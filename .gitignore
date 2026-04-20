@@ -134,6 +134,16 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+# Google Sheets service account keys (не коммитить)
+synaps-table-*.json
+*-service-account*.json
+
+# Local Playwright session (cookies / storage)
+synaps_storage_state.json
+
+# Saved HTML dumps for selector work
+dom_dumps/
+
 # Environments
 .env
 .envrc
