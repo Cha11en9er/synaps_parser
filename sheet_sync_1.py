@@ -1,17 +1,12 @@
 """
-Читает URL карточек Synaps из столбца A Google Таблицы (прямой URL в ячейке или гиперссылка на названии),
-парсит Synaps и записывает поля по заголовкам строки 1.
-По умолчанию лист «Лист1»; дубликаты переносятся на «Лист1 дубликаты» (переименование через .env).
+Устаревший вариант синхронизации (до листов «Лист1» / «Лист1 дубликаты» и маркера «работа парсера»).
 
-Граница зоны парсера: в столбце A строка, в которой после нормализации только текст «работа парсера».
-Обрабатываются только строки 2 … (эта строка − 1); всё ниже не читается и не меняется.
+По умолчанию лист «компании», дубликаты — «дубли компании». Обрабатывается весь заполненный столбец A (без строки-маркера).
 
-Пустые ячейки и «-» заполняются; непустые не трогаем. Парсинг строки пропускается, если все столбцы парсера (O…AC),
-сопоставленные с заголовками, уже заполнены реальными значениями (не пусто и не «-»).
-Заголовки — русские названия столбцов или буквенные ключи JSON.
+Читает URL карточек Synaps из столбца A (прямой URL или гиперссылка на названии), парсит Synaps и записывает поля.
+Пустые ячейки и «-» как плейсхолдер заполняются; непустые не трогаем.
 
-После парсинга каждой карточки данные сразу пишутся в таблицу (не ждём конца всего списка), чтение строки — одним
-запросом; при 429 — пауза и повтор.
+Запуск: python sheet_sync_1.py (те же флаги, что у sheet_sync.py).
 """
 
 from __future__ import annotations
@@ -44,9 +39,6 @@ ROOT = Path(__file__).resolve().parent
 _SCOPES_SHEETS = ("https://www.googleapis.com/auth/spreadsheets",)
 
 _BANK_OK_PHRASE = "действующие решения о приостановлении отсутствуют"
-
-# Маркер в столбце A: строки ниже не участвуют в парсинге и дедупе
-_PARSER_ZONE_END_MARKER = "работа парсера"
 
 # Нормализованный заголовок (нижний регистр, ё→е, без лишних пробелов и финального :) → логический ключ
 HEADER_TO_KEY: dict[str, str] = {
@@ -108,12 +100,12 @@ def _sheet_id() -> str:
 
 def _worksheet_name() -> str | None:
     t = _env("SHEET_TAB", "").strip()
-    return t or "Лист1"
+    return t or "компании"
 
 
 def _duplicates_sheet_name() -> str:
     t = _env("SHEET_DUPLICATES_TAB", "").strip()
-    return t or "Лист1 дубликаты"
+    return t or "дубли компании"
 
 
 def _is_synaps_org_url(s: str) -> bool:
@@ -228,18 +220,6 @@ def _canon_header_label(h: str) -> str:
     t = t.replace("ё", "е")
     t = re.sub(r"\s+", " ", t)
     return t.rstrip(":").strip()
-
-
-def _parser_section_last_row_1based(col_a: list[str]) -> tuple[int, bool]:
-    """
-    Последняя строка зоны парсера (1-based): строки 2..включительно до строки с маркером в A.
-    Если в A найдена строка «работа парсера» (после _canon_header_label), вернуть (номер строки над маркером, True).
-    Иначе (len(col_a), False) — вся заполненная колонка A, как раньше.
-    """
-    for k in range(1, len(col_a)):
-        if _canon_header_label(col_a[k]) == _PARSER_ZONE_END_MARKER:
-            return (k, True)
-    return (len(col_a), False)
 
 
 def _normalize_header(h: str) -> str | None:
@@ -526,7 +506,7 @@ def _move_duplicate_rows(
     urls_by_row: dict[int, str] | None = None,
 ) -> tuple[int, int]:
     """
-    Переносит дубли на лист дубликатов (по умолчанию «Лист1 дубликаты») и удаляет их из текущего листа со сдвигом вверх.
+    Переносит дубли на лист «дубли компании» и удаляет их из текущего листа со сдвигом вверх.
     Логика: на основном листе должна остаться ровно одна строка на компанию (по URL Synaps в столбце A).
     - если есть «полные» строки (все поля парсера заполнены) — оставляем первую полную;
     - иначе оставляем самую верхнюю строку (первую в группе, обычно пустую/новую).
@@ -582,13 +562,12 @@ def _dedupe_current_companies_sheet(
     cred_path: Path,
 ) -> int:
     """
-    Прочитать актуальные строки листа (зона парсера по маркеру в A) и перенести дубли на лист дубликатов.
+    Прочитать актуальные строки листа и перенести дубли на лист «дубли компании».
     Возвращает количество перенесённых строк.
     """
     max_col = max(max(col_by_key.values()), len(headers), 29)
     col_a = _sheet_call(lambda: ws.col_values(1), desc="столбец A (дедуп)")
-    parser_last, _ = _parser_section_last_row_1based(col_a)
-    last = min(len(col_a), parser_last)
+    last = len(col_a)
     urls_by_row = _sheet_call(
         lambda: _fetch_column_a_hyperlinks_from_api(sh.id, ws.title, cred_path, 1, last),
         desc="гиперссылки A (дедуп)",
@@ -678,13 +657,7 @@ def run_sheet_sync(*, headless: bool = True, save_dom_snapshots: bool = False) -
         )
 
     col_a = _sheet_call(lambda: ws.col_values(1), desc="столбец A")
-    parser_last, parser_zone_from_marker = _parser_section_last_row_1based(col_a)
-    if parser_zone_from_marker:
-        print(
-            f"Зона парсера и дедупа: строки 2–{parser_last} "
-            f"(в столбце A ниже — маркер «{_PARSER_ZONE_END_MARKER}», те строки не трогаем).",
-        )
-    last = parser_last
+    last = len(col_a)
     max_col = max(max(col_by_key.values()), len(headers), 29)
     sheet_rows: list[list[Any]] = []
     if last >= 2:
@@ -710,8 +683,7 @@ def run_sheet_sync(*, headless: bool = True, save_dom_snapshots: bool = False) -
         dup_tab = _duplicates_sheet_name()
         print(f"Дубликаты: перенесено строк на лист «{dup_tab}»: {moved}")
         col_a = _sheet_call(lambda: ws.col_values(1), desc="столбец A после очистки дублей")
-        parser_last, _ = _parser_section_last_row_1based(col_a)
-        last = parser_last
+        last = len(col_a)
         sheet_rows = []
         if last >= 2:
             rng = f"{rowcol_to_a1(2, 1)}:{rowcol_to_a1(last, max_col)}"
@@ -801,7 +773,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="Synaps → Google Sheets: URL Synaps в столбце A (текст или гиперссылка на названии)",
+        description="(legacy) Synaps → лист «компании»: URL в столбце A (текст или гиперссылка)",
     )
     parser.add_argument("--headed", action="store_true", help="Показать браузер (по умолчанию headless)")
     parser.add_argument(

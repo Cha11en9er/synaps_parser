@@ -104,8 +104,9 @@ def _ensure_organizacii_profile(page: Page) -> None:
 def _sorted_dict(d: dict[str, Any]) -> dict[str, Any]:
     return dict(sorted(d.items(), key=lambda kv: kv[0]))
 
-# Телефоны на Synaps: и «8 (491) 472-11-05», и «8 (49147) 2-11-05» (в скобках 3–5 цифр).
-_PHONE_RU = re.compile(r"8\s*\(\d{3,5}\)\s*\d+(?:-\d{2}-\d{2})")
+# Телефоны: 8 (...) и +7 (...) — одинаковый хвост после скобок.
+_PHONE_RU_8 = re.compile(r"8\s*\(\d{3,5}\)\s*\d+(?:-\d{2}-\d{2})")
+_PHONE_RU_PLUS7 = re.compile(r"\+7\s*\(\d{3,5}\)\s*\d+(?:-\d{2}-\d{2})")
 _EMAIL_STRICT = re.compile(r"^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$")
 # ZWSP, BOM, word joiner, soft hyphen и т.п. — часто «ломают» сравнение дублей
 _INVISIBLE_EMAIL_CHARS = re.compile(r"[\u200b-\u200f\ufeff\u2060\u00ad\u034f\ufeff]")
@@ -471,24 +472,122 @@ def _extract_okved_r(page: Page) -> dict[str, str]:
 
 def _extract_aa_statistics(page: Page) -> dict[str, str]:
     """
-    AA: первый .co-statistics-block — пара «активные» → число из следующего div.
+    AA: детальная сводка по долгам:
+    - кол-во активных производств
+    - общая сумма задолженности
+    - % от уставного капитала (если есть)
+    - % относительно прибыли (если есть)
+    Учитываются формулировки «составляет 2,01%» и «составляет менее 0,01%».
     """
-    block = page.locator(".co-statistics-block").first
-    if block.count() == 0:
-        return {}
-    n = block.locator(":scope > div").count()
-    for i in range(max(0, n - 1)):
-        label = _norm_space(block.locator(":scope > div").nth(i).text_content() or "").lower()
-        if label == "активные":
-            val = _norm_space(block.locator(":scope > div").nth(i + 1).text_content() or "")
-            return _sorted_dict({"активные": val})
-    return {}
+    active = "-"
+    stats_blocks = page.locator(".org-bailiff-statistics .co-statistics-block")
+    for i in range(stats_blocks.count()):
+        b = stats_blocks.nth(i)
+        label = _norm_space(b.locator(":scope > div").first.text_content() or "").lower()
+        if "актив" in label:
+            val = _norm_space(b.locator(":scope > div").nth(1).text_content() or "")
+            active = val if val else "-"
+            break
+
+    seo = page.locator(".org-bailiff-seo-text").first
+    seo_text = _norm_space(seo.text_content() or "") if seo.count() > 0 else ""
+
+    total_sum = "-"
+    m_sum = re.search(
+        r"Общая\s+сумма\s+задолженности[^.]*?составляет\s+([\d\s\xa0]+)\s*руб",
+        seo_text,
+        re.I,
+    )
+    if m_sum:
+        total_sum = _norm_space(m_sum.group(1).replace("\xa0", " "))
+
+    cap_pct = "-"
+    m_cap = re.search(
+        r"составляет\s+(?:менее\s+)?([\d\s,\xa0]+)%\s*от\s+уставного\s+капитала",
+        seo_text,
+        re.I,
+    )
+    if m_cap:
+        cap_pct = re.sub(r"\s+", "", m_cap.group(1).replace("\xa0", "")).replace(",", ".") + "%"
+
+    profit_pct = "-"
+    m_profit = re.search(
+        r"Относительно\s+прибыли[^.]*?составляет\s+(?:менее\s+)?([\d\s,\xa0]+)%",
+        seo_text,
+        re.I | re.DOTALL,
+    )
+    if m_profit:
+        profit_pct = re.sub(r"\s+", "", m_profit.group(1).replace("\xa0", "")).replace(",", ".") + "%"
+
+    return _sorted_dict(
+        {
+            "кол-во": active,
+            "сумма": total_sum,
+            "задолжн. относит. устанвой капитал": cap_pct,
+            "относительно прибыли": profit_pct,
+        },
+    )
+
+
+def _has_ispolnitelnoe_section(page: Page, profile_base: str) -> bool:
+    """
+    Раздел «Долги» на главной: ссылка/data-href на …/ispolnitelnoe-proizvodstvo.
+    Если пункта нет (напр. ИП без страницы долгов), в AA не подставляем данные с чужой страницы.
+    """
+    slug = profile_base.rstrip("/").split("/")[-1]
+    if page.locator(f'[data-href*="{slug}/ispolnitelnoe-proizvodstvo"]').count() > 0:
+        return True
+    if page.locator('[data-href*="/ispolnitelnoe-proizvodstvo"]').count() > 0:
+        return True
+    if page.locator('a[href*="/ispolnitelnoe-proizvodstvo"]').count() > 0:
+        return True
+    return False
+
+
+def _extract_employees_count_ac(page: Page) -> str | None:
+    """AC: число работников из .org-smp-block (например, «10 работников» -> «10»)."""
+    loc = page.locator('.org-smp-block span[title*="Среднесписочная численность"]').first
+    if loc.count() == 0:
+        return None
+    txt = _norm_space(loc.text_content() or "")
+    m = re.search(r"\d+", txt)
+    return m.group(0) if m else None
 
 
 def _contacts_block_by_strong(page: Page, label: str):
+    """Подпись на сайте может быть с разным регистром («Телефон»)."""
+    pat = re.compile(re.escape(label), re.I)
     return page.locator("div.org-contacts-block").filter(
-        has=page.locator("strong").filter(has_text=label),
+        has=page.locator("strong").filter(has_text=pat),
     ).first
+
+
+def _email_candidates_from_text_chunk(s: str) -> list[str]:
+    """Все подстроки вида user@host из текста (вложенные div, склейка inner_text)."""
+    if not (s or "").strip():
+        return []
+    out: list[str] = []
+    seen_line: set[str] = set()
+    for m in re.finditer(
+        r"[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}",
+        s,
+    ):
+        t = clean_email_as_on_page(m.group(0))
+        if not _EMAIL_STRICT.match(t):
+            continue
+        k = email_sheet_line_key(t)
+        if k not in seen_line:
+            seen_line.add(k)
+            out.append(t)
+    return out
+
+
+def _phones_in_text_chunks(s: str) -> list[str]:
+    out: list[str] = []
+    for rx in (_PHONE_RU_8, _PHONE_RU_PLUS7):
+        for m in rx.finditer(s or ""):
+            out.append(_norm_space(m.group(0)))
+    return out
 
 
 def _extract_phones(page: Page) -> list[str]:
@@ -496,9 +595,6 @@ def _extract_phones(page: Page) -> list[str]:
     block = _contacts_block_by_strong(page, "телефон")
     if block.count() == 0:
         return []
-
-    def _phones_in_string(s: str) -> list[str]:
-        return [_norm_space(m.group(0)) for m in _PHONE_RU.finditer(s or "")]
 
     seen: set[str] = set()
     out: list[str] = []
@@ -509,12 +605,12 @@ def _extract_phones(page: Page) -> list[str]:
         if div_id == "ocb-phone-block-script":
             for j in range(div.locator(":scope > div").count()):
                 inner = div.locator(":scope > div").nth(j)
-                for p in _phones_in_string(inner.text_content() or ""):
+                for p in _phones_in_text_chunks(inner.text_content() or ""):
                     if p not in seen:
                         seen.add(p)
                         out.append(p)
             continue
-        for p in _phones_in_string(div.text_content() or ""):
+        for p in _phones_in_text_chunks(div.text_content() or ""):
             if p not in seen:
                 seen.add(p)
                 out.append(p)
@@ -549,6 +645,13 @@ def _extract_emails(page: Page) -> list[str]:
         if div.locator("strong").count() > 0:
             continue
         _push(div.text_content() or "", out, seen)
+    # Доп. адреса только в #ocb-email-block-script: обходим любую вложенность и целиком inner_text
+    # (на случай, если не только прямые :scope > div листья или text_content отличается от видимого).
+    scripts = root.locator("#ocb-email-block-script")
+    for k in range(scripts.count()):
+        el = scripts.nth(k)
+        for t in _email_candidates_from_text_chunk(el.inner_text() or ""):
+            _push(t, out, seen)
     merged = _dedupe_email_list(out)
     return _drop_inbox_if_same_local_has_indox(merged)
 
@@ -601,6 +704,8 @@ def extract_organization_json(
     dom_base = _dom_dump_name_prefix(dom_dump_run_index, dom_slug, dom_source_url or page.url)
 
     _expand_contacts_for_parse(page)
+    # Пока на главной: есть ли в меню раздел «Долги» (иначе /ispolnitelnoe-proizvodstvo может отсутствовать).
+    has_ip_section = _has_ispolnitelnoe_section(page, profile_base)
 
     yv = _year_value_map_finance_table2(page)
     y25 = _finance_y_2025(page)
@@ -611,6 +716,7 @@ def extract_organization_json(
         "Q": _extract_phones(page),
         "S": _extract_legal_address(page),
         "T": _extract_emails(page),
+        "AC": _extract_employees_count_ac(page),
         "V": _sorted_dict(v) if v else None,
         "W": _sorted_dict(w) if w else None,
         "X": _sorted_dict(x) if x else None,
@@ -637,18 +743,21 @@ def extract_organization_json(
     if save_dom_snapshots:
         _save_dom(page, f"{dom_base}__02_okved.html")
 
-    page.goto(f"{profile_base}/ispolnitelnoe-proizvodstvo", wait_until="domcontentloaded")
-    _pause(page)
-    if save_dom_snapshots:
-        _stabilize_page_for_dom_dump(page, kind="ip")
+    if has_ip_section:
+        page.goto(f"{profile_base}/ispolnitelnoe-proizvodstvo", wait_until="domcontentloaded")
+        _pause(page)
+        if save_dom_snapshots:
+            _stabilize_page_for_dom_dump(page, kind="ip")
+        else:
+            try:
+                page.wait_for_selector(".co-statistics-block, .org-card-h2", timeout=20_000)
+            except PlaywrightTimeoutError:
+                pass
+        data["AA"] = _extract_aa_statistics(page)
+        if save_dom_snapshots:
+            _save_dom(page, f"{dom_base}__03_ispolnitelnoe.html")
     else:
-        try:
-            page.wait_for_selector(".co-statistics-block, .org-card-h2", timeout=20_000)
-        except PlaywrightTimeoutError:
-            pass
-    data["AA"] = _extract_aa_statistics(page)
-    if save_dom_snapshots:
-        _save_dom(page, f"{dom_base}__03_ispolnitelnoe.html")
+        data["AA"] = None
 
     page.goto(profile_base, wait_until="domcontentloaded")
     _pause(page)
@@ -677,7 +786,7 @@ def resolved_dom_dumps_dir() -> Path:
     return _dom_dumps_root()
 
 
-SHEET_JSON_KEYS: tuple[str, ...] = ("AA", "AB", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
+SHEET_JSON_KEYS: tuple[str, ...] = ("AA", "AB", "AC", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
 
 
 def scrape_urls_sequentially(
