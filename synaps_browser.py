@@ -27,6 +27,13 @@ DOM_DUMPS_DIR = Path(__file__).resolve().parent / "dom_dumps"
 DEFAULT_JSON_OUT = Path(__file__).resolve().parent / "organization_fields.json"
 
 ORG_STABILIZE_URL = "https://synapsenet.ru/organizacii/1226900006101-ooo-zhilstroj"
+# Стартовая страница с глобальным поиском (можно переопределить SYNAPS_LANDING_URL в .env)
+DEFAULT_SYNAPS_LANDING_URL = "https://synapsenet.ru/organizacii/1187746623734-ekspodor-stroj"
+
+
+def _synaps_landing_url() -> str:
+    u = (os.getenv("SYNAPS_LANDING_URL") or "").strip().strip('"').strip("'")
+    return u or DEFAULT_SYNAPS_LANDING_URL
 
 
 def _org_profile_base(url: str) -> str:
@@ -250,6 +257,87 @@ def _ensure_logged_in(page: Page, main_url: str, mail: str, password: str) -> No
 
 def _org_page_loaded(page: Page) -> bool:
     return page.locator(".oc-op-reg-date").count() > 0
+
+
+def _org_search_input_locator(page: Page) -> Locator:
+    return page.locator(
+        'div.ocs-input-block input[placeholder="поиск организаций и ИП"], '
+        'div.ocs-input-block input[aria-label="Название, ИНН или ОГРН"]',
+    ).first
+
+
+def _org_search_button_locator(page: Page) -> Locator:
+    return page.locator("div.ocs-input-button").first
+
+
+def _ensure_org_search_visible(page: Page, landing_url: str) -> Locator:
+    """Поле поиска в шапке; при отсутствии — переход на стартовую страницу."""
+    inp = _org_search_input_locator(page)
+    if inp.count() > 0:
+        try:
+            if inp.is_visible():
+                return inp
+        except Exception:
+            pass
+    page.goto(landing_url, wait_until="domcontentloaded")
+    _pause(page)
+    inp = _org_search_input_locator(page)
+    if inp.count() == 0:
+        raise RuntimeError("Не найдено поле поиска организаций (.ocs-input-block input).")
+    inp.wait_for(state="visible", timeout=25_000)
+    return inp
+
+
+def _click_first_organizacii_result_if_needed(page: Page) -> None:
+    if _org_page_loaded(page):
+        return
+    links = page.locator('a[href*="/organizacii/"]')
+    if links.count() == 0:
+        return
+    try:
+        first = links.first
+        if first.is_visible():
+            first.click()
+            _pause(page)
+    except Exception:
+        pass
+
+
+def navigate_to_organization_by_inn(page: Page, inn_raw: str, *, landing_url: str | None = None) -> None:
+    """
+    Ввод ИНН в глобальный поиск, клик по кнопке поиска, ожидание карточки организации.
+    Работает со страницы лендинга или с уже открытой карточки (поиск в шапке).
+    """
+    landing = landing_url or _synaps_landing_url()
+    inn = re.sub(r"\D", "", (inn_raw or "").strip())
+    if not inn:
+        raise ValueError("Пустой ИНН")
+
+    inp = _ensure_org_search_visible(page, landing)
+    inp.click()
+    _pause(page)
+    inp.fill("")
+    inp.fill(inn)
+    _pause(page)
+
+    btn = _org_search_button_locator(page)
+    if btn.count() == 0:
+        inp.press("Enter")
+    else:
+        btn.click()
+    _pause(page)
+
+    try:
+        page.wait_for_selector(".oc-op-reg-date", state="visible", timeout=30_000)
+    except PlaywrightTimeoutError:
+        _click_first_organizacii_result_if_needed(page)
+        try:
+            page.wait_for_selector(".oc-op-reg-date", state="visible", timeout=15_000)
+        except PlaywrightTimeoutError:
+            pass
+
+    if not _org_page_loaded(page):
+        raise RuntimeError(f"После поиска по ИНН {inn} карточка не открылась (нет .oc-op-reg-date). URL: {page.url}")
 
 
 def _extract_reg_date(page: Page) -> str | None:
@@ -749,6 +837,93 @@ def scrape_urls_sequentially(
                     context.storage_state(path=str(storage))
                 except Exception as e:
                     results[u] = e
+        finally:
+            try:
+                context.storage_state(path=str(storage))
+            except Exception:
+                pass
+            context.close()
+            browser.close()
+
+    return results
+
+
+def scrape_inns_sequentially(
+    inns: list[str],
+    *,
+    headless: bool = False,
+    storage_path: Path | None = None,
+    save_dom_snapshots: bool = False,
+    on_each_result: Callable[[str, dict[str, Any]], None] | None = None,
+    landing_url: str | None = None,
+) -> dict[str, Any | BaseException]:
+    """
+    Тот же один браузер и сессия: для каждого ИНН — ввод в поиск на сайте, переход на карточку, парсинг.
+    Ключи результата — нормализованный ИНН (только цифры), как в переданном списке после нормализации.
+    """
+    main_url, mail, password = _credentials()
+    storage = storage_path or DEFAULT_STORAGE
+    landing = landing_url or _synaps_landing_url()
+    results: dict[str, Any | BaseException] = {}
+    _ensure_utf8_stdout()
+
+    todo_raw = [re.sub(r"\D", "", (x or "").strip()) for x in inns if x and str(x).strip()]
+    todo = list(dict.fromkeys(todo_raw))
+    if not todo:
+        return results
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=headless)
+        context_args: dict = {}
+        if storage.exists():
+            context_args["storage_state"] = str(storage)
+        context = browser.new_context(**context_args)
+        page = context.new_page()
+
+        def _recover_session() -> None:
+            nonlocal context, page
+            if storage.exists():
+                storage.unlink()
+            try:
+                context.close()
+            except Exception:
+                pass
+            context = browser.new_context()
+            page = context.new_page()
+            _ensure_logged_in(page, main_url, mail, password)
+            context.storage_state(path=str(storage))
+
+        try:
+            _ensure_logged_in(page, main_url, mail, password)
+            context.storage_state(path=str(storage))
+
+            page.goto(landing, wait_until="domcontentloaded")
+            _pause(page)
+
+            total = len(todo)
+            for idx, inn in enumerate(todo, start=1):
+                try:
+                    print(f"[{idx}/{total}] ИНН {inn}")
+                    navigate_to_organization_by_inn(page, inn, landing_url=landing)
+                    if not _org_page_loaded(page) or "home/login" in (page.url or ""):
+                        _recover_session()
+                        page.goto(landing, wait_until="domcontentloaded")
+                        _pause(page)
+                        navigate_to_organization_by_inn(page, inn, landing_url=landing)
+                    if not _org_page_loaded(page):
+                        raise RuntimeError(f"Карточка не открылась после поиска по ИНН {inn}")
+                    src_tag = f"inn:{inn}"
+                    results[inn] = extract_organization_json(
+                        page,
+                        save_dom_snapshots=save_dom_snapshots,
+                        dom_dump_run_index=idx,
+                        dom_source_url=src_tag,
+                    )
+                    if on_each_result is not None:
+                        on_each_result(inn, results[inn])
+                    context.storage_state(path=str(storage))
+                except Exception as e:
+                    results[inn] = e
         finally:
             try:
                 context.storage_state(path=str(storage))
