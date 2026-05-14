@@ -1,6 +1,11 @@
 """
 Синапс: авторизация, сохранение сессии (storage state), обход ссылок в одном окне.
 Переменные окружения: MAIN_URL, MAIL (или EMAIL), PASS (или PASSWORD).
+
+Ускорение (опционально, в .env): SYNAPS_ACTION_DELAY_MS (пауза после навигации, по умолчанию 700),
+SYNAPS_MICRO_DELAY_MS (после мелких кликов, по умолчанию 200), SYNAPS_SUBPAGE_WAIT_MS,
+SYNAPS_BANK_COMMENT_MS, SYNAPS_INN_SEARCH_WAIT_MS, SYNAPS_LOGIN_FORM_WAIT_MS, SYNAPS_LOGIN_NAV_MS,
+SYNAPS_SEARCH_BOX_WAIT_MS; для DOM-дампов: SYNAPS_DOM_DUMP_WAIT_MS, SYNAPS_DOM_DUMP_NETWORKIDLE_MS.
 """
 
 from __future__ import annotations
@@ -18,8 +23,63 @@ from typing import Any, Callable
 from dotenv import load_dotenv
 from playwright.sync_api import Locator, Page, TimeoutError as PlaywrightTimeoutError, sync_playwright
 
-# Задержка после навигации / клика (сайт «тяжёлый»)
-ACTION_DELAY_MS = 2000
+
+def _env_int(name: str, default: int, *, lo: int = 0, hi: int | None = None) -> int:
+    raw = (os.getenv(name) or "").strip()
+    if not raw:
+        return default
+    try:
+        v = int(raw, 10)
+    except ValueError:
+        return default
+    if v < lo:
+        v = lo
+    if hi is not None and v > hi:
+        v = hi
+    return v
+
+
+# Паузы (мс): при «рваной» вёрстке поднимите SYNAPS_ACTION_DELAY_MS (например 1500–2000).
+def _action_delay_ms() -> int:
+    return _env_int("SYNAPS_ACTION_DELAY_MS", 700, lo=0, hi=8000)
+
+
+def _micro_delay_ms() -> int:
+    """После мелких кликов (раскрыть контакты и т.п.)."""
+    return _env_int("SYNAPS_MICRO_DELAY_MS", 200, lo=0, hi=3000)
+
+
+def _subpage_selector_timeout_ms() -> int:
+    return _env_int("SYNAPS_SUBPAGE_WAIT_MS", 12_000, lo=1000, hi=90_000)
+
+
+def _bank_comment_timeout_ms() -> int:
+    return _env_int("SYNAPS_BANK_COMMENT_MS", 14_000, lo=2000, hi=60_000)
+
+
+def _inn_search_primary_timeout_ms() -> int:
+    return _env_int("SYNAPS_INN_SEARCH_WAIT_MS", 18_000, lo=3000, hi=90_000)
+
+
+def _dom_dump_selector_timeout_ms() -> int:
+    return _env_int("SYNAPS_DOM_DUMP_WAIT_MS", 28_000, lo=5000, hi=120_000)
+
+
+def _dom_dump_networkidle_ms() -> int:
+    return _env_int("SYNAPS_DOM_DUMP_NETWORKIDLE_MS", 18_000, lo=3000, hi=90_000)
+
+
+def _login_form_input_timeout_ms() -> int:
+    return _env_int("SYNAPS_LOGIN_FORM_WAIT_MS", 22_000, lo=5000, hi=120_000)
+
+
+def _login_navigation_timeout_ms() -> int:
+    return _env_int("SYNAPS_LOGIN_NAV_MS", 45_000, lo=10_000, hi=180_000)
+
+
+def _org_search_box_timeout_ms() -> int:
+    return _env_int("SYNAPS_SEARCH_BOX_WAIT_MS", 18_000, lo=3000, hi=90_000)
+
 
 # Файл сессии Playwright (куки + localStorage)
 DEFAULT_STORAGE = Path(__file__).resolve().parent / "synaps_storage_state.json"
@@ -74,18 +134,20 @@ def _dom_dumps_root() -> Path:
 
 def _stabilize_page_for_dom_dump(page: Page, *, kind: str) -> None:
     """Дождаться сети/маркеров, чтобы в HTML попал контент SPA, а не пустая оболочка."""
+    t_sel = _dom_dump_selector_timeout_ms()
+    t_net = _dom_dump_networkidle_ms()
     sel_main = ".oc-op-reg-date"
     try:
         if kind == "main":
-            page.wait_for_selector(sel_main, state="visible", timeout=35_000)
+            page.wait_for_selector(sel_main, state="visible", timeout=t_sel)
         elif kind == "okved":
-            page.wait_for_selector(".org-card-h2, table.org-okved-table", timeout=35_000)
+            page.wait_for_selector(".org-card-h2, table.org-okved-table", timeout=t_sel)
         elif kind == "ip":
-            page.wait_for_selector(".co-statistics-block, .org-card-h2", timeout=35_000)
+            page.wait_for_selector(".co-statistics-block, .org-card-h2", timeout=t_sel)
     except PlaywrightTimeoutError:
         pass
     try:
-        page.wait_for_load_state("networkidle", timeout=30_000)
+        page.wait_for_load_state("networkidle", timeout=t_net)
     except PlaywrightTimeoutError:
         pass
     _pause(page)
@@ -105,7 +167,11 @@ def _ensure_organizacii_profile(page: Page) -> None:
     slug = m.group(1)
     target = f"https://synapsenet.ru/organizacii/{slug}"
     page.goto(target, wait_until="domcontentloaded")
-    _pause(page)
+    _pause_micro(page)
+    try:
+        page.wait_for_selector(".oc-op-reg-date", state="visible", timeout=_subpage_selector_timeout_ms())
+    except PlaywrightTimeoutError:
+        _pause(page)
 
 
 def _sorted_dict(d: dict[str, Any]) -> dict[str, Any]:
@@ -190,7 +256,13 @@ def _env(name: str, *fallbacks: str) -> str:
 
 
 def _pause(page: Page) -> None:
-    page.wait_for_timeout(ACTION_DELAY_MS)
+    page.wait_for_timeout(_action_delay_ms())
+
+
+def _pause_micro(page: Page) -> None:
+    ms = _micro_delay_ms()
+    if ms > 0:
+        page.wait_for_timeout(ms)
 
 
 def _ensure_utf8_stdout() -> None:
@@ -221,17 +293,17 @@ def _login_button_visible(page: Page) -> bool:
 
 def _perform_login(page: Page, mail: str, password: str) -> None:
     page.goto("https://synapsenet.ru/home/login", wait_until="domcontentloaded")
-    _pause(page)
-    page.wait_for_selector("input.demand-input", timeout=30_000)
+    _pause_micro(page)
+    page.wait_for_selector("input.demand-input", timeout=_login_form_input_timeout_ms())
     # Почта: первый demand-input без класса пароля
     email = page.locator("input.demand-input:not(.form-input-password)").first
     email.fill(mail)
-    _pause(page)
+    _pause_micro(page)
     pwd = page.locator("input.demand-input.form-input-password").first
     pwd.fill(password)
-    _pause(page)
+    _pause_micro(page)
     page.locator(".demand-submit").first.click()
-    page.wait_for_load_state("load", timeout=60_000)
+    page.wait_for_load_state("load", timeout=_login_navigation_timeout_ms())
     _pause(page)
     if _login_form_visible(page):
         raise RuntimeError("Похоже, вход не удался: форма логина всё ещё на странице.")
@@ -247,17 +319,43 @@ def _ensure_logged_in(page: Page, main_url: str, mail: str, password: str) -> No
 
     if _login_button_visible(page):
         page.locator(".mh-enter-pro.click-link").first.click()
-        page.wait_for_url("**/home/login**", timeout=30_000)
-        _pause(page)
+        page.wait_for_url("**/home/login**", timeout=_login_form_input_timeout_ms())
+        _pause_micro(page)
         _perform_login(page, mail, password)
         return
 
     # Кнопки входа нет — считаем, что сессия уже валидна
-    _pause(page)
+    _pause_micro(page)
 
 
 def _org_page_loaded(page: Page) -> bool:
     return page.locator(".oc-op-reg-date").count() > 0
+
+
+def _settle_after_org_goto(page: Page) -> None:
+    """После goto на карточку: короткая пауза + ожидание маркера (вместо длинного sleep)."""
+    _pause_micro(page)
+    try:
+        page.wait_for_selector(
+            ".oc-op-reg-date",
+            state="visible",
+            timeout=_inn_search_primary_timeout_ms(),
+        )
+    except PlaywrightTimeoutError:
+        _pause(page)
+
+
+def _settle_after_landing_goto(page: Page) -> None:
+    """После goto на лендинг для ИНН-поиска: дождаться поля поиска (без лишней паузы)."""
+    _pause_micro(page)
+    inp = _org_search_input_locator(page)
+    if inp.count() == 0:
+        _pause(page)
+        return
+    try:
+        inp.wait_for(state="visible", timeout=_org_search_box_timeout_ms())
+    except Exception:
+        _pause(page)
 
 
 def _org_search_input_locator(page: Page) -> Locator:
@@ -281,11 +379,11 @@ def _ensure_org_search_visible(page: Page, landing_url: str) -> Locator:
         except Exception:
             pass
     page.goto(landing_url, wait_until="domcontentloaded")
-    _pause(page)
+    _settle_after_landing_goto(page)
     inp = _org_search_input_locator(page)
     if inp.count() == 0:
         raise RuntimeError("Не найдено поле поиска организаций (.ocs-input-block input).")
-    inp.wait_for(state="visible", timeout=25_000)
+    inp.wait_for(state="visible", timeout=_org_search_box_timeout_ms())
     return inp
 
 
@@ -299,7 +397,7 @@ def _click_first_organizacii_result_if_needed(page: Page) -> None:
         first = links.first
         if first.is_visible():
             first.click()
-            _pause(page)
+            _pause_micro(page)
     except Exception:
         pass
 
@@ -316,24 +414,28 @@ def navigate_to_organization_by_inn(page: Page, inn_raw: str, *, landing_url: st
 
     inp = _ensure_org_search_visible(page, landing)
     inp.click()
-    _pause(page)
+    _pause_micro(page)
     inp.fill("")
     inp.fill(inn)
-    _pause(page)
+    _pause_micro(page)
 
     btn = _org_search_button_locator(page)
     if btn.count() == 0:
         inp.press("Enter")
     else:
         btn.click()
-    _pause(page)
 
+    t_primary = _inn_search_primary_timeout_ms()
     try:
-        page.wait_for_selector(".oc-op-reg-date", state="visible", timeout=30_000)
+        page.wait_for_selector(".oc-op-reg-date", state="visible", timeout=t_primary)
     except PlaywrightTimeoutError:
         _click_first_organizacii_result_if_needed(page)
         try:
-            page.wait_for_selector(".oc-op-reg-date", state="visible", timeout=15_000)
+            page.wait_for_selector(
+                ".oc-op-reg-date",
+                state="visible",
+                timeout=max(4_000, t_primary // 2),
+            )
         except PlaywrightTimeoutError:
             pass
 
@@ -380,14 +482,14 @@ def _expand_contacts_for_parse(page: Page) -> None:
         t = (phone_btn.first.inner_text() or "").lower()
         if "свернуть" not in t:
             phone_btn.first.click()
-            _pause(page)
+            _pause_micro(page)
 
     mail_btn = page.locator(".ocb-show-all.ocb-email-but-script")
     if mail_btn.count() > 0 and mail_btn.first.is_visible():
         t = (mail_btn.first.inner_text() or "").lower()
         if "свернуть" not in t:
             mail_btn.first.click()
-            _pause(page)
+            _pause_micro(page)
 
 
 def _year_value_map_finance_table2(page: Page) -> dict[int, int]:
@@ -635,11 +737,20 @@ def _has_ispolnitelnoe_section(page: Page, profile_base: str) -> bool:
 def _extract_employees_count_ac(page: Page) -> str | None:
     """AC: число работников из .org-smp-block (например, «10 работников» -> «10»)."""
     loc = page.locator('.org-smp-block span[title*="Среднесписочная численность"]').first
-    if loc.count() == 0:
+    if loc.count() > 0:
+        txt = _norm_space(loc.text_content() or "")
+        m = re.search(r"\d+", txt)
+        if m:
+            return m.group(0)
+    # Запасной вариант: весь блок .org-smp-block (другой title/вёрстка).
+    block = page.locator(".org-smp-block").first
+    if block.count() == 0:
         return None
-    txt = _norm_space(loc.text_content() or "")
-    m = re.search(r"\d+", txt)
-    return m.group(0) if m else None
+    blob = _norm_space(block.inner_text() or "")
+    if not re.search(r"численн|работник", blob, re.I):
+        return None
+    m2 = re.search(r"\b(\d+)\b", blob)
+    return m2.group(1) if m2 else None
 
 
 def _contacts_block_by_strong(page: Page, label: str):
@@ -758,12 +869,12 @@ def _fetch_bank_accounts_comment(page: Page) -> str | None:
     if btn.count() == 0:
         return None
     btn.first.click()
-    _pause(page)
+    _pause_micro(page)
     try:
-        page.wait_for_selector(".ba-rb-comment", timeout=25_000)
+        page.wait_for_selector(".ba-rb-comment", timeout=_bank_comment_timeout_ms())
     except PlaywrightTimeoutError:
         return None
-    _pause(page)
+    _pause_micro(page)
     cm = page.locator(".ba-rb-comment").first
     if cm.count() == 0:
         return None
@@ -819,12 +930,15 @@ def extract_organization_json(
         _save_dom(page, f"{dom_base}__01_main_after_actions.html")
 
     page.goto(f"{profile_base}/vidy-deyatelnosti", wait_until="domcontentloaded")
-    _pause(page)
+    _pause_micro(page)
     if save_dom_snapshots:
         _stabilize_page_for_dom_dump(page, kind="okved")
     else:
         try:
-            page.wait_for_selector(".org-card-h2, table.org-okved-table", timeout=20_000)
+            page.wait_for_selector(
+                ".org-card-h2, table.org-okved-table",
+                timeout=_subpage_selector_timeout_ms(),
+            )
         except PlaywrightTimeoutError:
             pass
     data["R"] = _extract_okved_r(page)
@@ -833,12 +947,15 @@ def extract_organization_json(
 
     if has_ip_section:
         page.goto(f"{profile_base}/ispolnitelnoe-proizvodstvo", wait_until="domcontentloaded")
-        _pause(page)
+        _pause_micro(page)
         if save_dom_snapshots:
             _stabilize_page_for_dom_dump(page, kind="ip")
         else:
             try:
-                page.wait_for_selector(".co-statistics-block, .org-card-h2", timeout=20_000)
+                page.wait_for_selector(
+                    ".co-statistics-block, .org-card-h2",
+                    timeout=_subpage_selector_timeout_ms(),
+                )
             except PlaywrightTimeoutError:
                 pass
         data["AA"] = _extract_aa_statistics(page)
@@ -848,7 +965,18 @@ def extract_organization_json(
         data["AA"] = None
 
     page.goto(profile_base, wait_until="domcontentloaded")
-    _pause(page)
+    _pause_micro(page)
+    if not save_dom_snapshots:
+        try:
+            page.wait_for_selector(
+                ".oc-op-reg-date",
+                state="visible",
+                timeout=_subpage_selector_timeout_ms(),
+            )
+        except PlaywrightTimeoutError:
+            _pause(page)
+    else:
+        _pause(page)
     return _sorted_dict(data)
 
 
@@ -928,11 +1056,11 @@ def scrape_urls_sequentially(
                 try:
                     print(f"[{idx}/{total}] {u}")
                     page.goto(u, wait_until="domcontentloaded")
-                    _pause(page)
+                    _settle_after_org_goto(page)
                     if not _org_page_loaded(page) or "home/login" in (page.url or ""):
                         _recover_session()
                         page.goto(u, wait_until="domcontentloaded")
-                        _pause(page)
+                        _settle_after_org_goto(page)
                     if not _org_page_loaded(page):
                         raise RuntimeError(f"Не удалось открыть карточку (нет .oc-op-reg-date): {u}")
                     results[u] = extract_organization_json(
@@ -1007,7 +1135,7 @@ def scrape_inns_sequentially(
             context.storage_state(path=str(storage))
 
             page.goto(landing, wait_until="domcontentloaded")
-            _pause(page)
+            _settle_after_landing_goto(page)
 
             total = len(todo)
             for idx, inn in enumerate(todo, start=1):
@@ -1017,7 +1145,7 @@ def scrape_inns_sequentially(
                     if not _org_page_loaded(page) or "home/login" in (page.url or ""):
                         _recover_session()
                         page.goto(landing, wait_until="domcontentloaded")
-                        _pause(page)
+                        _settle_after_landing_goto(page)
                         navigate_to_organization_by_inn(page, inn, landing_url=landing)
                     if not _org_page_loaded(page):
                         raise RuntimeError(f"Карточка не открылась после поиска по ИНН {inn}")

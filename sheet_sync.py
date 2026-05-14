@@ -6,8 +6,8 @@
 Граница зоны парсера: в столбце A строка, в которой после нормализации только текст «работа парсера».
 Обрабатываются только строки 2 … (эта строка − 1); всё ниже не читается и не меняется.
 
-Пустые ячейки и «-» заполняются; непустые не трогаем. Парсинг строки пропускается, если все столбцы парсера (O…AC),
-сопоставленные с заголовками, уже заполнены реальными значениями (не пусто и не «-»).
+Пустые ячейки заполняются; «-»/тире не трогаем (уже ответ Synaps: на сайте нет данных). Парсинг строки пропускается,
+если все сопоставленные столбцы парсера (O…AC) не пустые (в т.ч. уже стоит «-»).
 Заголовки — русские названия столбцов или буквенные ключи JSON.
 
 После парсинга каждой карточки данные сразу пишутся в таблицу (не ждём конца всего списка), чтение строки — одним
@@ -31,6 +31,7 @@ from google.oauth2.service_account import Credentials
 from gspread.exceptions import APIError
 from gspread.utils import rowcol_to_a1
 
+from sheet_column_layout import apply_u_w_overrides, restore_synaps_bank_column
 from synaps_browser import (
     SHEET_JSON_KEYS,
     clean_email_as_on_page,
@@ -252,6 +253,8 @@ def _normalize_header(h: str) -> str | None:
     if u in SHEET_JSON_KEYS:
         return u
     c = _canon_header_label(t)
+    if "(чел." in c or "(чел)" in c or "(человек" in c:
+        return None
     if c in HEADER_TO_KEY:
         return HEADER_TO_KEY[c]
     # Частые опечатки / варианты для столбца R (основной ОКВЭД)
@@ -441,20 +444,15 @@ def _pad_row_values(row_vals: list[Any], width: int) -> list[str]:
 
 
 def _sheet_cell_is_empty_for_parser(val: Any) -> bool:
-    """Пусто или плейсхолдер «нет данных» из format_value_for_sheet (— тоже считаем пустым)."""
+    """Только пустая ячейка. «-»/«—»/«–» — уже результат парсера (на сайте пусто), не перезаписываем."""
     t = str(val or "").strip()
-    if not t:
-        return True
-    if t in ("-", "—", "–"):
-        return True
-    return False
+    return not t
 
 
 def _row_needs_scrape_from_prefetched(row_vals: list[str], col_by_key: dict[str, int]) -> bool:
     """
-    Нужен парсинг, если хотя бы одно сопоставленное поле парсера (O…AC) пусто или «-».
-    Раньше при наличии столбца O проверяли только его — тогда даты тендера в «Дата регистрации»
-    ошибочно блокировали парсинг, хотя данные Synaps в других столбцах ещё не заполнены.
+    Нужен парсинг, если хотя бы одно сопоставленное поле парсера (O…AC) физически пустое.
+    «-»/тире — уже ответ Synaps, не триггер повторного обхода.
     """
     for k in SHEET_JSON_KEYS:
         if k not in col_by_key:
@@ -670,6 +668,12 @@ def run_sheet_sync(*, headless: bool = True, save_dom_snapshots: bool = False) -
         raise RuntimeError("В первой строке таблицы должны быть заголовки столбцов.")
 
     col_by_key = _header_to_col_index(headers)
+    apply_u_w_overrides(col_by_key)
+    if not restore_synaps_bank_column(headers, col_by_key):
+        print(
+            "Внимание: столбец банка (логический U) не сопоставлен после фикса U=долг, W=численность Synaps. "
+            "Задайте SYNAPS_BANK_COL=номер_столбца (1-based, не 21 и не 23) или столбец «счёт» вне U/W.",
+        )
     if not col_by_key:
         sample = ", ".join(sorted(HEADER_TO_KEY.keys())[:8])
         raise RuntimeError(

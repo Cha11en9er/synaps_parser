@@ -24,6 +24,7 @@ from dotenv import load_dotenv
 from gspread.exceptions import APIError
 from gspread.utils import rowcol_to_a1
 
+from sheet_column_layout import apply_u_w_overrides, restore_synaps_bank_column
 from synaps_browser import (
     SHEET_JSON_KEYS,
     clean_email_as_on_page,
@@ -74,6 +75,9 @@ HEADER_TO_KEY: dict[str, str] = {
     "долг по исполнительному производству:": "AA",
     "генеральный директор": "AB",
     "ген дир": "AB",
+    "численность": "AC",
+    "численность сотрудников": "AC",
+    "среднесписочная численность": "AC",
 }
 
 
@@ -184,6 +188,9 @@ def _normalize_header(h: str) -> str | None:
     if u in SHEET_JSON_KEYS:
         return u
     c = _canon_header_label(t)
+    # Колонка из тендера «численность сотрудников (чел.) *» — не поле Synaps AC (численность в конце таблицы).
+    if "(чел." in c or "(чел)" in c or "(человек" in c:
+        return None
     if c in HEADER_TO_KEY:
         return HEADER_TO_KEY[c]
     if "дополнительн" not in c and "основн" in c and ("оквэд" in c or "оквед" in c or "okved" in c):
@@ -293,15 +300,28 @@ def format_value_for_sheet(logical_key: str, val: Any) -> str:
         return t
     if logical_key == "AA":
         if isinstance(val, dict):
-            raw = val.get("активные", val.get("Активные", ""))
-            s = str(raw).strip() if raw is not None else ""
-            return s if s else "0"
-        return str(val).strip() if val else "0"
+            count = str(val.get("кол-во", "-")).strip() or "-"
+            amount = str(val.get("сумма", "-")).strip() or "-"
+            cap = str(val.get("задолжн. относит. устанвой капитал", "-")).strip() or "-"
+            profit = str(val.get("относительно прибыли", "-")).strip() or "-"
+            return "\n".join(
+                [
+                    f"кол-во {count}",
+                    f"сумма {amount}",
+                    f"задолжн. относит. устанвой капитал {cap}",
+                    f"относительно прибыли {profit}",
+                ],
+            )
+        s = str(val).strip()
+        return s if s else "-"
     if logical_key == "AB":
         if isinstance(val, dict) and val:
             parts = [f"{k.strip()} {str(v).strip()}".strip() for k, v in val.items() if k or v]
             return " ".join(x for x in parts if x)
         return str(val).strip()
+    if logical_key == "AC":
+        s = str(val).strip()
+        return s if s else "-"
     if isinstance(val, (dict, list)):
         return json.dumps(val, ensure_ascii=False, separators=(",", ":"))
     return str(val).strip()
@@ -392,14 +412,27 @@ def _ensure_final_worksheet(sh: gspread.Spreadsheet) -> gspread.Worksheet:
         return sh.add_worksheet(title=FINAL_SHEET, rows=2000, cols=32)
 
 
+def _sheet_cell_is_empty_for_parser(val: Any) -> bool:
+    """Только физически пустая ячейка — сюда можно писать из парсера.
+
+    «-», «—», «–» — уже записанный результат (на Synaps нет данных), не пустота:
+    строка не пропускается целиком и поле не перезаписывается.
+    """
+    t = str(val or "").strip()
+    return not t
+
+
 def _row_needs_scrape_from_prefetched(row_vals: list[str], col_by_key: dict[str, int]) -> bool:
-    """Нужен парсинг, если хотя бы один сопоставленный столбец полей Synaps пустой."""
+    """
+    Нужен парсинг, если хотя бы одно сопоставленное поле парсера (O…AC) физически пустое.
+    «-»/тире не считаем пустым — это уже ответ с сайта, пустые ячейки ищем отдельно.
+    """
     for k in SHEET_JSON_KEYS:
         if k not in col_by_key:
             continue
         i = col_by_key[k] - 1
         v = row_vals[i] if 0 <= i < len(row_vals) else ""
-        if not v or not str(v).strip():
+        if _sheet_cell_is_empty_for_parser(v):
             return True
     return False
 
@@ -424,7 +457,7 @@ def _fill_row_only_empty(
             continue
         col = col_by_key[key]
         cur = row_vals[col - 1] if col <= len(row_vals) else ""
-        if cur is not None and str(cur).strip():
+        if not _sheet_cell_is_empty_for_parser(cur):
             continue
         val = format_value_for_sheet(key, data[key])
         a1 = rowcol_to_a1(row, col)
@@ -498,6 +531,13 @@ def run_sheet_sync_new(
         raise RuntimeError("В первой строке таблицы должны быть заголовки столбцов.")
 
     col_by_key = _header_to_col_index(headers)
+    apply_u_w_overrides(col_by_key)
+    if not restore_synaps_bank_column(headers, col_by_key):
+        print(
+            "Внимание: столбец банка (логический U, «счёт») не сопоставлен после фикса U=долг, W=численность Synaps. "
+            "Укажите в .env SYNAPS_BANK_COL=номер_столбца (1-based, не 21 и не 23), либо добавьте отдельный столбец "
+            "«счёт» вне колонок U и W.",
+        )
     if not col_by_key:
         sample = ", ".join(sorted(HEADER_TO_KEY.keys())[:8])
         raise RuntimeError(
@@ -531,6 +571,7 @@ def run_sheet_sync_new(
     tasks_by_inn: list[tuple[int, str]] = []
     sheet_urls_order: list[str] = []
     sheet_inns_order: list[str] = []
+    skipped_no_inn_no_url = 0
 
     for row in range(2, last + 1):
         idx = row - 2
@@ -562,6 +603,7 @@ def run_sheet_sync_new(
             lookup, mode = inn, "inn"
 
         if not lookup or not mode:
+            skipped_no_inn_no_url += 1
             continue
 
         if not _row_needs_scrape_from_prefetched(row_vals, col_by_key):
@@ -573,6 +615,12 @@ def run_sheet_sync_new(
             tasks_by_url.append((row, lookup))
         else:
             tasks_by_inn.append((row, lookup))
+
+    if skipped_no_inn_no_url:
+        print(
+            f"Строк без ИНН и без ссылки Synaps (не парсятся): {skipped_no_inn_no_url} "
+            f"(номера строк в логе не выводятся).",
+        )
 
     if not tasks_by_url and not tasks_by_inn and not save_dom_snapshots:
         print("Нет строк для парсинга (нет ИНН/ссылки Synaps или все поля парсера уже заполнены).")
@@ -608,6 +656,11 @@ def run_sheet_sync_new(
         f"Строк по URL: {len(tasks_by_url)} (уникальных URL: {len(urls_to_fetch)}); "
         f"строк по ИНН: {len(tasks_by_inn)} (уникальных ИНН: {len(inns_to_fetch)})",
     )
+    if tasks_by_inn or tasks_by_url:
+        print(
+            "Подсказка: в логе Synaps «[k/total] ИНН …» — это k-й уникальный URL/ИНН в очереди браузера; "
+            "номер строки листа даётся отдельно в строке «Строка N: записано полей …».",
+        )
 
     if not urls_to_fetch and not inns_to_fetch:
         print(
