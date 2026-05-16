@@ -37,19 +37,22 @@ def apply_u_w_overrides(col_by_key: dict[str, int]) -> None:
 
 def restore_synaps_bank_column(headers: list[str], col_by_key: dict[str, int]) -> bool:
     """
-    После apply_u_w_overrides в физических U и W зафиксированы AA (долг) и AC (численность Synaps).
-    Если «счёт» был в колонке U, логический U (состояние счёта) пропадает — восстанавливаем.
+    Если логический U (счёт / состояние банковского счёта) не сопоставился — восстанавливаем по заголовку или .env.
 
-    Сначала читается переменная окружения SYNAPS_BANK_COL (номер столбца, 1-based, не U и не W),
-    иначе берётся первый столбец с заголовком из набора «счёт» / «состояние банковского счёта» вне колонок 21 и 23.
+    Столбцы, уже занятые AA (долг) и AC (численность), не используются для U.
     """
     if "U" in col_by_key:
         return True
+    reserved: set[int] = set()
+    for k in ("AA", "AC"):
+        j = col_by_key.get(k)
+        if isinstance(j, int) and j > 0:
+            reserved.add(j)
     n = len(headers)
     raw = (os.getenv("SYNAPS_BANK_COL") or "").strip()
     if raw.isdigit():
         j = int(raw)
-        if 1 <= j <= n and j not in (_COL_U, _COL_W):
+        if 1 <= j <= n and j not in reserved:
             col_by_key["U"] = j
             return True
     for i, raw_h in enumerate(headers):
@@ -57,7 +60,7 @@ def restore_synaps_bank_column(headers: list[str], col_by_key: dict[str, int]) -
         if c not in _BANK_HEADER_LABELS:
             continue
         col = i + 1
-        if col in (_COL_U, _COL_W):
+        if col in reserved:
             continue
         col_by_key["U"] = col
         return True

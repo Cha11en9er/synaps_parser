@@ -1,13 +1,19 @@
 """
-Шаг 2 пайплайна: копия «уникальные» → «финальные данные», затем дополнение с Synaps только на «финальные данные».
-Лист «уникальные» не изменяется.
+Экспорт база: копия SHEET_UNIQUE → SHEET_FINAL, опционально перенос по ИНН с SHEET_IMPORT, затем Synaps.
 
-Перед парсингом: если число строк в «финальных» = «уникальных» и в первых 100 строках ИНН совпадают — копирование
-не делаем (только дозаполнение с Synaps). Иначе «финальные данные» полностью перезаписываются из «уникальные».
-Принудительная перезапись: `--force-copy`.
+Если в .env задан SHEET_IMPORT (лист со старыми спарсенными данными), перед парсингом поля O…AC
+копируются на SHEET_FINAL по совпадению ИНН; строки без ИНН в импортёре обходятся браузером.
+Без SHEET_IMPORT — только копия и парсинг с нуля.
 
-Если в строке есть ссылка на Synaps — открывается напрямую (колонка по заголовку, иначе B, запасной A, HYPERLINK).
-Если ссылки нет — столбец «ИНН» и поиск на сайте (.ocs-input-block).
+Копирование на SHEET_FINAL — по совпадению ИНН (INN_PREFIX_COMPARE_ROWS) или PARSER_FORCE_COPY=1.
+
+Строка: есть ссылка Synaps → URL; иначе ИНН → поиск на сайте.
+
+Классическая фиксация столбцов U=долг, W=численность (старые таблицы): PARSER_CLASSIC_UW_COLUMNS=1.
+Численность Synaps (AC) в последний столбец: PARSER_AC_LAST_COLUMN=1.
+
+Режим копии между двумя листами: в .env задайте SHEET_COPY_FROM и SHEET_COPY_TO, либо PARSER_RUN_20M=1
+(листы SHEET_20M_SOURCE / SHEET_20M_FINAL). Опции запуска — только переменные окружения (см. parser_sheet_env.stage2_options).
 """
 
 from __future__ import annotations
@@ -24,8 +30,14 @@ from dotenv import load_dotenv
 from gspread.exceptions import APIError
 from gspread.utils import rowcol_to_a1
 
-from sheet_column_layout import apply_u_w_overrides, restore_synaps_bank_column
-from synaps_browser import (
+from parser_fix_columns import apply_u_w_overrides, restore_synaps_bank_column
+from parser_sheet_env import sheet_final, sheet_import, sheet_unique
+from parser_synaps_columns import (
+    build_bootstrap_merged_headers,
+    first_header_row_nonempty,
+    has_inn_column_in_headers,
+)
+from parser_synaps_browser import (
     SHEET_JSON_KEYS,
     clean_email_as_on_page,
     email_sheet_line_key,
@@ -35,8 +47,6 @@ from synaps_browser import (
 )
 
 ROOT = Path(__file__).resolve().parent
-UNIQUE_SHEET = "уникальные"
-FINAL_SHEET = "финальные данные"
 # Сколько первых строк данных сверять по ИНН перед решением «копировать или только парсить»
 INN_PREFIX_COMPARE_ROWS = 100
 SOURCE_URL_COL = 2  # B — если столбец со ссылкой не найден по заголовку
@@ -336,6 +346,136 @@ def _header_to_col_index(headers: list[str]) -> dict[str, int]:
     return out
 
 
+def _col_by_key_from_headers(headers: list[str], *, ac_last_column: bool) -> dict[str, int]:
+    col_by_key = _header_to_col_index(headers)
+    if (os.getenv("PARSER_CLASSIC_UW_COLUMNS") or "").strip().lower() in ("1", "true", "yes", "on"):
+        apply_u_w_overrides(col_by_key)
+    if ac_last_column and headers:
+        col_by_key["AC"] = len(headers)
+    return col_by_key
+
+
+def _apply_import_by_inn(
+    ws: gspread.Worksheet,
+    sh: gspread.Spreadsheet,
+    import_sheet_name: str,
+    *,
+    ac_last_column: bool = False,
+) -> tuple[int, list[str]]:
+    """
+    Копирует поля парсера (O…AC) с листа-импортёра на ws по ИНН.
+    Возвращает (число обновлённых строк, ИНН строк финала без записи в импортёре).
+    """
+    try:
+        ws_imp = sh.worksheet(import_sheet_name)
+    except gspread.WorksheetNotFound:
+        print(f"Лист-импортёр «{import_sheet_name}» не найден — перенос по ИНН пропущен.")
+        return 0, []
+
+    imp_all = _sheet_call(
+        lambda: ws_imp.get_all_values(),
+        desc=f"чтение «{import_sheet_name}»",
+    )
+    if not imp_all or len(imp_all) < 2:
+        print(f"Лист «{import_sheet_name}» пуст или только заголовок — импорт пропущен.")
+        return 0, []
+
+    imp_headers = imp_all[0]
+    imp_inn_col = _inn_column_1based(imp_headers)
+    if imp_inn_col is None:
+        print(f"На листе «{import_sheet_name}» нет столбца «ИНН» — импорт пропущен.")
+        return 0, []
+
+    imp_col_by_key = _col_by_key_from_headers(imp_headers, ac_last_column=ac_last_column)
+    restore_synaps_bank_column(imp_headers, imp_col_by_key)
+    transfer_keys = [k for k in SHEET_JSON_KEYS if k in imp_col_by_key]
+    if not transfer_keys:
+        print(
+            f"На «{import_sheet_name}» нет столбцов парсера (O…AC по заголовкам) — импорт пропущен.",
+        )
+        return 0, []
+
+    imp_width = max(len(imp_headers), max(imp_col_by_key.values(), default=0))
+    imp_by_inn: dict[str, list[str]] = {}
+    for row in imp_all[1:]:
+        padded = _pad_row_values(row, imp_width)
+        inn = _normalize_inn_cell(padded[imp_inn_col - 1] if imp_inn_col <= len(padded) else "")
+        if inn:
+            imp_by_inn[inn] = padded
+
+    final_headers = _sheet_call(lambda: ws.row_values(1), desc="заголовок финального листа")
+    if not final_headers:
+        print("Финальный лист без заголовка — импорт пропущен.")
+        return 0, []
+
+    final_col_by_key = _col_by_key_from_headers(final_headers, ac_last_column=ac_last_column)
+    restore_synaps_bank_column(final_headers, final_col_by_key)
+    keys = [k for k in transfer_keys if k in final_col_by_key]
+    if not keys:
+        print("Нет общих столбцов парсера между финальным листом и листом-импортёром.")
+        return 0, []
+
+    final_inn_col = _inn_column_1based(final_headers)
+    if final_inn_col is None:
+        print("На финальном листе нет столбца «ИНН» — импорт пропущен.")
+        return 0, []
+
+    col_a = _sheet_call(lambda: ws.col_values(1), desc="столбец A финала")
+    last = len(col_a)
+    if last < 2:
+        return 0, []
+
+    max_col = max(
+        max(final_col_by_key.values()),
+        max(imp_col_by_key.values()),
+        len(final_headers),
+        imp_width,
+    )
+    rng = f"{rowcol_to_a1(2, 1)}:{rowcol_to_a1(last, max_col)}"
+    final_rows = _sheet_call(lambda: ws.get(rng), desc="данные финала") or []
+
+    batch: list[dict] = []
+    rows_updated = 0
+    inns_without_import: list[str] = []
+
+    for row in range(2, last + 1):
+        idx = row - 2
+        row_vals = _pad_row_values(final_rows[idx] if 0 <= idx < len(final_rows) else [], max_col)
+        inn = _normalize_inn_cell(
+            row_vals[final_inn_col - 1] if final_inn_col <= len(row_vals) else "",
+        )
+        if not inn:
+            continue
+        imp_row = imp_by_inn.get(inn)
+        if imp_row is None:
+            inns_without_import.append(inn)
+            continue
+
+        copied_keys: list[str] = []
+        for key in keys:
+            ic = imp_col_by_key[key]
+            fc = final_col_by_key[key]
+            val = imp_row[ic - 1] if ic <= len(imp_row) else ""
+            if not str(val).strip():
+                continue
+            batch.append({"range": rowcol_to_a1(row, fc), "values": [[val]]})
+            copied_keys.append(key)
+        if copied_keys:
+            rows_updated += 1
+            print(
+                f"Строка {row}: импорт с «{import_sheet_name}» (ИНН {inn}) — "
+                f"{', '.join(copied_keys)}",
+            )
+
+    if batch:
+        _sheet_call(
+            lambda: ws.batch_update(batch, value_input_option="USER_ENTERED"),
+            desc="импорт по ИНН",
+        )
+
+    return rows_updated, inns_without_import
+
+
 def _sheet_call(fn: Callable[[], Any], *, desc: str = "") -> Any:
     waits = (5, 20, 65)
     for attempt in range(len(waits) + 1):
@@ -406,10 +546,11 @@ def _final_matches_unique_by_inn(
 
 
 def _ensure_final_worksheet(sh: gspread.Spreadsheet) -> gspread.Worksheet:
+    title = sheet_final()
     try:
-        return sh.worksheet(FINAL_SHEET)
+        return sh.worksheet(title)
     except gspread.WorksheetNotFound:
-        return sh.add_worksheet(title=FINAL_SHEET, rows=2000, cols=32)
+        return sh.add_worksheet(title=title, rows=2000, cols=32)
 
 
 def _sheet_cell_is_empty_for_parser(val: Any) -> bool:
@@ -471,72 +612,33 @@ def _fill_row_only_empty(
     return updated
 
 
-def run_sheet_sync_new(
+def _ensure_worksheet_by_title(sh: gspread.Spreadsheet, title: str, *, min_cols: int) -> gspread.Worksheet:
+    try:
+        return sh.worksheet(title)
+    except gspread.WorksheetNotFound:
+        return sh.add_worksheet(title=title, rows=2000, cols=max(min_cols, 26))
+
+
+def _synaps_enrich_worksheet(
+    ws: gspread.Worksheet,
     *,
-    headless: bool = True,
-    save_dom_snapshots: bool = False,
-    force_copy_from_unique: bool = False,
+    headless: bool,
+    save_dom_snapshots: bool,
+    ac_last_column: bool = False,
 ) -> None:
-    load_dotenv(ROOT / ".env")
-    cred_path = _credentials_path()
-    sheet_id = _sheet_id()
-
-    gc = gspread.service_account(filename=str(cred_path))
-    sh = gc.open_by_key(sheet_id)
-    ws_unique = sh.worksheet(UNIQUE_SHEET)
-    ws_final = _ensure_final_worksheet(sh)
-
-    unique_all = _sheet_call(lambda: ws_unique.get_all_values(), desc="чтение «уникальные»")
-    if not unique_all:
-        raise RuntimeError(f"Лист «{UNIQUE_SHEET}» пуст — сначала заполните или выполните sheet_inn_clean.py.")
-
-    final_all = _sheet_call(lambda: ws_final.get_all_values(), desc="чтение «финальные данные»")
-
-    if force_copy_from_unique:
-        need_copy = True
-        copy_reason = "флаг --force-copy"
-    else:
-        match, mismatch_reason = _final_matches_unique_by_inn(
-            unique_all,
-            final_all,
-            compare_first_n=INN_PREFIX_COMPARE_ROWS,
-        )
-        need_copy = not match
-        copy_reason = mismatch_reason
-
-    if need_copy:
-        _sheet_call(lambda: ws_final.clear(), desc="очистка «финальные данные»")
-        _sheet_call(
-            lambda: ws_final.update(
-                range_name="A1",
-                values=unique_all,
-                value_input_option="RAW",
-            ),
-            desc="копия уникальные → финальные данные",
-        )
-        print(
-            f"Перезапись «{FINAL_SHEET}» из «{UNIQUE_SHEET}» ({len(unique_all)} строк). Причина: {copy_reason}.",
-        )
-    else:
-        checked = min(INN_PREFIX_COMPARE_ROWS, max(0, len(unique_all) - 1))
-        print(
-            f"«{FINAL_SHEET}» совпадает с «{UNIQUE_SHEET}» по числу строк и по ИНН в первых {checked} "
-            f"строках данных — копирование пропущено, только парсинг.",
-        )
-
-    ws = ws_final
-
+    """
+    Заполнение полей парсера (O…AC) на уже подготовленном листе.
+    Строка: при наличии ссылки Synaps — обход по URL, иначе при наличии ИНН — поиск по ИНН (parser_synaps_browser).
+    """
     headers = ws.row_values(1)
     if not headers:
         raise RuntimeError("В первой строке таблицы должны быть заголовки столбцов.")
 
-    col_by_key = _header_to_col_index(headers)
-    apply_u_w_overrides(col_by_key)
+    col_by_key = _col_by_key_from_headers(headers, ac_last_column=ac_last_column)
     if not restore_synaps_bank_column(headers, col_by_key):
         print(
-            "Внимание: столбец банка (логический U, «счёт») не сопоставлен после фикса U=долг, W=численность Synaps. "
-            "Укажите в .env SYNAPS_BANK_COL=номер_столбца (1-based, не 21 и не 23), либо добавьте отдельный столбец "
-            "«счёт» вне колонок U и W.",
+            "Внимание: столбец банка (логический U, «счёт») не сопоставлен по заголовку. "
+            "Укажите в .env SYNAPS_BANK_COL=номер_столбца (1-based) или добавьте столбец «счёт» / «состояние банковского счёта».",
         )
     if not col_by_key:
         sample = ", ".join(sorted(HEADER_TO_KEY.keys())[:8])
@@ -562,7 +664,6 @@ def run_sheet_sync_new(
 
     rng = f"{rowcol_to_a1(2, 1)}:{rowcol_to_a1(last, max_col)}"
     sheet_rows = _sheet_call(lambda: ws.get(rng), desc="данные строк 2…") or []
-    # Формулы нужны для поддержки скрытых ссылок вида =HYPERLINK("url"; "текст")
     sheet_rows_formula = (
         _sheet_call(lambda: ws.get(rng, value_render_option="FORMULA"), desc="формулы строк 2…") or []
     )
@@ -704,26 +805,207 @@ def run_sheet_sync_new(
             print(f"Строка {row}: ошибка парсинга (ИНН {inn}) — {res!s}")
 
 
-if __name__ == "__main__":
-    import argparse
+def run_copy_source_to_final_then_parse(
+    source_sheet: str,
+    final_sheet: str,
+    *,
+    headless: bool = True,
+    save_dom_snapshots: bool = False,
+    skip_copy: bool = False,
+    ac_last_column: bool = False,
+) -> None:
+    """Полная копия листа-источника на лист-приёмник, затем тот же парсинг, что и для «финальные данные»."""
+    load_dotenv(ROOT / ".env")
+    cred_path = _credentials_path()
+    sheet_id = _sheet_id()
 
-    parser = argparse.ArgumentParser(
-        description="Synaps → лист «финальные данные» (копия с «уникальные» при необходимости); «уникальные» не меняются",
+    gc = gspread.service_account(filename=str(cred_path))
+    sh = gc.open_by_key(sheet_id)
+    try:
+        ws_src = sh.worksheet(source_sheet)
+    except gspread.WorksheetNotFound as e:
+        raise RuntimeError(f"Нет листа «{source_sheet}».") from e
+
+    source_all = _sheet_call(lambda: ws_src.get_all_values(), desc=f"чтение «{source_sheet}»")
+    if not source_all:
+        raise RuntimeError(f"Лист «{source_sheet}» пуст.")
+
+    width = max((len(r) for r in source_all), default=1)
+    ws_dst = _ensure_worksheet_by_title(sh, final_sheet, min_cols=width)
+
+    if not skip_copy:
+        _sheet_call(lambda: ws_dst.clear(), desc=f"очистка «{final_sheet}»")
+        _sheet_call(
+            lambda: ws_dst.update(
+                range_name="A1",
+                values=source_all,
+                value_input_option="RAW",
+            ),
+            desc=f"копия «{source_sheet}» → «{final_sheet}»",
+        )
+        print(f"Скопировано строк: {len(source_all)} (включая заголовок).")
+    else:
+        print(f"Пропуск копирования: парсинг по текущему содержимому листа «{final_sheet}».")
+
+    _synaps_enrich_worksheet(
+        ws_dst,
+        headless=headless,
+        save_dom_snapshots=save_dom_snapshots,
+        ac_last_column=ac_last_column,
     )
-    parser.add_argument("--headed", action="store_true", help="Показать браузер (по умолчанию headless)")
-    parser.add_argument(
-        "--dump-dom",
-        action="store_true",
-        help="Сохранить HTML трёх страниц на каждую организацию в dom_dumps/",
+
+
+def run_sheet_sync_new(
+    *,
+    headless: bool = True,
+    save_dom_snapshots: bool = False,
+    force_copy_from_unique: bool = False,
+    ac_last_column: bool = False,
+) -> None:
+    load_dotenv(ROOT / ".env")
+    cred_path = _credentials_path()
+    sheet_id = _sheet_id()
+
+    gc = gspread.service_account(filename=str(cred_path))
+    sh = gc.open_by_key(sheet_id)
+    unique_name = sheet_unique()
+    final_name = sheet_final()
+    try:
+        ws_unique = sh.worksheet(unique_name)
+    except gspread.WorksheetNotFound:
+        ws_unique = sh.add_worksheet(title=unique_name, rows=2000, cols=40)
+    ws_final = _ensure_final_worksheet(sh)
+
+    unique_all = _sheet_call(lambda: ws_unique.get_all_values(), desc=f"чтение «{unique_name}»")
+
+    need_bootstrap = False
+    if not unique_all:
+        need_bootstrap = True
+    elif len(unique_all) == 1:
+        r0 = unique_all[0]
+        if not first_header_row_nonempty(r0) or not has_inn_column_in_headers(r0):
+            need_bootstrap = True
+    elif not has_inn_column_in_headers(unique_all[0]):
+        raise RuntimeError(
+            f"На листе «{unique_name}» в строке 1 нет столбца «ИНН». Исправьте заголовок или удалите все строки — "
+            f"тогда при следующем запуске будет записан шаблон.",
+        )
+
+    if need_bootstrap:
+        mh = build_bootstrap_merged_headers()
+        _sheet_call(lambda: ws_unique.clear(), desc=f"очистка «{unique_name}» (шаблон)")
+        _sheet_call(
+            lambda: ws_unique.update(range_name="A1", values=[mh], value_input_option="RAW"),
+            desc=f"запись шаблона заголовков «{unique_name}»",
+        )
+        unique_all = [mh]
+        print(
+            f"Лист «{unique_name}» был пуст или без заголовка ИНН — записана строка заголовков ({len(mh)} столбцов: "
+            f"исходные + Synaps). Добавьте строки с данными и запустите снова; парсинг строк пока не выполняется.",
+        )
+
+    final_all = _sheet_call(lambda: ws_final.get_all_values(), desc=f"чтение «{final_name}»")
+
+    if force_copy_from_unique:
+        need_copy = True
+        copy_reason = "флаг --force-copy"
+    else:
+        match, mismatch_reason = _final_matches_unique_by_inn(
+            unique_all,
+            final_all,
+            compare_first_n=INN_PREFIX_COMPARE_ROWS,
+        )
+        need_copy = not match
+        copy_reason = mismatch_reason
+
+    if need_copy:
+        _sheet_call(lambda: ws_final.clear(), desc=f"очистка «{final_name}»")
+        _sheet_call(
+            lambda: ws_final.update(
+                range_name="A1",
+                values=unique_all,
+                value_input_option="RAW",
+            ),
+            desc=f"копия «{unique_name}» → «{final_name}»",
+        )
+        print(
+            f"Перезапись «{final_name}» из «{unique_name}» ({len(unique_all)} строк). Причина: {copy_reason}.",
+        )
+    else:
+        checked = min(INN_PREFIX_COMPARE_ROWS, max(0, len(unique_all) - 1))
+        print(
+            f"«{final_name}» совпадает с «{unique_name}» по числу строк и по ИНН в первых {checked} "
+            f"строках данных — копирование пропущено, только парсинг.",
+        )
+
+    imp_name = sheet_import()
+    if imp_name:
+        if imp_name == final_name:
+            raise RuntimeError(
+                f"SHEET_IMPORT и SHEET_FINAL не должны указывать на один лист («{imp_name}»).",
+            )
+        rows_imp, inns_parse = _apply_import_by_inn(
+            ws_final,
+            sh,
+            imp_name,
+            ac_last_column=ac_last_column,
+        )
+        print(f"Импорт с «{imp_name}»: обновлено строк {rows_imp}.")
+        if inns_parse:
+            preview = ", ".join(inns_parse[:12])
+            more = f" и ещё {len(inns_parse) - 12}" if len(inns_parse) > 12 else ""
+            print(
+                f"ИНН без записи в «{imp_name}» ({len(inns_parse)}): {preview}{more} — будут обойдены парсером.",
+            )
+
+    ws = ws_final
+    _synaps_enrich_worksheet(
+        ws,
+        headless=headless,
+        save_dom_snapshots=save_dom_snapshots,
+        ac_last_column=ac_last_column,
     )
-    parser.add_argument(
-        "--force-copy",
-        action="store_true",
-        help="Всегда очистить «финальные данные» и заново скопировать из «уникальные» перед парсингом",
+
+
+if __name__ == "__main__":
+    from parser_sheet_env import (
+        sheet_copy_from,
+        sheet_copy_to,
+        sheet_20m_final,
+        sheet_20m_source,
+        stage2_options,
     )
-    args = parser.parse_args()
-    run_sheet_sync_new(
-        headless=not args.headed,
-        save_dom_snapshots=args.dump_dom,
-        force_copy_from_unique=args.force_copy,
-    )
+
+    opt = stage2_options()
+    headless = not opt["headed"]
+    src = sheet_copy_from().strip()
+    dst = sheet_copy_to().strip()
+    if opt["run_20m"]:
+        src = sheet_20m_source()
+        dst = sheet_20m_final()
+    if bool(src) ^ bool(dst):
+        raise RuntimeError(
+            "Задайте в .env оба имени SHEET_COPY_FROM и SHEET_COPY_TO "
+            "или включите PARSER_RUN_20M=1 для листов SHEET_20M_SOURCE / SHEET_20M_FINAL.",
+        )
+    if opt["skip_copy"] and not (src and dst):
+        raise RuntimeError("PARSER_SKIP_COPY=1 имеет смысл только вместе с копией между листами (SHEET_COPY_* или PARSER_RUN_20M).")
+
+    if src and dst:
+        run_copy_source_to_final_then_parse(
+            src,
+            dst,
+            headless=headless,
+            save_dom_snapshots=opt["dump_dom"],
+            skip_copy=opt["skip_copy"],
+            ac_last_column=opt["ac_last"],
+        )
+    else:
+        if opt["force_copy"] and opt["skip_copy"]:
+            raise RuntimeError("Нельзя одновременно PARSER_FORCE_COPY и PARSER_SKIP_COPY в основном режиме.")
+        run_sheet_sync_new(
+            headless=headless,
+            save_dom_snapshots=opt["dump_dom"],
+            force_copy_from_unique=opt["force_copy"],
+            ac_last_column=opt["ac_last"],
+        )

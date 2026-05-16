@@ -1,5 +1,7 @@
 """
-Синапс: авторизация, сохранение сессии (storage state), обход ссылок в одном окне.
+Синапс в браузере: авторизация, сохранение сессии (storage state), парсинг карточек (URL / ИНН).
+Разовый логин без парсинга: python parser_login.py
+
 Переменные окружения: MAIN_URL, MAIL (или EMAIL), PASS (или PASSWORD).
 
 Ускорение (опционально, в .env): SYNAPS_ACTION_DELAY_MS (пауза после навигации, по умолчанию 700),
@@ -735,17 +737,28 @@ def _has_ispolnitelnoe_section(page: Page, profile_base: str) -> bool:
 
 
 def _extract_employees_count_ac(page: Page) -> str | None:
-    """AC: число работников из .org-smp-block (например, «10 работников» -> «10»)."""
-    loc = page.locator('.org-smp-block span[title*="Среднесписочная численность"]').first
-    if loc.count() > 0:
-        txt = _norm_space(loc.text_content() or "")
-        m = re.search(r"\d+", txt)
-        if m:
-            return m.group(0)
-    # Запасной вариант: весь блок .org-smp-block (другой title/вёрстка).
+    """AC: среднесписочная численность — внутри .org-smp-block ищем span с title про численность."""
     block = page.locator(".org-smp-block").first
     if block.count() == 0:
         return None
+
+    def _digits_from_locator(loc: Locator) -> str | None:
+        if loc.count() == 0:
+            return None
+        txt = _norm_space(loc.first.text_content() or "")
+        m = re.search(r"\d+", txt)
+        return m.group(0) if m else None
+
+    # Как на сайте: внутри org-smp-block span с полным title.
+    for sel in (
+        'span[title="Среднесписочная численность"]',
+        'span[title*="Среднесписочная численность"]',
+    ):
+        hit = _digits_from_locator(block.locator(sel))
+        if hit:
+            return hit
+
+    # Запасной вариант: весь текст блока (другая вёрстка / без title на span).
     blob = _norm_space(block.inner_text() or "")
     if not re.search(r"численн|работник", blob, re.I):
         return None
@@ -1228,38 +1241,27 @@ def run(
 
 
 if __name__ == "__main__":
-    import argparse
-
-    parser = argparse.ArgumentParser(description="Синапс: сессия + обход URL + дамп DOM")
-    parser.add_argument("--headless", action="store_true", help="Без окна браузера")
-    parser.add_argument("--rounds", type=int, default=1, help="Сколько полных проходов по списку URL")
-    parser.add_argument(
-        "--sleep-between-rounds",
-        type=float,
-        default=0,
-        metavar="SEC",
-        help="Пауза между раундами (секунды)",
-    )
-    parser.add_argument(
-        "--urls",
-        default="",
-        help="Список URL через запятую (если пусто — только страница организации)",
-    )
-    parser.add_argument(
-        "--json-out",
-        default="",
-        metavar="PATH",
-        help=f"Куда сохранить поля (по умолчанию {DEFAULT_JSON_OUT.name})",
-    )
-    parser.add_argument("--no-dom", action="store_true", help="Не сохранять HTML дамп")
-    args = parser.parse_args()
-    url_list = [u.strip() for u in args.urls.split(",") if u.strip()] if args.urls else None
-    jpath = Path(args.json_out) if args.json_out else None
+    load_dotenv(Path(__file__).resolve().parent / ".env")
+    raw = (os.getenv("SYNAPS_TEST_URLS") or "").strip()
+    url_list = [u.strip() for u in raw.split(",") if u.strip()] if raw else None
+    if not url_list:
+        print(
+            "Локальный тест: в .env задайте SYNAPS_TEST_URLS=url1,url2 (через запятую). "
+            "Опционально: SYNAPS_TEST_HEADLESS=1, SYNAPS_TEST_ROUNDS=2, SYNAPS_TEST_SLEEP_BETWEEN_ROUNDS=1.5, "
+            "SYNAPS_TEST_JSON_OUT=путь.json, SYNAPS_TEST_NO_DOM=1",
+        )
+        raise SystemExit(0)
+    headless = (os.getenv("SYNAPS_TEST_HEADLESS") or "").strip().lower() in ("1", "true", "yes", "on")
+    rounds = int((os.getenv("SYNAPS_TEST_ROUNDS") or "1").strip() or "1")
+    sleep = float((os.getenv("SYNAPS_TEST_SLEEP_BETWEEN_ROUNDS") or "0").strip() or "0")
+    json_out = (os.getenv("SYNAPS_TEST_JSON_OUT") or "").strip()
+    jpath = Path(json_out) if json_out else None
+    save_dom = (os.getenv("SYNAPS_TEST_NO_DOM") or "").strip().lower() not in ("1", "true", "yes", "on")
     run(
-        headless=args.headless,
+        headless=headless,
         urls=url_list,
-        loop_rounds=max(1, args.rounds),
-        loop_sleep_sec=max(0.0, args.sleep_between_rounds),
+        loop_rounds=max(1, rounds),
+        loop_sleep_sec=max(0.0, sleep),
         json_out=jpath,
-        save_dom=not args.no_dom,
+        save_dom=save_dom,
     )
