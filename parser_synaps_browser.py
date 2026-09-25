@@ -1105,6 +1105,7 @@ def scrape_inns_sequentially(
     storage_path: Path | None = None,
     save_dom_snapshots: bool = False,
     on_each_result: Callable[[str, dict[str, Any]], None] | None = None,
+    on_each_error: Callable[[str, BaseException], None] | None = None,
     landing_url: str | None = None,
 ) -> dict[str, Any | BaseException]:
     """
@@ -1163,17 +1164,22 @@ def scrape_inns_sequentially(
                     if not _org_page_loaded(page):
                         raise RuntimeError(f"Карточка не открылась после поиска по ИНН {inn}")
                     src_tag = f"inn:{inn}"
-                    results[inn] = extract_organization_json(
+                    data = extract_organization_json(
                         page,
                         save_dom_snapshots=save_dom_snapshots,
                         dom_dump_run_index=idx,
                         dom_source_url=src_tag,
                     )
+                    if isinstance(data, dict):
+                        data["_profile_url"] = (page.url or "").split("?", 1)[0]
+                    results[inn] = data
                     if on_each_result is not None:
-                        on_each_result(inn, results[inn])
+                        on_each_result(inn, data)
                     context.storage_state(path=str(storage))
                 except Exception as e:
                     results[inn] = e
+                    if on_each_error is not None:
+                        on_each_error(inn, e)
         finally:
             try:
                 context.storage_state(path=str(storage))

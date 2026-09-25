@@ -2,6 +2,20 @@
 
 Парсер карточек организаций Synaps и выгрузка полей в Google Таблицу.
 
+## CSV по списку ИНН (`parser_csv_inns.py`)
+
+Вход `input/SimpleTouch_baza_INN.csv` не перезаписывается. Результат пишется рядом: `input/SimpleTouch_baza_INN_synaps.csv` (ключ склейки — столбец `ИНН`). Успешные ИНН при повторном запуске пропускаются.
+
+```powershell
+cd C:\repos\YouDo\18.04.26-synaps_parser
+.\.venv\Scripts\Activate.ps1
+python parser_csv_inns.py --dry-run
+python parser_csv_inns.py --limit 5 --headed
+python parser_csv_inns.py
+```
+
+Нужен `.env` с `MAIN_URL`, `MAIL` (или `EMAIL`) и `PASS` (или `PASSWORD`). Файл `.env` в git не входит — его копируют на машину отдельно. Google-таблица для этого режима не нужна.
+
 ## Окружение (Windows, PowerShell)
 
 Если виртуальное окружение в папке `**.venv**` (с точкой):

@@ -144,6 +144,9 @@ synaps_storage_state.json
 # Saved HTML dumps for selector work
 dom_dumps/
 
+# Результат прогона по CSV (вход input/*.csv коммитится, выгрузка — нет)
+input/*_synaps.csv
+
 # Environments
 .env
 .envrc
