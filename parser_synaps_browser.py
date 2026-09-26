@@ -389,24 +389,117 @@ def _ensure_org_search_visible(page: Page, landing_url: str) -> Locator:
     return inp
 
 
-def _click_first_organizacii_result_if_needed(page: Page) -> None:
+# Ближайшая карточка в выдаче: статус и блок .org-pc-right — соседи, ссылка внутри справа.
+_ACTIVE_ORG_HREF_JS = """(el) => {
+    const hrefOf = (node) => {
+        if (!node) return "";
+        const link = node.matches("a.org-pcr-title") ? node : node.querySelector("a.org-pcr-title");
+        if (!link) return "";
+        const href = (link.getAttribute("href") || "").trim();
+        return href.includes("/organizacii/") ? href : "";
+    };
+    let node = el;
+    for (let depth = 0; depth < 8 && node; depth++) {
+        const direct = node.querySelector(":scope > .org-pc-right");
+        const href = hrefOf(direct);
+        if (href) return href;
+        const rights = node.querySelectorAll(".org-pc-right");
+        if (rights.length === 1) {
+            const nested = hrefOf(rights[0]);
+            if (nested) return nested;
+        }
+        node = node.parentElement;
+    }
+    return "";
+}"""
+
+
+def _absolute_synaps_url(href: str) -> str:
+    h = (href or "").strip()
+    if h.startswith("https://") or h.startswith("http://"):
+        return h
+    if h.startswith("/"):
+        return "https://synapsenet.ru" + h
+    return "https://synapsenet.ru/" + h.lstrip("/")
+
+
+def _is_org_choice_list(page: Page) -> bool:
+    """Поиск открыл список организаций, а не карточку и не пустую выдачу."""
+    url = (page.url or "").lower()
+    # query= важнее маркера карточки: старая карточка может ещё быть в DOM, пока список грузится.
+    if "query=" in url and "/organizacii" in url:
+        return True
     if _org_page_loaded(page):
+        return False
+    return page.locator(".org-pc-status, a.org-pcr-title").count() > 0
+
+
+def _active_org_card_href(page: Page) -> str:
+    """Ссылка действующей организации: зелёный статус и a.org-pcr-title в том же блоке."""
+    statuses = page.locator(".org-pc-status.org-pcs-green")
+    for i in range(statuses.count()):
+        status = statuses.nth(i)
+        try:
+            if not status.is_visible():
+                continue
+        except Exception:
+            continue
+        label = _norm_space(status.inner_text() or "").lower().replace("ё", "е")
+        if "действующая организация" not in label:
+            continue
+        href = status.evaluate(_ACTIVE_ORG_HREF_JS)
+        if href:
+            return str(href).strip()
+    return ""
+
+
+def _open_active_organization_from_choice_list(page: Page, inn: str) -> None:
+    """
+    Страница /organizacii?query=ИНН: дождаться списка и открыть карточку
+    со статусом «действующая организация». Ликвидированные в списке не берём.
+    """
+    t_primary = _inn_search_primary_timeout_ms()
+    try:
+        page.wait_for_function(
+            """() => {
+                const url = location.href || "";
+                const onQuery = url.includes("query=") && url.includes("/organizacii");
+                if (!onQuery && document.querySelector(".oc-op-reg-date")) return true;
+                return !!document.querySelector(".org-pc-status");
+            }""",
+            timeout=t_primary,
+        )
+    except PlaywrightTimeoutError:
         return
-    links = page.locator('a[href*="/organizacii/"]')
-    if links.count() == 0:
+    url = (page.url or "").lower()
+    on_query = "query=" in url and "/organizacii" in url
+    if _org_page_loaded(page) and not on_query:
         return
     try:
-        first = links.first
-        if first.is_visible():
-            first.click()
-            _pause_micro(page)
-    except Exception:
+        page.wait_for_selector(
+            ".org-pc-status.org-pcs-green",
+            state="visible",
+            timeout=min(8_000, t_primary),
+        )
+    except PlaywrightTimeoutError:
         pass
+    _pause_micro(page)
+    href = _active_org_card_href(page)
+    if not href:
+        raise RuntimeError(
+            f"По ИНН {inn} открыт список организаций, действующая не найдена. URL: {page.url}",
+        )
+    url = _absolute_synaps_url(href)
+    print(f"  список по ИНН {inn}: открываю действующую {url}")
+    page.goto(url, wait_until="domcontentloaded")
+    _settle_after_org_goto(page)
 
 
 def navigate_to_organization_by_inn(page: Page, inn_raw: str, *, landing_url: str | None = None) -> None:
     """
     Ввод ИНН в глобальный поиск, клик по кнопке поиска, ожидание карточки организации.
+    Если вместо карточки открылся список (/organizacii?query=ИНН), выбирается
+    действующая организация (org-pc-status.org-pcs-green), затем обычный разбор карточки.
     Работает со страницы лендинга или с уже открытой карточки (поиск в шапке).
     """
     landing = landing_url or _synaps_landing_url()
@@ -421,6 +514,7 @@ def navigate_to_organization_by_inn(page: Page, inn_raw: str, *, landing_url: st
     inp.fill(inn)
     _pause_micro(page)
 
+    before_url = page.url
     btn = _org_search_button_locator(page)
     if btn.count() == 0:
         inp.press("Enter")
@@ -429,17 +523,22 @@ def navigate_to_organization_by_inn(page: Page, inn_raw: str, *, landing_url: st
 
     t_primary = _inn_search_primary_timeout_ms()
     try:
-        page.wait_for_selector(".oc-op-reg-date", state="visible", timeout=t_primary)
+        page.wait_for_function(
+            "(before) => location.href !== before",
+            arg=before_url,
+            timeout=t_primary,
+        )
     except PlaywrightTimeoutError:
-        _click_first_organizacii_result_if_needed(page)
+        pass
+
+    if _is_org_choice_list(page):
+        _open_active_organization_from_choice_list(page, inn)
+    elif not _org_page_loaded(page):
         try:
-            page.wait_for_selector(
-                ".oc-op-reg-date",
-                state="visible",
-                timeout=max(4_000, t_primary // 2),
-            )
+            page.wait_for_selector(".oc-op-reg-date", state="visible", timeout=t_primary)
         except PlaywrightTimeoutError:
-            pass
+            if _is_org_choice_list(page):
+                _open_active_organization_from_choice_list(page, inn)
 
     if not _org_page_loaded(page):
         raise RuntimeError(f"После поиска по ИНН {inn} карточка не открылась (нет .oc-op-reg-date). URL: {page.url}")
