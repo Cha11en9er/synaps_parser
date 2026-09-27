@@ -146,6 +146,7 @@ dom_dumps/
 
 # Результат прогона по CSV (вход input/*.csv коммитится, выгрузка — нет)
 input/*_synaps.csv
+!input/SimpleTouch_baza_INN_synaps.csv
 
 # Environments
 .env
