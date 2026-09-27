@@ -21,6 +21,8 @@ from __future__ import annotations
 import argparse
 import csv
 import sys
+import time
+import traceback
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -213,6 +215,7 @@ def main(argv: list[str] | None = None) -> None:
     headless = not args.headed
 
     offset = 0
+    stalls = 0
     while offset < len(queue):
         chunk = queue[offset : offset + batch_size]
         print(f"Пачка {offset + 1}–{offset + len(chunk)} из {len(queue)}")
@@ -225,13 +228,35 @@ def main(argv: list[str] | None = None) -> None:
             _sink.append(_row_error(inn, exc))
             print(f"  ошибка ИНН {inn}: {exc}")
 
-        scrape_inns_sequentially(
-            chunk,
-            headless=headless,
-            save_dom_snapshots=False,
-            on_each_result=_ok,
-            on_each_error=_err,
-        )
+        try:
+            scrape_inns_sequentially(
+                chunk,
+                headless=headless,
+                save_dom_snapshots=False,
+                on_each_result=_ok,
+                on_each_error=_err,
+            )
+        except Exception as exc:
+            stalls += 1
+            print(f"Пачка оборвалась: {exc}")
+            traceback.print_exc()
+            if stalls >= 20:
+                print("Синапс долго недоступен. Уже записанные строки сохранены, запустите парсер снова.")
+                break
+            pause = min(180, 20 * stalls)
+            print(f"Пауза {pause} с, продолжаю с ещё не записанных ИНН.")
+            time.sleep(pause)
+            progress = load_progress(dst)
+            rest: list[str] = []
+            for inn in queue[offset:]:
+                status, errors = progress.get(inn, ("", 0))
+                if status == "ok" or errors >= max(1, args.max_attempts):
+                    continue
+                rest.append(inn)
+            queue = rest
+            offset = 0
+            continue
+        stalls = 0
         offset += len(chunk)
 
     print(f"Готово. Результат: {dst}")

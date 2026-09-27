@@ -33,9 +33,11 @@ from gspread.utils import rowcol_to_a1
 from parser_fix_columns import apply_u_w_overrides, restore_synaps_bank_column
 from parser_sheet_env import sheet_final, sheet_import, sheet_unique
 from parser_synaps_columns import (
+    SYNAPS_APPEND_HEADER_LABELS,
     build_bootstrap_merged_headers,
     first_header_row_nonempty,
     has_inn_column_in_headers,
+    merge_source_headers_with_synaps,
 )
 from parser_synaps_browser import (
     SHEET_JSON_KEYS,
@@ -52,6 +54,25 @@ INN_PREFIX_COMPARE_ROWS = 100
 SOURCE_URL_COL = 2  # B — если столбец со ссылкой не найден по заголовку
 FALLBACK_URL_COL = 1  # A
 _BANK_OK_PHRASE = "действующие решения о приостановлении отсутствуют"
+_GRID_FLUSH_ROWS = 250
+_WRITE_PAUSE_SEC = 2.0
+_SCRAPE_WRITE_PAUSE_SEC = 1.1
+
+# Исходные столбцы тендера — не сопоставлять с полями парсера Synaps (O…AC).
+_SOURCE_ONLY_HEADER_CANON: frozenset[str] = frozenset(
+    {
+        "главный оквэд (код)",
+        "главный оквэд (название)",
+        "полное наименование организации",
+        "код окопф",
+        "название окопф",
+        "анализ выручки",
+        "выручка (тыс. руб.) *",
+        "статус компании",
+        "федеральный округ",
+        "часовой пояс",
+    },
+)
 
 # Нормализованный заголовок -> логический ключ парсера.
 # Важно: не маппить общее «дата регистрации» на O — у заказчика это уже своя колонка (ЕГРЮЛ),
@@ -159,6 +180,10 @@ def _canon_header_label(h: str) -> str:
     return t.rstrip(":").strip()
 
 
+def _synaps_header_canon_set() -> frozenset[str]:
+    return frozenset(_canon_header_label(h) for h in SYNAPS_APPEND_HEADER_LABELS)
+
+
 def _normalize_inn_cell(value: str) -> str:
     return "".join(ch for ch in (value or "").strip() if ch.isdigit())
 
@@ -198,6 +223,8 @@ def _normalize_header(h: str) -> str | None:
     if u in SHEET_JSON_KEYS:
         return u
     c = _canon_header_label(t)
+    if c in _SOURCE_ONLY_HEADER_CANON or c.startswith("главный оквэд") or c.startswith("главный okved"):
+        return None
     # Колонка из тендера «численность сотрудников (чел.) *» — не поле Synaps AC (численность в конце таблицы).
     if "(чел." in c or "(чел)" in c or "(человек" in c:
         return None
@@ -338,12 +365,38 @@ def format_value_for_sheet(logical_key: str, val: Any) -> str:
 
 
 def _header_to_col_index(headers: list[str]) -> dict[str, int]:
-    out: dict[str, int] = {}
+    """При дубле ключа предпочитаем столбец с заголовком из блока Synaps (справа в таблице)."""
+    synaps_canon = _synaps_header_canon_set()
+    candidates: dict[str, list[tuple[int, bool]]] = {}
     for i, raw in enumerate(headers):
         key = _normalize_header(raw)
-        if key:
-            out[key] = i + 1
+        if not key:
+            continue
+        col = i + 1
+        is_syn = _canon_header_label(raw) in synaps_canon
+        candidates.setdefault(key, []).append((col, is_syn))
+    out: dict[str, int] = {}
+    for key, opts in candidates.items():
+        syn_cols = [c for c, s in opts if s]
+        out[key] = max(syn_cols) if syn_cols else max(c for c, _ in opts)
     return out
+
+
+def _normalize_unique_grid(unique_all: list[list[str]]) -> list[list[str]]:
+    """Добавляет недостающие столбцы Synaps в заголовок и выравнивает ширину всех строк."""
+    if not unique_all:
+        return unique_all
+    merged_hdr, _ = merge_source_headers_with_synaps(unique_all[0])
+    width = len(merged_hdr)
+    out = [_pad_row_values(merged_hdr, width)]
+    for row in unique_all[1:]:
+        out.append(_pad_row_values(row, width))
+    return out
+
+
+def _worksheet_grid(ws: gspread.Worksheet, *, desc: str) -> list[list[str]]:
+    """Полное содержимое листа; не обрезает строки при пустом столбце A."""
+    return _sheet_call(lambda: ws.get_all_values(), desc=desc) or []
 
 
 def _col_by_key_from_headers(headers: list[str], *, ac_last_column: bool) -> dict[str, int]:
@@ -355,125 +408,154 @@ def _col_by_key_from_headers(headers: list[str], *, ac_last_column: bool) -> dic
     return col_by_key
 
 
-def _apply_import_by_inn(
+def _parser_col_bounds(col_by_key: dict[str, int]) -> tuple[int, int]:
+    cols = [col_by_key[k] for k in SHEET_JSON_KEYS if k in col_by_key]
+    if not cols:
+        raise RuntimeError("Нет сопоставленных столбцов парсера.")
+    return min(cols), max(cols)
+
+
+def _slice_parser_row(row_vals: list[str], c0: int, c1: int) -> list[str]:
+    return [row_vals[i - 1] if i <= len(row_vals) else "" for i in range(c0, c1 + 1)]
+
+
+def _write_parser_row_block(
     ws: gspread.Worksheet,
+    row: int,
+    row_vals: list[str],
+    c0: int,
+    c1: int,
+) -> None:
+    """Одна запись строки (блок столбцов парсера), без batch_update по ячейкам."""
+    rng = f"{rowcol_to_a1(row, c0)}:{rowcol_to_a1(row, c1)}"
+    values = [_slice_parser_row(row_vals, c0, c1)]
+    _sheet_call(
+        lambda r=rng, v=values: ws.update(range_name=r, values=v, value_input_option="USER_ENTERED"),
+        desc=f"строка {row}",
+    )
+
+
+def _flush_parser_rows_chunked(
+    ws: gspread.Worksheet,
+    data_rows: list[list[str]],
+    *,
+    c0: int,
+    c1: int,
+    max_col: int,
+    row_offset: int = 2,
+) -> int:
+    """Записывает столбцы парсера для всех data_rows блоками по _GRID_FLUSH_ROWS (мало запросов к API)."""
+    if not data_rows:
+        return 0
+    n_chunks = 0
+    for start in range(0, len(data_rows), _GRID_FLUSH_ROWS):
+        end = min(start + _GRID_FLUSH_ROWS, len(data_rows))
+        values = [
+            _slice_parser_row(_pad_row_values(data_rows[i], max_col), c0, c1)
+            for i in range(start, end)
+        ]
+        row_start = start + row_offset
+        row_end = end + row_offset - 1
+        rng = f"{rowcol_to_a1(row_start, c0)}:{rowcol_to_a1(row_end, c1)}"
+        _sheet_call(
+            lambda r=rng, v=values: ws.update(range_name=r, values=v, value_input_option="USER_ENTERED"),
+            desc=f"строки {row_start}–{row_end}",
+        )
+        n_chunks += 1
+        if end < len(data_rows):
+            time.sleep(_WRITE_PAUSE_SEC)
+    return n_chunks
+
+
+def _load_import_index(
     sh: gspread.Spreadsheet,
     import_sheet_name: str,
+    final_col_by_key: dict[str, int],
     *,
-    ac_last_column: bool = False,
-) -> tuple[int, list[str]]:
-    """
-    Копирует поля парсера (O…AC) с листа-импортёра на ws по ИНН.
-    Возвращает (число обновлённых строк, ИНН строк финала без записи в импортёре).
-    """
+    ac_last_column: bool,
+) -> dict[str, Any] | None:
     try:
         ws_imp = sh.worksheet(import_sheet_name)
     except gspread.WorksheetNotFound:
-        print(f"Лист-импортёр «{import_sheet_name}» не найден — перенос по ИНН пропущен.")
-        return 0, []
+        print(f"Лист-импортёр «{import_sheet_name}» не найден.")
+        return None
 
     imp_all = _sheet_call(
         lambda: ws_imp.get_all_values(),
         desc=f"чтение «{import_sheet_name}»",
     )
     if not imp_all or len(imp_all) < 2:
-        print(f"Лист «{import_sheet_name}» пуст или только заголовок — импорт пропущен.")
-        return 0, []
+        print(f"Лист «{import_sheet_name}» пуст — импорт пропущен.")
+        return None
 
     imp_headers = imp_all[0]
     imp_inn_col = _inn_column_1based(imp_headers)
     if imp_inn_col is None:
-        print(f"На листе «{import_sheet_name}» нет столбца «ИНН» — импорт пропущен.")
-        return 0, []
+        print(f"На «{import_sheet_name}» нет столбца «ИНН».")
+        return None
 
     imp_col_by_key = _col_by_key_from_headers(imp_headers, ac_last_column=ac_last_column)
     restore_synaps_bank_column(imp_headers, imp_col_by_key)
-    transfer_keys = [k for k in SHEET_JSON_KEYS if k in imp_col_by_key]
-    if not transfer_keys:
-        print(
-            f"На «{import_sheet_name}» нет столбцов парсера (O…AC по заголовкам) — импорт пропущен.",
-        )
-        return 0, []
+    keys = [k for k in SHEET_JSON_KEYS if k in imp_col_by_key and k in final_col_by_key]
+    if not keys:
+        print(f"На «{import_sheet_name}» нет общих полей парсера с финальным листом.")
+        return None
 
     imp_width = max(len(imp_headers), max(imp_col_by_key.values(), default=0))
-    imp_by_inn: dict[str, list[str]] = {}
+    by_inn: dict[str, list[str]] = {}
     for row in imp_all[1:]:
         padded = _pad_row_values(row, imp_width)
         inn = _normalize_inn_cell(padded[imp_inn_col - 1] if imp_inn_col <= len(padded) else "")
         if inn:
-            imp_by_inn[inn] = padded
+            by_inn[inn] = padded
 
-    final_headers = _sheet_call(lambda: ws.row_values(1), desc="заголовок финального листа")
-    if not final_headers:
-        print("Финальный лист без заголовка — импорт пропущен.")
-        return 0, []
-
-    final_col_by_key = _col_by_key_from_headers(final_headers, ac_last_column=ac_last_column)
-    restore_synaps_bank_column(final_headers, final_col_by_key)
-    keys = [k for k in transfer_keys if k in final_col_by_key]
-    if not keys:
-        print("Нет общих столбцов парсера между финальным листом и листом-импортёром.")
-        return 0, []
-
-    final_inn_col = _inn_column_1based(final_headers)
-    if final_inn_col is None:
-        print("На финальном листе нет столбца «ИНН» — импорт пропущен.")
-        return 0, []
-
-    col_a = _sheet_call(lambda: ws.col_values(1), desc="столбец A финала")
-    last = len(col_a)
-    if last < 2:
-        return 0, []
-
-    max_col = max(
-        max(final_col_by_key.values()),
-        max(imp_col_by_key.values()),
-        len(final_headers),
-        imp_width,
+    print(
+        f"Индекс импорта «{import_sheet_name}»: {len(by_inn)} ИНН, поля {', '.join(keys)}.",
     )
-    rng = f"{rowcol_to_a1(2, 1)}:{rowcol_to_a1(last, max_col)}"
-    final_rows = _sheet_call(lambda: ws.get(rng), desc="данные финала") or []
+    return {"by_inn": by_inn, "imp_col_by_key": imp_col_by_key, "keys": keys}
 
-    batch: list[dict] = []
-    rows_updated = 0
-    inns_without_import: list[str] = []
 
-    for row in range(2, last + 1):
-        idx = row - 2
-        row_vals = _pad_row_values(final_rows[idx] if 0 <= idx < len(final_rows) else [], max_col)
-        inn = _normalize_inn_cell(
-            row_vals[final_inn_col - 1] if final_inn_col <= len(row_vals) else "",
-        )
-        if not inn:
+def _merge_import_into_row(
+    row_vals: list[str],
+    imp_row: list[str],
+    keys: list[str],
+    final_col_by_key: dict[str, int],
+    imp_col_by_key: dict[str, int],
+) -> bool:
+    changed = False
+    for key in keys:
+        fc = final_col_by_key[key]
+        ic = imp_col_by_key[key]
+        val = imp_row[ic - 1] if ic <= len(imp_row) else ""
+        if not str(val).strip():
             continue
-        imp_row = imp_by_inn.get(inn)
-        if imp_row is None:
-            inns_without_import.append(inn)
+        while len(row_vals) < fc:
+            row_vals.append("")
+        if row_vals[fc - 1] != val:
+            row_vals[fc - 1] = val
+            changed = True
+    return changed
+
+
+def _apply_parser_data_to_row_vals(
+    row_vals: list[str],
+    data: dict[str, Any],
+    col_by_key: dict[str, int],
+) -> list[str]:
+    updated: list[str] = []
+    for key in SHEET_JSON_KEYS:
+        if key not in col_by_key or key not in data:
             continue
-
-        copied_keys: list[str] = []
-        for key in keys:
-            ic = imp_col_by_key[key]
-            fc = final_col_by_key[key]
-            val = imp_row[ic - 1] if ic <= len(imp_row) else ""
-            if not str(val).strip():
-                continue
-            batch.append({"range": rowcol_to_a1(row, fc), "values": [[val]]})
-            copied_keys.append(key)
-        if copied_keys:
-            rows_updated += 1
-            print(
-                f"Строка {row}: импорт с «{import_sheet_name}» (ИНН {inn}) — "
-                f"{', '.join(copied_keys)}",
-            )
-
-    if batch:
-        _sheet_call(
-            lambda: ws.batch_update(batch, value_input_option="USER_ENTERED"),
-            desc="импорт по ИНН",
-        )
-
-    return rows_updated, inns_without_import
+        col = col_by_key[key]
+        cur = row_vals[col - 1] if col <= len(row_vals) else ""
+        if not _sheet_cell_is_empty_for_parser(cur):
+            continue
+        val = format_value_for_sheet(key, data[key])
+        while len(row_vals) < col:
+            row_vals.append("")
+        row_vals[col - 1] = val
+        updated.append(key)
+    return updated
 
 
 def _sheet_call(fn: Callable[[], Any], *, desc: str = "") -> Any:
@@ -545,12 +627,22 @@ def _final_matches_unique_by_inn(
     return True, ""
 
 
-def _ensure_final_worksheet(sh: gspread.Spreadsheet) -> gspread.Worksheet:
+def _ensure_final_worksheet(
+    sh: gspread.Spreadsheet,
+    *,
+    min_rows: int = 5000,
+    min_cols: int = 40,
+) -> gspread.Worksheet:
     title = sheet_final()
     try:
-        return sh.worksheet(title)
+        ws = sh.worksheet(title)
     except gspread.WorksheetNotFound:
-        return sh.add_worksheet(title=title, rows=2000, cols=32)
+        ws = sh.add_worksheet(title=title, rows=max(min_rows, 5000), cols=max(min_cols, 40))
+        print(f"Создан лист «{title}» ({ws.row_count}×{ws.col_count}).")
+        return ws
+    if ws.row_count < min_rows or ws.col_count < min_cols:
+        ws.resize(rows=max(ws.row_count, min_rows), cols=max(ws.col_count, min_cols))
+    return ws
 
 
 def _sheet_cell_is_empty_for_parser(val: Any) -> bool:
@@ -578,40 +670,6 @@ def _row_needs_scrape_from_prefetched(row_vals: list[str], col_by_key: dict[str,
     return False
 
 
-def _fill_row_only_empty(
-    ws: gspread.Worksheet,
-    row: int,
-    col_by_key: dict[str, int],
-    data: dict,
-) -> list[str]:
-    updated: list[str] = []
-    keys_present = [k for k in SHEET_JSON_KEYS if k in col_by_key]
-    if not keys_present:
-        return updated
-    max_col = max(col_by_key[k] for k in keys_present)
-    rng = f"{rowcol_to_a1(row, 1)}:{rowcol_to_a1(row, max_col)}"
-    raw = _sheet_call(lambda: ws.get(rng), desc=f"строка {row}")
-    row_vals = _pad_row_values(raw[0] if raw else [], max_col)
-    batch: list[dict] = []
-    for key in SHEET_JSON_KEYS:
-        if key not in col_by_key or key not in data:
-            continue
-        col = col_by_key[key]
-        cur = row_vals[col - 1] if col <= len(row_vals) else ""
-        if not _sheet_cell_is_empty_for_parser(cur):
-            continue
-        val = format_value_for_sheet(key, data[key])
-        a1 = rowcol_to_a1(row, col)
-        batch.append({"range": a1, "values": [[val]]})
-        updated.append(key)
-    if batch:
-        _sheet_call(
-            lambda: ws.batch_update(batch, value_input_option="USER_ENTERED"),
-            desc=f"запись строки {row}",
-        )
-    return updated
-
-
 def _ensure_worksheet_by_title(sh: gspread.Spreadsheet, title: str, *, min_cols: int) -> gspread.Worksheet:
     try:
         return sh.worksheet(title)
@@ -619,190 +677,208 @@ def _ensure_worksheet_by_title(sh: gspread.Spreadsheet, title: str, *, min_cols:
         return sh.add_worksheet(title=title, rows=2000, cols=max(min_cols, 26))
 
 
-def _synaps_enrich_worksheet(
+def _process_final_import_then_parse(
     ws: gspread.Worksheet,
+    sh: gspread.Spreadsheet,
     *,
+    import_sheet_name: str | None,
     headless: bool,
     save_dom_snapshots: bool,
     ac_last_column: bool = False,
 ) -> None:
     """
-    Заполнение полей парсера (O…AC) на уже подготовленном листе.
-    Строка: при наличии ссылки Synaps — обход по URL, иначе при наличии ИНН — поиск по ИНН (parser_synaps_browser).
+    1) Импорт по ИНН с SHEET_IMPORT в память → запись блоками (мало запросов API).
+    2) По строкам: если поля парсера пусты — Synaps (URL или ИНН), запись одной строкой.
     """
-    headers = ws.row_values(1)
-    if not headers:
+    sheet_title = ws.title
+    all_vals = _worksheet_grid(ws, desc=f"чтение «{sheet_title}»")
+    if not all_vals or not all_vals[0]:
         raise RuntimeError("В первой строке таблицы должны быть заголовки столбцов.")
+
+    headers = all_vals[0]
+    data_rows: list[list[str]] = [list(r) for r in all_vals[1:]]
+    last = len(all_vals)
+    print(f"Лист «{sheet_title}»: строк {last} (данных {len(data_rows)}).")
 
     col_by_key = _col_by_key_from_headers(headers, ac_last_column=ac_last_column)
     if not restore_synaps_bank_column(headers, col_by_key):
         print(
-            "Внимание: столбец банка (логический U, «счёт») не сопоставлен по заголовку. "
-            "Укажите в .env SYNAPS_BANK_COL=номер_столбца (1-based) или добавьте столбец «счёт» / «состояние банковского счёта».",
+            "Внимание: столбец банка (логический U) не сопоставлен. "
+            "Задайте SYNAPS_BANK_COL в .env или столбец «счёт».",
         )
     if not col_by_key:
-        sample = ", ".join(sorted(HEADER_TO_KEY.keys())[:8])
-        raise RuntimeError(
-            "Не удалось сопоставить заголовки с полями парсера. "
-            f"Примеры поддерживаемых названий: {sample}… или буквы {', '.join(SHEET_JSON_KEYS)}.",
-        )
+        raise RuntimeError("Не удалось сопоставить заголовки с полями парсера (O…AC).")
 
+    mapped = ", ".join(f"{k}→{col_by_key[k]}" for k in sorted(col_by_key))
+    print(f"Поля парсера: {mapped}")
+
+    c0, c1 = _parser_col_bounds(col_by_key)
     url_col = _synaps_url_column_1based(headers)
     inn_col = _inn_column_1based(headers)
-    max_col = max(
-        max(col_by_key.values()),
-        url_col,
-        FALLBACK_URL_COL,
-        len(headers),
-        inn_col or 0,
-    )
-    col_a = _sheet_call(lambda: ws.col_values(1), desc="столбец A")
-    last = len(col_a)
+    max_col = max(max(col_by_key.values()), url_col, FALLBACK_URL_COL, len(headers), inn_col or 0)
+
     if last < 2:
         print("Нет строк для обработки.")
         return
 
-    rng = f"{rowcol_to_a1(2, 1)}:{rowcol_to_a1(last, max_col)}"
-    sheet_rows = _sheet_call(lambda: ws.get(rng), desc="данные строк 2…") or []
-    sheet_rows_formula = (
-        _sheet_call(lambda: ws.get(rng, value_render_option="FORMULA"), desc="формулы строк 2…") or []
-    )
-
-    tasks_by_url: list[tuple[int, str]] = []
-    tasks_by_inn: list[tuple[int, str]] = []
-    sheet_urls_order: list[str] = []
-    sheet_inns_order: list[str] = []
-    skipped_no_inn_no_url = 0
-
-    for row in range(2, last + 1):
-        idx = row - 2
-        row_vals = _pad_row_values(sheet_rows[idx] if 0 <= idx < len(sheet_rows) else [], max_col)
-        row_formula_vals = _pad_row_values(
-            sheet_rows_formula[idx] if 0 <= idx < len(sheet_rows_formula) else [],
-            max_col,
+    import_idx = None
+    if import_sheet_name:
+        import_idx = _load_import_index(
+            sh,
+            import_sheet_name,
+            col_by_key,
+            ac_last_column=ac_last_column,
         )
 
+    n_imported = 0
+    n_no_import_inn = 0
+    if import_idx:
+        keys = import_idx["keys"]
+        by_inn = import_idx["by_inn"]
+        imp_col = import_idx["imp_col_by_key"]
+        for idx in range(len(data_rows)):
+            row_vals = _pad_row_values(data_rows[idx], max_col)
+            if inn_col is None:
+                break
+            inn = _normalize_inn_cell(row_vals[inn_col - 1] if inn_col <= len(row_vals) else "")
+            if not inn:
+                continue
+            imp_row = by_inn.get(inn)
+            if imp_row is None:
+                n_no_import_inn += 1
+                continue
+            if _merge_import_into_row(row_vals, imp_row, keys, col_by_key, imp_col):
+                data_rows[idx] = row_vals
+                n_imported += 1
+
+        print(f"Импорт в память: совпало строк {n_imported}; без записи в импортёре: {n_no_import_inn}.")
+        n_chunks = _flush_parser_rows_chunked(ws, data_rows, c0=c0, c1=c1, max_col=max_col)
+        print(f"Импорт записан на лист: {n_chunks} блок(ов) по ≤{_GRID_FLUSH_ROWS} строк.")
+
+    rng_formula = f"{rowcol_to_a1(2, url_col)}:{rowcol_to_a1(last, url_col)}"
+    url_formula_raw = (
+        _sheet_call(
+            lambda: ws.get(rng_formula, value_render_option="FORMULA"),
+            desc="ссылки Synaps (формулы)",
+        )
+        or []
+    )
+    url_formula_cells: list[str] = []
+    for f_idx in range(len(data_rows)):
+        cell = ""
+        if f_idx < len(url_formula_raw) and url_formula_raw[f_idx]:
+            row_f = url_formula_raw[f_idx]
+            cell = str(row_f[0] if row_f else "")
+        url_formula_cells.append(cell)
+
+    rows_by_url: dict[str, list[int]] = {}
+    rows_by_inn: dict[str, list[int]] = {}
+    tasks_by_url: list[tuple[int, str]] = []
+    tasks_by_inn: list[tuple[int, str]] = []
+    skipped_no_lookup = 0
+    skipped_has_data = 0
+
+    for idx in range(len(data_rows)):
+        row = idx + 2
+        row_vals = _pad_row_values(data_rows[idx], max_col)
         url = _extract_synaps_url(
             row_vals[url_col - 1] if url_col <= len(row_vals) else "",
-            row_formula_vals[url_col - 1] if url_col <= len(row_formula_vals) else "",
+            url_formula_cells[idx],
             row_vals[FALLBACK_URL_COL - 1] if FALLBACK_URL_COL <= len(row_vals) else "",
         )
         inn = ""
         if inn_col is not None and inn_col <= len(row_vals):
             inn = _normalize_inn_cell(row_vals[inn_col - 1])
 
-        if url:
-            sheet_urls_order.append(url)
-        if inn:
-            sheet_inns_order.append(inn)
-
-        lookup: str | None = None
-        mode: str | None = None
-        if url:
-            lookup, mode = url, "url"
-        elif inn:
-            lookup, mode = inn, "inn"
-
-        if not lookup or not mode:
-            skipped_no_inn_no_url += 1
+        if not url and not inn:
+            skipped_no_lookup += 1
             continue
 
         if not _row_needs_scrape_from_prefetched(row_vals, col_by_key):
-            hint = lookup[:70] if mode == "url" else f"ИНН {lookup}"
-            print(f"Строка {row}: пропуск (уже с данными) — {hint}")
+            skipped_has_data += 1
             continue
 
-        if mode == "url":
-            tasks_by_url.append((row, lookup))
+        if url:
+            tasks_by_url.append((row, url))
+            rows_by_url.setdefault(url, []).append(idx)
         else:
-            tasks_by_inn.append((row, lookup))
+            tasks_by_inn.append((row, inn))
+            rows_by_inn.setdefault(inn, []).append(idx)
 
-    if skipped_no_inn_no_url:
-        print(
-            f"Строк без ИНН и без ссылки Synaps (не парсятся): {skipped_no_inn_no_url} "
-            f"(номера строк в логе не выводятся).",
-        )
+    print(
+        f"К парсингу: URL {len(tasks_by_url)} (уник. {len(rows_by_url)}), "
+        f"ИНН {len(tasks_by_inn)} (уник. {len(rows_by_inn)}); "
+        f"пропуск (уже заполнено) {skipped_has_data}, без ИНН/URL {skipped_no_lookup}.",
+    )
 
-    if not tasks_by_url and not tasks_by_inn and not save_dom_snapshots:
-        print("Нет строк для парсинга (нет ИНН/ссылки Synaps или все поля парсера уже заполнены).")
+    if not tasks_by_url and not tasks_by_inn:
+        print("Парсинг Synaps не требуется.")
         return
 
-    if save_dom_snapshots and not sheet_urls_order and not sheet_inns_order:
-        print("Нет строк для дампа DOM (в листе нет ИНН и ссылок Synaps).")
-        return
+    def _on_url(url_key: str, data: dict[str, Any]) -> None:
+        for ridx in rows_by_url.get(url_key, []):
+            row_num = ridx + 2
+            row_vals = _pad_row_values(data_rows[ridx], max_col)
+            done = _apply_parser_data_to_row_vals(row_vals, data, col_by_key)
+            data_rows[ridx] = row_vals
+            if done:
+                _write_parser_row_block(ws, row_num, row_vals, c0, c1)
+                print(f"Строка {row_num}: парсинг URL — {', '.join(done)}")
+            time.sleep(_SCRAPE_WRITE_PAUSE_SEC)
 
-    def _flush_url_row(url_key: str, data: dict[str, Any]) -> None:
-        for row, u in tasks_by_url:
-            if u == url_key:
-                done = _fill_row_only_empty(ws, row, col_by_key, data)
-                print(f"Строка {row}: записано полей: {', '.join(done) or 'ничего'}")
-
-    def _flush_inn_row(inn_key: str, data: dict[str, Any]) -> None:
-        for row, i in tasks_by_inn:
-            if i == inn_key:
-                done = _fill_row_only_empty(ws, row, col_by_key, data)
-                print(f"Строка {row}: записано полей: {', '.join(done) or 'ничего'}")
+    def _on_inn(inn_key: str, data: dict[str, Any]) -> None:
+        for ridx in rows_by_inn.get(inn_key, []):
+            row_num = ridx + 2
+            row_vals = _pad_row_values(data_rows[ridx], max_col)
+            done = _apply_parser_data_to_row_vals(row_vals, data, col_by_key)
+            data_rows[ridx] = row_vals
+            if done:
+                _write_parser_row_block(ws, row_num, row_vals, c0, c1)
+                print(f"Строка {row_num}: парсинг ИНН {inn_key} — {', '.join(done)}")
+            time.sleep(_SCRAPE_WRITE_PAUSE_SEC)
 
     urls_unique = list(dict.fromkeys(u for _, u in tasks_by_url))
     inns_unique = list(dict.fromkeys(i for _, i in tasks_by_inn))
 
-    if save_dom_snapshots:
-        urls_to_fetch = list(dict.fromkeys(sheet_urls_order))
-        inns_to_fetch = list(dict.fromkeys(sheet_inns_order))
-    else:
-        urls_to_fetch = urls_unique
-        inns_to_fetch = inns_unique
-
-    print(
-        f"Строк по URL: {len(tasks_by_url)} (уникальных URL: {len(urls_to_fetch)}); "
-        f"строк по ИНН: {len(tasks_by_inn)} (уникальных ИНН: {len(inns_to_fetch)})",
-    )
-    if tasks_by_inn or tasks_by_url:
-        print(
-            "Подсказка: в логе Synaps «[k/total] ИНН …» — это k-й уникальный URL/ИНН в очереди браузера; "
-            "номер строки листа даётся отдельно в строке «Строка N: записано полей …».",
-        )
-
-    if not urls_to_fetch and not inns_to_fetch:
-        print(
-            "Нечего обходить: добавьте столбец «ИНН» или ссылку Synaps, либо очистите поля для дозаполнения.",
-        )
-        return
-
     results: dict[str, Any | BaseException] = {}
 
-    if urls_to_fetch:
-        results_url = scrape_urls_sequentially(
-            urls_to_fetch,
-            headless=headless,
-            save_dom_snapshots=save_dom_snapshots,
-            on_each_result=_flush_url_row if tasks_by_url else None,
+    if urls_unique:
+        results.update(
+            scrape_urls_sequentially(
+                urls_unique,
+                headless=headless,
+                save_dom_snapshots=save_dom_snapshots,
+                on_each_result=_on_url,
+            ),
         )
-        results.update(results_url)
 
-    if inns_to_fetch:
+    if inns_unique:
         if inn_col is None:
-            raise RuntimeError("В таблице нет столбца «ИНН» — добавьте заголовок «ИНН» для поиска на Synaps.")
-        results_inn = scrape_inns_sequentially(
-            inns_to_fetch,
-            headless=headless,
-            save_dom_snapshots=save_dom_snapshots,
-            on_each_result=_flush_inn_row if tasks_by_inn else None,
+            raise RuntimeError("Нет столбца «ИНН» для поиска на Synaps.")
+        results.update(
+            scrape_inns_sequentially(
+                inns_unique,
+                headless=headless,
+                save_dom_snapshots=save_dom_snapshots,
+                on_each_result=_on_inn,
+            ),
         )
-        results.update(results_inn)
 
     if save_dom_snapshots:
-        n = (len(urls_to_fetch) + len(inns_to_fetch)) * 3
+        n = (len(urls_unique) + len(inns_unique)) * 3
         print(f"HTML-снимки DOM (до {n} файлов): {resolved_dom_dumps_dir()}")
 
+    err = 0
     for row, u in tasks_by_url:
-        res = results.get(u)
-        if isinstance(res, BaseException):
-            print(f"Строка {row}: ошибка парсинга (URL) — {res!s}")
+        if isinstance(results.get(u), BaseException):
+            print(f"Строка {row}: ошибка URL — {results[u]!s}")
+            err += 1
     for row, inn in tasks_by_inn:
-        res = results.get(inn)
-        if isinstance(res, BaseException):
-            print(f"Строка {row}: ошибка парсинга (ИНН {inn}) — {res!s}")
+        if isinstance(results.get(inn), BaseException):
+            print(f"Строка {row}: ошибка ИНН {inn} — {results[inn]!s}")
+            err += 1
+    if err:
+        print(f"Ошибок парсинга: {err}.")
 
 
 def run_copy_source_to_final_then_parse(
@@ -847,8 +923,10 @@ def run_copy_source_to_final_then_parse(
     else:
         print(f"Пропуск копирования: парсинг по текущему содержимому листа «{final_sheet}».")
 
-    _synaps_enrich_worksheet(
+    _process_final_import_then_parse(
         ws_dst,
+        sh,
+        import_sheet_name=sheet_import() or None,
         headless=headless,
         save_dom_snapshots=save_dom_snapshots,
         ac_last_column=ac_last_column,
@@ -870,11 +948,18 @@ def run_sheet_sync_new(
     sh = gc.open_by_key(sheet_id)
     unique_name = sheet_unique()
     final_name = sheet_final()
+    imp_name_cfg = sheet_import()
+
+    print("─── parser_export_baza ───")
+    print(f"  SHEET_UNIQUE = «{unique_name}»")
+    print(f"  SHEET_FINAL  = «{final_name}»")
+    print(f"  SHEET_IMPORT = «{imp_name_cfg}»" if imp_name_cfg else "  SHEET_IMPORT = (не задан)")
+
     try:
         ws_unique = sh.worksheet(unique_name)
     except gspread.WorksheetNotFound:
-        ws_unique = sh.add_worksheet(title=unique_name, rows=2000, cols=40)
-    ws_final = _ensure_final_worksheet(sh)
+        ws_unique = sh.add_worksheet(title=unique_name, rows=5000, cols=40)
+        print(f"Создан лист «{unique_name}».")
 
     unique_all = _sheet_call(lambda: ws_unique.get_all_values(), desc=f"чтение «{unique_name}»")
 
@@ -901,8 +986,19 @@ def run_sheet_sync_new(
         unique_all = [mh]
         print(
             f"Лист «{unique_name}» был пуст или без заголовка ИНН — записана строка заголовков ({len(mh)} столбцов: "
-            f"исходные + Synaps). Добавьте строки с данными и запустите снова; парсинг строк пока не выполняется.",
+            f"исходные + Synaps). Добавьте строки с данными и запустите снова.",
         )
+
+    if len(unique_all) < 2:
+        print(f"На «{unique_name}» нет строк данных — выход.")
+        return
+
+    unique_all = _normalize_unique_grid(unique_all)
+    n_rows = len(unique_all)
+    n_cols = max((len(r) for r in unique_all), default=40)
+    print(f"«{unique_name}»: {n_rows} строк (включая заголовок), {n_cols} столбцов.")
+
+    ws_final = _ensure_final_worksheet(sh, min_rows=n_rows + 100, min_cols=n_cols + 5)
 
     final_all = _sheet_call(lambda: ws_final.get_all_values(), desc=f"чтение «{final_name}»")
 
@@ -929,7 +1025,8 @@ def run_sheet_sync_new(
             desc=f"копия «{unique_name}» → «{final_name}»",
         )
         print(
-            f"Перезапись «{final_name}» из «{unique_name}» ({len(unique_all)} строк). Причина: {copy_reason}.",
+            f"Перезапись «{final_name}» из «{unique_name}» ({len(unique_all)} строк, {n_cols} столбцов). "
+            f"Причина: {copy_reason}.",
         )
     else:
         checked = min(INN_PREFIX_COMPARE_ROWS, max(0, len(unique_all) - 1))
@@ -937,30 +1034,22 @@ def run_sheet_sync_new(
             f"«{final_name}» совпадает с «{unique_name}» по числу строк и по ИНН в первых {checked} "
             f"строках данных — копирование пропущено, только парсинг.",
         )
-
-    imp_name = sheet_import()
-    if imp_name:
-        if imp_name == final_name:
-            raise RuntimeError(
-                f"SHEET_IMPORT и SHEET_FINAL не должны указывать на один лист («{imp_name}»).",
-            )
-        rows_imp, inns_parse = _apply_import_by_inn(
-            ws_final,
-            sh,
-            imp_name,
-            ac_last_column=ac_last_column,
-        )
-        print(f"Импорт с «{imp_name}»: обновлено строк {rows_imp}.")
-        if inns_parse:
-            preview = ", ".join(inns_parse[:12])
-            more = f" и ещё {len(inns_parse) - 12}" if len(inns_parse) > 12 else ""
+        if len(final_all) != len(unique_all):
             print(
-                f"ИНН без записи в «{imp_name}» ({len(inns_parse)}): {preview}{more} — будут обойдены парсером.",
+                f"Внимание: на «{final_name}» {len(final_all)} строк, на «{unique_name}» {len(unique_all)} — "
+                f"задайте PARSER_FORCE_COPY=1 для полной перезаписи.",
             )
 
-    ws = ws_final
-    _synaps_enrich_worksheet(
-        ws,
+    imp_name = imp_name_cfg
+    if imp_name and imp_name == final_name:
+        raise RuntimeError(
+            f"SHEET_IMPORT и SHEET_FINAL не должны указывать на один лист («{imp_name}»).",
+        )
+
+    _process_final_import_then_parse(
+        ws_final,
+        sh,
+        import_sheet_name=imp_name or None,
         headless=headless,
         save_dom_snapshots=save_dom_snapshots,
         ac_last_column=ac_last_column,

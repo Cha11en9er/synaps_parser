@@ -168,7 +168,7 @@ def _ensure_organizacii_profile(page: Page) -> None:
         return
     slug = m.group(1)
     target = f"https://synapsenet.ru/organizacii/{slug}"
-    page.goto(target, wait_until="domcontentloaded")
+    _goto(page, target, wait_until="domcontentloaded")
     _pause_micro(page)
     try:
         page.wait_for_selector(".oc-op-reg-date", state="visible", timeout=_subpage_selector_timeout_ms())
@@ -267,6 +267,47 @@ def _pause_micro(page: Page) -> None:
         page.wait_for_timeout(ms)
 
 
+_NETWORK_MARKERS = (
+    "ERR_HTTP2_PROTOCOL_ERROR",
+    "ERR_CONNECTION",
+    "ERR_NETWORK",
+    "ERR_INTERNET_DISCONNECTED",
+    "ERR_NAME_NOT_RESOLVED",
+    "ERR_TIMED_OUT",
+    "ERR_ABORTED",
+    "ERR_EMPTY_RESPONSE",
+    "chrome-error://",
+    "net::ERR_",
+    "has been closed",
+    "Connection closed",
+)
+
+
+def _is_network_error(exc: BaseException) -> bool:
+    msg = str(exc)
+    return any(mark in msg for mark in _NETWORK_MARKERS)
+
+
+def _goto(page: Page, url: str, *, wait_until: str = "domcontentloaded", attempts: int = 3) -> None:
+    """Открыть URL. Сбой сети (HTTP/2, chrome-error) — короткая пауза и повтор, без падения всего прогона."""
+    last: BaseException | None = None
+    for attempt in range(1, attempts + 1):
+        try:
+            page.goto(url, wait_until=wait_until)
+            if (page.url or "").startswith("chrome-error://"):
+                raise RuntimeError(f"chrome-error:// при открытии {url}")
+            return
+        except Exception as exc:
+            last = exc
+            if attempt >= attempts or not _is_network_error(exc):
+                raise
+            pause = 3 * attempt
+            print(f"  сеть недоступна, повтор через {pause} с ({attempt}/{attempts})")
+            time.sleep(pause)
+    if last is not None:
+        raise last
+
+
 def _ensure_utf8_stdout() -> None:
     """Windows cp1251 ломается на ₽ и т.п. при print(json)."""
     if hasattr(sys.stdout, "reconfigure"):
@@ -294,7 +335,7 @@ def _login_button_visible(page: Page) -> bool:
 
 
 def _perform_login(page: Page, mail: str, password: str) -> None:
-    page.goto("https://synapsenet.ru/home/login", wait_until="domcontentloaded")
+    _goto(page, "https://synapsenet.ru/home/login", wait_until="domcontentloaded")
     _pause_micro(page)
     page.wait_for_selector("input.demand-input", timeout=_login_form_input_timeout_ms())
     # Почта: первый demand-input без класса пароля
@@ -312,7 +353,7 @@ def _perform_login(page: Page, mail: str, password: str) -> None:
 
 
 def _ensure_logged_in(page: Page, main_url: str, mail: str, password: str) -> None:
-    page.goto(main_url, wait_until="domcontentloaded")
+    _goto(page, main_url, wait_until="domcontentloaded")
     _pause(page)
 
     if _login_form_visible(page):
@@ -380,7 +421,7 @@ def _ensure_org_search_visible(page: Page, landing_url: str) -> Locator:
                 return inp
         except Exception:
             pass
-    page.goto(landing_url, wait_until="domcontentloaded")
+    _goto(page, landing_url, wait_until="domcontentloaded")
     _settle_after_landing_goto(page)
     inp = _org_search_input_locator(page)
     if inp.count() == 0:
@@ -491,7 +532,7 @@ def _open_active_organization_from_choice_list(page: Page, inn: str) -> None:
         )
     url = _absolute_synaps_url(href)
     print(f"  список по ИНН {inn}: открываю действующую {url}")
-    page.goto(url, wait_until="domcontentloaded")
+    _goto(page, url, wait_until="domcontentloaded")
     _settle_after_org_goto(page)
 
 
@@ -975,18 +1016,38 @@ def _extract_legal_address(page: Page) -> str | None:
     return _norm_space(loc.first.text_content() or "")
 
 
+def _bank_captcha_visible(page: Page) -> bool:
+    loc = page.locator(".ba-captcha-outer")
+    if loc.count() == 0:
+        return False
+    try:
+        return loc.first.is_visible()
+    except Exception:
+        return False
+
+
 def _fetch_bank_accounts_comment(page: Page) -> str | None:
-    """U: кнопка #check-bank-account → текст .ba-rb-comment."""
+    """U: кнопка #check-bank-account → текст .ba-rb-comment.
+    Капча .ba-captcha-outer вместо комментария — поле пропускается сразу.
+    """
     btn = page.locator("#check-bank-account.oba-check-bank")
     if btn.count() == 0:
         return None
+    if _bank_captcha_visible(page):
+        print("  капча ba-captcha-outer, пропуск банковских счетов")
+        return None
     btn.first.click()
-    _pause_micro(page)
     try:
-        page.wait_for_selector(".ba-rb-comment", timeout=_bank_comment_timeout_ms())
+        page.wait_for_selector(
+            ".ba-rb-comment, .ba-captcha-outer",
+            state="visible",
+            timeout=_bank_comment_timeout_ms(),
+        )
     except PlaywrightTimeoutError:
         return None
-    _pause_micro(page)
+    if _bank_captcha_visible(page):
+        print("  капча ba-captcha-outer, пропуск банковских счетов")
+        return None
     cm = page.locator(".ba-rb-comment").first
     if cm.count() == 0:
         return None
@@ -1041,7 +1102,7 @@ def extract_organization_json(
         _stabilize_page_for_dom_dump(page, kind="main")
         _save_dom(page, f"{dom_base}__01_main_after_actions.html")
 
-    page.goto(f"{profile_base}/vidy-deyatelnosti", wait_until="domcontentloaded")
+    _goto(page, f"{profile_base}/vidy-deyatelnosti", wait_until="domcontentloaded")
     _pause_micro(page)
     if save_dom_snapshots:
         _stabilize_page_for_dom_dump(page, kind="okved")
@@ -1058,7 +1119,7 @@ def extract_organization_json(
         _save_dom(page, f"{dom_base}__02_okved.html")
 
     if has_ip_section:
-        page.goto(f"{profile_base}/ispolnitelnoe-proizvodstvo", wait_until="domcontentloaded")
+        _goto(page, f"{profile_base}/ispolnitelnoe-proizvodstvo", wait_until="domcontentloaded")
         _pause_micro(page)
         if save_dom_snapshots:
             _stabilize_page_for_dom_dump(page, kind="ip")
@@ -1076,7 +1137,7 @@ def extract_organization_json(
     else:
         data["AA"] = None
 
-    page.goto(profile_base, wait_until="domcontentloaded")
+    _goto(page, profile_base, wait_until="domcontentloaded")
     _pause_micro(page)
     if not save_dom_snapshots:
         try:
@@ -1167,11 +1228,11 @@ def scrape_urls_sequentially(
             for idx, u in enumerate(todo, start=1):
                 try:
                     print(f"[{idx}/{total}] {u}")
-                    page.goto(u, wait_until="domcontentloaded")
+                    _goto(page, u, wait_until="domcontentloaded")
                     _settle_after_org_goto(page)
                     if not _org_page_loaded(page) or "home/login" in (page.url or ""):
                         _recover_session()
-                        page.goto(u, wait_until="domcontentloaded")
+                        _goto(page, u, wait_until="domcontentloaded")
                         _settle_after_org_goto(page)
                     if not _org_page_loaded(page):
                         raise RuntimeError(f"Не удалось открыть карточку (нет .oc-op-reg-date): {u}")
@@ -1191,8 +1252,14 @@ def scrape_urls_sequentially(
                 context.storage_state(path=str(storage))
             except Exception:
                 pass
-            context.close()
-            browser.close()
+            try:
+                context.close()
+            except Exception:
+                pass
+            try:
+                browser.close()
+            except Exception:
+                pass
 
     return results
 
@@ -1230,6 +1297,39 @@ def scrape_inns_sequentially(
         context = browser.new_context(**context_args)
         page = context.new_page()
 
+        def _restart_browser() -> None:
+            nonlocal browser, context, page
+            try:
+                context.close()
+            except Exception:
+                pass
+            try:
+                browser.close()
+            except Exception:
+                pass
+            browser = p.chromium.launch(headless=headless)
+            fresh: dict = {}
+            if storage.exists():
+                fresh["storage_state"] = str(storage)
+            context = browser.new_context(**fresh)
+            page = context.new_page()
+
+        def _boot_session() -> None:
+            for attempt in range(1, 5):
+                try:
+                    _ensure_logged_in(page, main_url, mail, password)
+                    context.storage_state(path=str(storage))
+                    _goto(page, landing, wait_until="domcontentloaded")
+                    _settle_after_landing_goto(page)
+                    return
+                except Exception as exc:
+                    if attempt >= 4 or not _is_network_error(exc):
+                        raise
+                    pause = min(90, 15 * attempt)
+                    print(f"  Синапс не открылся, пауза {pause} с ({attempt}/4)")
+                    time.sleep(pause)
+                    _restart_browser()
+
         def _recover_session() -> None:
             nonlocal context, page
             if storage.exists():
@@ -1244,48 +1344,79 @@ def scrape_inns_sequentially(
             context.storage_state(path=str(storage))
 
         try:
-            _ensure_logged_in(page, main_url, mail, password)
-            context.storage_state(path=str(storage))
-
-            page.goto(landing, wait_until="domcontentloaded")
-            _settle_after_landing_goto(page)
+            _boot_session()
 
             total = len(todo)
             for idx, inn in enumerate(todo, start=1):
-                try:
-                    print(f"[{idx}/{total}] ИНН {inn}")
-                    navigate_to_organization_by_inn(page, inn, landing_url=landing)
-                    if not _org_page_loaded(page) or "home/login" in (page.url or ""):
-                        _recover_session()
-                        page.goto(landing, wait_until="domcontentloaded")
-                        _settle_after_landing_goto(page)
+                print(f"[{idx}/{total}] ИНН {inn}")
+                saved = False
+                last_exc: BaseException | None = None
+                for attempt in range(1, 4):
+                    try:
                         navigate_to_organization_by_inn(page, inn, landing_url=landing)
-                    if not _org_page_loaded(page):
-                        raise RuntimeError(f"Карточка не открылась после поиска по ИНН {inn}")
-                    src_tag = f"inn:{inn}"
-                    data = extract_organization_json(
-                        page,
-                        save_dom_snapshots=save_dom_snapshots,
-                        dom_dump_run_index=idx,
-                        dom_source_url=src_tag,
-                    )
-                    if isinstance(data, dict):
-                        data["_profile_url"] = (page.url or "").split("?", 1)[0]
-                    results[inn] = data
-                    if on_each_result is not None:
-                        on_each_result(inn, data)
-                    context.storage_state(path=str(storage))
-                except Exception as e:
-                    results[inn] = e
-                    if on_each_error is not None:
-                        on_each_error(inn, e)
+                        if not _org_page_loaded(page) or "home/login" in (page.url or ""):
+                            _recover_session()
+                            _goto(page, landing, wait_until="domcontentloaded")
+                            _settle_after_landing_goto(page)
+                            navigate_to_organization_by_inn(page, inn, landing_url=landing)
+                        if not _org_page_loaded(page):
+                            raise RuntimeError(f"Карточка не открылась после поиска по ИНН {inn}")
+                        src_tag = f"inn:{inn}"
+                        data = extract_organization_json(
+                            page,
+                            save_dom_snapshots=save_dom_snapshots,
+                            dom_dump_run_index=idx,
+                            dom_source_url=src_tag,
+                        )
+                        if isinstance(data, dict):
+                            data["_profile_url"] = (page.url or "").split("?", 1)[0]
+                        results[inn] = data
+                        if on_each_result is not None:
+                            on_each_result(inn, data)
+                        context.storage_state(path=str(storage))
+                        saved = True
+                        break
+                    except Exception as e:
+                        last_exc = e
+                        dead = _is_network_error(e)
+                        if not dead:
+                            try:
+                                dead = (page.url or "").startswith("chrome-error://")
+                            except Exception:
+                                dead = True
+                        if not dead or attempt >= 3:
+                            break
+                        pause = min(90, 15 * attempt)
+                        print(f"  обрыв сети, пауза {pause} с, повтор ИНН {inn} ({attempt}/3)")
+                        time.sleep(pause)
+                        try:
+                            _restart_browser()
+                            _boot_session()
+                        except Exception as boot_exc:
+                            if _is_network_error(boot_exc):
+                                raise
+                            last_exc = boot_exc
+                            break
+                if saved:
+                    continue
+                if last_exc is None:
+                    last_exc = RuntimeError(f"ИНН {inn} не обработан")
+                results[inn] = last_exc
+                if on_each_error is not None:
+                    on_each_error(inn, last_exc)
         finally:
             try:
                 context.storage_state(path=str(storage))
             except Exception:
                 pass
-            context.close()
-            browser.close()
+            try:
+                context.close()
+            except Exception:
+                pass
+            try:
+                browser.close()
+            except Exception:
+                pass
 
     return results
 
