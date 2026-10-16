@@ -334,22 +334,65 @@ def _login_button_visible(page: Page) -> bool:
     return loc.count() > 0 and loc.first.is_visible()
 
 
+def _login_succeeded(page: Page) -> bool:
+    """Успех: ушли с /home/login и поля пароля больше нет."""
+    url = page.url or ""
+    if "/home/login" in url:
+        return False
+    return not _login_form_visible(page)
+
+
+def _wait_until_logged_in(page: Page, *, timeout_ms: int) -> bool:
+    """Ждём редирект после SPA-логина (load часто уже случился до клика)."""
+    deadline = time.monotonic() + timeout_ms / 1000.0
+    while time.monotonic() < deadline:
+        if _login_succeeded(page):
+            return True
+        page.wait_for_timeout(250)
+    return _login_succeeded(page)
+
+
 def _perform_login(page: Page, mail: str, password: str) -> None:
-    _goto(page, "https://synapsenet.ru/home/login", wait_until="domcontentloaded")
+    if "/home/login" not in (page.url or ""):
+        _goto(page, "https://synapsenet.ru/home/login", wait_until="domcontentloaded")
     _pause_micro(page)
     page.wait_for_selector("input.demand-input", timeout=_login_form_input_timeout_ms())
     # Почта: первый demand-input без класса пароля
     email = page.locator("input.demand-input:not(.form-input-password)").first
+    email.click()
     email.fill(mail)
     _pause_micro(page)
     pwd = page.locator("input.demand-input.form-input-password").first
+    pwd.click()
     pwd.fill(password)
     _pause_micro(page)
     page.locator(".demand-submit").first.click()
-    page.wait_for_load_state("load", timeout=_login_navigation_timeout_ms())
-    _pause(page)
-    if _login_form_visible(page):
-        raise RuntimeError("Похоже, вход не удался: форма логина всё ещё на странице.")
+    try:
+        page.wait_for_load_state("domcontentloaded", timeout=5_000)
+    except PlaywrightTimeoutError:
+        pass
+
+    nav_ms = _login_navigation_timeout_ms()
+    if _wait_until_logged_in(page, timeout_ms=nav_ms):
+        _pause(page)
+        return
+
+    # SPA/медленный редирект или ручной ввод: ждём ухода с формы логина
+    manual_ms = _env_int("SYNAPS_LOGIN_MANUAL_MS", 120_000, lo=0, hi=600_000)
+    if manual_ms > 0 and not _login_succeeded(page):
+        print(
+            f"Автологин не завершился за {nav_ms // 1000} с. "
+            f"Войдите вручную в окне браузера — жду до {manual_ms // 1000} с…"
+        )
+        if _wait_until_logged_in(page, timeout_ms=manual_ms):
+            _pause(page)
+            return
+
+    if not _login_succeeded(page):
+        raise RuntimeError(
+            "Похоже, вход не удался: форма логина всё ещё на странице "
+            "(проверьте MAIL/PASS в .env или завершите вход вручную дольше)."
+        )
 
 
 def _ensure_logged_in(page: Page, main_url: str, mail: str, password: str) -> None:
@@ -475,8 +518,56 @@ def _is_org_choice_list(page: Page) -> bool:
     return page.locator(".org-pc-status, a.org-pcr-title").count() > 0
 
 
-def _active_org_card_href(page: Page) -> str:
-    """Ссылка действующей организации: зелёный статус и a.org-pcr-title в том же блоке."""
+def _norm_org_name(value: str) -> str:
+    s = unicodedata.normalize("NFKC", value or "")
+    s = s.lower().replace("ё", "е")
+    s = re.sub(r"[\"«»„“”']", " ", s)
+    s = re.sub(r"\b(ооо|оао|ао|зао|пао|нао|ип|муп|мку|фгуп|пк|ано|нко|сз)\b", " ", s)
+    s = re.sub(r"[^a-zа-я0-9]+", " ", s, flags=re.I)
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def _active_org_candidates(page: Page) -> list[dict[str, str]]:
+    """Действующие организации из выдачи: title + href."""
+    try:
+        rows = page.evaluate(
+            """() => {
+                const out = [];
+                const seen = new Set();
+                for (const status of document.querySelectorAll(".org-pc-status.org-pcs-green")) {
+                    const label = (status.innerText || "").toLowerCase().replace(/ё/g, "е");
+                    if (!label.includes("действующая организация")) continue;
+                    let node = status;
+                    let href = "";
+                    let title = "";
+                    for (let depth = 0; depth < 8 && node; depth++) {
+                        const link = node.querySelector("a.org-pcr-title");
+                        if (link) {
+                            href = (link.getAttribute("href") || "").trim();
+                            title = (link.innerText || "").replace(/\\s+/g, " ").trim();
+                            break;
+                        }
+                        node = node.parentElement;
+                    }
+                    if (!href || !href.includes("/organizacii/") || seen.has(href)) continue;
+                    seen.add(href);
+                    out.push({ href, title });
+                }
+                return out;
+            }"""
+        )
+    except Exception:
+        rows = []
+    out: list[dict[str, str]] = []
+    for row in rows or []:
+        href = str((row or {}).get("href") or "").strip()
+        title = str((row or {}).get("title") or "").strip()
+        if href:
+            out.append({"href": href, "title": title})
+    if out:
+        return out
+
+    # Fallback: старый путь только по href первой зелёной карточки.
     statuses = page.locator(".org-pc-status.org-pcs-green")
     for i in range(statuses.count()):
         status = statuses.nth(i)
@@ -490,14 +581,48 @@ def _active_org_card_href(page: Page) -> str:
             continue
         href = status.evaluate(_ACTIVE_ORG_HREF_JS)
         if href:
-            return str(href).strip()
-    return ""
+            return [{"href": str(href).strip(), "title": ""}]
+    return []
 
 
-def _open_active_organization_from_choice_list(page: Page, inn: str) -> None:
+def _pick_active_org_href(page: Page, *, name_hint: str | None = None) -> str:
+    """Выбрать карточку: точное/частичное совпадение названия, иначе первая действующая."""
+    candidates = _active_org_candidates(page)
+    if not candidates:
+        return ""
+    hint = _norm_org_name(name_hint or "")
+    if hint:
+        exact = [c for c in candidates if _norm_org_name(c.get("title") or "") == hint]
+        if len(exact) == 1:
+            return exact[0]["href"]
+        if len(exact) > 1:
+            return exact[0]["href"]
+        contains = [
+            c
+            for c in candidates
+            if hint in _norm_org_name(c.get("title") or "")
+            or _norm_org_name(c.get("title") or "") in hint
+        ]
+        if contains:
+            contains.sort(key=lambda c: abs(len(_norm_org_name(c.get("title") or "")) - len(hint)))
+            return contains[0]["href"]
+    return candidates[0]["href"]
+
+
+def _active_org_card_href(page: Page) -> str:
+    """Ссылка действующей организации: зелёный статус и a.org-pcr-title в том же блоке."""
+    return _pick_active_org_href(page, name_hint=None)
+
+
+def _open_organization_from_choice_list(
+    page: Page,
+    query_label: str,
+    *,
+    name_hint: str | None = None,
+) -> None:
     """
-    Страница /organizacii?query=ИНН: дождаться списка и открыть карточку
-    со статусом «действующая организация». Ликвидированные в списке не берём.
+    Страница /organizacii?query=…: дождаться списка и открыть карточку
+    со статусом «действующая организация». При name_hint предпочитаем совпадение названия.
     """
     t_primary = _inn_search_primary_timeout_ms()
     try:
@@ -525,34 +650,43 @@ def _open_active_organization_from_choice_list(page: Page, inn: str) -> None:
     except PlaywrightTimeoutError:
         pass
     _pause_micro(page)
-    href = _active_org_card_href(page)
+    href = _pick_active_org_href(page, name_hint=name_hint)
     if not href:
         raise RuntimeError(
-            f"По ИНН {inn} открыт список организаций, действующая не найдена. URL: {page.url}",
+            f"По запросу {query_label!r} открыт список организаций, действующая не найдена. URL: {page.url}",
         )
     url = _absolute_synaps_url(href)
-    print(f"  список по ИНН {inn}: открываю действующую {url}")
+    print(f"  список по {query_label!r}: открываю действующую {url}")
     _goto(page, url, wait_until="domcontentloaded")
     _settle_after_org_goto(page)
 
 
-def navigate_to_organization_by_inn(page: Page, inn_raw: str, *, landing_url: str | None = None) -> None:
+def _open_active_organization_from_choice_list(page: Page, inn: str) -> None:
+    """Совместимость: список по ИНН → первая действующая."""
+    _open_organization_from_choice_list(page, f"ИНН {inn}", name_hint=None)
+
+
+def navigate_to_organization_by_query(
+    page: Page,
+    query_raw: str,
+    *,
+    landing_url: str | None = None,
+    match_name: bool = False,
+) -> None:
     """
-    Ввод ИНН в глобальный поиск, клик по кнопке поиска, ожидание карточки организации.
-    Если вместо карточки открылся список (/organizacii?query=ИНН), выбирается
-    действующая организация (org-pc-status.org-pcs-green), затем обычный разбор карточки.
-    Работает со страницы лендинга или с уже открытой карточки (поиск в шапке).
+    Ввод запроса (ИНН / ОГРН / название) в глобальный поиск и открытие карточки.
+    Если открылся список — берём действующую; при match_name=True предпочитаем совпадение названия.
     """
     landing = landing_url or _synaps_landing_url()
-    inn = re.sub(r"\D", "", (inn_raw or "").strip())
-    if not inn:
-        raise ValueError("Пустой ИНН")
+    query = _norm_space(query_raw or "")
+    if not query:
+        raise ValueError("Пустой поисковый запрос")
 
     inp = _ensure_org_search_visible(page, landing)
     inp.click()
     _pause_micro(page)
     inp.fill("")
-    inp.fill(inn)
+    inp.fill(query)
     _pause_micro(page)
 
     before_url = page.url
@@ -572,17 +706,63 @@ def navigate_to_organization_by_inn(page: Page, inn_raw: str, *, landing_url: st
     except PlaywrightTimeoutError:
         pass
 
+    name_hint = query if match_name else None
     if _is_org_choice_list(page):
-        _open_active_organization_from_choice_list(page, inn)
+        _open_organization_from_choice_list(page, query, name_hint=name_hint)
     elif not _org_page_loaded(page):
         try:
             page.wait_for_selector(".oc-op-reg-date", state="visible", timeout=t_primary)
         except PlaywrightTimeoutError:
             if _is_org_choice_list(page):
-                _open_active_organization_from_choice_list(page, inn)
+                _open_organization_from_choice_list(page, query, name_hint=name_hint)
 
     if not _org_page_loaded(page):
-        raise RuntimeError(f"После поиска по ИНН {inn} карточка не открылась (нет .oc-op-reg-date). URL: {page.url}")
+        raise RuntimeError(
+            f"После поиска {query!r} карточка не открылась (нет .oc-op-reg-date). URL: {page.url}"
+        )
+
+
+def navigate_to_organization_by_inn(page: Page, inn_raw: str, *, landing_url: str | None = None) -> None:
+    """
+    Ввод ИНН в глобальный поиск, клик по кнопке поиска, ожидание карточки организации.
+    Если вместо карточки открылся список (/organizacii?query=ИНН), выбирается
+    действующая организация (org-pc-status.org-pcs-green), затем обычный разбор карточки.
+    Работает со страницы лендинга или с уже открытой карточки (поиск в шапке).
+    """
+    inn = re.sub(r"\D", "", (inn_raw or "").strip())
+    if not inn:
+        raise ValueError("Пустой ИНН")
+    navigate_to_organization_by_query(page, inn, landing_url=landing_url, match_name=False)
+
+
+def _extract_inn_from_card(page: Page) -> str:
+    """ИНН с открытой карточки организации."""
+    for sel in (
+        ".oc-op-inn",
+        ".org-inn",
+        "[data-inn]",
+        "div.oc-op-reg-info",
+        ".oc-organization-page",
+    ):
+        loc = page.locator(sel)
+        if loc.count() == 0:
+            continue
+        try:
+            text = loc.first.inner_text(timeout=1500) or ""
+        except Exception:
+            continue
+        m = re.search(r"ИНН\s*[:\s]?\s*(\d{10}|\d{12})", text, re.I)
+        if m:
+            return m.group(1)
+        m = re.search(r"\b(\d{10}|\d{12})\b", text)
+        if m and sel in (".oc-op-inn", ".org-inn", "[data-inn]"):
+            return m.group(1)
+    try:
+        blob = page.locator("body").inner_text(timeout=3000) or ""
+    except Exception:
+        blob = ""
+    m = re.search(r"ИНН\s*[:\s]?\s*(\d{10}|\d{12})", blob, re.I)
+    return m.group(1) if m else ""
 
 
 def _extract_reg_date(page: Page) -> str | None:
@@ -1096,7 +1276,12 @@ def extract_organization_json(
         "Z": _extract_reliability_z(page),
         "AB": _extract_director_ab(page),
     }
-    data["U"] = _fetch_bank_accounts_comment(page)
+    # Банковские счета (ФНС / #check-bank-account) отключены: капча и тормоза.
+    # data["U"] = _fetch_bank_accounts_comment(page)
+    data["U"] = None
+    inn_on_card = _extract_inn_from_card(page)
+    if inn_on_card:
+        data["_inn"] = inn_on_card
 
     if save_dom_snapshots:
         _stabilize_page_for_dom_dump(page, kind="main")
@@ -1404,6 +1589,174 @@ def scrape_inns_sequentially(
                 results[inn] = last_exc
                 if on_each_error is not None:
                     on_each_error(inn, last_exc)
+        finally:
+            try:
+                context.storage_state(path=str(storage))
+            except Exception:
+                pass
+            try:
+                context.close()
+            except Exception:
+                pass
+            try:
+                browser.close()
+            except Exception:
+                pass
+
+    return results
+
+
+def scrape_queries_sequentially(
+    queries: list[str],
+    *,
+    headless: bool = False,
+    storage_path: Path | None = None,
+    save_dom_snapshots: bool = False,
+    on_each_result: Callable[[str, dict[str, Any]], None] | None = None,
+    on_each_error: Callable[[str, BaseException], None] | None = None,
+    landing_url: str | None = None,
+    match_name: bool = True,
+) -> dict[str, Any | BaseException]:
+    """
+    Как scrape_inns_sequentially, но ключ — исходная строка запроса (название / ИНН / ОГРН).
+    При match_name=True в выдаче предпочитается карточка с похожим названием.
+    """
+    main_url, mail, password = _credentials()
+    storage = storage_path or DEFAULT_STORAGE
+    landing = landing_url or _synaps_landing_url()
+    results: dict[str, Any | BaseException] = {}
+    _ensure_utf8_stdout()
+
+    todo = list(dict.fromkeys(_norm_space(x) for x in queries if x and str(x).strip()))
+    if not todo:
+        return results
+
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=headless)
+        context_args: dict = {}
+        if storage.exists():
+            context_args["storage_state"] = str(storage)
+        context = browser.new_context(**context_args)
+        page = context.new_page()
+
+        def _restart_browser() -> None:
+            nonlocal browser, context, page
+            try:
+                context.close()
+            except Exception:
+                pass
+            try:
+                browser.close()
+            except Exception:
+                pass
+            browser = p.chromium.launch(headless=headless)
+            fresh: dict = {}
+            if storage.exists():
+                fresh["storage_state"] = str(storage)
+            context = browser.new_context(**fresh)
+            page = context.new_page()
+
+        def _boot_session() -> None:
+            for attempt in range(1, 5):
+                try:
+                    _ensure_logged_in(page, main_url, mail, password)
+                    context.storage_state(path=str(storage))
+                    _goto(page, landing, wait_until="domcontentloaded")
+                    _settle_after_landing_goto(page)
+                    return
+                except Exception as exc:
+                    if attempt >= 4 or not _is_network_error(exc):
+                        raise
+                    pause = min(90, 15 * attempt)
+                    print(f"  Синапс не открылся, пауза {pause} с ({attempt}/4)")
+                    time.sleep(pause)
+                    _restart_browser()
+
+        def _recover_session() -> None:
+            nonlocal context, page
+            if storage.exists():
+                storage.unlink()
+            try:
+                context.close()
+            except Exception:
+                pass
+            context = browser.new_context()
+            page = context.new_page()
+            _ensure_logged_in(page, main_url, mail, password)
+            context.storage_state(path=str(storage))
+
+        try:
+            _boot_session()
+
+            total = len(todo)
+            for idx, query in enumerate(todo, start=1):
+                print(f"[{idx}/{total}] запрос {query!r}")
+                saved = False
+                last_exc: BaseException | None = None
+                for attempt in range(1, 4):
+                    try:
+                        navigate_to_organization_by_query(
+                            page,
+                            query,
+                            landing_url=landing,
+                            match_name=match_name,
+                        )
+                        if not _org_page_loaded(page) or "home/login" in (page.url or ""):
+                            _recover_session()
+                            _goto(page, landing, wait_until="domcontentloaded")
+                            _settle_after_landing_goto(page)
+                            navigate_to_organization_by_query(
+                                page,
+                                query,
+                                landing_url=landing,
+                                match_name=match_name,
+                            )
+                        if not _org_page_loaded(page):
+                            raise RuntimeError(f"Карточка не открылась после поиска {query!r}")
+                        src_tag = f"query:{query}"
+                        data = extract_organization_json(
+                            page,
+                            save_dom_snapshots=save_dom_snapshots,
+                            dom_dump_run_index=idx,
+                            dom_source_url=src_tag,
+                        )
+                        if isinstance(data, dict):
+                            data["_profile_url"] = (page.url or "").split("?", 1)[0]
+                            data["_query"] = query
+                        results[query] = data
+                        if on_each_result is not None:
+                            on_each_result(query, data)
+                        context.storage_state(path=str(storage))
+                        saved = True
+                        break
+                    except Exception as e:
+                        last_exc = e
+                        dead = _is_network_error(e)
+                        if not dead:
+                            try:
+                                dead = (page.url or "").startswith("chrome-error://")
+                            except Exception:
+                                dead = True
+                        if not dead or attempt >= 3:
+                            break
+                        pause = min(90, 15 * attempt)
+                        print(f"  обрыв сети, пауза {pause} с, повтор {query!r} ({attempt}/3)")
+                        time.sleep(pause)
+                        try:
+                            _restart_browser()
+                            _boot_session()
+                        except Exception as boot_exc:
+                            if _is_network_error(boot_exc):
+                                raise
+                            last_exc = boot_exc
+                            break
+                if saved:
+                    continue
+                if last_exc is None:
+                    last_exc = RuntimeError(f"Запрос {query!r} не обработан")
+                results[query] = last_exc
+                if on_each_error is not None:
+                    on_each_error(query, last_exc)
         finally:
             try:
                 context.storage_state(path=str(storage))

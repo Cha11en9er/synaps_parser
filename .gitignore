@@ -141,6 +141,26 @@ synaps-table-*.json
 # Local Playwright session (cookies / storage)
 synaps_storage_state.json
 
+# Nostroy scraper artifacts (large)
+genpodryad_comp/1_stage/pages/
+genpodryad_comp/1_stage/progress.json
+genpodryad_comp/1_stage/members.json
+genpodryad_comp/1_stage/members.jsonl
+genpodryad_comp/_probe/
+
+# Developer Synaps search DOM dumps
+developer_comp/2_stage/search_dom_dumps/
+developer_comp/2_stage/dump_search_progress.json
+developer_comp/2_stage/sample_500.json
+developer_comp/2_stage/okved_freq.json
+developer_comp/2_stage/shortlist.json
+developer_comp/2_stage/shortlist_inns.json
+developer_comp/2_stage/companies.json
+genpodryad_comp/2_stage/shortlist.json
+genpodryad_comp/2_stage/shortlist_inns.json
+genpodryad_comp/2_stage/companies.json
+ritual_comp/2_stage/companies.json
+
 # Saved HTML dumps for selector work
 dom_dumps/
 
