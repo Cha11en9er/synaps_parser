@@ -1,0 +1,41 @@
+{
+  "index": 5656,
+  "name": "ЭСПЛАР",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%AD%D0%A1%D0%9F%D0%9B%D0%90%D0%A0",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%AD%D0%A1%D0%9F%D0%9B%D0%90%D0%A0",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"ЭСПЛАР\"",
+      "url": "https://synapsenet.ru/organizacii/1186451002935-ooo-esplar",
+      "ogrn": "1186451002935",
+      "inn": "6449089365",
+      "kpp": "644901001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Энгельс",
+      "reg_date": "13.02.2018",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЭСПЛАР\"",
+      "url": "https://synapsenet.ru/organizacii/1072722013286-ooo-esplar",
+      "ogrn": "1072722013286",
+      "inn": "2722067505",
+      "kpp": "272201001",
+      "okved": "86.21",
+      "okved_name": "Общая врачебная практика",
+      "status": "организация ликвидирована",
+      "region": "г. Хабаровск",
+      "reg_date": "",
+      "period": "с 26.10.2007 по 11.10.2021"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "86.21"
+  ],
+  "saved_at": "2026-10-16T14:14:57.332599+00:00"
+}

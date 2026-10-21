@@ -1,0 +1,82 @@
+{
+  "index": 1323,
+  "name": "Лендекс",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9B%D0%B5%D0%BD%D0%B4%D0%B5%D0%BA%D1%81",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9B%D0%B5%D0%BD%D0%B4%D0%B5%D0%BA%D1%81",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ООО \"ЛЕНДЕКС\"",
+      "url": "https://synapsenet.ru/organizacii/1232300006707-ooo-lendeks",
+      "ogrn": "1232300006707",
+      "inn": "2308289759",
+      "kpp": "230801001",
+      "okved": "70.22",
+      "okved_name": "Консультирование по вопросам коммерческой деятельности и управления",
+      "status": "действующая организация",
+      "region": "г. Краснодар",
+      "reg_date": "08.02.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЛЕНДЕКС УПРАВЛЕНИЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1242300061321-ooo-lendeks-upravlenie",
+      "ogrn": "1242300061321",
+      "inn": "2308299309",
+      "kpp": "230801001",
+      "okved": "70.22",
+      "okved_name": "Консультирование по вопросам коммерческой деятельности и управления",
+      "status": "действующая организация",
+      "region": "г. Краснодар",
+      "reg_date": "18.11.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЛЕНДЕКС-ЛОГИСТИКА\"",
+      "url": "https://synapsenet.ru/organizacii/1232300013110-ooo-lendekslogistika",
+      "ogrn": "1232300013110",
+      "inn": "2308290352",
+      "kpp": "230801001",
+      "okved": "68.20",
+      "okved_name": "Аренда и управление собственным или арендованным недвижимым имуществом",
+      "status": "действующая организация",
+      "region": "г. Краснодар",
+      "reg_date": "09.03.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЛЕНДЕКС-РИЕЛТ\"",
+      "url": "https://synapsenet.ru/organizacii/1232300075842-ooo-lendeksrielt",
+      "ogrn": "1232300075842",
+      "inn": "2308295209",
+      "kpp": "230801001",
+      "okved": "68.10",
+      "okved_name": "Покупка и продажа собственного недвижимого имущества",
+      "status": "действующая организация",
+      "region": "г. Краснодар",
+      "reg_date": "29.12.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ ЛЕНДЕКС-ДЕВЕЛОПМЕНТ\"",
+      "url": "https://synapsenet.ru/organizacii/1232300044921-ooo-sz-lendeksdevelopment",
+      "ogrn": "1232300044921",
+      "inn": "2308292896",
+      "kpp": "230801001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "в процессе ликвидации",
+      "region": "г. Краснодар",
+      "reg_date": "02.08.2023",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "70.22",
+    "68.20",
+    "68.10",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T10:24:37.053266+00:00"
+}

@@ -1,0 +1,68 @@
+{
+  "index": 1184,
+  "name": "Компания КЕТОМ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%9A%D0%95%D0%A2%D0%9E%D0%9C",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%9A%D0%95%D0%A2%D0%9E%D0%9C",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"КЕТОМ\"",
+      "url": "https://synapsenet.ru/organizacii/1112722004251-ooo-ketom",
+      "ogrn": "1112722004251",
+      "inn": "2722103591",
+      "kpp": "272201001",
+      "okved": "46.63",
+      "okved_name": "Торговля оптовая машинами и оборудованием для добычи полезных ископаемых и строительства",
+      "status": "действующая организация",
+      "region": "г. Хабаровск",
+      "reg_date": "20.05.2011",
+      "period": ""
+    },
+    {
+      "title": "ООО \"КЕТОМ\"",
+      "url": "https://synapsenet.ru/organizacii/1172724028509-ooo-ketom",
+      "ogrn": "1172724028509",
+      "inn": "2724225108",
+      "kpp": "272401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Хабаровск",
+      "reg_date": "27.10.2017",
+      "period": ""
+    },
+    {
+      "title": "ООО КЕТОМ",
+      "url": "https://synapsenet.ru/organizacii/1147746676758-ooo-ketom",
+      "ogrn": "1147746676758",
+      "inn": "7732104868",
+      "kpp": "773201010",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 16.06.2014 по 16.06.2014"
+    },
+    {
+      "title": "ООО \"КЕТОМ\"",
+      "url": "https://synapsenet.ru/organizacii/1192375016734-ooo-ketom",
+      "ogrn": "1192375016734",
+      "inn": "2310212753",
+      "kpp": "231001001",
+      "okved": "43.31",
+      "okved_name": "Производство штукатурных работ",
+      "status": "организация ликвидирована",
+      "region": "г. Краснодар",
+      "reg_date": "",
+      "period": "с 05.03.2019 по 11.09.2020"
+    }
+  ],
+  "okveds": [
+    "46.63",
+    "41.20",
+    "43.31"
+  ],
+  "saved_at": "2026-10-16T10:15:41.079873+00:00"
+}

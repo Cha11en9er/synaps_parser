@@ -1,0 +1,132 @@
+{
+  "index": 1298,
+  "name": "КУЙБЫШЕВСКАЯ ДОРОЖНАЯ ПМК",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%A3%D0%99%D0%91%D0%AB%D0%A8%D0%95%D0%92%D0%A1%D0%9A%D0%90%D0%AF%20%D0%94%D0%9E%D0%A0%D0%9E%D0%96%D0%9D%D0%90%D0%AF%20%D0%9F%D0%9C%D0%9A",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%A3%D0%99%D0%91%D0%AB%D0%A8%D0%95%D0%92%D0%A1%D0%9A%D0%90%D0%AF%20%D0%94%D0%9E%D0%A0%D0%9E%D0%96%D0%9D%D0%90%D0%AF%20%D0%9F%D0%9C%D0%9A",
+  "total_text": "найдено 9 лиц",
+  "cards_count": 9,
+  "cards": [
+    {
+      "title": "АО \"КУЙБЫШЕВСКАЯ ДОРОЖНАЯ ПМК\"",
+      "url": "https://synapsenet.ru/organizacii/1026301425996-ao-kujbishevskaya-dorozhnaya-pmk",
+      "ogrn": "1026301425996",
+      "inn": "6317017766",
+      "kpp": "631701001",
+      "okved": "42.11",
+      "okved_name": "Строительство автомобильных дорог и автомагистралей",
+      "status": "действующая организация",
+      "region": "г. Самара",
+      "reg_date": "09.01.2003",
+      "period": ""
+    },
+    {
+      "title": "ТОО \"КУЙБЫШЕВСКАЯ ПМК\"",
+      "url": "https://synapsenet.ru/organizacii/1024000896303-too-kujbishevskaya-pmk",
+      "ogrn": "1024000896303",
+      "inn": "4010001219",
+      "kpp": "401001001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "р-н Куйбышевский",
+      "reg_date": "",
+      "period": "с 01.10.2002 по 19.03.2003"
+    },
+    {
+      "title": "ОАО\"КУЙБЫШЕВСКАЯ ПМК\"МЕЛИОВОДСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1065471000650-oao-kujbishevskaya-pmk-meliovodstroj",
+      "ogrn": "1065471000650",
+      "inn": "5452112140",
+      "kpp": "545201001",
+      "okved": "42.91.2",
+      "okved_name": "Строительство гидротехнических сооружений",
+      "status": "организация ликвидирована",
+      "region": "г. Куйбышев",
+      "reg_date": "",
+      "period": "с 01.02.2006 по 19.05.2026"
+    },
+    {
+      "title": "ГУП НСО КУЙБЫШЕВСКАЯ ПМК \"МЕЛИОВОДСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1025406824574-gup-nso-kujbishevskaya-pmk-meliovodstroj",
+      "ogrn": "1025406824574",
+      "inn": "5447100332",
+      "kpp": "545201001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Куйбышев",
+      "reg_date": "",
+      "period": "с 30.09.2002 по 01.02.2006"
+    },
+    {
+      "title": "ООО \"КД ПМК\"",
+      "url": "https://synapsenet.ru/organizacii/1026303514522-ooo-kd-pmk",
+      "ogrn": "1026303514522",
+      "inn": "6367009721",
+      "kpp": "631701001",
+      "okved": "42.11",
+      "okved_name": "Строительство автомобильных дорог и автомагистралей",
+      "status": "действующая организация",
+      "region": "г. Самара",
+      "reg_date": "12.12.2002",
+      "period": ""
+    },
+    {
+      "title": "ГУЗ СДП ФГУП КБШ ЖД МПС РФ",
+      "url": "https://synapsenet.ru/organizacii/1026300534369-guz-sdp-fgup-kbsh-zhd-mps-rf",
+      "ogrn": "1026300534369",
+      "inn": "6311049553",
+      "kpp": "631101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Самара",
+      "reg_date": "",
+      "period": "с 26.12.2002 по 14.12.2005"
+    },
+    {
+      "title": "ГУЗ ДКБ НА СТ. САМАРА ФГУП КБШ ЖД МПС РФ",
+      "url": "https://synapsenet.ru/organizacii/1026300518496-guz-dkb-na-st-samara-fgup-kbsh-zhd-mps-rf",
+      "ogrn": "1026300518496",
+      "inn": "6311012592",
+      "kpp": "631101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Самара",
+      "reg_date": "",
+      "period": "с 25.07.2002 по 21.12.2005"
+    },
+    {
+      "title": "КУЙБЫШЕВСКАЯ ДОРОЖНАЯ (РЕГИОНАЛЬНАЯ) ОРГАНИЗАЦИЯ РОССИЙСКОГО ОБЩЕСТВА КРАСНОГО КРЕСТА",
+      "url": "https://synapsenet.ru/organizacii/1036303383313-kujbishevskaya-dorozhnaya-regionalnaya-organizaciya-rossijskogo-obschestva-krasnogo-kresta",
+      "ogrn": "1036303383313",
+      "inn": "6311013317",
+      "kpp": "631101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Самара",
+      "reg_date": "",
+      "period": "с 06.02.2003 по 25.07.2012"
+    },
+    {
+      "title": "ОАО \"КАМЫШЛИНСКАЯ ДОР.ПМК\"",
+      "url": "https://synapsenet.ru/organizacii/1026303657820-oao-kamishlinskaya-dorpmk",
+      "ogrn": "1026303657820",
+      "inn": "6370000119",
+      "kpp": "637001001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "р-н Камышлинский",
+      "reg_date": "",
+      "period": "с 27.11.2002 по 22.07.2009"
+    }
+  ],
+  "okveds": [
+    "42.11",
+    "42.91.2"
+  ],
+  "saved_at": "2026-10-16T10:23:10.323993+00:00"
+}

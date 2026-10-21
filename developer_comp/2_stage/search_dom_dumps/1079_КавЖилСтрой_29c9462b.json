@@ -1,0 +1,66 @@
+{
+  "index": 1079,
+  "name": "КавЖилСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%B0%D0%B2%D0%96%D0%B8%D0%BB%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%B0%D0%B2%D0%96%D0%B8%D0%BB%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"КАВЖИЛСТРОЙ - 1\"",
+      "url": "https://synapsenet.ru/organizacii/1040700301025-ooo-kavzhilstroj-1",
+      "ogrn": "1040700301025",
+      "inn": "0702722832",
+      "kpp": "070201001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "р-н Зольский",
+      "reg_date": "06.08.2004",
+      "period": ""
+    },
+    {
+      "title": "ООО \"КАВЖИЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1022601612087-ooo-kavzhilstroj",
+      "ogrn": "1022601612087",
+      "inn": "2632066345",
+      "kpp": "263201001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Пятигорск",
+      "reg_date": "",
+      "period": "с 20.08.2002 по 24.08.2016"
+    },
+    {
+      "title": "ОАО \"КАВЖИЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1030700227030-oao-kavzhilstroj",
+      "ogrn": "1030700227030",
+      "inn": "0721003752",
+      "kpp": "072101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Нальчик",
+      "reg_date": "",
+      "period": "с 04.01.2003 по 23.06.2006"
+    },
+    {
+      "title": "ООО \"КАВЖИЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1140725002330-ooo-kavzhilstroj",
+      "ogrn": "1140725002330",
+      "inn": "0725015244",
+      "kpp": "072501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Нальчик",
+      "reg_date": "",
+      "period": "с 23.10.2014 по 26.02.2018"
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T10:09:35.054500+00:00"
+}

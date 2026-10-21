@@ -1,0 +1,41 @@
+{
+  "index": 5210,
+  "name": "ТАРАФОРМ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A2%D0%90%D0%A0%D0%90%D0%A4%D0%9E%D0%A0%D0%9C",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A2%D0%90%D0%A0%D0%90%D0%A4%D0%9E%D0%A0%D0%9C",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "АО \"ТАРАФОРМ\"",
+      "url": "https://synapsenet.ru/organizacii/1064707006099-ao-taraform",
+      "ogrn": "1064707006099",
+      "inn": "4707024162",
+      "kpp": "470701001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Кингисепп",
+      "reg_date": "05.06.2006",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ТАРАФОРМ\"",
+      "url": "https://synapsenet.ru/organizacii/1117847015637-ooo-taraform",
+      "ogrn": "1117847015637",
+      "inn": "7810813818",
+      "kpp": "780501001",
+      "okved": "22.22",
+      "okved_name": "Производство пластмассовых изделий для упаковывания товаров",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 24.01.2011 по 02.07.2018"
+    }
+  ],
+  "okveds": [
+    "71.12.2",
+    "22.22"
+  ],
+  "saved_at": "2026-10-16T13:46:26.358421+00:00"
+}

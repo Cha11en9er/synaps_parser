@@ -1,0 +1,68 @@
+{
+  "index": 2069,
+  "name": "САХАТРАНСНЕФТЕГАЗ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%90%D0%A5%D0%90%D0%A2%D0%A0%D0%90%D0%9D%D0%A1%D0%9D%D0%95%D0%A4%D0%A2%D0%95%D0%93%D0%90%D0%97",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%90%D0%A5%D0%90%D0%A2%D0%A0%D0%90%D0%9D%D0%A1%D0%9D%D0%95%D0%A4%D0%A2%D0%95%D0%93%D0%90%D0%97",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "АО \"САХАТРАНСНЕФТЕГАЗ\"",
+      "url": "https://synapsenet.ru/organizacii/1031402073097-ao-sahatransneftegaz",
+      "ogrn": "1031402073097",
+      "inn": "1435142972",
+      "kpp": "143501001",
+      "okved": "35.23",
+      "okved_name": "Торговля газообразным топливом, подаваемым по распределительным сетям",
+      "status": "действующая организация",
+      "region": "г. Якутск",
+      "reg_date": "17.12.2003",
+      "period": ""
+    },
+    {
+      "title": "НОУ УЦ \"САХАТРАНСНЕФТЕГАЗ\".",
+      "url": "https://synapsenet.ru/organizacii/1041400431808-nou-uc-sahatransneftegaz",
+      "ogrn": "1041400431808",
+      "inn": "1410005565",
+      "kpp": "141001001",
+      "okved": "85.21",
+      "okved_name": "Образование профессиональное среднее",
+      "status": "организация ликвидирована",
+      "region": "у. Вилюйский",
+      "reg_date": "",
+      "period": "с 21.06.2004 по 12.08.2016"
+    },
+    {
+      "title": "ООО \"САХАТРАНСНЕФТЕГАЗ-ПОСТАВКА\"",
+      "url": "https://synapsenet.ru/organizacii/1057748183426-ooo-sahatransneftegazpostavka",
+      "ogrn": "1057748183426",
+      "inn": "7714616670",
+      "kpp": "771401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 12.09.2005 по 07.02.2009"
+    },
+    {
+      "title": "АНО ДПО УМЦ \"СТНГ\"",
+      "url": "https://synapsenet.ru/organizacii/1101400001141-ano-dpo-umc-stng",
+      "ogrn": "1101400001141",
+      "inn": "1435232369",
+      "kpp": "143501001",
+      "okved": "85.42",
+      "okved_name": "Образование профессиональное дополнительное",
+      "status": "организация ликвидирована",
+      "region": "г. Якутск",
+      "reg_date": "",
+      "period": "с 10.09.2010 по 06.05.2024"
+    }
+  ],
+  "okveds": [
+    "35.23",
+    "85.21",
+    "85.42"
+  ],
+  "saved_at": "2026-10-16T11:08:40.111861+00:00"
+}

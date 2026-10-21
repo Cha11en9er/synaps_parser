@@ -1,0 +1,96 @@
+{
+  "index": 1294,
+  "name": "КУБАНЬКАПСТРОЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%A3%D0%91%D0%90%D0%9D%D0%AC%D0%9A%D0%90%D0%9F%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%A3%D0%91%D0%90%D0%9D%D0%AC%D0%9A%D0%90%D0%9F%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "total_text": "найдено 6 лиц",
+  "cards_count": 6,
+  "cards": [
+    {
+      "title": "ООО \"КУБАНЬКАПСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1092310006172-ooo-kubankapstroj",
+      "ogrn": "1092310006172",
+      "inn": "2310143370",
+      "kpp": "231001001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Краснодар",
+      "reg_date": "29.12.2009",
+      "period": ""
+    },
+    {
+      "title": "ООО \"КУБАНЬКАПСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1162375049440-ooo-kubankapstroj",
+      "ogrn": "1162375049440",
+      "inn": "2312253603",
+      "kpp": "231201001",
+      "okved": "49.20.9",
+      "okved_name": "Перевозка прочих грузов",
+      "status": "действующая организация",
+      "region": "г. Краснодар",
+      "reg_date": "01.11.2016",
+      "period": ""
+    },
+    {
+      "title": "ООО \"КУБАНЬКАПСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1112370000214-ooo-kubankapstroj",
+      "ogrn": "1112370000214",
+      "inn": "2370000070",
+      "kpp": "237001001",
+      "okved": "43.12",
+      "okved_name": "Подготовка строительной площадки",
+      "status": "организация ликвидирована",
+      "region": "г. Славянск-на-Кубани",
+      "reg_date": "",
+      "period": "с 20.05.2011 по 21.02.2020"
+    },
+    {
+      "title": "ГПИФ \"КУБАНЬКАПСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1022301216849-gpif-kubankapstroj",
+      "ogrn": "1022301216849",
+      "inn": "2308005319",
+      "kpp": "230801001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Краснодар",
+      "reg_date": "",
+      "period": "с 13.12.2002 по 02.04.2012"
+    },
+    {
+      "title": "ЗАО \"КУБАНЬКАПСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1032307185240-zao-kubankapstroj",
+      "ogrn": "1032307185240",
+      "inn": "2312106736",
+      "kpp": "231201001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Краснодар",
+      "reg_date": "",
+      "period": "с 08.10.2003 по 05.06.2025"
+    },
+    {
+      "title": "ООО \"КУБАНЬКАПСТРОЙ-УМД И ДОН\"",
+      "url": "https://synapsenet.ru/organizacii/1062319004032-ooo-kubankapstrojumd-i-don",
+      "ogrn": "1062319004032",
+      "inn": "2319037094",
+      "kpp": "231901001",
+      "okved": "68.32",
+      "okved_name": "Управление недвижимым имуществом за вознаграждение или на договорной основе",
+      "status": "действующая организация",
+      "region": "г. Сочи",
+      "reg_date": "24.03.2006",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.2",
+    "49.20.9",
+    "43.12",
+    "41.20",
+    "68.32"
+  ],
+  "saved_at": "2026-10-16T10:22:59.803088+00:00"
+}

@@ -1,0 +1,67 @@
+{
+  "index": 1651,
+  "name": "Омскнефтепроводстрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9E%D0%BC%D1%81%D0%BA%D0%BD%D0%B5%D1%84%D1%82%D0%B5%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9E%D0%BC%D1%81%D0%BA%D0%BD%D0%B5%D1%84%D1%82%D0%B5%D0%BF%D1%80%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "АО \"ОНПС\"",
+      "url": "https://synapsenet.ru/organizacii/1025500512861-ao-onps",
+      "ogrn": "1025500512861",
+      "inn": "5501023640",
+      "kpp": "550101001",
+      "okved": "68.20.29",
+      "okved_name": "Аренда и управление собственным или арендованным прочим нежилым недвижимым имуществом",
+      "status": "действующая организация",
+      "region": "г. Омск",
+      "reg_date": "26.09.2002",
+      "period": ""
+    },
+    {
+      "title": "ЗАО \"ОНПС\"",
+      "url": "https://synapsenet.ru/organizacii/1075501007053-zao-onps",
+      "ogrn": "1075501007053",
+      "inn": "5501109449",
+      "kpp": "550101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Омск",
+      "reg_date": "",
+      "period": "с 07.08.2007 по 26.10.2010"
+    },
+    {
+      "title": "ПЕРВИЧНАЯ ПРОФСОЮЗНАЯ ОРГАНИЗАЦИЯ СУМР-1 ОАО \"ОМСКНЕФТЕПРОВОДСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1115500000406-pervichnaya-profsoyuznaya-organizaciya-sumr1-oao-omsknefteprovodstroj",
+      "ogrn": "1115500000406",
+      "inn": "5501034088",
+      "kpp": "550101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Омск",
+      "reg_date": "",
+      "period": "с 18.01.2011 по 18.01.2011"
+    },
+    {
+      "title": "ПЕРВИЧНАЯ ПРОФСОЮЗНАЯ ОРГАНИЗАЦИЯ СУ-2 ОТКРЫТОГО АКЦИОНЕРНОГО ОБЩЕСТВА \"ОМСКНЕФТЕПРОВОДСТРОЙ\" ОМСКОГО ОБЛАСТНОГО СОВЕТА ПРЕДСЕДАТЕЛЕЙ ПРОФКОМОВ ПРОФСОЮЗА РАБОТНИКОВ НЕФТЯНОЙ И ГАЗОВОЙ ПРОМЫШЛЕННОСТИ И СТРОИТЕЛЬСТВА",
+      "url": "https://synapsenet.ru/organizacii/1035500008059-pervichnaya-profsoyuznaya-organizaciya-su2-otkritogo-akcionernogo-obschestva-omsknefteprovodstroj-omskogo-oblastnogo-soveta-predsedatelej-profkomov-profsoyuza-rabotnikov-neftyanoj-i-i",
+      "ogrn": "1035500008059",
+      "inn": "5501041215",
+      "kpp": "550101001",
+      "okved": "94.20",
+      "okved_name": "Деятельность профессиональных союзов",
+      "status": "организация ликвидирована",
+      "region": "г. Омск",
+      "reg_date": "",
+      "period": "с 01.02.2003 по 20.01.2023"
+    }
+  ],
+  "okveds": [
+    "68.20.29",
+    "94.20"
+  ],
+  "saved_at": "2026-10-16T10:43:48.881513+00:00"
+}

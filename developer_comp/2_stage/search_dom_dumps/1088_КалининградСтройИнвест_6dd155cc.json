@@ -1,0 +1,68 @@
+{
+  "index": 1088,
+  "name": "КалининградСтройИнвест",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%B0%D0%BB%D0%B8%D0%BD%D0%B8%D0%BD%D0%B3%D1%80%D0%B0%D0%B4%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"КАЛИНИНГРАДСТРОЙИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1243900000409-ooo-kaliningradstrojinvest",
+      "ogrn": "1243900000409",
+      "inn": "3900020492",
+      "kpp": "390001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Калининград",
+      "reg_date": "17.01.2024",
+      "period": ""
+    },
+    {
+      "title": "АО \"ХОЛДИНГ КАЛИНИНГРАДСТРОЙИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1053903294565-ao-holding-kaliningradstrojinvest",
+      "ogrn": "1053903294565",
+      "inn": "3904069570",
+      "kpp": "390601001",
+      "okved": "68.20",
+      "okved_name": "Аренда и управление собственным или арендованным недвижимым имуществом",
+      "status": "действующая организация",
+      "region": "г. Калининград",
+      "reg_date": "06.10.2005",
+      "period": ""
+    },
+    {
+      "title": "ООО \"КАЛИНИНГРАДСТРОЙИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1043900821557-ooo-kaliningradstrojinvest",
+      "ogrn": "1043900821557",
+      "inn": "3905059038",
+      "kpp": "390501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Калининград",
+      "reg_date": "",
+      "period": "с 09.07.2004 по 01.02.2012"
+    },
+    {
+      "title": "АО \"СЗ \"КСИ\"",
+      "url": "https://synapsenet.ru/organizacii/1023900986625-ao-sz-ksi",
+      "ogrn": "1023900986625",
+      "inn": "3903012789",
+      "kpp": "390601001",
+      "okved": "70.22",
+      "okved_name": "Консультирование по вопросам коммерческой деятельности и управления",
+      "status": "действующая организация",
+      "region": "г. Калининград",
+      "reg_date": "14.08.2002",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "68.20",
+    "70.22"
+  ],
+  "saved_at": "2026-10-16T10:10:20.348807+00:00"
+}

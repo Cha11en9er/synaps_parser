@@ -1,0 +1,40 @@
+{
+  "index": 715,
+  "name": "ДАГЕСТАНСТРОЙМАТЕРИАЛЫ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%94%D0%90%D0%93%D0%95%D0%A1%D0%A2%D0%90%D0%9D%D0%A1%D0%A2%D0%A0%D0%9E%D0%99%D0%9C%D0%90%D0%A2%D0%95%D0%A0%D0%98%D0%90%D0%9B%D0%AB",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%94%D0%90%D0%93%D0%95%D0%A1%D0%A2%D0%90%D0%9D%D0%A1%D0%A2%D0%A0%D0%9E%D0%99%D0%9C%D0%90%D0%A2%D0%95%D0%A0%D0%98%D0%90%D0%9B%D0%AB",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"ДАГЕСТАНСТРОЙМАТЕРИАЛЫ\"",
+      "url": "https://synapsenet.ru/organizacii/1150554001311-ooo-dagestanstrojmateriali",
+      "ogrn": "1150554001311",
+      "inn": "0554001062",
+      "kpp": "055401001",
+      "okved": "82.99",
+      "okved_name": "Деятельность по предоставлению прочих вспомогательных услуг для бизнеса, не включенная в другие группировки",
+      "status": "действующая организация",
+      "region": "г. Каспийск",
+      "reg_date": "30.11.2015",
+      "period": ""
+    },
+    {
+      "title": "ЗАО \"ДАГЕСТАНСТРОЙМАТЕРИАЛЫ\"",
+      "url": "https://synapsenet.ru/organizacii/1020502130769-zao-dagestanstrojmateriali",
+      "ogrn": "1020502130769",
+      "inn": "0545003610",
+      "kpp": "055401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Каспийск",
+      "reg_date": "",
+      "period": "с 07.11.2002 по 30.11.2015"
+    }
+  ],
+  "okveds": [
+    "82.99"
+  ],
+  "saved_at": "2026-10-16T09:50:46.680614+00:00"
+}

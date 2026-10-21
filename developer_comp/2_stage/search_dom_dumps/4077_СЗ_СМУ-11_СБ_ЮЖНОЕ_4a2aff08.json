@@ -1,0 +1,40 @@
+{
+  "index": 4077,
+  "name": "СЗ СМУ-11 СБ ЮЖНОЕ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%9C%D0%A3-11%20%D0%A1%D0%91%20%D0%AE%D0%96%D0%9D%D0%9E%D0%95",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%9C%D0%A3-11%20%D0%A1%D0%91%20%D0%AE%D0%96%D0%9D%D0%9E%D0%95",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"СМУ-11 СБ \"ЮЖНОЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1225500025123-ooo-specializirovannij-zastrojschik-smu11-sb-yuzhnoe",
+      "ogrn": "1225500025123",
+      "inn": "5501280573",
+      "kpp": "550101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Омск",
+      "reg_date": "11.11.2022",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"СМУ-11\"",
+      "url": "https://synapsenet.ru/organizacii/1182130012547-ooo-sz-smu11",
+      "ogrn": "1182130012547",
+      "inn": "2130206380",
+      "kpp": "213001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Чебоксары",
+      "reg_date": "29.11.2018",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T12:46:45.921294+00:00"
+}

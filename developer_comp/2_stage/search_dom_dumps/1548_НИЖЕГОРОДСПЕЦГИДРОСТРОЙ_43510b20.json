@@ -1,0 +1,67 @@
+{
+  "index": 1548,
+  "name": "НИЖЕГОРОДСПЕЦГИДРОСТРОЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9D%D0%98%D0%96%D0%95%D0%93%D0%9E%D0%A0%D0%9E%D0%94%D0%A1%D0%9F%D0%95%D0%A6%D0%93%D0%98%D0%94%D0%A0%D0%9E%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9D%D0%98%D0%96%D0%95%D0%93%D0%9E%D0%A0%D0%9E%D0%94%D0%A1%D0%9F%D0%95%D0%A6%D0%93%D0%98%D0%94%D0%A0%D0%9E%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"НСГС\"",
+      "url": "https://synapsenet.ru/organizacii/1155260001148-ooo-nsgs",
+      "ogrn": "1155260001148",
+      "inn": "5260404396",
+      "kpp": "526001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Нижний Новгород",
+      "reg_date": "02.02.2015",
+      "period": ""
+    },
+    {
+      "title": "ООО \"НСГС\"",
+      "url": "https://synapsenet.ru/organizacii/1155257006541-ooo-nsgs",
+      "ogrn": "1155257006541",
+      "inn": "5257153390",
+      "kpp": "525701001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Нижний Новгород",
+      "reg_date": "11.08.2015",
+      "period": ""
+    },
+    {
+      "title": "ЗАО \"НСГС\"",
+      "url": "https://synapsenet.ru/organizacii/1025202401080-zao-nsgs",
+      "ogrn": "1025202401080",
+      "inn": "5257000442",
+      "kpp": "525701001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Нижний Новгород",
+      "reg_date": "",
+      "period": "с 20.11.2002 по 11.08.2015"
+    },
+    {
+      "title": "ЗАО \"НСГС\"",
+      "url": "https://synapsenet.ru/organizacii/1085257000300-zao-nsgs",
+      "ogrn": "1085257000300",
+      "inn": "5257097681",
+      "kpp": "525701001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Нижний Новгород",
+      "reg_date": "",
+      "period": "с 18.01.2008 по 26.05.2017"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "41.2"
+  ],
+  "saved_at": "2026-10-16T10:37:46.549555+00:00"
+}

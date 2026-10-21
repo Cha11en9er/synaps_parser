@@ -1,0 +1,108 @@
+{
+  "index": 4672,
+  "name": "Сибагропромстрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%B8%D0%B1%D0%B0%D0%B3%D1%80%D0%BE%D0%BF%D1%80%D0%BE%D0%BC%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%B8%D0%B1%D0%B0%D0%B3%D1%80%D0%BE%D0%BF%D1%80%D0%BE%D0%BC%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 7 лиц",
+  "cards_count": 7,
+  "cards": [
+    {
+      "title": "ООО \"\"СИБАГРОПРОМСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1227200002787-ooo-sibagropromstroj",
+      "ogrn": "1227200002787",
+      "inn": "7207021659",
+      "kpp": "720701001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "р-н Исетский",
+      "reg_date": "17.02.2022",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СИБАГРОПРОМСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1182468041447-ooo-sibagropromstroj",
+      "ogrn": "1182468041447",
+      "inn": "2455038996",
+      "kpp": "190001001",
+      "okved": "23.69",
+      "okved_name": "Производство прочих изделий из гипса, бетона или цемента",
+      "status": "действующая организация",
+      "region": "г. Абакан",
+      "reg_date": "02.07.2018",
+      "period": ""
+    },
+    {
+      "title": "АО \"СЗ \"СИБАГРОПРОМСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1022402485181-ao-sz-sibagropromstroj",
+      "ogrn": "1022402485181",
+      "inn": "2465050449",
+      "kpp": "246501001",
+      "okved": "68.20.29",
+      "okved_name": "Аренда и управление собственным или арендованным прочим нежилым недвижимым имуществом",
+      "status": "действующая организация",
+      "region": "г. Красноярск",
+      "reg_date": "26.11.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СИБАГРОПРОМСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1032311678497-ooo-sibagropromstroj",
+      "ogrn": "1032311678497",
+      "inn": "2320100167",
+      "kpp": "232001001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Сочи",
+      "reg_date": "",
+      "period": "с 31.01.2003 по 01.08.2013"
+    },
+    {
+      "title": "ЗАО \" СИБАГРОПРОМСТРОЙ \"",
+      "url": "https://synapsenet.ru/organizacii/1023802139800-zao-sibagropromstroj",
+      "ogrn": "1023802139800",
+      "inn": "3819009690",
+      "kpp": "381901001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Иркутск",
+      "reg_date": "",
+      "period": "с 24.09.2002 по 26.02.2007"
+    },
+    {
+      "title": "ООО \"УК САПС-ИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1107746284260-ooo-uk-sapsinvest",
+      "ogrn": "1107746284260",
+      "inn": "7705914983",
+      "kpp": "770501001",
+      "okved": "43.12",
+      "okved_name": "Подготовка строительной площадки",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 13.04.2010 по 21.11.2016"
+    },
+    {
+      "title": "ООО \" ЖСУ ЗАО \" САПС \"",
+      "url": "https://synapsenet.ru/organizacii/1032402649872-ooo-zhsu-zao-saps",
+      "ogrn": "1032402649872",
+      "inn": "2465077031",
+      "kpp": "246501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Красноярск",
+      "reg_date": "",
+      "period": "с 21.04.2003 по 25.09.2020"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "23.69",
+    "68.20.29",
+    "43.12"
+  ],
+  "saved_at": "2026-10-16T13:15:18.402367+00:00"
+}

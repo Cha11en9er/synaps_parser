@@ -1,0 +1,69 @@
+{
+  "index": 4074,
+  "name": "СЗ СМР-747",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%9C%D0%A0-747",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%9C%D0%A0-747",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"СЗ \"СМР-747\"",
+      "url": "https://synapsenet.ru/organizacii/1233300003562-ooo-sz-smr747",
+      "ogrn": "1233300003562",
+      "inn": "3300001152",
+      "kpp": "330001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Владимир",
+      "reg_date": "27.04.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ\"СМР-646\"",
+      "url": "https://synapsenet.ru/organizacii/1043303412525-ooo-sz-smr646",
+      "ogrn": "1043303412525",
+      "inn": "3329033527",
+      "kpp": "332801001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "в процессе банкротства",
+      "region": "г. Владимир",
+      "reg_date": "15.12.2004",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СМР СЗ\"",
+      "url": "https://synapsenet.ru/organizacii/1127746538633-ooo-smr-sz",
+      "ogrn": "1127746538633",
+      "inn": "7727783290",
+      "kpp": "772701001",
+      "okved": "46.90",
+      "okved_name": "Торговля оптовая неспециализированная",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 12.07.2012 по 05.04.2024"
+    },
+    {
+      "title": "ООО \"СЗ \"ГЛОРАКС-СМР БЕРЕГОВОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1246300027808-ooo-sz-glorakssmr-beregovoj",
+      "ogrn": "1246300027808",
+      "inn": "6317168388",
+      "kpp": "631701001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Самара",
+      "reg_date": "09.10.2024",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "41.2",
+    "46.90",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T12:46:38.549372+00:00"
+}

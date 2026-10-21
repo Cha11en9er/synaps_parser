@@ -1,0 +1,93 @@
+{
+  "index": 2194,
+  "name": "СЗ АИР-СТРОЙ ЗАВЬЯЛОВО",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%90%D0%98%D0%A0-%D0%A1%D0%A2%D0%A0%D0%9E%D0%99%20%D0%97%D0%90%D0%92%D0%AC%D0%AF%D0%9B%D0%9E%D0%92%D0%9E",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%90%D0%98%D0%A0-%D0%A1%D0%A2%D0%A0%D0%9E%D0%99%20%D0%97%D0%90%D0%92%D0%AC%D0%AF%D0%9B%D0%9E%D0%92%D0%9E",
+  "total_text": "найдено 6 лиц",
+  "cards_count": 6,
+  "cards": [
+    {
+      "title": "ООО СЗ \"АИР-СТРОЙ ЗАВЬЯЛОВО\"",
+      "url": "https://synapsenet.ru/organizacii/1231800014160-ooo-sz-airstroj-zavyalovo",
+      "ogrn": "1231800014160",
+      "inn": "1800003884",
+      "kpp": "180001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Ижевск",
+      "reg_date": "10.08.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"АИР-СТРОЙ ЗАРЕЧНОЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1241800007140-ooo-sz-airstroj-zarechnoe",
+      "ogrn": "1241800007140",
+      "inn": "1800018418",
+      "kpp": "180001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Ижевск",
+      "reg_date": "28.05.2024",
+      "period": ""
+    },
+    {
+      "title": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ СЗ \"АИР-СТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1211800011587-obschestvo-s-ogranichennoj-otvetstvennostyu-sz-airstroj",
+      "ogrn": "1211800011587",
+      "inn": "1840105000",
+      "kpp": "184101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Ижевск",
+      "reg_date": "17.06.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ\"АИР\"",
+      "url": "https://synapsenet.ru/organizacii/1245100004027-ooo-sz-air",
+      "ogrn": "1245100004027",
+      "inn": "5190100810",
+      "kpp": "519001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Мурманск",
+      "reg_date": "15.08.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"АИР ПЛЮС\"",
+      "url": "https://synapsenet.ru/organizacii/1241800005468-ooo-sz-air-plyus",
+      "ogrn": "1241800005468",
+      "inn": "1800016756",
+      "kpp": "180001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Ижевск",
+      "reg_date": "11.04.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"АРКТИКИНВЕСТРЕСУРС\", ООО \"СЗ \"АИР\"",
+      "url": "https://synapsenet.ru/organizacii/1092901009310-ooo-sz-arktikinvestresurs-ooo-sz-air",
+      "ogrn": "1092901009310",
+      "inn": "2901196553",
+      "kpp": "290101001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Архангельск",
+      "reg_date": "28.10.2009",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "71.12.2",
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T11:15:44.617056+00:00"
+}

@@ -1,0 +1,55 @@
+{
+  "index": 4498,
+  "name": "СЗ ФРИДОМ ВИЛЛЭДЖ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A4%D0%A0%D0%98%D0%94%D0%9E%D0%9C%20%D0%92%D0%98%D0%9B%D0%9B%D0%AD%D0%94%D0%96",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A4%D0%A0%D0%98%D0%94%D0%9E%D0%9C%20%D0%92%D0%98%D0%9B%D0%9B%D0%AD%D0%94%D0%96",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО СЗ \"ФРИДОМ ВИЛЛЭДЖ\"",
+      "url": "https://synapsenet.ru/organizacii/1255400015353-ooo-sz-fridom-villedzh",
+      "ogrn": "1255400015353",
+      "inn": "5410166707",
+      "kpp": "541001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "р-н Мошковский",
+      "reg_date": "15.05.2025",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"ФРИДОМ\"",
+      "url": "https://synapsenet.ru/organizacii/1207700438087-ooo-sz-fridom",
+      "ogrn": "1207700438087",
+      "inn": "9729302327",
+      "kpp": "772901001",
+      "okved": "68.20.1",
+      "okved_name": "Аренда и управление собственным или арендованным жилым недвижимым имуществом",
+      "status": "в процессе ликвидации",
+      "region": "г. Москва",
+      "reg_date": "18.11.2020",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"ФРИДОМ-СИТИ\"",
+      "url": "https://synapsenet.ru/organizacii/1075405020855-ooo-sz-fridomsiti",
+      "ogrn": "1075405020855",
+      "inn": "5405351743",
+      "kpp": "540501001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Новосибирск",
+      "reg_date": "22.08.2007",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "68.20.1",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T13:06:18.308747+00:00"
+}

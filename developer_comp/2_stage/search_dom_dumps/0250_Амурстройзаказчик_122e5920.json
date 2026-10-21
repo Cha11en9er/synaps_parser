@@ -1,0 +1,54 @@
+{
+  "index": 250,
+  "name": "Амурстройзаказчик",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%BC%D1%83%D1%80%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%BC%D1%83%D1%80%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"СЗ \"АМУРСТРОЙЗАКАЗЧИК\"",
+      "url": "https://synapsenet.ru/organizacii/1102801011895-ooo-sz-amurstrojzakazchik",
+      "ogrn": "1102801011895",
+      "inn": "2801154158",
+      "kpp": "237601001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Крымск",
+      "reg_date": "17.09.2010",
+      "period": ""
+    },
+    {
+      "title": "ОАО \"АМУРСТРОЙЗАКАЗЧИК\"",
+      "url": "https://synapsenet.ru/organizacii/1022800528849-oao-amurstrojzakazchik",
+      "ogrn": "1022800528849",
+      "inn": "2801018236",
+      "kpp": "280101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Благовещенск",
+      "reg_date": "",
+      "period": "с 31.12.2002 по 17.09.2010"
+    },
+    {
+      "title": "ЧОУ ДПО \"УЧЕБНЫЙ ЦЕНТР \"АМУРСТРОЙЗАКАЗЧИК\"",
+      "url": "https://synapsenet.ru/organizacii/1042800013211-chou-dpo-uchebnij-centr-amurstrojzakazchik",
+      "ogrn": "1042800013211",
+      "inn": "2801095382",
+      "kpp": "280101001",
+      "okved": "85.23",
+      "okved_name": "Подготовка кадров высшей квалификации",
+      "status": "организация ликвидирована",
+      "region": "г. Благовещенск",
+      "reg_date": "",
+      "period": "с 03.03.2004 по 27.12.2024"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "85.23"
+  ],
+  "saved_at": "2026-10-16T09:20:55.721046+00:00"
+}

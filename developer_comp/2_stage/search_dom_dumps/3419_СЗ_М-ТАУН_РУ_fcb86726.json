@@ -1,0 +1,81 @@
+{
+  "index": 3419,
+  "name": "СЗ М-ТАУН РУ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%9C-%D0%A2%D0%90%D0%A3%D0%9D%20%D0%A0%D0%A3",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%9C-%D0%A2%D0%90%D0%A3%D0%9D%20%D0%A0%D0%A3",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ООО СЗ \"М-ТАУН РУ\"",
+      "url": "https://synapsenet.ru/organizacii/1254600004405-ooo-sz-mtaun-ru",
+      "ogrn": "1254600004405",
+      "inn": "4600005382",
+      "kpp": "460001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "р-н Курский",
+      "reg_date": "24.10.2025",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"РЕГИОН-ТАУН\"",
+      "url": "https://synapsenet.ru/organizacii/1256800003437-ooo-sz-regiontaun",
+      "ogrn": "1256800003437",
+      "inn": "6800016353",
+      "kpp": "680001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Тамбов",
+      "reg_date": "25.09.2025",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"КРОМ ТАУН\"",
+      "url": "https://synapsenet.ru/organizacii/1235400036190-ooo-sz-krom-taun",
+      "ogrn": "1235400036190",
+      "inn": "5405088404",
+      "kpp": "540501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Новосибирск",
+      "reg_date": "01.09.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"АВЕРС-РУ\"",
+      "url": "https://synapsenet.ru/organizacii/1149102070435-ooo-sz-aversru",
+      "ogrn": "1149102070435",
+      "inn": "9103008294",
+      "kpp": "910301001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Ялта",
+      "reg_date": "30.10.2014",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ\"СТ\"",
+      "url": "https://synapsenet.ru/organizacii/1247700206599-ooo-sz-st",
+      "ogrn": "1247700206599",
+      "inn": "9728127739",
+      "kpp": "772801001",
+      "okved": "41.10",
+      "okved_name": "Разработка строительных проектов",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "04.03.2024",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "71.12.2",
+    "41.10"
+  ],
+  "saved_at": "2026-10-16T12:16:08.245812+00:00"
+}

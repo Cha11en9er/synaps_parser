@@ -1,0 +1,40 @@
+{
+  "index": 965,
+  "name": "Иеса ЖБИ Южный",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%98%D0%B5%D1%81%D0%B0%20%D0%96%D0%91%D0%98%20%D0%AE%D0%B6%D0%BD%D1%8B%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%98%D0%B5%D1%81%D0%B0%20%D0%96%D0%91%D0%98%20%D0%AE%D0%B6%D0%BD%D1%8B%D0%B9",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"ЖБИ ЮЖНЫЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1255600003350-ooo-zhbi-yuzhnij",
+      "ogrn": "1255600003350",
+      "inn": "5609207970",
+      "kpp": "560901001",
+      "okved": "23.61",
+      "okved_name": "Производство изделий из бетона для использования в строительстве",
+      "status": "действующая организация",
+      "region": "г. Оренбург",
+      "reg_date": "09.04.2025",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЮПК-ЖБИ\"",
+      "url": "https://synapsenet.ru/organizacii/1252300035173-ooo-yupkzhbi",
+      "ogrn": "1252300035173",
+      "inn": "2309187492",
+      "kpp": "237301001",
+      "okved": "23.61",
+      "okved_name": "Производство изделий из бетона для использования в строительстве",
+      "status": "действующая организация",
+      "region": "р-н Динской",
+      "reg_date": "09.07.2025",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "23.61"
+  ],
+  "saved_at": "2026-10-16T10:03:07.495083+00:00"
+}

@@ -1,0 +1,54 @@
+{
+  "index": 5220,
+  "name": "ТВЕРЬЖИЛСТРОЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A2%D0%92%D0%95%D0%A0%D0%AC%D0%96%D0%98%D0%9B%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A2%D0%92%D0%95%D0%A0%D0%AC%D0%96%D0%98%D0%9B%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"ТВЕРЬЖИЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1166952060604-ooo-tverzhilstroj",
+      "ogrn": "1166952060604",
+      "inn": "6950192615",
+      "kpp": "695001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Тверь",
+      "reg_date": "10.05.2016",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ТЖС\"",
+      "url": "https://synapsenet.ru/organizacii/1166952066214-ooo-tzhs",
+      "ogrn": "1166952066214",
+      "inn": "6952008646",
+      "kpp": "695001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Тверь",
+      "reg_date": "",
+      "period": "с 10.08.2016 по 06.08.2024"
+    },
+    {
+      "title": "ТОВАРИЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"ТВЕРЬЖИЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1116952022252-tovarischestvo-s-ogranichennoj-otvetstvennostyu-tverzhilstroj",
+      "ogrn": "1116952022252",
+      "inn": "6904010691",
+      "kpp": "690101010",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Тверь",
+      "reg_date": "",
+      "period": "с 12.07.2011 по 12.07.2011"
+    }
+  ],
+  "okveds": [
+    "71.12.2",
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T13:47:15.759997+00:00"
+}

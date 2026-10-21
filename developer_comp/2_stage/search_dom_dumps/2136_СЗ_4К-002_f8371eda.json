@@ -1,0 +1,66 @@
+{
+  "index": 2136,
+  "name": "СЗ 4К-002",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%204%D0%9A-002",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%204%D0%9A-002",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО СЗ \"4К-002\"",
+      "url": "https://synapsenet.ru/organizacii/1247700289176-ooo-sz-4k002",
+      "ogrn": "1247700289176",
+      "inn": "9727073583",
+      "kpp": "772701001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "03.04.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"4К\"",
+      "url": "https://synapsenet.ru/organizacii/1237700411057-ooo-sz-4k",
+      "ogrn": "1237700411057",
+      "inn": "9727037401",
+      "kpp": "772701001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "15.06.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"4К-003\"",
+      "url": "https://synapsenet.ru/organizacii/1247700374140-ooo-sz-4k003",
+      "ogrn": "1247700374140",
+      "inn": "9727076383",
+      "kpp": "772701001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "17.05.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"4К-004\"",
+      "url": "https://synapsenet.ru/organizacii/1257700015319-ooo-sz-4k004",
+      "ogrn": "1257700015319",
+      "inn": "9727097464",
+      "kpp": "772701001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "20.01.2025",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T11:13:08.634485+00:00"
+}

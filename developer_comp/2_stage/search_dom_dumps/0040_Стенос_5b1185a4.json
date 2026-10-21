@@ -1,0 +1,107 @@
+{
+  "index": 40,
+  "name": "Стенос",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D1%82%D0%B5%D0%BD%D0%BE%D1%81",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D1%82%D0%B5%D0%BD%D0%BE%D1%81",
+  "total_text": "найдено 7 лиц",
+  "cards_count": 7,
+  "cards": [
+    {
+      "title": "ООО \"СТЕНОС\"",
+      "url": "https://synapsenet.ru/organizacii/1052301889133-ooo-stenos",
+      "ogrn": "1052301889133",
+      "inn": "2304044204",
+      "kpp": "230401001",
+      "okved": "68.10.21",
+      "okved_name": "Покупка и продажа собственного жилого недвижимого имущества",
+      "status": "действующая организация",
+      "region": "г. Геленджик",
+      "reg_date": "29.11.2005",
+      "period": ""
+    },
+    {
+      "title": "СТЕНОС",
+      "url": "https://synapsenet.ru/organizacii/5087746219380-stenos",
+      "ogrn": "5087746219380",
+      "inn": "7719059895",
+      "kpp": "771901050",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 11.10.2008 по 11.10.2008"
+    },
+    {
+      "title": "ООО \"СТЕНОС\"",
+      "url": "https://synapsenet.ru/organizacii/1024201979658-ooo-stenos",
+      "ogrn": "1024201979658",
+      "inn": "4229003993",
+      "kpp": "422901001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Топки",
+      "reg_date": "",
+      "period": "с 19.08.2002 по 09.10.2003"
+    },
+    {
+      "title": "ООО \"СТЕНОС\"",
+      "url": "https://synapsenet.ru/organizacii/1211600083177-ooo-stenos",
+      "ogrn": "1211600083177",
+      "inn": "1650407733",
+      "kpp": "165001001",
+      "okved": "43.29",
+      "okved_name": "Производство прочих строительно-монтажных работ",
+      "status": "организация ликвидирована",
+      "region": "г. Набережные Челны",
+      "reg_date": "",
+      "period": "с 25.11.2021 по 26.07.2022"
+    },
+    {
+      "title": "СТЕНОС ФИРМА ТОО",
+      "url": "https://synapsenet.ru/organizacii/5147746177849-stenos-firma-too",
+      "ogrn": "5147746177849",
+      "inn": "7729008956",
+      "kpp": "772901090",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 06.10.2014 по 06.10.2014"
+    },
+    {
+      "title": "ООО. М.П.Ф. \"СТЕНОС\"",
+      "url": "https://synapsenet.ru/organizacii/1133019002060-ooo-mpf-stenos",
+      "ogrn": "1133019002060",
+      "inn": "3019008087",
+      "kpp": "301901001",
+      "okved": "88.99",
+      "okved_name": "Предоставление прочих социальных услуг без обеспечения проживания, не включенных в другие группировки",
+      "status": "действующая организация",
+      "region": "г. Астрахань",
+      "reg_date": "27.06.2013",
+      "period": ""
+    },
+    {
+      "title": "\"СТЕНОС\" СТРАХОВАЯ КОМПАНИЯ АОЗТ",
+      "url": "https://synapsenet.ru/organizacii/1127847517401--stenos-strahovaya-kompaniya-aozt",
+      "ogrn": "1127847517401",
+      "inn": "7813014330",
+      "kpp": "781301010",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 03.10.2012 по 03.10.2012"
+    }
+  ],
+  "okveds": [
+    "68.10.21",
+    "43.29",
+    "88.99"
+  ],
+  "saved_at": "2026-10-16T09:01:59.024868+00:00"
+}

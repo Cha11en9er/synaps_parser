@@ -1,0 +1,41 @@
+{
+  "index": 99,
+  "name": "SG Development",
+  "query_url": "https://synapsenet.ru/organizacii?query=SG%20Development",
+  "final_url": "https://synapsenet.ru/organizacii?query=SG%20Development",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "OOO \"SG\"",
+      "url": "https://synapsenet.ru/organizacii/1056503006878-ooo-sg",
+      "ogrn": "1056503006878",
+      "inn": "6506009062",
+      "kpp": "650601001",
+      "okved": "42.21",
+      "okved_name": "Строительство инженерных коммуникаций для водоснабжения и водоотведения, газоснабжения",
+      "status": "организация ликвидирована",
+      "region": "г. Оха",
+      "reg_date": "",
+      "period": "с 29.12.2005 по 15.05.2024"
+    },
+    {
+      "title": "ООО \"ГЕРМЕС-SG\"",
+      "url": "https://synapsenet.ru/organizacii/1052329059397-ooo-sggermes",
+      "ogrn": "1052329059397",
+      "inn": "2352036683",
+      "kpp": "235201001",
+      "okved": "46.1",
+      "okved_name": "Торговля оптовая за вознаграждение или на договорной основе",
+      "status": "организация ликвидирована",
+      "region": "г. Темрюк",
+      "reg_date": "",
+      "period": "с 10.03.2005 по 22.09.2017"
+    }
+  ],
+  "okveds": [
+    "42.21",
+    "46.1"
+  ],
+  "saved_at": "2026-10-16T09:11:36.203443+00:00"
+}

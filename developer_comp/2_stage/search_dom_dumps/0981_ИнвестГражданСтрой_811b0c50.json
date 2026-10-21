@@ -1,0 +1,93 @@
+{
+  "index": 981,
+  "name": "ИнвестГражданСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%93%D1%80%D0%B0%D0%B6%D0%B4%D0%B0%D0%BD%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%93%D1%80%D0%B0%D0%B6%D0%B4%D0%B0%D0%BD%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 6 лиц",
+  "cards_count": 6,
+  "cards": [
+    {
+      "title": "ООО \"ИНВЕСТГРАЖДАНСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1077203022709-ooo-investgrazhdanstroj",
+      "ogrn": "1077203022709",
+      "inn": "7204109295",
+      "kpp": "720501001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Ишим",
+      "reg_date": "13.04.2007",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ИНВЕСТГРАЖДАНСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1028601496791-ooo-investgrazhdanstroj",
+      "ogrn": "1028601496791",
+      "inn": "8610013615",
+      "kpp": "861001001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Нягань",
+      "reg_date": "",
+      "period": "с 27.09.2002 по 23.09.2014"
+    },
+    {
+      "title": "ООО \"ИНВЕСТГРАЖДАНСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1056604396595-ooo-investgrazhdanstroj",
+      "ogrn": "1056604396595",
+      "inn": "6672182200",
+      "kpp": "667201001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Екатеринбург",
+      "reg_date": "",
+      "period": "с 28.02.2005 по 16.02.2007"
+    },
+    {
+      "title": "ОАО ФСК \"ИНВЕСТГРАЖДАНСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1026605227549-oao-fsk-investgrazhdanstroj",
+      "ogrn": "1026605227549",
+      "inn": "6661052680",
+      "kpp": "666101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Екатеринбург",
+      "reg_date": "",
+      "period": "с 11.09.2002 по 26.09.2012"
+    },
+    {
+      "title": "ООО \"ФИРМА \"ИНВЕСТГРАЖДАНСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1037735003415-ooo-firma-investgrazhdanstroj",
+      "ogrn": "1037735003415",
+      "inn": "7735118330",
+      "kpp": "773501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Зеленоград",
+      "reg_date": "",
+      "period": "с 01.02.2003 по 31.10.2006"
+    },
+    {
+      "title": "ООО \"СЗ \"ИГС\"",
+      "url": "https://synapsenet.ru/organizacii/1173443009398-ooo-sz-igs",
+      "ogrn": "1173443009398",
+      "inn": "3444264106",
+      "kpp": "344401001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Волгоград",
+      "reg_date": "13.04.2017",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.2",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T10:03:50.058194+00:00"
+}

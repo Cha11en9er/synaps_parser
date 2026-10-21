@@ -1,0 +1,54 @@
+{
+  "index": 2072,
+  "name": "СБСБ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%91%D0%A1%D0%91",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%91%D0%A1%D0%91",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"СБСБ\"",
+      "url": "https://synapsenet.ru/organizacii/1082632005180-ooo-sbsb",
+      "ogrn": "1082632005180",
+      "inn": "2632092497",
+      "kpp": "263201001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Пятигорск",
+      "reg_date": "07.10.2008",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СБСБ-ПЛЮС\"",
+      "url": "https://synapsenet.ru/organizacii/1132651018763-ooo-sbsbplyus",
+      "ogrn": "1132651018763",
+      "inn": "2632808773",
+      "kpp": "263201001",
+      "okved": "43.11",
+      "okved_name": "Разборка и снос зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Пятигорск",
+      "reg_date": "",
+      "period": "с 22.07.2013 по 19.07.2016"
+    },
+    {
+      "title": "СБСБ ВИЗ ООО",
+      "url": "https://synapsenet.ru/organizacii/1097760179538-sbsb-viz-ooo",
+      "ogrn": "1097760179538",
+      "inn": "7710271488",
+      "kpp": "771001010",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 07.02.2009 по 07.02.2009"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "43.11"
+  ],
+  "saved_at": "2026-10-16T11:08:47.326215+00:00"
+}

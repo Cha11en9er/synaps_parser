@@ -1,0 +1,77 @@
+{
+  "index": 61,
+  "name": "KASKAD Family",
+  "query_url": "https://synapsenet.ru/organizacii?query=KASKAD%20Family",
+  "final_url": "https://synapsenet.ru/organizacii?query=KASKAD%20Family",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ООО \"NORTH FAMILY\"",
+      "url": "https://synapsenet.ru/organizacii/1051402059565-ooo-north-family",
+      "ogrn": "1051402059565",
+      "inn": "1435157873",
+      "kpp": "143501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Якутск",
+      "reg_date": "",
+      "period": "с 23.03.2005 по 21.09.2011"
+    },
+    {
+      "title": "ООО \"BIG FAMILY\"",
+      "url": "https://synapsenet.ru/organizacii/1033400718856-ooo-big-family",
+      "ogrn": "1033400718856",
+      "inn": "3423018766",
+      "kpp": "342301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Палласовка",
+      "reg_date": "",
+      "period": "с 01.09.2003 по 10.07.2006"
+    },
+    {
+      "title": "ЗАО \"HПО КАСКАД\"",
+      "url": "https://synapsenet.ru/organizacii/1037739766690-zao-hpo-kaskad",
+      "ogrn": "1037739766690",
+      "inn": "7714110629",
+      "kpp": "771401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 26.02.2003 по 14.06.2019"
+    },
+    {
+      "title": "АКЦИОНЕРНОЕ ОБЩЕСТВО ЗАКРЫТОГО ТИПА \"ЦЕНТР СЕМЕЙНОЙ МЕДИЦИНЫ\"\"CITY FAMILY MEDIKAL CENTER\"",
+      "url": "https://synapsenet.ru/organizacii/1127847015328-akcionernoe-obschestvo-zakritogo-tipa-centr-semejnoj-medicini-city-family-medikal-center",
+      "ogrn": "1127847015328",
+      "inn": "7805013083",
+      "kpp": "780501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 11.01.2012 по 11.01.2012"
+    },
+    {
+      "title": "ФОНД \"ОДНА СЕМЬЯ - ONE FAMILY\"",
+      "url": "https://synapsenet.ru/organizacii/1067400002383-fond-odna-semya-one-family",
+      "ogrn": "1067400002383",
+      "inn": "7453158221",
+      "kpp": "745301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Челябинск",
+      "reg_date": "",
+      "period": "с 30.03.2006 по 31.12.2013"
+    }
+  ],
+  "okveds": [],
+  "saved_at": "2026-10-16T09:09:26.997791+00:00"
+}

@@ -1,0 +1,38 @@
+{
+  "index": 461,
+  "name": "ВарьёганНефтеСпецСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%92%D0%B0%D1%80%D1%8C%D1%91%D0%B3%D0%B0%D0%BD%D0%9D%D0%B5%D1%84%D1%82%D0%B5%D0%A1%D0%BF%D0%B5%D1%86%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%92%D0%B0%D1%80%D1%8C%D1%91%D0%B3%D0%B0%D0%BD%D0%9D%D0%B5%D1%84%D1%82%D0%B5%D0%A1%D0%BF%D0%B5%D1%86%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ДАОЗТ \"ВНСС\" АОЗТ \"РАДУГА-СТРОЙСЕРВИС\"",
+      "url": "https://synapsenet.ru/organizacii/1032600363542-daozt-vnss-aozt-radugastrojservis",
+      "ogrn": "1032600363542",
+      "inn": "2625001788",
+      "kpp": "262501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Георгиевск",
+      "reg_date": "",
+      "period": "с 08.08.2003 по 29.01.2004"
+    },
+    {
+      "title": "ПРОФСОЮЗНЫЙ КОМИТЕТ ЗАКРЫТОГО АКЦИОНЕРНОГО ОБЩЕСТВА ВАРЬЕГАННЕФТЕСПЕЦСТРОЙ",
+      "url": "https://synapsenet.ru/organizacii/1118600001288-profsoyuznij-komitet-zakritogo-akcionernogo-obschestva-vareganneftespecstroj",
+      "ogrn": "1118600001288",
+      "inn": "8609013402",
+      "kpp": "860901001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Радужный",
+      "reg_date": "",
+      "period": "с 02.08.2011 по 02.08.2011"
+    }
+  ],
+  "okveds": [],
+  "saved_at": "2026-10-16T09:36:04.778098+00:00"
+}

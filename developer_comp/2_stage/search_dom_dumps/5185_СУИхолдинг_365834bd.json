@@ -1,0 +1,41 @@
+{
+  "index": 5185,
+  "name": "СУИхолдинг",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%A3%D0%98%D1%85%D0%BE%D0%BB%D0%B4%D0%B8%D0%BD%D0%B3",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%A3%D0%98%D1%85%D0%BE%D0%BB%D0%B4%D0%B8%D0%BD%D0%B3",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"ХК \"СУИХОЛДИНГ\"",
+      "url": "https://synapsenet.ru/organizacii/5107746046469-ooo-hk-suiholding",
+      "ogrn": "5107746046469",
+      "inn": "7704772380",
+      "kpp": "771501001",
+      "okved": "77.11",
+      "okved_name": "Аренда и лизинг легковых автомобилей и легких автотранспортных средств",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "22.12.2010",
+      "period": ""
+    },
+    {
+      "title": "АО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"СУИХОЛДИНГ\"",
+      "url": "https://synapsenet.ru/organizacii/1027700104410-ao-specializirovannij-zastrojschik-suiholding",
+      "ogrn": "1027700104410",
+      "inn": "7715152910",
+      "kpp": "771801001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 06.08.2002 по 02.10.2023"
+    }
+  ],
+  "okveds": [
+    "77.11",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T13:44:12.438094+00:00"
+}

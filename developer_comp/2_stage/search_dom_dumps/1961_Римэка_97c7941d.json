@@ -1,0 +1,40 @@
+{
+  "index": 1961,
+  "name": "Римэка",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A0%D0%B8%D0%BC%D1%8D%D0%BA%D0%B0",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A0%D0%B8%D0%BC%D1%8D%D0%BA%D0%B0",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"РИМЭКА\"",
+      "url": "https://synapsenet.ru/organizacii/1025003210407-ooo-rimeka",
+      "ogrn": "1025003210407",
+      "inn": "5027087230",
+      "kpp": "502701001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Люберцы",
+      "reg_date": "",
+      "period": "с 04.10.2002"
+    },
+    {
+      "title": "ООО \"РИМЭКА\"",
+      "url": "https://synapsenet.ru/organizacii/1025003212849-ooo-rimeka",
+      "ogrn": "1025003212849",
+      "inn": "5027087230",
+      "kpp": "500101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "в процессе банкротства",
+      "region": "г. Балашиха",
+      "reg_date": "11.11.2002",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T10:59:56.908625+00:00"
+}

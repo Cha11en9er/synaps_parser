@@ -1,0 +1,41 @@
+{
+  "index": 3250,
+  "name": "СЗ ЛОК ВЕРА",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%9B%D0%9E%D0%9A%20%D0%92%D0%95%D0%A0%D0%90",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%9B%D0%9E%D0%9A%20%D0%92%D0%95%D0%A0%D0%90",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"СЗ \"ЛОК \"ВЕРА\"",
+      "url": "https://synapsenet.ru/organizacii/1217700052228-ooo-sz-lok-vera",
+      "ogrn": "1217700052228",
+      "inn": "7707448632",
+      "kpp": "236601001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Сочи",
+      "reg_date": "10.02.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"ВЕРА-СТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1177232002265-ooo-sz-verastroj",
+      "ogrn": "1177232002265",
+      "inn": "7203408743",
+      "kpp": "720301001",
+      "okved": "77.29",
+      "okved_name": "Прокат и аренда прочих предметов личного пользования и хозяйственно-бытового назначения",
+      "status": "действующая организация",
+      "region": "г. Тюмень",
+      "reg_date": "30.01.2017",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "77.29"
+  ],
+  "saved_at": "2026-10-16T12:07:40.087253+00:00"
+}

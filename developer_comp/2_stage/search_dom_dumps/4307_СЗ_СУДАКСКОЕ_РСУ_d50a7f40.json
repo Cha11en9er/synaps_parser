@@ -1,0 +1,54 @@
+{
+  "index": 4307,
+  "name": "СЗ СУДАКСКОЕ РСУ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%A3%D0%94%D0%90%D0%9A%D0%A1%D0%9A%D0%9E%D0%95%20%D0%A0%D0%A1%D0%A3",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%A3%D0%94%D0%90%D0%9A%D0%A1%D0%9A%D0%9E%D0%95%20%D0%A0%D0%A1%D0%A3",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"СЗ \"СУДАКСКОЕ РСУ-1\"",
+      "url": "https://synapsenet.ru/organizacii/1232200008556-ooo-sz-sudakskoe-rsu1",
+      "ogrn": "1232200008556",
+      "inn": "2225229280",
+      "kpp": "910801001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Судак",
+      "reg_date": "04.05.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"СУДАКСКОЕ РСУ\"",
+      "url": "https://synapsenet.ru/organizacii/1159102020912-ooo-specializirovannij-zastrojschik-sudakskoe-rsu",
+      "ogrn": "1159102020912",
+      "inn": "9108103777",
+      "kpp": "910801001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Судак",
+      "reg_date": "10.01.2015",
+      "period": ""
+    },
+    {
+      "title": "ООО РСУ СЗ \"РАЗВИТИЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1083668020303-ooo-rsu-sz-razvitie",
+      "ogrn": "1083668020303",
+      "inn": "3662134153",
+      "kpp": "366201001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Воронеж",
+      "reg_date": "20.05.2008",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T12:56:58.022045+00:00"
+}

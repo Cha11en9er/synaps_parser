@@ -1,0 +1,54 @@
+{
+  "index": 1104,
+  "name": "КапиталЖилСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%B0%D0%BF%D0%B8%D1%82%D0%B0%D0%BB%D0%96%D0%B8%D0%BB%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%B0%D0%BF%D0%B8%D1%82%D0%B0%D0%BB%D0%96%D0%B8%D0%BB%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"КАПИТАЛЖИЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1132223004803-ooo-kapitalzhilstroj",
+      "ogrn": "1132223004803",
+      "inn": "2222812896",
+      "kpp": "222201001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Барнаул",
+      "reg_date": "09.04.2013",
+      "period": ""
+    },
+    {
+      "title": "ООО \"КАПИТАЛЖИЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1064401039669-ooo-kapitalzhilstroj",
+      "ogrn": "1064401039669",
+      "inn": "4401067592",
+      "kpp": "440101001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Кострома",
+      "reg_date": "",
+      "period": "с 28.08.2006 по 25.07.2019"
+    },
+    {
+      "title": "ООО \"КАПИТАЛЖИЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1133525007967-ooo-kapitalzhilstroj",
+      "ogrn": "1133525007967",
+      "inn": "3525299795",
+      "kpp": "352501001",
+      "okved": "46.73.6",
+      "okved_name": "Торговля оптовая прочими строительными материалами и изделиями",
+      "status": "организация ликвидирована",
+      "region": "г. Вологда",
+      "reg_date": "",
+      "period": "с 07.05.2013 по 05.06.2026"
+    }
+  ],
+  "okveds": [
+    "41.2",
+    "46.73.6"
+  ],
+  "saved_at": "2026-10-16T10:11:25.115839+00:00"
+}

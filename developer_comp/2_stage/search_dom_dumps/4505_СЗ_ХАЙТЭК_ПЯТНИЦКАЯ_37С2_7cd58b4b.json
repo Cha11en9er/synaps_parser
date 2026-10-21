@@ -1,0 +1,41 @@
+{
+  "index": 4505,
+  "name": "СЗ ХАЙТЭК ПЯТНИЦКАЯ 37С2",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A5%D0%90%D0%99%D0%A2%D0%AD%D0%9A%20%D0%9F%D0%AF%D0%A2%D0%9D%D0%98%D0%A6%D0%9A%D0%90%D0%AF%2037%D0%A12",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A5%D0%90%D0%99%D0%A2%D0%AD%D0%9A%20%D0%9F%D0%AF%D0%A2%D0%9D%D0%98%D0%A6%D0%9A%D0%90%D0%AF%2037%D0%A12",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК ХАЙТЭК ПЯТНИЦКАЯ 37С2\"",
+      "url": "https://synapsenet.ru/organizacii/1207700361483-ooo-specializirovannij-zastrojschik-hajtek-pyatnickaya-37s2",
+      "ogrn": "1207700361483",
+      "inn": "9715390348",
+      "kpp": "772501001",
+      "okved": "68.10",
+      "okved_name": "Покупка и продажа собственного недвижимого имущества",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "30.09.2020",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ СМАЙНЭКС ПЯТНИЦКАЯ\"",
+      "url": "https://synapsenet.ru/organizacii/1247700279991-ooo-sz-smajneks-pyatnickaya",
+      "ogrn": "1247700279991",
+      "inn": "9706044359",
+      "kpp": "770601001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "01.04.2024",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "68.10",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T13:06:37.634911+00:00"
+}

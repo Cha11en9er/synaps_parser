@@ -1,0 +1,55 @@
+{
+  "index": 5569,
+  "name": "Черногорскпромстрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA%D0%BF%D1%80%D0%BE%D0%BC%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A7%D0%B5%D1%80%D0%BD%D0%BE%D0%B3%D0%BE%D1%80%D1%81%D0%BA%D0%BF%D1%80%D0%BE%D0%BC%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "АО \"ЧПС\"",
+      "url": "https://synapsenet.ru/organizacii/1021900698786-ao-chps",
+      "ogrn": "1021900698786",
+      "inn": "1903000878",
+      "kpp": "190301001",
+      "okved": "43.12",
+      "okved_name": "Подготовка строительной площадки",
+      "status": "действующая организация",
+      "region": "г. Черногорск",
+      "reg_date": "05.10.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО СК \"ЧЕРНОГОРСКПРОМСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1131903000020-ooo-sk-chernogorskpromstroj",
+      "ogrn": "1131903000020",
+      "inn": "1903022060",
+      "kpp": "190301001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Черногорск",
+      "reg_date": "",
+      "period": "с 16.01.2013 по 10.06.2019"
+    },
+    {
+      "title": "ООО \"ЧПС\"",
+      "url": "https://synapsenet.ru/organizacii/1091903001630-ooo-chps",
+      "ogrn": "1091903001630",
+      "inn": "1903019815",
+      "kpp": "245501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Минусинск",
+      "reg_date": "31.12.2009",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "43.12",
+    "41.2",
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T14:09:49.674648+00:00"
+}

@@ -1,0 +1,93 @@
+{
+  "index": 888,
+  "name": "ЖилПромИнвест",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%96%D0%B8%D0%BB%D0%9F%D1%80%D0%BE%D0%BC%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%96%D0%B8%D0%BB%D0%9F%D1%80%D0%BE%D0%BC%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82",
+  "total_text": "найдено 6 лиц",
+  "cards_count": 6,
+  "cards": [
+    {
+      "title": "ООО \"ЖИЛПРОМИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1150280034552-ooo-zhilprominvest",
+      "ogrn": "1150280034552",
+      "inn": "0274905474",
+      "kpp": "027601001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Уфа",
+      "reg_date": "01.06.2015",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЖИЛПРОМИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1026900576207-ooo-zhilprominvest",
+      "ogrn": "1026900576207",
+      "inn": "6901020540",
+      "kpp": "690101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Тверь",
+      "reg_date": "",
+      "period": "с 16.12.2002 по 11.07.2011"
+    },
+    {
+      "title": "ООО \"ЖИЛПРОМИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1040204624822-ooo-zhilprominvest",
+      "ogrn": "1040204624822",
+      "inn": "0278106850",
+      "kpp": "027801001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Уфа",
+      "reg_date": "",
+      "period": "с 14.12.2004 по 14.01.2026"
+    },
+    {
+      "title": "ООО \"ЖИЛПРОМИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1089847288310-ooo-zhilprominvest",
+      "ogrn": "1089847288310",
+      "inn": "7813420854",
+      "kpp": "781301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 22.07.2008 по 20.04.2016"
+    },
+    {
+      "title": "ООО \"ЖИЛПРОМИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1127746563230-ooo-zhilprominvest",
+      "ogrn": "1127746563230",
+      "inn": "7728814103",
+      "kpp": "772801001",
+      "okved": "55.90",
+      "okved_name": "Деятельность по предоставлению прочих мест для временного проживания",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 20.07.2012 по 31.10.2016"
+    },
+    {
+      "title": "ООО СК \"ЖИЛПРОМИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1170280053217-ooo-sk-zhilprominvest",
+      "ogrn": "1170280053217",
+      "inn": "0275912202",
+      "kpp": "027501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Уфа",
+      "reg_date": "",
+      "period": "с 11.08.2017 по 13.07.2022"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "55.90"
+  ],
+  "saved_at": "2026-10-16T09:59:19.557575+00:00"
+}

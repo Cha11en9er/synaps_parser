@@ -1,0 +1,80 @@
+{
+  "index": 749,
+  "name": "ДЕРБЕНТСТРОЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%94%D0%95%D0%A0%D0%91%D0%95%D0%9D%D0%A2%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%94%D0%95%D0%A0%D0%91%D0%95%D0%9D%D0%A2%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ОАО \" ДЕРБЕНТСТРОЙ \"",
+      "url": "https://synapsenet.ru/organizacii/1020502002730-oao-derbentstroj",
+      "ogrn": "1020502002730",
+      "inn": "0542002833",
+      "kpp": "054201001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Дербент",
+      "reg_date": "18.12.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ДЕРБЕНТСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1150542000410-ooo-derbentstroj",
+      "ogrn": "1150542000410",
+      "inn": "0542003700",
+      "kpp": "054201001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Дербент",
+      "reg_date": "",
+      "period": "с 18.03.2015 по 23.11.2023"
+    },
+    {
+      "title": "МУП \" ДЕРБЕНТСТРОЙ \"",
+      "url": "https://synapsenet.ru/organizacii/1020502000859-mup-derbentstroj",
+      "ogrn": "1020502000859",
+      "inn": "0542015350",
+      "kpp": "054201001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Дербент",
+      "reg_date": "",
+      "period": "с 13.11.2002 по 30.09.2024"
+    },
+    {
+      "title": "ООО ППСП \"ДЕРБЕНТСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1020502003026-ooo-ppsp-derbentstroj",
+      "ogrn": "1020502003026",
+      "inn": "0542010626",
+      "kpp": "054201001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Дербент",
+      "reg_date": "",
+      "period": "с 21.12.2002 по 01.08.2006"
+    },
+    {
+      "title": "ООО \"ДЕРБЕНТСТРОЙ 2000\"",
+      "url": "https://synapsenet.ru/organizacii/1160571057910-ooo-derbentstroj-2000",
+      "ogrn": "1160571057910",
+      "inn": "0542010739",
+      "kpp": "054201001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Дербент",
+      "reg_date": "",
+      "period": "с 02.07.2016 по 14.03.2019"
+    }
+  ],
+  "okveds": [
+    "41.2",
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T09:52:59.621636+00:00"
+}

@@ -1,0 +1,118 @@
+{
+  "index": 3923,
+  "name": "СЗ СЕТТ ГАЗОВИКОВ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%95%D0%A2%D0%A2%20%D0%93%D0%90%D0%97%D0%9E%D0%92%D0%98%D0%9A%D0%9E%D0%92",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%95%D0%A2%D0%A2%20%D0%93%D0%90%D0%97%D0%9E%D0%92%D0%98%D0%9A%D0%9E%D0%92",
+  "total_text": "найдено 8 лиц",
+  "cards_count": 8,
+  "cards": [
+    {
+      "title": "ООО СЗ \"СЕТТ ГАЗОВИКОВ\"",
+      "url": "https://synapsenet.ru/organizacii/1203100013313-ooo-sz-sett-gazovikov",
+      "ogrn": "1203100013313",
+      "inn": "3123472351",
+      "kpp": "312301001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Белгород",
+      "reg_date": "24.07.2020",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СЕТТ\"",
+      "url": "https://synapsenet.ru/organizacii/1213100000960-ooo-sz-sett",
+      "ogrn": "1213100000960",
+      "inn": "3123476740",
+      "kpp": "312301001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Белгород",
+      "reg_date": "29.01.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СЕТТ МАКАРЕНКО\"",
+      "url": "https://synapsenet.ru/organizacii/1263100006047-ooo-sz-sett-makarenko",
+      "ogrn": "1263100006047",
+      "inn": "3100058144",
+      "kpp": "310001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Белгород",
+      "reg_date": "07.10.2026",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СЕТТ ПРИГОРОДНАЯ\"",
+      "url": "https://synapsenet.ru/organizacii/1253100005289-ooo-sz-sett-prigorodnaya",
+      "ogrn": "1253100005289",
+      "inn": "3100046244",
+      "kpp": "310001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Белгород",
+      "reg_date": "30.06.2025",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СЕТТ ЛУГОВАЯ\"",
+      "url": "https://synapsenet.ru/organizacii/1243100001429-ooo-sz-sett-lugovaya",
+      "ogrn": "1243100001429",
+      "inn": "3100029023",
+      "kpp": "310001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Белгород",
+      "reg_date": "08.02.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СЕТТ ЮБИЛЕЙНАЯ\"",
+      "url": "https://synapsenet.ru/organizacii/1245700002943-ooo-sz-sett-yubilejnaya",
+      "ogrn": "1245700002943",
+      "inn": "5700010290",
+      "kpp": "310001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Белгород",
+      "reg_date": "13.08.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СЕТТ НОВАЯ\"",
+      "url": "https://synapsenet.ru/organizacii/1263100000635-ooo-sz-sett-novaya",
+      "ogrn": "1263100000635",
+      "inn": "3100052840",
+      "kpp": "310001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Белгород",
+      "reg_date": "26.01.2026",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СЕТТ ЗАЙЦЕВА\"",
+      "url": "https://synapsenet.ru/organizacii/1263100000624-ooo-sz-sett-zajceva",
+      "ogrn": "1263100000624",
+      "inn": "3100052833",
+      "kpp": "310001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Белгород",
+      "reg_date": "26.01.2026",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T12:39:58.472573+00:00"
+}

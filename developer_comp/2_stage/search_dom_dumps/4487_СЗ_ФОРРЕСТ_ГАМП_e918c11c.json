@@ -1,0 +1,41 @@
+{
+  "index": 4487,
+  "name": "СЗ ФОРРЕСТ ГАМП",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A4%D0%9E%D0%A0%D0%A0%D0%95%D0%A1%D0%A2%20%D0%93%D0%90%D0%9C%D0%9F",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A4%D0%9E%D0%A0%D0%A0%D0%95%D0%A1%D0%A2%20%D0%93%D0%90%D0%9C%D0%9F",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО СЗ \"ФОРРЕСТ ГАМП\"",
+      "url": "https://synapsenet.ru/organizacii/1214800007993-ooo-sz-forrest-gamp",
+      "ogrn": "1214800007993",
+      "inn": "4826148713",
+      "kpp": "482601001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Липецк",
+      "reg_date": "06.07.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ФОРРЕСТ ГАМП\"",
+      "url": "https://synapsenet.ru/organizacii/1117746067350-ooo-forrest-gamp",
+      "ogrn": "1117746067350",
+      "inn": "7733757524",
+      "kpp": "773301001",
+      "okved": "02.1",
+      "okved_name": "Лесоводство и прочая лесохозяйственная деятельность",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 03.02.2011 по 20.06.2016"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "02.1"
+  ],
+  "saved_at": "2026-10-16T13:05:49.387095+00:00"
+}

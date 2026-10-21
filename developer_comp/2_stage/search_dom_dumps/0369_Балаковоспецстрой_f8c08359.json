@@ -1,0 +1,66 @@
+{
+  "index": 369,
+  "name": "Балаковоспецстрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%91%D0%B0%D0%BB%D0%B0%D0%BA%D0%BE%D0%B2%D0%BE%D1%81%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%91%D0%B0%D0%BB%D0%B0%D0%BA%D0%BE%D0%B2%D0%BE%D1%81%D0%BF%D0%B5%D1%86%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"БАЛАКОВОСПЕЦСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1026401405580-ooo-balakovospecstroj",
+      "ogrn": "1026401405580",
+      "inn": "6439052729",
+      "kpp": "643901001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Балаково",
+      "reg_date": "",
+      "period": "с 21.11.2002 по 01.08.2016"
+    },
+    {
+      "title": "ТОО \"БАЛАКОВОСПЕЦСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1076439001088-too-balakovospecstroj",
+      "ogrn": "1076439001088",
+      "inn": "6439025267",
+      "kpp": "643901001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Балаково",
+      "reg_date": "",
+      "period": "с 25.04.2007 по 26.04.2007"
+    },
+    {
+      "title": "ООО \"ПКФ \"БАЛАКОВОСПЕЦСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1036403910850-ooo-pkf-balakovospecstroj",
+      "ogrn": "1036403910850",
+      "inn": "6439054540",
+      "kpp": "643901001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Балаково",
+      "reg_date": "",
+      "period": "с 22.08.2003 по 25.01.2012"
+    },
+    {
+      "title": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СТРОИТЕЛЬНО-ПРОИЗВОДСТВЕННАЯ ФИРМА \"БАЛАКОВОСПЕЦСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1096439002637-obschestvo-s-ogranichennoj-otvetstvennostyu-stroitelnoproizvodstvennaya-firma-balakovospecstroj",
+      "ogrn": "1096439002637",
+      "inn": "6439072806",
+      "kpp": "643901001",
+      "okved": "43.12",
+      "okved_name": "Подготовка строительной площадки",
+      "status": "организация ликвидирована",
+      "region": "г. Балаково",
+      "reg_date": "",
+      "period": "с 27.11.2009 по 09.06.2026"
+    }
+  ],
+  "okveds": [
+    "43.12"
+  ],
+  "saved_at": "2026-10-16T09:29:58.499354+00:00"
+}

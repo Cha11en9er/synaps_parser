@@ -1,0 +1,40 @@
+{
+  "index": 3020,
+  "name": "СЗ ЙОНД.ШУШАРЫ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%99%D0%9E%D0%9D%D0%94.%D0%A8%D0%A3%D0%A8%D0%90%D0%A0%D0%AB",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%99%D0%9E%D0%9D%D0%94.%D0%A8%D0%A3%D0%A8%D0%90%D0%A0%D0%AB",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"СЗ \"ЙОНД.ШУШАРЫ\"",
+      "url": "https://synapsenet.ru/organizacii/1217800112860-ooo-sz-jondshushari",
+      "ogrn": "1217800112860",
+      "inn": "7802897518",
+      "kpp": "780601001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "21.07.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"ЙОНД.ОХТА\"",
+      "url": "https://synapsenet.ru/organizacii/1217800143164-ooo-sz-jondohta",
+      "ogrn": "1217800143164",
+      "inn": "7802899931",
+      "kpp": "780601001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "16.09.2021",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T11:56:08.026254+00:00"
+}

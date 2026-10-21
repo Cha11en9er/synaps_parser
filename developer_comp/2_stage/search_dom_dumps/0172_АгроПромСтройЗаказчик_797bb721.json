@@ -1,0 +1,53 @@
+{
+  "index": 172,
+  "name": "АгроПромСтройЗаказчик",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%B3%D1%80%D0%BE%D0%9F%D1%80%D0%BE%D0%BC%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%B3%D1%80%D0%BE%D0%9F%D1%80%D0%BE%D0%BC%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%97%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"АГРОПРОМСТРОЙЗАКАЗЧИК\"",
+      "url": "https://synapsenet.ru/organizacii/1103327001304-ooo-agropromstrojzakazchik",
+      "ogrn": "1103327001304",
+      "inn": "3327847739",
+      "kpp": "332701001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "в процессе ликвидации",
+      "region": "г. Владимир",
+      "reg_date": "03.03.2010",
+      "period": ""
+    },
+    {
+      "title": "ООО \"АГРОПРОМСТРОЙЗАКАЗЧИК\"",
+      "url": "https://synapsenet.ru/organizacii/1033301804359-ooo-agropromstrojzakazchik",
+      "ogrn": "1033301804359",
+      "inn": "3327309025",
+      "kpp": "332701001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Владимир",
+      "reg_date": "",
+      "period": "с 08.02.2003 по 14.11.2014"
+    },
+    {
+      "title": "ОАО \"АГРОПРОМСТРОЙЗАКАЗЧИК\"",
+      "url": "https://synapsenet.ru/organizacii/1027000763921-oao-agropromstrojzakazchik",
+      "ogrn": "1027000763921",
+      "inn": "7014037420",
+      "kpp": "701401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "р-н Томский",
+      "reg_date": "",
+      "period": "с 09.10.2002 по 06.04.2010"
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T09:15:22.766292+00:00"
+}

@@ -1,0 +1,69 @@
+{
+  "index": 5218,
+  "name": "ТверьДомСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A2%D0%B2%D0%B5%D1%80%D1%8C%D0%94%D0%BE%D0%BC%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A2%D0%B2%D0%B5%D1%80%D1%8C%D0%94%D0%BE%D0%BC%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"ТВЕРЬДОМСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1156952008510-ooo-tverdomstroj",
+      "ogrn": "1156952008510",
+      "inn": "6950033990",
+      "kpp": "695001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Тверь",
+      "reg_date": "20.04.2015",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"ТВЕРЬДОМСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1136952020479-ooo-sz-tverdomstroj",
+      "ogrn": "1136952020479",
+      "inn": "6950175070",
+      "kpp": "695201001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Тверь",
+      "reg_date": "05.12.2013",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ТВЕРЬДОМСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1116952075943-ooo-tverdomstroj",
+      "ogrn": "1116952075943",
+      "inn": "6952031187",
+      "kpp": "695001001",
+      "okved": "47.52",
+      "okved_name": "Торговля розничная скобяными изделиями, лакокрасочными материалами и стеклом в специализированных магазинах",
+      "status": "организация ликвидирована",
+      "region": "г. Тверь",
+      "reg_date": "",
+      "period": "с 15.11.2011 по 31.12.2020"
+    },
+    {
+      "title": "ООО \"ТВЕРЬДОМСТРОЙ - Н\"",
+      "url": "https://synapsenet.ru/organizacii/1046900011014-ooo-tverdomstroj-n",
+      "ogrn": "1046900011014",
+      "inn": "6901048471",
+      "kpp": "695001001",
+      "okved": "43.11",
+      "okved_name": "Разборка и снос зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Тверь",
+      "reg_date": "",
+      "period": "с 25.02.2004 по 24.09.2019"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "71.12.2",
+    "47.52",
+    "43.11"
+  ],
+  "saved_at": "2026-10-16T13:46:50.154192+00:00"
+}

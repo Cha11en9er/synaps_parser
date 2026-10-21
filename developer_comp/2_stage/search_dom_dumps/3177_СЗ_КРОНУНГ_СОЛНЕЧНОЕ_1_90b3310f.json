@@ -1,0 +1,94 @@
+{
+  "index": 3177,
+  "name": "СЗ КРОНУНГ СОЛНЕЧНОЕ 1",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%9A%D0%A0%D0%9E%D0%9D%D0%A3%D0%9D%D0%93%20%D0%A1%D0%9E%D0%9B%D0%9D%D0%95%D0%A7%D0%9D%D0%9E%D0%95%201",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%9A%D0%A0%D0%9E%D0%9D%D0%A3%D0%9D%D0%93%20%D0%A1%D0%9E%D0%9B%D0%9D%D0%95%D0%A7%D0%9D%D0%9E%D0%95%201",
+  "total_text": "найдено 6 лиц",
+  "cards_count": 6,
+  "cards": [
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"КРОНУНГ СОЛНЕЧНОЕ 1\"",
+      "url": "https://synapsenet.ru/organizacii/1247800065369-ooo-specializirovannij-zastrojschik-kronung-solnechnoe-1",
+      "ogrn": "1247800065369",
+      "inn": "7813680980",
+      "kpp": "781301001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "28.06.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СОЛНЕЧНОЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1240200024239-ooo-sz-solnechnoe",
+      "ogrn": "1240200024239",
+      "inn": "0278983699",
+      "kpp": "027801001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Уфа",
+      "reg_date": "17.07.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СОЛНЕЧНОЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1147453013817-ooo-sz-solnechnoe",
+      "ogrn": "1147453013817",
+      "inn": "7453276761",
+      "kpp": "745101001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Челябинск",
+      "reg_date": "10.12.2014",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"АЛГОРИТМ СОЛНЕЧНОЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1254700011004-ooo-sz-algoritm-solnechnoe",
+      "ogrn": "1254700011004",
+      "inn": "4706090250",
+      "kpp": "470601001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "в процессе реорганизации",
+      "region": "г. Сертолово",
+      "reg_date": "03.07.2025",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"СОЛНЕЧНОЕ ПОБЕРЕЖЬЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1259100005372-ooo-sz-solnechnoe-poberezhe",
+      "ogrn": "1259100005372",
+      "inn": "9102304325",
+      "kpp": "910201001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Симферополь",
+      "reg_date": "16.04.2025",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"ЭЙ ЭЙ ДЖИ СОЛНЕЧНОЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1147847149977-ooo-sz-ej-ej-dzhi-solnechnoe",
+      "ogrn": "1147847149977",
+      "inn": "7839495251",
+      "kpp": "781301001",
+      "okved": "68.10.1",
+      "okved_name": "Подготовка к продаже собственного недвижимого имущества",
+      "status": "действующая организация",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "24.04.2014",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "71.12.2",
+    "41.20",
+    "68.10.1"
+  ],
+  "saved_at": "2026-10-16T12:04:18.950696+00:00"
+}

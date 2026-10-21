@@ -1,0 +1,67 @@
+{
+  "index": 541,
+  "name": "ВолжскПромСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%92%D0%BE%D0%BB%D0%B6%D1%81%D0%BA%D0%9F%D1%80%D0%BE%D0%BC%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%92%D0%BE%D0%BB%D0%B6%D1%81%D0%BA%D0%9F%D1%80%D0%BE%D0%BC%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ЗАО \"ВОЛЖСКПРОМСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1023405174858-zao-volzhskpromstroj",
+      "ogrn": "1023405174858",
+      "inn": "3428982004",
+      "kpp": "342801001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "р-н Среднеахтубинский",
+      "reg_date": "",
+      "period": "с 30.12.2002 по 29.06.2006"
+    },
+    {
+      "title": "САДОВОДЧЕСКОЕ ТОВАРИЩЕСТВО \"СТРОИТЕЛЬ - 2 \"ВОЛЖСКПРОМСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1041205001397-sadovodcheskoe-tovarischestvo-stroitel-2-volzhskpromstroj",
+      "ogrn": "1041205001397",
+      "inn": "1216013004",
+      "kpp": "121601001",
+      "okved": "94.99",
+      "okved_name": "Деятельность прочих общественных организаций и некоммерческих организаций, кроме религиозных и политических организаций",
+      "status": "действующая организация",
+      "region": "г. Волжск",
+      "reg_date": "12.05.2004",
+      "period": ""
+    },
+    {
+      "title": "АО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"ВПС\"",
+      "url": "https://synapsenet.ru/organizacii/1021202250772-ao-specializirovannij-zastrojschik-vps",
+      "ogrn": "1021202250772",
+      "inn": "1216001104",
+      "kpp": "121601001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Волжск",
+      "reg_date": "28.10.2002",
+      "period": ""
+    },
+    {
+      "title": "ПРОФСОЮЗНАЯ ОРГАНИЗАЦИЯ ОАО \"ВОЛЖСКПРОМСТРОЙ\" ПРОФСОЮЗА РАБОТНИКОВ СТРОИТЕЛЬСТВА И ПРОМСТРОЙМАТЕРИАЛОВ",
+      "url": "https://synapsenet.ru/organizacii/1021200007014-profsoyuznaya-organizaciya-oao-volzhskpromstroj-profsoyuza-rabotnikov-stroitelstva-i-promstrojmaterialov",
+      "ogrn": "1021200007014",
+      "inn": "1216005109",
+      "kpp": "121601001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Волжск",
+      "reg_date": "",
+      "period": "с 23.12.2002 по 18.05.2017"
+    }
+  ],
+  "okveds": [
+    "94.99",
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T09:41:01.277654+00:00"
+}

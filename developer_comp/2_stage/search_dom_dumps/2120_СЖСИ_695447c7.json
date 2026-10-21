@@ -1,0 +1,41 @@
+{
+  "index": 2120,
+  "name": "СЖСИ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%96%D0%A1%D0%98",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%96%D0%A1%D0%98",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"СК \"СЖСИ\"",
+      "url": "https://synapsenet.ru/organizacii/1145476149906-ooo-sk-szhsi",
+      "ogrn": "1145476149906",
+      "inn": "5402583746",
+      "kpp": "540201001",
+      "okved": "46.31",
+      "okved_name": "Торговля оптовая фруктами и овощами",
+      "status": "действующая организация",
+      "region": "г. Новосибирск",
+      "reg_date": "01.12.2014",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЖСИ\"",
+      "url": "https://synapsenet.ru/organizacii/1125476225280-ooo-szhsi",
+      "ogrn": "1125476225280",
+      "inn": "5402557810",
+      "kpp": "540201001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Новосибирск",
+      "reg_date": "",
+      "period": "с 14.12.2012 по 26.07.2021"
+    }
+  ],
+  "okveds": [
+    "46.31",
+    "41.2"
+  ],
+  "saved_at": "2026-10-16T11:12:02.792996+00:00"
+}

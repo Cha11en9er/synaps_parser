@@ -1,0 +1,108 @@
+{
+  "index": 5230,
+  "name": "ТексПроект",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A2%D0%B5%D0%BA%D1%81%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A2%D0%B5%D0%BA%D1%81%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82",
+  "total_text": "найдено 7 лиц",
+  "cards_count": 7,
+  "cards": [
+    {
+      "title": "ООО \"ТЕКСПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1156027003175-ooo-teksproekt",
+      "ogrn": "1156027003175",
+      "inn": "6027162433",
+      "kpp": "602701001",
+      "okved": "43.12.3",
+      "okved_name": "Производство земляных работ",
+      "status": "действующая организация",
+      "region": "г. Псков",
+      "reg_date": "13.05.2015",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ТЕКСПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1247800009115-ooo-teksproekt",
+      "ogrn": "1247800009115",
+      "inn": "7810994064",
+      "kpp": "781001001",
+      "okved": "13.92",
+      "okved_name": "Производство готовых текстильных изделий, кроме одежды",
+      "status": "действующая организация",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "31.01.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ТЕКСПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1055014727877-ooo-teksproekt",
+      "ogrn": "1055014727877",
+      "inn": "5036066131",
+      "kpp": "503601001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Подольск",
+      "reg_date": "",
+      "period": "с 02.06.2005 по 17.08.2009"
+    },
+    {
+      "title": "ООО \"ТЕКСПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1037739876019-ooo-teksproekt",
+      "ogrn": "1037739876019",
+      "inn": "7709506777",
+      "kpp": "770901001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 24.09.2003 по 15.02.2016"
+    },
+    {
+      "title": "ООО \"ТЕКСПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1026000970346-ooo-teksproekt",
+      "ogrn": "1026000970346",
+      "inn": "6027068110",
+      "kpp": "784201001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 26.11.2002 по 19.09.2011"
+    },
+    {
+      "title": "ООО \"ТЕКСПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1077759827276-ooo-teksproekt",
+      "ogrn": "1077759827276",
+      "inn": "7715665091",
+      "kpp": "771501001",
+      "okved": "46.19",
+      "okved_name": "Деятельность агентов по оптовой торговле универсальным ассортиментом товаров",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 06.09.2007 по 22.08.2016"
+    },
+    {
+      "title": "ООО \"ТЕКСПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1207700274352-ooo-teksproekt",
+      "ogrn": "1207700274352",
+      "inn": "9704025907",
+      "kpp": "772401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 05.08.2020 по 14.07.2022"
+    }
+  ],
+  "okveds": [
+    "43.12.3",
+    "13.92",
+    "46.19",
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T13:48:08.269700+00:00"
+}

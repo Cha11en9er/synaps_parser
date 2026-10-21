@@ -1,0 +1,54 @@
+{
+  "index": 859,
+  "name": "ЕДИНО",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%95%D0%94%D0%98%D0%9D%D0%9E",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%95%D0%94%D0%98%D0%9D%D0%9E",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "БФ \"КУПНО ЗА ЕДИНО\"",
+      "url": "https://synapsenet.ru/organizacii/1205200018627-bf-kupno-za-edino",
+      "ogrn": "1205200018627",
+      "inn": "5260471160",
+      "kpp": "526001001",
+      "okved": "88.99",
+      "okved_name": "Предоставление прочих социальных услуг без обеспечения проживания, не включенных в другие группировки",
+      "status": "действующая организация",
+      "region": "г. Нижний Новгород",
+      "reg_date": "20.04.2020",
+      "period": ""
+    },
+    {
+      "title": "ЕДИНОДУШИЕ МЕДИЦИНСКИЙ КООПЕРАТИВ",
+      "url": "https://synapsenet.ru/organizacii/1067757722670-edinodushie-medicinskij-kooperativ",
+      "ogrn": "1067757722670",
+      "inn": "7702051062",
+      "kpp": "770201001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 10.10.2006 по 10.10.2006"
+    },
+    {
+      "title": "ООО \"РОЗЕТКА\"",
+      "url": "https://synapsenet.ru/organizacii/1225900008212-ooo-rozetka",
+      "ogrn": "1225900008212",
+      "inn": "5959007248",
+      "kpp": "595901001",
+      "okved": "35.11",
+      "okved_name": "Производство электроэнергии",
+      "status": "организация ликвидирована",
+      "region": "г. Чернушка",
+      "reg_date": "",
+      "period": "с 25.04.2022 по 20.10.2023"
+    }
+  ],
+  "okveds": [
+    "88.99",
+    "35.11"
+  ],
+  "saved_at": "2026-10-16T09:58:02.098731+00:00"
+}

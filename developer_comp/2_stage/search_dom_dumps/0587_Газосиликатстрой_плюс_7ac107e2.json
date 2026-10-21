@@ -1,0 +1,79 @@
+{
+  "index": 587,
+  "name": "Газосиликатстрой плюс",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%93%D0%B0%D0%B7%D0%BE%D1%81%D0%B8%D0%BB%D0%B8%D0%BA%D0%B0%D1%82%D1%81%D1%82%D1%80%D0%BE%D0%B9%20%D0%BF%D0%BB%D1%8E%D1%81",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%93%D0%B0%D0%B7%D0%BE%D1%81%D0%B8%D0%BB%D0%B8%D0%BA%D0%B0%D1%82%D1%81%D1%82%D1%80%D0%BE%D0%B9%20%D0%BF%D0%BB%D1%8E%D1%81",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ООО \"ГАЗОСИЛИКАТСТРОЙ ПЛЮС\"",
+      "url": "https://synapsenet.ru/organizacii/1064345110114-ooo-gazosilikatstroj-plyus",
+      "ogrn": "1064345110114",
+      "inn": "4345143367",
+      "kpp": "434501001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Киров",
+      "reg_date": "",
+      "period": "с 03.08.2006 по 01.04.2019"
+    },
+    {
+      "title": "ООО \"ГАЗОСИЛИКАТСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1034316600823-ooo-gazosilikatstroj",
+      "ogrn": "1034316600823",
+      "inn": "4345067211",
+      "kpp": "434501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Киров",
+      "reg_date": "",
+      "period": "с 09.10.2003 по 28.09.2011"
+    },
+    {
+      "title": "ЗАО \"ГАЗОСИЛИКАТСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1037725031981-zao-gazosilikatstroj",
+      "ogrn": "1037725031981",
+      "inn": "7725233005",
+      "kpp": "772501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 11.06.2003 по 29.09.2014"
+    },
+    {
+      "title": "ООО \"ГАЗОСИЛИКАТСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1074345034114-ooo-gazosilikatstroj",
+      "ogrn": "1074345034114",
+      "inn": "4345190374",
+      "kpp": "434501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Киров",
+      "reg_date": "",
+      "period": "с 26.06.2007 по 11.04.2016"
+    },
+    {
+      "title": "ООО \"ГАЗОСИЛИКАТСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1047796926847-ooo-gazosilikatstroj",
+      "ogrn": "1047796926847",
+      "inn": "7714580511",
+      "kpp": "771401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 02.12.2004 по 13.09.2008"
+    }
+  ],
+  "okveds": [
+    "41.2"
+  ],
+  "saved_at": "2026-10-16T09:43:41.971235+00:00"
+}

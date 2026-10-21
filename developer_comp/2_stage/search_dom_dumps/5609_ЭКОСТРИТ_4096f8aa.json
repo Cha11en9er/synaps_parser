@@ -1,0 +1,82 @@
+{
+  "index": 5609,
+  "name": "ЭКОСТРИТ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%AD%D0%9A%D0%9E%D0%A1%D0%A2%D0%A0%D0%98%D0%A2",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%AD%D0%9A%D0%9E%D0%A1%D0%A2%D0%A0%D0%98%D0%A2",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ООО \"СЗ \"ЭКОСТРИТ\"",
+      "url": "https://synapsenet.ru/organizacii/1075038016954-ooo-sz-ekostrit",
+      "ogrn": "1075038016954",
+      "inn": "5016017256",
+      "kpp": "771501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "27.11.2007",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЭКОСТРИТ\"",
+      "url": "https://synapsenet.ru/organizacii/1147746179580-ooo-ekostrit",
+      "ogrn": "1147746179580",
+      "inn": "7730702260",
+      "kpp": "773001001",
+      "okved": "49.4",
+      "okved_name": "Деятельность автомобильного грузового транспорта и услуги по перевозкам",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 24.02.2014 по 15.10.2020"
+    },
+    {
+      "title": "ООО \"ЭКОСТРИТ\"",
+      "url": "https://synapsenet.ru/organizacii/1115047010209-ooo-ekostrit",
+      "ogrn": "1115047010209",
+      "inn": "5047125445",
+      "kpp": "504701001",
+      "okved": "01.11",
+      "okved_name": "Выращивание зерновых (кроме риса), зернобобовых культур и семян масличных культур",
+      "status": "организация ликвидирована",
+      "region": "г. Химки",
+      "reg_date": "",
+      "period": "с 01.07.2011 по 14.07.2020"
+    },
+    {
+      "title": "ООО \"ЭКОСТРИТ\"",
+      "url": "https://synapsenet.ru/organizacii/5087746167647-ooo-ekostrit",
+      "ogrn": "5087746167647",
+      "inn": "7702685573",
+      "kpp": "770201001",
+      "okved": "69",
+      "okved_name": "Деятельность в области права и бухгалтерского учета",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 02.10.2008 по 25.09.2017"
+    },
+    {
+      "title": "ООО \"ЭКОСТРИТ СЕРВИС\"",
+      "url": "https://synapsenet.ru/organizacii/1147746179646-ooo-ekostrit-servis",
+      "ogrn": "1147746179646",
+      "inn": "7730702277",
+      "kpp": "773001001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 24.02.2014 по 31.08.2015"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "49.4",
+    "01.11",
+    "69"
+  ],
+  "saved_at": "2026-10-16T14:11:55.115965+00:00"
+}

@@ -1,0 +1,81 @@
+{
+  "index": 5540,
+  "name": "ХОСК-2",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A5%D0%9E%D0%A1%D0%9A-2",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A5%D0%9E%D0%A1%D0%9A-2",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "АО \"ХОСК-2\"",
+      "url": "https://synapsenet.ru/organizacii/1027810245462-ao-hosk2",
+      "ogrn": "1027810245462",
+      "inn": "7826017811",
+      "kpp": "781301001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "28.10.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ХОСК-2\"",
+      "url": "https://synapsenet.ru/organizacii/1117847341061-ooo-hosk2",
+      "ogrn": "1117847341061",
+      "inn": "7811499129",
+      "kpp": "783901001",
+      "okved": "43.12",
+      "okved_name": "Подготовка строительной площадки",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 17.08.2011 по 30.06.2021"
+    },
+    {
+      "title": "ООО \"СТРОИТЕЛЬ ХОСК-2\"",
+      "url": "https://synapsenet.ru/organizacii/1027809211077-ooo-stroitel-hosk2",
+      "ogrn": "1027809211077",
+      "inn": "7825426635",
+      "kpp": "783601001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 13.11.2002 по 21.02.2011"
+    },
+    {
+      "title": "АНО\"ХОСК\"ФЕНИКС\"",
+      "url": "https://synapsenet.ru/organizacii/1239500006790-ano-hosk-feniks",
+      "ogrn": "1239500006790",
+      "inn": "9500017986",
+      "kpp": "950001001",
+      "okved": "94.99",
+      "okved_name": "Деятельность прочих общественных организаций и некоммерческих организаций, кроме религиозных и политических организаций",
+      "status": "действующая организация",
+      "region": "г. Херсон",
+      "reg_date": "14.08.2023",
+      "period": ""
+    },
+    {
+      "title": "АОЗТ \"ХОСК\"",
+      "url": "https://synapsenet.ru/organizacii/5067847350907-aozt-hosk",
+      "ogrn": "5067847350907",
+      "inn": "7808046440",
+      "kpp": "784001001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 18.09.2006 по 18.09.2006"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "43.12",
+    "94.99"
+  ],
+  "saved_at": "2026-10-16T14:08:14.978459+00:00"
+}

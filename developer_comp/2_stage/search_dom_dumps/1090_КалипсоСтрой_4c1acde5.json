@@ -1,0 +1,40 @@
+{
+  "index": 1090,
+  "name": "КалипсоСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%B0%D0%BB%D0%B8%D0%BF%D1%81%D0%BE%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%B0%D0%BB%D0%B8%D0%BF%D1%81%D0%BE%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"КАЛИПСОСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1133926034186-ooo-kalipsostroj",
+      "ogrn": "1133926034186",
+      "inn": "3906304613",
+      "kpp": "390601001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Калининград",
+      "reg_date": "13.09.2013",
+      "period": ""
+    },
+    {
+      "title": "ООО \"КАЛИПСОСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1157746696678-ooo-kalipsostroj",
+      "ogrn": "1157746696678",
+      "inn": "7725282690",
+      "kpp": "772501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 29.07.2015 по 21.03.2019"
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T10:10:26.348509+00:00"
+}

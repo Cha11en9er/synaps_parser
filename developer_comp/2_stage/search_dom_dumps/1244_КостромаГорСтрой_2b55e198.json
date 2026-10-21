@@ -1,0 +1,41 @@
+{
+  "index": 1244,
+  "name": "КостромаГорСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%BC%D0%B0%D0%93%D0%BE%D1%80%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%BC%D0%B0%D0%93%D0%BE%D1%80%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО ИСПО \"КОСТРОМАГОРСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1024400507669-ooo-ispo-kostromagorstroj",
+      "ogrn": "1024400507669",
+      "inn": "4443022963",
+      "kpp": "440101001",
+      "okved": "41.20.1",
+      "okved_name": "Жилищное строительство",
+      "status": "в процессе банкротства",
+      "region": "г. Кострома",
+      "reg_date": "29.07.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО ПИ \"КОСТРОМАГОРСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1164401055917-ooo-pi-kostromagorstroj",
+      "ogrn": "1164401055917",
+      "inn": "4401172822",
+      "kpp": "440101001",
+      "okved": "71.1",
+      "okved_name": "Деятельность в области архитектуры, инженерных изысканий и предоставление технических консультаций в этих областях",
+      "status": "организация ликвидирована",
+      "region": "г. Кострома",
+      "reg_date": "",
+      "period": "с 29.06.2016 по 02.05.2024"
+    }
+  ],
+  "okveds": [
+    "41.20.1",
+    "71.1"
+  ],
+  "saved_at": "2026-10-16T10:19:23.814611+00:00"
+}

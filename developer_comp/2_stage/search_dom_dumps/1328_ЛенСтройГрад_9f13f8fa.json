@@ -1,0 +1,55 @@
+{
+  "index": 1328,
+  "name": "ЛенСтройГрад",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9B%D0%B5%D0%BD%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%93%D1%80%D0%B0%D0%B4",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9B%D0%B5%D0%BD%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%93%D1%80%D0%B0%D0%B4",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"ЛЕНСТРОЙГРАД\"",
+      "url": "https://synapsenet.ru/organizacii/1127847578297-ooo-lenstrojgrad",
+      "ogrn": "1127847578297",
+      "inn": "7814552148",
+      "kpp": "502901001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "в процессе банкротства",
+      "region": "г. Мытищи",
+      "reg_date": "19.10.2012",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЛЕНСТРОЙГРАД\"",
+      "url": "https://synapsenet.ru/organizacii/1187847097481-ooo-lenstrojgrad",
+      "ogrn": "1187847097481",
+      "inn": "7841072824",
+      "kpp": "784101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 06.04.2018 по 06.09.2019"
+    },
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"ЛЕНСТРОЙГРАД\"",
+      "url": "https://synapsenet.ru/organizacii/1127847677770-ooo-specializirovannij-zastrojschik-lenstrojgrad",
+      "ogrn": "1127847677770",
+      "inn": "7806492689",
+      "kpp": "471601001",
+      "okved": "68.1",
+      "okved_name": "Покупка и продажа собственного недвижимого имущества",
+      "status": "действующая организация",
+      "region": "р-н Тосненский",
+      "reg_date": "12.12.2012",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.2",
+    "41.20",
+    "68.1"
+  ],
+  "saved_at": "2026-10-16T10:24:50.844163+00:00"
+}

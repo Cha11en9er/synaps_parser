@@ -1,0 +1,40 @@
+{
+  "index": 1998,
+  "name": "РостовДомСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2%D0%94%D0%BE%D0%BC%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A0%D0%BE%D1%81%D1%82%D0%BE%D0%B2%D0%94%D0%BE%D0%BC%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"РОСТОВДОМСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1086164007533-ooo-rostovdomstroj",
+      "ogrn": "1086164007533",
+      "inn": "6164281746",
+      "kpp": "616401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ростов-на-Дону",
+      "reg_date": "",
+      "period": "с 03.07.2008 по 10.09.2012"
+    },
+    {
+      "title": "ООО СЗ \"СК-РДС\"",
+      "url": "https://synapsenet.ru/organizacii/1166196115722-ooo-sz-skrds",
+      "ogrn": "1166196115722",
+      "inn": "6163151744",
+      "kpp": "616501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Ростов-на-Дону",
+      "reg_date": "16.12.2016",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T11:03:21.231122+00:00"
+}

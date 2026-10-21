@@ -1,0 +1,40 @@
+{
+  "index": 5713,
+  "name": "Ярославльзаказчик",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%BB%D1%8C%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%AF%D1%80%D0%BE%D1%81%D0%BB%D0%B0%D0%B2%D0%BB%D1%8C%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%87%D0%B8%D0%BA",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "АО \"ЯРОСЛАВЛЬЗАКАЗЧИК\"",
+      "url": "https://synapsenet.ru/organizacii/1097604002803-ao-yaroslavlzakazchik",
+      "ogrn": "1097604002803",
+      "inn": "7604152390",
+      "kpp": "760401001",
+      "okved": "68.10.21",
+      "okved_name": "Покупка и продажа собственного жилого недвижимого имущества",
+      "status": "действующая организация",
+      "region": "г. Ярославль",
+      "reg_date": "17.02.2009",
+      "period": ""
+    },
+    {
+      "title": "МУП \"ЯРОСЛАВЛЬЗАКАЗЧИК\" Г. ЯРОСЛАВЛЯ",
+      "url": "https://synapsenet.ru/organizacii/1057600607305-mup-yaroslavlzakazchik-g-yaroslavlya",
+      "ogrn": "1057600607305",
+      "inn": "7604077418",
+      "kpp": "760401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ярославль",
+      "reg_date": "",
+      "period": "с 29.06.2005 по 17.02.2009"
+    }
+  ],
+  "okveds": [
+    "68.10.21"
+  ],
+  "saved_at": "2026-10-16T14:19:36.609556+00:00"
+}

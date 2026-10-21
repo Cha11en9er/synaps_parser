@@ -1,0 +1,40 @@
+{
+  "index": 4382,
+  "name": "СЗ ТПК СТИЛЬСТРОЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A2%D0%9F%D0%9A%20%D0%A1%D0%A2%D0%98%D0%9B%D0%AC%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A2%D0%9F%D0%9A%20%D0%A1%D0%A2%D0%98%D0%9B%D0%AC%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"СЗ ТПК \"СТИЛЬСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1103123001288-ooo-sz-tpk-stilstroj",
+      "ogrn": "1103123001288",
+      "inn": "3123208808",
+      "kpp": "312301001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Белгород",
+      "reg_date": "03.02.2010",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ ТПК\"",
+      "url": "https://synapsenet.ru/organizacii/1097847294434-ooo-sz-tpk",
+      "ogrn": "1097847294434",
+      "inn": "7810567496",
+      "kpp": "781001001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 21.10.2009 по 28.07.2014"
+    }
+  ],
+  "okveds": [
+    "41.2"
+  ],
+  "saved_at": "2026-10-16T13:01:18.117911+00:00"
+}

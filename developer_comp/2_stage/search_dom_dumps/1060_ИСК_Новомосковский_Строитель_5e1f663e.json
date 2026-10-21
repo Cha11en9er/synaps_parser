@@ -1,0 +1,108 @@
+{
+  "index": 1060,
+  "name": "ИСК Новомосковский Строитель",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%98%D0%A1%D0%9A%20%D0%9D%D0%BE%D0%B2%D0%BE%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%98%D0%A1%D0%9A%20%D0%9D%D0%BE%D0%B2%D0%BE%D0%BC%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%A1%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C",
+  "total_text": "найдено 7 лиц",
+  "cards_count": 7,
+  "cards": [
+    {
+      "title": "ООО \"СК НОВОМОСКОВСКИЙ СТРОИТЕЛЬ\"",
+      "url": "https://synapsenet.ru/organizacii/1087154024088-ooo-sk-novomoskovskij-stroitel",
+      "ogrn": "1087154024088",
+      "inn": "7116501351",
+      "kpp": "711601001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Новомосковск",
+      "reg_date": "",
+      "period": "с 01.07.2008 по 16.09.2026"
+    },
+    {
+      "title": "ООО \"СТРОИТЕЛЬ ИСК\"",
+      "url": "https://synapsenet.ru/organizacii/1185476030079-ooo-stroitel-isk",
+      "ogrn": "1185476030079",
+      "inn": "5446019777",
+      "kpp": "544601001",
+      "okved": "43.12",
+      "okved_name": "Подготовка строительной площадки",
+      "status": "организация ликвидирована",
+      "region": "г. Искитим",
+      "reg_date": "",
+      "period": "с 19.04.2018 по 17.05.2024"
+    },
+    {
+      "title": "ООО ИСК \"СТРОИТЕЛЬ\"",
+      "url": "https://synapsenet.ru/organizacii/1106820000220-ooo-isk-stroitel",
+      "ogrn": "1106820000220",
+      "inn": "6820030229",
+      "kpp": "682001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "обл. Тамбовская",
+      "reg_date": "",
+      "period": "с 27.02.2010 по 12.09.2017"
+    },
+    {
+      "title": "ООО ИСК \"СТРОИТЕЛЬ\"",
+      "url": "https://synapsenet.ru/organizacii/1027739327879-ooo-isk-stroitel",
+      "ogrn": "1027739327879",
+      "inn": "7722147238",
+      "kpp": "772201001",
+      "okved": "43.11",
+      "okved_name": "Разборка и снос зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 07.10.2002 по 02.04.2018"
+    },
+    {
+      "title": "ООО \"ИСК СТРОИТЕЛЬ\"",
+      "url": "https://synapsenet.ru/organizacii/1056165051172-ooo-isk-stroitel",
+      "ogrn": "1056165051172",
+      "inn": "6165122033",
+      "kpp": "370201001",
+      "okved": "25.11",
+      "okved_name": "Производство строительных металлических конструкций, изделий и их частей",
+      "status": "организация ликвидирована",
+      "region": "г. Иваново",
+      "reg_date": "",
+      "period": "с 27.04.2005 по 19.07.2016"
+    },
+    {
+      "title": "ООО \"НС\"",
+      "url": "https://synapsenet.ru/organizacii/1057101589819-ooo-ns",
+      "ogrn": "1057101589819",
+      "inn": "7116127961",
+      "kpp": "711601001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Новомосковск",
+      "reg_date": "",
+      "period": "с 25.04.2005 по 16.03.2011"
+    },
+    {
+      "title": "ФИЗКУЛЬТУРНО-СПОРТИВНЫЙ КЛУБ \"СТРОИТЕЛЬ\" АО ИСК \"ДОМОСТРОИТЕЛЬ\"",
+      "url": "https://synapsenet.ru/organizacii/1106318003769-fizkulturnosportivnij-klub-stroitel-ao-isk-domostroitel",
+      "ogrn": "1106318003769",
+      "inn": "6318109995",
+      "kpp": "631801001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Самара",
+      "reg_date": "",
+      "period": "с 03.06.2010 по 03.06.2010"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "43.12",
+    "43.11",
+    "25.11"
+  ],
+  "saved_at": "2026-10-16T10:08:43.794056+00:00"
+}

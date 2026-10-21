@@ -1,0 +1,121 @@
+{
+  "index": 1165,
+  "name": "КЛЮЧСТРОЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%9B%D0%AE%D0%A7%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%9B%D0%AE%D0%A7%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "total_text": "найдено 8 лиц",
+  "cards_count": 8,
+  "cards": [
+    {
+      "title": "ЗАО \"КЛЮЧСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1042302492870-zao-klyuchstroj",
+      "ogrn": "1042302492870",
+      "inn": "2305021866",
+      "kpp": "230501001",
+      "okved": "43.2",
+      "okved_name": "Производство электромонтажных, санитарно-технических и прочих строительно-монтажных работ",
+      "status": "действующая организация",
+      "region": "г. Горячий Ключ",
+      "reg_date": "24.03.2004",
+      "period": ""
+    },
+    {
+      "title": "ООО \"КЛЮЧСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1142368001214-ooo-klyuchstroj",
+      "ogrn": "1142368001214",
+      "inn": "2305029093",
+      "kpp": "230501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Горячий Ключ",
+      "reg_date": "25.06.2014",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"КЛЮЧСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1240300004460-ooo-sz-klyuchstroj",
+      "ogrn": "1240300004460",
+      "inn": "0300024250",
+      "kpp": "030001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Улан-Удэ",
+      "reg_date": "17.06.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"КЛЮЧСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1191832006013-ooo-sz-klyuchstroj",
+      "ogrn": "1191832006013",
+      "inn": "1831193628",
+      "kpp": "183101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Ижевск",
+      "reg_date": "13.03.2019",
+      "period": ""
+    },
+    {
+      "title": "ООО \"КЛЮЧСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1237700046484-ooo-klyuchstroj",
+      "ogrn": "1237700046484",
+      "inn": "7734470066",
+      "kpp": "773401001",
+      "okved": "43.21",
+      "okved_name": "Производство электромонтажных работ",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 23.01.2023 по 01.04.2025"
+    },
+    {
+      "title": "ООО \"КЛЮЧСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1187746305559-ooo-klyuchstroj",
+      "ogrn": "1187746305559",
+      "inn": "7722444008",
+      "kpp": "772201001",
+      "okved": "42.21",
+      "okved_name": "Строительство инженерных коммуникаций для водоснабжения и водоотведения, газоснабжения",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 19.03.2018 по 21.11.2019"
+    },
+    {
+      "title": "ООО \"КЛЮЧСТРОЙ-М\"",
+      "url": "https://synapsenet.ru/organizacii/1037714008342-ooo-klyuchstrojm",
+      "ogrn": "1037714008342",
+      "inn": "7714295867",
+      "kpp": "771401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 29.01.2003 по 11.11.2013"
+    },
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"КЛЮЧСТРОЙ НОВОСЕЛЬЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1244700036690-ooo-specializirovannij-zastrojschik-klyuchstroj-novosele",
+      "ogrn": "1244700036690",
+      "inn": "4707059038",
+      "kpp": "470701001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Новоселье",
+      "reg_date": "24.12.2024",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "43.2",
+    "41.20",
+    "43.21",
+    "42.21"
+  ],
+  "saved_at": "2026-10-16T10:14:28.547592+00:00"
+}

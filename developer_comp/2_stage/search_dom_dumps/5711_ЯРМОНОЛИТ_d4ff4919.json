@@ -1,0 +1,68 @@
+{
+  "index": 5711,
+  "name": "ЯРМОНОЛИТ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%AF%D0%A0%D0%9C%D0%9E%D0%9D%D0%9E%D0%9B%D0%98%D0%A2",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%AF%D0%A0%D0%9C%D0%9E%D0%9D%D0%9E%D0%9B%D0%98%D0%A2",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"ЯРМОНОЛИТ\"",
+      "url": "https://synapsenet.ru/organizacii/1147604019298-ooo-yarmonolit",
+      "ogrn": "1147604019298",
+      "inn": "7604269705",
+      "kpp": "760401001",
+      "okved": "77.32",
+      "okved_name": "Аренда и лизинг строительных машин и оборудования",
+      "status": "действующая организация",
+      "region": "г. Ярославль",
+      "reg_date": "07.11.2014",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СК\" ЯРМОНОЛИТ\"",
+      "url": "https://synapsenet.ru/organizacii/1157604001940-ooo-sk-yarmonolit",
+      "ogrn": "1157604001940",
+      "inn": "7604274695",
+      "kpp": "760401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Ярославль",
+      "reg_date": "12.02.2015",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЯРМОНОЛИТ\"",
+      "url": "https://synapsenet.ru/organizacii/1137604010829-ooo-yarmonolit",
+      "ogrn": "1137604010829",
+      "inn": "7604246137",
+      "kpp": "760401001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Ярославль",
+      "reg_date": "",
+      "period": "с 04.07.2013 по 24.07.2017"
+    },
+    {
+      "title": "ООО \"ЯРМОНОЛИТ\"",
+      "url": "https://synapsenet.ru/organizacii/1077627003552-ooo-yarmonolit",
+      "ogrn": "1077627003552",
+      "inn": "7621007315",
+      "kpp": "760401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ярославль",
+      "reg_date": "",
+      "period": "с 16.10.2007 по 07.11.2011"
+    }
+  ],
+  "okveds": [
+    "77.32",
+    "41.20",
+    "41.2"
+  ],
+  "saved_at": "2026-10-16T14:19:31.578491+00:00"
+}

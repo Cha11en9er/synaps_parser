@@ -1,0 +1,121 @@
+{
+  "index": 1335,
+  "name": "ЛИГО-ДИЗАЙН ТРЕЙДИНГ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9B%D0%98%D0%93%D0%9E-%D0%94%D0%98%D0%97%D0%90%D0%99%D0%9D%20%D0%A2%D0%A0%D0%95%D0%99%D0%94%D0%98%D0%9D%D0%93",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9B%D0%98%D0%93%D0%9E-%D0%94%D0%98%D0%97%D0%90%D0%99%D0%9D%20%D0%A2%D0%A0%D0%95%D0%99%D0%94%D0%98%D0%9D%D0%93",
+  "total_text": "найдено 8 лиц",
+  "cards_count": 8,
+  "cards": [
+    {
+      "title": "ООО \"ЛИГО-ДИЗАЙН ТРЕЙДИНГ\"",
+      "url": "https://synapsenet.ru/organizacii/1046500646257-ooo-ligodizajn-trejding",
+      "ogrn": "1046500646257",
+      "inn": "6501153658",
+      "kpp": "650101001",
+      "okved": "41.20.1",
+      "okved_name": "Жилищное строительство",
+      "status": "действующая организация",
+      "region": "г. Южно-Сахалинск",
+      "reg_date": "16.11.2004",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"ЛИГО-ДИЗАЙН\"",
+      "url": "https://synapsenet.ru/organizacii/1026500541132-ooo-sz-ligodizajn",
+      "ogrn": "1026500541132",
+      "inn": "6501109401",
+      "kpp": "650101001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Южно-Сахалинск",
+      "reg_date": "03.12.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЛИГО-ДИЗАЙН\"",
+      "url": "https://synapsenet.ru/organizacii/1116501007930-ooo-ligodizajn",
+      "ogrn": "1116501007930",
+      "inn": "6501242957",
+      "kpp": "650101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Южно-Сахалинск",
+      "reg_date": "",
+      "period": "с 09.12.2011 по 29.01.2013"
+    },
+    {
+      "title": "ООО \"ДИЗАЙН-ТРЕЙДИНГ\"",
+      "url": "https://synapsenet.ru/organizacii/1063702032998-ooo-dizajntrejding",
+      "ogrn": "1063702032998",
+      "inn": "3702088001",
+      "kpp": "370201001",
+      "okved": "46.41",
+      "okved_name": "Торговля оптовая текстильными изделиями",
+      "status": "действующая организация",
+      "region": "г. Иваново",
+      "reg_date": "03.03.2006",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ДИЗАЙН ТРЕЙДИНГ\"",
+      "url": "https://synapsenet.ru/organizacii/1067746587303-ooo-dizajn-trejding",
+      "ogrn": "1067746587303",
+      "inn": "7709677050",
+      "kpp": "772301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 11.05.2006 по 15.07.2013"
+    },
+    {
+      "title": "ООО \"ДИЗАЙН ТРЕЙДИНГ\"",
+      "url": "https://synapsenet.ru/organizacii/1165275070091-ooo-dizajn-trejding",
+      "ogrn": "1165275070091",
+      "inn": "5260435281",
+      "kpp": "526001001",
+      "okved": "46.42",
+      "okved_name": "Торговля оптовая одеждой и обувью",
+      "status": "организация ликвидирована",
+      "region": "г. Нижний Новгород",
+      "reg_date": "",
+      "period": "с 05.12.2016 по 12.05.2022"
+    },
+    {
+      "title": "ДИЗАЙН-ТРЕЙДИНГ ЗАО",
+      "url": "https://synapsenet.ru/organizacii/1147746908264-dizajntrejding-zao",
+      "ogrn": "1147746908264",
+      "inn": "7726233590",
+      "kpp": "772601010",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 11.08.2014 по 11.08.2014"
+    },
+    {
+      "title": "ООО \"МД-ТРЕЙДИНГ\"",
+      "url": "https://synapsenet.ru/organizacii/1066165010834-ooo-mdtrejding",
+      "ogrn": "1066165010834",
+      "inn": "6165129416",
+      "kpp": "616301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ростов-на-Дону",
+      "reg_date": "",
+      "period": "с 02.03.2006 по 06.03.2015"
+    }
+  ],
+  "okveds": [
+    "41.20.1",
+    "71.12.2",
+    "46.41",
+    "46.42"
+  ],
+  "saved_at": "2026-10-16T10:25:07.370072+00:00"
+}

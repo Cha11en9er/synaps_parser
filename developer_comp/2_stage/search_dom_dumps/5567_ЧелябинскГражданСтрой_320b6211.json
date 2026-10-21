@@ -1,0 +1,80 @@
+{
+  "index": 5567,
+  "name": "ЧелябинскГражданСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A7%D0%B5%D0%BB%D1%8F%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%D0%93%D1%80%D0%B0%D0%B6%D0%B4%D0%B0%D0%BD%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A7%D0%B5%D0%BB%D1%8F%D0%B1%D0%B8%D0%BD%D1%81%D0%BA%D0%93%D1%80%D0%B0%D0%B6%D0%B4%D0%B0%D0%BD%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "АО \"СК ЧГС\"",
+      "url": "https://synapsenet.ru/organizacii/1027403893054-ao-sk-chgs",
+      "ogrn": "1027403893054",
+      "inn": "7453017809",
+      "kpp": "745301001",
+      "okved": "68.10.21",
+      "okved_name": "Покупка и продажа собственного жилого недвижимого имущества",
+      "status": "в процессе банкротства",
+      "region": "г. Челябинск",
+      "reg_date": "24.12.2002",
+      "period": ""
+    },
+    {
+      "title": "ЗАО \"ЧГС\"",
+      "url": "https://synapsenet.ru/organizacii/1027403869371-zao-chgs",
+      "ogrn": "1027403869371",
+      "inn": "7453064319",
+      "kpp": "745101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Челябинск",
+      "reg_date": "",
+      "period": "с 14.11.2002 по 21.10.2014"
+    },
+    {
+      "title": "ПОЛНОЕ ТОВАРИЩЕСТВО ПРОФКОМ ПСМО \"ЧЕЛЯБИНСКГРАЖДАНСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1137453009374-polnoe-tovarischestvo-profkom-psmo-chelyabinskgrazhdanstroj",
+      "ogrn": "1137453009374",
+      "inn": "7453040300",
+      "kpp": "745301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Челябинск",
+      "reg_date": "",
+      "period": "с 26.09.2013 по 26.09.2013"
+    },
+    {
+      "title": "ООО \"ЧГС\"",
+      "url": "https://synapsenet.ru/organizacii/1147451018648-ooo-chgs",
+      "ogrn": "1147451018648",
+      "inn": "7451380647",
+      "kpp": "745101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Челябинск",
+      "reg_date": "",
+      "period": "с 21.10.2014 по 19.08.2022"
+    },
+    {
+      "title": "ОБЩЕСТВО С ОГРАНИЧЕННОЙ ОТВЕТСТВЕННОСТЬЮ \"СТРОИТЕЛЬНОЕ УПРАВЛЕНИЕ №4 ЧЕЛЯБИНСКГРАЖДАНСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1037403880161-obschestvo-s-ogranichennoj-otvetstvennostyu-stroitelnoe-upravlenie-4-chelyabinskgrazhdanstroj",
+      "ogrn": "1037403880161",
+      "inn": "7453018344",
+      "kpp": "745301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Челябинск",
+      "reg_date": "",
+      "period": "с 08.01.2003 по 10.10.2005"
+    }
+  ],
+  "okveds": [
+    "68.10.21",
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T14:09:44.162271+00:00"
+}

@@ -1,0 +1,67 @@
+{
+  "index": 2569,
+  "name": "СЗ ВЫСОТНЫЕ ЗДАНИЯ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%92%D0%AB%D0%A1%D0%9E%D0%A2%D0%9D%D0%AB%D0%95%20%D0%97%D0%94%D0%90%D0%9D%D0%98%D0%AF",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%92%D0%AB%D0%A1%D0%9E%D0%A2%D0%9D%D0%AB%D0%95%20%D0%97%D0%94%D0%90%D0%9D%D0%98%D0%AF",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО СЗ \"ВЫСОТНЫЕ ЗДАНИЯ\"",
+      "url": "https://synapsenet.ru/organizacii/1240800010736-ooo-sz-visotnie-zdaniya",
+      "ogrn": "1240800010736",
+      "inn": "0800024480",
+      "kpp": "080001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Элиста",
+      "reg_date": "16.12.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ВЫСОТНЫЕ ЗДАНИЯ\"",
+      "url": "https://synapsenet.ru/organizacii/1057813070974-ooo-visotnie-zdaniya",
+      "ogrn": "1057813070974",
+      "inn": "7801394790",
+      "kpp": "780201001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 06.12.2005 по 31.03.2014"
+    },
+    {
+      "title": "ООО СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"ВЫСОТНЫЕ ЗДАНИЯ\"",
+      "url": "https://synapsenet.ru/organizacii/1196196048729-ooo-specializirovannij-zastrojschik-visotnie-zdaniya",
+      "ogrn": "1196196048729",
+      "inn": "6102073070",
+      "kpp": "616401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Ростов-на-Дону",
+      "reg_date": "02.12.2019",
+      "period": ""
+    },
+    {
+      "title": "АССОЦИАЦИЯ СЗ \"НОВГОРОДСКАЯ 35\"",
+      "url": "https://synapsenet.ru/organizacii/1123500000293-associaciya-sz-novgorodskaya-35",
+      "ogrn": "1123500000293",
+      "inn": "3525269582",
+      "kpp": "352501001",
+      "okved": "68.32.2",
+      "okved_name": "Управление эксплуатацией нежилого фонда за вознаграждение или на договорной основе",
+      "status": "действующая организация",
+      "region": "г. Вологда",
+      "reg_date": "18.04.2012",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "68.32.2"
+  ],
+  "saved_at": "2026-10-16T11:34:56.835490+00:00"
+}

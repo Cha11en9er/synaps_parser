@@ -1,0 +1,109 @@
+{
+  "index": 1901,
+  "name": "РегионБизнесГрупп",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A0%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%91%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%93%D1%80%D1%83%D0%BF%D0%BF",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A0%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%91%D0%B8%D0%B7%D0%BD%D0%B5%D1%81%D0%93%D1%80%D1%83%D0%BF%D0%BF",
+  "total_text": "найдено 7 лиц",
+  "cards_count": 7,
+  "cards": [
+    {
+      "title": "ООО \"РЕГИОНБИЗНЕСГРУПП\"",
+      "url": "https://synapsenet.ru/organizacii/1155040003095-ooo-regionbiznesgrupp",
+      "ogrn": "1155040003095",
+      "inn": "5040093924",
+      "kpp": "504001001",
+      "okved": "43.91",
+      "okved_name": "Производство кровельных работ",
+      "status": "действующая организация",
+      "region": "г. Раменское",
+      "reg_date": "07.05.2015",
+      "period": ""
+    },
+    {
+      "title": "ООО \"РЕГИОНБИЗНЕСГРУПП\"",
+      "url": "https://synapsenet.ru/organizacii/5077746278055-ooo-regionbiznesgrupp",
+      "ogrn": "5077746278055",
+      "inn": "7715639528",
+      "kpp": "772501001",
+      "okved": "43.91",
+      "okved_name": "Производство кровельных работ",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "09.03.2007",
+      "period": ""
+    },
+    {
+      "title": "ООО \"РЕГИОНБИЗНЕСГРУПП\"",
+      "url": "https://synapsenet.ru/organizacii/1162651061760-ooo-regionbiznesgrupp",
+      "ogrn": "1162651061760",
+      "inn": "2634096673",
+      "kpp": "263401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "в процессе банкротства",
+      "region": "г. Ставрополь",
+      "reg_date": "20.05.2016",
+      "period": ""
+    },
+    {
+      "title": "ООО \"РЕГИОНБИЗНЕСГРУПП\"",
+      "url": "https://synapsenet.ru/organizacii/1107746347213-ooo-regionbiznesgrupp",
+      "ogrn": "1107746347213",
+      "inn": "7704753067",
+      "kpp": "770401001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 29.04.2010 по 20.06.2016"
+    },
+    {
+      "title": "ООО \"РЕГИОНБИЗНЕСГРУПП\"",
+      "url": "https://synapsenet.ru/organizacii/1087746093478-ooo-regionbiznesgrupp",
+      "ogrn": "1087746093478",
+      "inn": "7724647740",
+      "kpp": "772401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 23.01.2008 по 15.03.2013"
+    },
+    {
+      "title": "ООО \"РЕГИОНБИЗНЕСГРУПП\"",
+      "url": "https://synapsenet.ru/organizacii/1151690049114-ooo-regionbiznesgrupp",
+      "ogrn": "1151690049114",
+      "inn": "1657196626",
+      "kpp": "160501001",
+      "okved": "46.73",
+      "okved_name": "Торговля оптовая лесоматериалами, строительными материалами и санитарно-техническим оборудованием",
+      "status": "организация ликвидирована",
+      "region": "р-н Алексеевский",
+      "reg_date": "",
+      "period": "с 16.06.2015 по 18.03.2022"
+    },
+    {
+      "title": "ООО \"РЕГИОНБИЗНЕСГРУПП\"",
+      "url": "https://synapsenet.ru/organizacii/1145958081917-ooo-regionbiznesgrupp",
+      "ogrn": "1145958081917",
+      "inn": "5904653130",
+      "kpp": "590401001",
+      "okved": "46.63",
+      "okved_name": "Торговля оптовая машинами и оборудованием для добычи полезных ископаемых и строительства",
+      "status": "организация ликвидирована",
+      "region": "г. Пермь",
+      "reg_date": "",
+      "period": "с 09.12.2014 по 07.08.2017"
+    }
+  ],
+  "okveds": [
+    "43.91",
+    "41.20",
+    "41.2",
+    "46.73",
+    "46.63"
+  ],
+  "saved_at": "2026-10-16T10:57:13.750899+00:00"
+}

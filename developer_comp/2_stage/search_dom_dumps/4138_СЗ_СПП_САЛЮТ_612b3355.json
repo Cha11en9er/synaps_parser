@@ -1,0 +1,68 @@
+{
+  "index": 4138,
+  "name": "СЗ СПП САЛЮТ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%9F%D0%9F%20%D0%A1%D0%90%D0%9B%D0%AE%D0%A2",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%9F%D0%9F%20%D0%A1%D0%90%D0%9B%D0%AE%D0%A2",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "АО СЗ \"СПП \"САЛЮТ\"",
+      "url": "https://synapsenet.ru/organizacii/1021200767180-ao-sz-spp-salyut",
+      "ogrn": "1021200767180",
+      "inn": "1215003701",
+      "kpp": "121501001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Йошкар-Ола",
+      "reg_date": "27.11.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СПП САЛЮТ\"",
+      "url": "https://synapsenet.ru/organizacii/1216600039017-ooo-spp-salyut",
+      "ogrn": "1216600039017",
+      "inn": "6670502769",
+      "kpp": "667001001",
+      "okved": "16.10",
+      "okved_name": "Распиловка и строгание древесины",
+      "status": "действующая организация",
+      "region": "г. Екатеринбург",
+      "reg_date": "02.07.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"САЛЮТ\"",
+      "url": "https://synapsenet.ru/organizacii/1142536010341-ooo-sz-salyut",
+      "ogrn": "1142536010341",
+      "inn": "2536278788",
+      "kpp": "254001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Владивосток",
+      "reg_date": "01.12.2014",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"САЛЮТ\"",
+      "url": "https://synapsenet.ru/organizacii/1246000000245-ooo-sz-salyut",
+      "ogrn": "1246000000245",
+      "inn": "6000006885",
+      "kpp": "600001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Псков",
+      "reg_date": "31.01.2024",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.2",
+    "16.10",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T12:49:28.214782+00:00"
+}

@@ -1,0 +1,68 @@
+{
+  "index": 4710,
+  "name": "СИПЭК",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%98%D0%9F%D0%AD%D0%9A",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%98%D0%9F%D0%AD%D0%9A",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"СИПЭК\"",
+      "url": "https://synapsenet.ru/organizacii/1047200036971-ooo-sipek",
+      "ogrn": "1047200036971",
+      "inn": "7205013099",
+      "kpp": "720301001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Тюмень",
+      "reg_date": "15.04.2004",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СИПЭК\"",
+      "url": "https://synapsenet.ru/organizacii/1165476146340-ooo-sipek",
+      "ogrn": "1165476146340",
+      "inn": "5406616880",
+      "kpp": "540601001",
+      "okved": "46.73",
+      "okved_name": "Торговля оптовая лесоматериалами, строительными материалами и санитарно-техническим оборудованием",
+      "status": "организация ликвидирована",
+      "region": "г. Новосибирск",
+      "reg_date": "",
+      "period": "с 15.08.2016 по 13.12.2018"
+    },
+    {
+      "title": "НП \"СИПЭК\"",
+      "url": "https://synapsenet.ru/organizacii/1062464002578-np-sipek",
+      "ogrn": "1062464002578",
+      "inn": "2464080881",
+      "kpp": "246401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Красноярск",
+      "reg_date": "",
+      "period": "с 23.01.2006 по 25.06.2009"
+    },
+    {
+      "title": "ООО \"СИПЭК\"",
+      "url": "https://synapsenet.ru/organizacii/1232200003947-ooo-sipek",
+      "ogrn": "1232200003947",
+      "inn": "2204097107",
+      "kpp": "220401001",
+      "okved": "46.90",
+      "okved_name": "Торговля оптовая неспециализированная",
+      "status": "организация ликвидирована",
+      "region": "г. Бийск",
+      "reg_date": "",
+      "period": "с 02.03.2023 по 28.06.2024"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "46.73",
+    "46.90"
+  ],
+  "saved_at": "2026-10-16T13:17:20.278933+00:00"
+}

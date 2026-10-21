@@ -1,0 +1,68 @@
+{
+  "index": 788,
+  "name": "ДОМ НА ЛАБОРАТОРНОМ, 23А",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%94%D0%9E%D0%9C%20%D0%9D%D0%90%20%D0%9B%D0%90%D0%91%D0%9E%D0%A0%D0%90%D0%A2%D0%9E%D0%A0%D0%9D%D0%9E%D0%9C%2C%2023%D0%90",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%94%D0%9E%D0%9C%20%D0%9D%D0%90%20%D0%9B%D0%90%D0%91%D0%9E%D0%A0%D0%90%D0%A2%D0%9E%D0%A0%D0%9D%D0%9E%D0%9C%2C%2023%D0%90",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"ДОМ НА ЛАБОРАТОРНОМ, 23 А\"",
+      "url": "https://synapsenet.ru/organizacii/1167847122046-ooo-dom-na-laboratornom-23-a",
+      "ogrn": "1167847122046",
+      "inn": "7804560502",
+      "kpp": "780401001",
+      "okved": "68.10",
+      "okved_name": "Покупка и продажа собственного недвижимого имущества",
+      "status": "действующая организация",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "04.03.2016",
+      "period": ""
+    },
+    {
+      "title": "ООО \"РСТИ НА ЛАБОРАТОРНОМ (СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК)\"",
+      "url": "https://synapsenet.ru/organizacii/1217800088186-ooo-rsti-na-laboratornom-specializirovannij-zastrojschik",
+      "ogrn": "1217800088186",
+      "inn": "7813654080",
+      "kpp": "781301001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "04.06.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО \"АСЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1057810377052-ooo-asl",
+      "ogrn": "1057810377052",
+      "inn": "7804316631",
+      "kpp": "780401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 20.05.2005 по 10.01.2007"
+    },
+    {
+      "title": "\"ТСЖ НА К.ВОРОБЬЕВА 23А\"",
+      "url": "https://synapsenet.ru/organizacii/1054639005871--tszh-na-kvorobeva-23a",
+      "ogrn": "1054639005871",
+      "inn": "4632049431",
+      "kpp": "463201001",
+      "okved": "68.32.1",
+      "okved_name": "Управление эксплуатацией жилого фонда за вознаграждение или на договорной основе",
+      "status": "действующая организация",
+      "region": "г. Курск",
+      "reg_date": "31.01.2005",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "68.10",
+    "41.20",
+    "68.32.1"
+  ],
+  "saved_at": "2026-10-16T09:54:40.153938+00:00"
+}

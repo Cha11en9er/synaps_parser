@@ -1,0 +1,41 @@
+{
+  "index": 2454,
+  "name": "СЗ БРУ-ТАМБОВСТРОЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%91%D0%A0%D0%A3-%D0%A2%D0%90%D0%9C%D0%91%D0%9E%D0%92%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%91%D0%A0%D0%A3-%D0%A2%D0%90%D0%9C%D0%91%D0%9E%D0%92%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"БРУ-ТАМБОВСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1196820009100-ooo-specializirovannij-zastrojschik-brutambovstroj",
+      "ogrn": "1196820009100",
+      "inn": "6820040636",
+      "kpp": "682001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "р-н Тамбовский",
+      "reg_date": "08.11.2019",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"ТАМБОВСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1266800002028-ooo-sz-tambovstroj",
+      "ogrn": "1266800002028",
+      "inn": "6800019611",
+      "kpp": "680001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Тамбов",
+      "reg_date": "06.07.2026",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T11:28:33.932215+00:00"
+}

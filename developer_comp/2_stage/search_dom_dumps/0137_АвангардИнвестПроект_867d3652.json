@@ -1,0 +1,81 @@
+{
+  "index": 137,
+  "name": "АвангардИнвестПроект",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%B2%D0%B0%D0%BD%D0%B3%D0%B0%D1%80%D0%B4%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%B2%D0%B0%D0%BD%D0%B3%D0%B0%D1%80%D0%B4%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ООО \"АВАНГАРДИНВЕСТПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1023902051205-ooo-avangardinvestproekt",
+      "ogrn": "1023902051205",
+      "inn": "3912008813",
+      "kpp": "391201001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "в процессе ликвидации",
+      "region": "г. Светлогорск",
+      "reg_date": "06.08.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"АВАНГАРДИНВЕСТПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1127746436564-ooo-avangardinvestproekt",
+      "ogrn": "1127746436564",
+      "inn": "7714874952",
+      "kpp": "771401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 04.06.2012 по 09.01.2014"
+    },
+    {
+      "title": "ООО \"АВАНГАРДИНВЕСТПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1097746168410-ooo-avangardinvestproekt",
+      "ogrn": "1097746168410",
+      "inn": "7701833243",
+      "kpp": "770101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 26.03.2009 по 17.12.2012"
+    },
+    {
+      "title": "ООО \"АВАНГАРДИНВЕСТПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1207700145290-ooo-avangardinvestproekt",
+      "ogrn": "1207700145290",
+      "inn": "7708378160",
+      "kpp": "770801001",
+      "okved": "43.11",
+      "okved_name": "Разборка и снос зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 30.03.2020 по 14.07.2022"
+    },
+    {
+      "title": "ООО СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"ИК \"АВАНГАРДИНВЕСТПРОЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1143926013835-ooo-specializirovannij-zastrojschik-ik-avangardinvestproekt",
+      "ogrn": "1143926013835",
+      "inn": "3912504547",
+      "kpp": "390601001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Калининград",
+      "reg_date": "18.04.2014",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.2",
+    "43.11",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T09:13:28.785027+00:00"
+}

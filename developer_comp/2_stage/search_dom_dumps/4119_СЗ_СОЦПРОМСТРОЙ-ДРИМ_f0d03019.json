@@ -1,0 +1,66 @@
+{
+  "index": 4119,
+  "name": "СЗ СОЦПРОМСТРОЙ-ДРИМ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%9E%D0%A6%D0%9F%D0%A0%D0%9E%D0%9C%D0%A1%D0%A2%D0%A0%D0%9E%D0%99-%D0%94%D0%A0%D0%98%D0%9C",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A1%D0%9E%D0%A6%D0%9F%D0%A0%D0%9E%D0%9C%D0%A1%D0%A2%D0%A0%D0%9E%D0%99-%D0%94%D0%A0%D0%98%D0%9C",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО СЗ \"СОЦПРОМСТРОЙ-ДРИМ\"",
+      "url": "https://synapsenet.ru/organizacii/1205000112932-ooo-sz-socpromstrojdrim",
+      "ogrn": "1205000112932",
+      "inn": "5032324110",
+      "kpp": "503201001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Одинцово",
+      "reg_date": "09.12.2020",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СОЦПРОМСТРОЙ-МЭЦ\"",
+      "url": "https://synapsenet.ru/organizacii/1145032006305-ooo-sz-socpromstrojmec",
+      "ogrn": "1145032006305",
+      "inn": "5032282163",
+      "kpp": "503201001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Одинцово",
+      "reg_date": "15.07.2014",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СОЦПРОМСТРОЙ-ДАЙМОНД\"",
+      "url": "https://synapsenet.ru/organizacii/1205000120490-ooo-sz-socpromstrojdajmond",
+      "ogrn": "1205000120490",
+      "inn": "5032324695",
+      "kpp": "503201001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Одинцово",
+      "reg_date": "31.12.2020",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СОЦПРОМСТРОЙ - КЛУБНЫЙ ДОМ\"",
+      "url": "https://synapsenet.ru/organizacii/1215000057227-ooo-sz-socpromstroj-klubnij-dom",
+      "ogrn": "1215000057227",
+      "inn": "5032329566",
+      "kpp": "503201001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Одинцово",
+      "reg_date": "02.06.2021",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T12:48:37.548155+00:00"
+}

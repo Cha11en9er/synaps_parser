@@ -1,0 +1,41 @@
+{
+  "index": 2064,
+  "name": "СахалинДом",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B8%D0%BD%D0%94%D0%BE%D0%BC",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%B0%D1%85%D0%B0%D0%BB%D0%B8%D0%BD%D0%94%D0%BE%D0%BC",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"САХАЛИНДОМ\"",
+      "url": "https://synapsenet.ru/organizacii/1036500605932-ooo-sahalindom",
+      "ogrn": "1036500605932",
+      "inn": "6501130844",
+      "kpp": "650101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Южно-Сахалинск",
+      "reg_date": "13.03.2003",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"САХАЛИНДОМ\"",
+      "url": "https://synapsenet.ru/organizacii/1236500005444-ooo-sz-sahalindom",
+      "ogrn": "1236500005444",
+      "inn": "6500012823",
+      "kpp": "650001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Южно-Сахалинск",
+      "reg_date": "16.10.2023",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T11:08:04.059441+00:00"
+}

@@ -1,0 +1,94 @@
+{
+  "index": 1578,
+  "name": "Новгородсельстрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9D%D0%BE%D0%B2%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%D1%81%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 6 лиц",
+  "cards_count": 6,
+  "cards": [
+    {
+      "title": "ООО \"НОВГОРОДСЕЛЬСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1075321000754-ooo-novgorodselstroj",
+      "ogrn": "1075321000754",
+      "inn": "5321114802",
+      "kpp": "532101001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Великий Новгород",
+      "reg_date": "15.02.2007",
+      "period": ""
+    },
+    {
+      "title": "АО АТП \"НОВГОРОДСЕЛЬСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1025301388683-ao-atp-novgorodselstroj",
+      "ogrn": "1025301388683",
+      "inn": "5310008129",
+      "kpp": "531001001",
+      "okved": "49.4",
+      "okved_name": "Деятельность автомобильного грузового транспорта и услуги по перевозкам",
+      "status": "действующая организация",
+      "region": "р-н Новгородский",
+      "reg_date": "14.10.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СПЕЦЗАСТРОЙЩИК \"НОВГОРОДСЕЛЬСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1225300002322-ooo-speczastrojschik-novgorodselstroj",
+      "ogrn": "1225300002322",
+      "inn": "5300004407",
+      "kpp": "530001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Великий Новгород",
+      "reg_date": "06.06.2022",
+      "period": ""
+    },
+    {
+      "title": "ЗАО \"НОВГОРОДСЕЛЬСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1025300799083-zao-novgorodselstroj",
+      "ogrn": "1025300799083",
+      "inn": "5321053331",
+      "kpp": "532101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Великий Новгород",
+      "reg_date": "",
+      "period": "с 29.11.2002 по 15.02.2007"
+    },
+    {
+      "title": "ПРОИЗВОДСТВЕННО-СТРОИТЕЛЬНАЯ АССОЦИАЦИЯ \"НОВГОРОДСЕЛЬСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1025300795662-proizvodstvennostroitelnaya-associaciya-novgorodselstroj",
+      "ogrn": "1025300795662",
+      "inn": "5321035678",
+      "kpp": "532101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Великий Новгород",
+      "reg_date": "",
+      "period": "с 24.11.2002 по 25.05.2009"
+    },
+    {
+      "title": "ПРОФКОМ АООТ АТП \"НОВГОРОДСЕЛЬСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1025300003442-profkom-aoot-atp-novgorodselstroj",
+      "ogrn": "1025300003442",
+      "inn": "5310007446",
+      "kpp": "531001001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "р-н Новгородский",
+      "reg_date": "",
+      "period": "с 04.11.2002 по 20.06.2011"
+    }
+  ],
+  "okveds": [
+    "71.12.2",
+    "49.4",
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T10:39:46.738915+00:00"
+}

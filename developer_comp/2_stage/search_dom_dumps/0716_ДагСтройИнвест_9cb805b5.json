@@ -1,0 +1,93 @@
+{
+  "index": 716,
+  "name": "ДагСтройИнвест",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%94%D0%B0%D0%B3%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%94%D0%B0%D0%B3%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82",
+  "total_text": "найдено 6 лиц",
+  "cards_count": 6,
+  "cards": [
+    {
+      "title": "ООО \"ДАГСТРОЙИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1060545002605-ooo-dagstrojinvest",
+      "ogrn": "1060545002605",
+      "inn": "0545019183",
+      "kpp": "055401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Каспийск",
+      "reg_date": "25.07.2006",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ДАГСТРОЙИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1120533000807-ooo-dagstrojinvest",
+      "ogrn": "1120533000807",
+      "inn": "0508011475",
+      "kpp": "050801001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "в процессе ликвидации",
+      "region": "р-н Гергебильский",
+      "reg_date": "14.05.2012",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ДАГСТРОЙИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1140572000634-ooo-dagstrojinvest",
+      "ogrn": "1140572000634",
+      "inn": "0572006810",
+      "kpp": "057201001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Махачкала",
+      "reg_date": "",
+      "period": "с 24.03.2014 по 09.06.2018"
+    },
+    {
+      "title": "ООО \"ДАГСТРОЙИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/5150550030208-ooo-dagstrojinvest",
+      "ogrn": "5150550030208",
+      "inn": "0550006447",
+      "kpp": "055001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Дагестанские Огни",
+      "reg_date": "",
+      "period": "с 25.06.2015 по 27.03.2019"
+    },
+    {
+      "title": "ООО \"ДАГ СТРОЙИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1130522000190-ooo-dag-strojinvest",
+      "ogrn": "1130522000190",
+      "inn": "0515015400",
+      "kpp": "051501001",
+      "okved": "43.12",
+      "okved_name": "Подготовка строительной площадки",
+      "status": "в процессе ликвидации",
+      "region": "р-н Каякентский",
+      "reg_date": "24.04.2013",
+      "period": ""
+    },
+    {
+      "title": "ЖСК \"ДАГСТРОЙИНВЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1190571017339-zhsk-dagstrojinvest",
+      "ogrn": "1190571017339",
+      "inn": "0571016005",
+      "kpp": "057101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Махачкала",
+      "reg_date": "31.12.2019",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "43.12"
+  ],
+  "saved_at": "2026-10-16T09:50:49.149786+00:00"
+}

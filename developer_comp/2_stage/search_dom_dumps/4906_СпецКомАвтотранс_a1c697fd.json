@@ -1,0 +1,83 @@
+{
+  "index": 4906,
+  "name": "СпецКомАвтотранс",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%BF%D0%B5%D1%86%D0%9A%D0%BE%D0%BC%D0%90%D0%B2%D1%82%D0%BE%D1%82%D1%80%D0%B0%D0%BD%D1%81",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%BF%D0%B5%D1%86%D0%9A%D0%BE%D0%BC%D0%90%D0%B2%D1%82%D0%BE%D1%82%D1%80%D0%B0%D0%BD%D1%81",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ООО \"СПЕЦКОМАВТОТРАНС\"",
+      "url": "https://synapsenet.ru/organizacii/1111101011020-ooo-speckomavtotrans",
+      "ogrn": "1111101011020",
+      "inn": "1101091574",
+      "kpp": "110101001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Сыктывкар",
+      "reg_date": "",
+      "period": "с 27.12.2011 по 12.07.2022"
+    },
+    {
+      "title": "ООО \"СКАТ\"",
+      "url": "https://synapsenet.ru/organizacii/1227400047203-ooo-skat",
+      "ogrn": "1227400047203",
+      "inn": "7452161398",
+      "kpp": "745201001",
+      "okved": "45.19",
+      "okved_name": "Торговля прочими автотранспортными средствами",
+      "status": "действующая организация",
+      "region": "г. Челябинск",
+      "reg_date": "25.11.2022",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СКАТ\"",
+      "url": "https://synapsenet.ru/organizacii/1246600055130-ooo-skat",
+      "ogrn": "1246600055130",
+      "inn": "6679179831",
+      "kpp": "667901001",
+      "okved": "49.41",
+      "okved_name": "Деятельность автомобильного грузового транспорта",
+      "status": "действующая организация",
+      "region": "г. Полевской",
+      "reg_date": "22.11.2024",
+      "period": ""
+    },
+    {
+      "title": "МУП \"СКАТ\" ГОРОДА РОВЕНЬКИ",
+      "url": "https://synapsenet.ru/organizacii/1229400102502-mup-skat-goroda-rovenki",
+      "ogrn": "1229400102502",
+      "inn": "9409009070",
+      "kpp": "940901001",
+      "okved": "81.29.2",
+      "okved_name": "Подметание улиц и уборка снега",
+      "status": "действующая организация",
+      "region": "г. Ровеньки",
+      "reg_date": "27.12.2022",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СКАТ ЛОГИСТИК\"",
+      "url": "https://synapsenet.ru/organizacii/1212600014417-ooo-skat-logistik",
+      "ogrn": "1212600014417",
+      "inn": "2635251586",
+      "kpp": "263501001",
+      "okved": "46.19",
+      "okved_name": "Деятельность агентов по оптовой торговле универсальным ассортиментом товаров",
+      "status": "действующая организация",
+      "region": "г. Ставрополь",
+      "reg_date": "07.12.2021",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.2",
+    "45.19",
+    "49.41",
+    "81.29.2",
+    "46.19"
+  ],
+  "saved_at": "2026-10-16T13:27:41.291389+00:00"
+}

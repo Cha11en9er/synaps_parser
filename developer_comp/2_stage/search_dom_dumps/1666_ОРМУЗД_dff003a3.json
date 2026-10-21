@@ -1,0 +1,79 @@
+{
+  "index": 1666,
+  "name": "ОРМУЗД",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9E%D0%A0%D0%9C%D0%A3%D0%97%D0%94",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9E%D0%A0%D0%9C%D0%A3%D0%97%D0%94",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ОРМУЗД",
+      "url": "https://synapsenet.ru/organizacii/1117746775300-ormuzd",
+      "ogrn": "1117746775300",
+      "inn": "7731056851",
+      "kpp": "773101050",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 03.10.2011 по 03.10.2011"
+    },
+    {
+      "title": "ОРМУЗД",
+      "url": "https://synapsenet.ru/organizacii/1117746486439-ormuzd",
+      "ogrn": "1117746486439",
+      "inn": "7715129559",
+      "kpp": "771501050",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 22.06.2011 по 22.06.2011"
+    },
+    {
+      "title": "АОЗТ \"ОРМУЗД\"",
+      "url": "https://synapsenet.ru/organizacii/1085401005678-aozt-ormuzd",
+      "ogrn": "1085401005678",
+      "inn": "5401117090",
+      "kpp": "540101010",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Новосибирск",
+      "reg_date": "",
+      "period": "с 11.03.2008 по 11.03.2008"
+    },
+    {
+      "title": "ООО \"ОРМУЗД\"",
+      "url": "https://synapsenet.ru/organizacii/1021500668969-ooo-ormuzd",
+      "ogrn": "1021500668969",
+      "inn": "1503016175",
+      "kpp": "151501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Владикавказ",
+      "reg_date": "",
+      "period": "с 19.08.2002 по 29.03.2022"
+    },
+    {
+      "title": "ИНДИВИДУАЛЬНОЕ ЧАСТНОЕ ПРЕДПРИЯТИЕ \"РОССИЙСКАЯ ИНВЕСТИЦИОННАЯ КОМПАНИЯ \"ОРМУЗД\"",
+      "url": "https://synapsenet.ru/organizacii/1065047049583-individualnoe-chastnoe-predpriyatie-rossijskaya-investicionnaya-kompaniya-ormuzd",
+      "ogrn": "1065047049583",
+      "inn": "5008005313",
+      "kpp": "500801001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Долгопрудный",
+      "reg_date": "",
+      "period": "с 12.05.2006 по 12.05.2006"
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T10:44:30.049168+00:00"
+}

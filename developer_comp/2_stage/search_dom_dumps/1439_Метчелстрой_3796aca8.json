@@ -1,0 +1,41 @@
+{
+  "index": 1439,
+  "name": "Метчелстрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9C%D0%B5%D1%82%D1%87%D0%B5%D0%BB%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9C%D0%B5%D1%82%D1%87%D0%B5%D0%BB%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО СЗ \"МЕТЧЕЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1027402814207-ooo-sz-metchelstroj",
+      "ogrn": "1027402814207",
+      "inn": "7450018152",
+      "kpp": "746001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Челябинск",
+      "reg_date": "04.10.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"МЕТЧЕЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1047421508353-ooo-metchelstroj",
+      "ogrn": "1047421508353",
+      "inn": "7447072336",
+      "kpp": "744701001",
+      "okved": "46.38.1",
+      "okved_name": "Торговля оптовая рыбой, ракообразными и моллюсками, консервами и пресервами из рыбы и морепродуктов",
+      "status": "организация ликвидирована",
+      "region": "г. Челябинск",
+      "reg_date": "",
+      "period": "с 27.04.2004 по 28.06.2016"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "46.38.1"
+  ],
+  "saved_at": "2026-10-16T10:31:38.572203+00:00"
+}

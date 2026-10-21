@@ -1,0 +1,92 @@
+{
+  "index": 1992,
+  "name": "РОСИТАЛ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A0%D0%9E%D0%A1%D0%98%D0%A2%D0%90%D0%9B",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A0%D0%9E%D0%A1%D0%98%D0%A2%D0%90%D0%9B",
+  "total_text": "найдено 6 лиц",
+  "cards_count": 6,
+  "cards": [
+    {
+      "title": "ООО \"РОСИТАЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1037700014109-ooo-rosital",
+      "ogrn": "1037700014109",
+      "inn": "7704097190",
+      "kpp": "770301001",
+      "okved": "41.20.9",
+      "okved_name": "Прочие виды строительства жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "10.01.2003",
+      "period": ""
+    },
+    {
+      "title": "РОСИТАЛ",
+      "url": "https://synapsenet.ru/organizacii/1073905028878-rosital",
+      "ogrn": "1073905028878",
+      "inn": "3903016279",
+      "kpp": "390401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Калининград",
+      "reg_date": "",
+      "period": "с 12.12.2007 по 12.12.2007"
+    },
+    {
+      "title": "ООО \"РОСИТАЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1086166003285-ooo-rosital",
+      "ogrn": "1086166003285",
+      "inn": "6166067258",
+      "kpp": "616601001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ростов-на-Дону",
+      "reg_date": "",
+      "period": "с 08.10.2008 по 22.03.2011"
+    },
+    {
+      "title": "ООО \"РОСИТАЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1096165003813-ooo-rosital",
+      "ogrn": "1096165003813",
+      "inn": "6165157170",
+      "kpp": "616501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ростов-на-Дону",
+      "reg_date": "",
+      "period": "с 18.09.2009 по 24.08.2011"
+    },
+    {
+      "title": "ООО \"РОСИТАЛ КОМП\"",
+      "url": "https://synapsenet.ru/organizacii/1027719003245-ooo-rosital-komp",
+      "ogrn": "1027719003245",
+      "inn": "7719253684",
+      "kpp": "771901001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 16.08.2002 по 20.12.2008"
+    },
+    {
+      "title": "РОСИТАЛ КОМПАНИ (ТОО)",
+      "url": "https://synapsenet.ru/organizacii/5077746502500-rosital-kompani-too",
+      "ogrn": "5077746502500",
+      "inn": "7729241085",
+      "kpp": "772901050",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 09.04.2007 по 09.04.2007"
+    }
+  ],
+  "okveds": [
+    "41.20.9"
+  ],
+  "saved_at": "2026-10-16T11:02:44.075748+00:00"
+}

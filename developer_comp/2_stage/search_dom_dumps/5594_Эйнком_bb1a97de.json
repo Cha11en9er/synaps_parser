@@ -1,0 +1,55 @@
+{
+  "index": 5594,
+  "name": "Эйнком",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%AD%D0%B9%D0%BD%D0%BA%D0%BE%D0%BC",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%AD%D0%B9%D0%BD%D0%BA%D0%BE%D0%BC",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"ЭЙНКОМ\"",
+      "url": "https://synapsenet.ru/organizacii/1087746429957-ooo-ejnkom",
+      "ogrn": "1087746429957",
+      "inn": "7729598631",
+      "kpp": "773001001",
+      "okved": "70.22",
+      "okved_name": "Консультирование по вопросам коммерческой деятельности и управления",
+      "status": "в процессе ликвидации",
+      "region": "г. Москва",
+      "reg_date": "27.03.2008",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЭЙНКОМ-НЕДВИЖИМОСТЬ\"",
+      "url": "https://synapsenet.ru/organizacii/1167746307662-ooo-ejnkomnedvizhimost",
+      "ogrn": "1167746307662",
+      "inn": "7730200005",
+      "kpp": "773001001",
+      "okved": "68.31",
+      "okved_name": "Деятельность агентств недвижимости за вознаграждение или на договорной основе",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 28.03.2016 по 10.02.2023"
+    },
+    {
+      "title": "ООО \"ЭЙНКОМ ДЕВЕЛОПМЕНТ\"",
+      "url": "https://synapsenet.ru/organizacii/1167746402526-ooo-ejnkom-development",
+      "ogrn": "1167746402526",
+      "inn": "7730201922",
+      "kpp": "773001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 21.04.2016 по 06.07.2023"
+    }
+  ],
+  "okveds": [
+    "70.22",
+    "68.31",
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T14:11:05.848798+00:00"
+}

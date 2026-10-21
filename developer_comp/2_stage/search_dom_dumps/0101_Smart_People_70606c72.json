@@ -1,0 +1,51 @@
+{
+  "index": 101,
+  "name": "Smart People",
+  "query_url": "https://synapsenet.ru/organizacii?query=Smart%20People",
+  "final_url": "https://synapsenet.ru/organizacii?query=Smart%20People",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ЛС СМАРТ LS SMART",
+      "url": "https://synapsenet.ru/organizacii/5077746120370-ls-smart-ls-smart",
+      "ogrn": "5077746120370",
+      "inn": "7728168442",
+      "kpp": "772801001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 04.03.2007 по 04.03.2007"
+    },
+    {
+      "title": "ЗАО ХК \"SMART INVEST\"",
+      "url": "https://synapsenet.ru/organizacii/1063808008890-zao-hk-smart-invest",
+      "ogrn": "1063808008890",
+      "inn": "3808133222",
+      "kpp": "380801001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Иркутск",
+      "reg_date": "",
+      "period": "с 07.02.2006 по 13.03.2013"
+    },
+    {
+      "title": "ЗАО Х К \"SMART INVEST\"",
+      "url": "https://synapsenet.ru/organizacii/1053811083050-zao-h-k-smart-invest",
+      "ogrn": "1053811083050",
+      "inn": "3811090410",
+      "kpp": "381101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Иркутск",
+      "reg_date": "",
+      "period": "с 03.06.2005 по 23.08.2011"
+    }
+  ],
+  "okveds": [],
+  "saved_at": "2026-10-16T09:11:40.991229+00:00"
+}

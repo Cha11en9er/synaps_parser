@@ -1,0 +1,108 @@
+{
+  "index": 5194,
+  "name": "СЭТТЭ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%AD%D0%A2%D0%A2%D0%AD",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%AD%D0%A2%D0%A2%D0%AD",
+  "total_text": "найдено 7 лиц",
+  "cards_count": 7,
+  "cards": [
+    {
+      "title": "ООО СК \"СЭТТЭ\"",
+      "url": "https://synapsenet.ru/organizacii/1071435019622-ooo-sk-sette",
+      "ogrn": "1071435019622",
+      "inn": "1435194434",
+      "kpp": "143501001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Якутск",
+      "reg_date": "09.11.2007",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СМУ СЭТТЭ\"",
+      "url": "https://synapsenet.ru/organizacii/1021401044521-ooo-smu-sette",
+      "ogrn": "1021401044521",
+      "inn": "1435127300",
+      "kpp": "143501001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Якутск",
+      "reg_date": "10.07.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЭТТЭ СОРТУОЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1241400002645-ooo-sette-sortuol",
+      "ogrn": "1241400002645",
+      "inn": "1400032640",
+      "kpp": "140001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Вилюйск",
+      "reg_date": "06.03.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"СЭТТЭ\"",
+      "url": "https://synapsenet.ru/organizacii/1141447001156-ooo-sz-sette",
+      "ogrn": "1141447001156",
+      "inn": "1435276782",
+      "kpp": "143501001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Якутск",
+      "reg_date": "05.02.2014",
+      "period": ""
+    },
+    {
+      "title": "ООО ДРСУ \"СЭТТЭ\"",
+      "url": "https://synapsenet.ru/organizacii/1201400005168-ooo-drsu-sette",
+      "ogrn": "1201400005168",
+      "inn": "1435352200",
+      "kpp": "143501001",
+      "okved": "42.11",
+      "okved_name": "Строительство автомобильных дорог и автомагистралей",
+      "status": "действующая организация",
+      "region": "г. Якутск",
+      "reg_date": "08.05.2020",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"ДСО СЭТТЭ\"",
+      "url": "https://synapsenet.ru/organizacii/1071435011340-ooo-sz-dso-sette",
+      "ogrn": "1071435011340",
+      "inn": "1435190479",
+      "kpp": "143501001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Якутск",
+      "reg_date": "24.07.2007",
+      "period": ""
+    },
+    {
+      "title": "ООО ПКФ \"СЭТТЭ\"",
+      "url": "https://synapsenet.ru/organizacii/1021401057040-ooo-pkf-sette",
+      "ogrn": "1021401057040",
+      "inn": "1435100757",
+      "kpp": "143501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Якутск",
+      "reg_date": "",
+      "period": "с 28.10.2002 по 27.01.2010"
+    }
+  ],
+  "okveds": [
+    "71.12.2",
+    "41.2",
+    "41.20",
+    "42.11"
+  ],
+  "saved_at": "2026-10-16T13:44:40.316955+00:00"
+}

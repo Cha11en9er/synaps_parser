@@ -1,0 +1,53 @@
+{
+  "index": 3846,
+  "name": "СЗ РУСИЧ-КАНТЕМИРОВСКИЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A0%D0%A3%D0%A1%D0%98%D0%A7-%D0%9A%D0%90%D0%9D%D0%A2%D0%95%D0%9C%D0%98%D0%A0%D0%9E%D0%92%D0%A1%D0%9A%D0%98%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A0%D0%A3%D0%A1%D0%98%D0%A7-%D0%9A%D0%90%D0%9D%D0%A2%D0%95%D0%9C%D0%98%D0%A0%D0%9E%D0%92%D0%A1%D0%9A%D0%98%D0%99",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "АО СЗ \"РУСИЧ-КАНТЕМИРОВСКИЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1217700586960-ao-sz-rusichkantemirovskij",
+      "ogrn": "1217700586960",
+      "inn": "9721151394",
+      "kpp": "771501001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "03.12.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"РУСИЧ\"",
+      "url": "https://synapsenet.ru/organizacii/1242200013714-ooo-sz-rusich",
+      "ogrn": "1242200013714",
+      "inn": "2221261822",
+      "kpp": "222101001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Барнаул",
+      "reg_date": "13.09.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"РУСИЧ-ГРАД\"",
+      "url": "https://synapsenet.ru/organizacii/1252200016122-ooo-sz-rusichgrad",
+      "ogrn": "1252200016122",
+      "inn": "2221263869",
+      "kpp": "222101001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Барнаул",
+      "reg_date": "13.11.2025",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T12:36:34.389955+00:00"
+}

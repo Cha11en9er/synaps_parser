@@ -1,0 +1,68 @@
+{
+  "index": 668,
+  "name": "ГОСЖИЛСТРОЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%93%D0%9E%D0%A1%D0%96%D0%98%D0%9B%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%93%D0%9E%D0%A1%D0%96%D0%98%D0%9B%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"ГОСЖИЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1166451078276-ooo-goszhilstroj",
+      "ogrn": "1166451078276",
+      "inn": "6452124443",
+      "kpp": "645201001",
+      "okved": "41.20.1",
+      "okved_name": "Жилищное строительство",
+      "status": "действующая организация",
+      "region": "г. Саратов",
+      "reg_date": "26.10.2016",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ ГОСЖИЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1256400012406-ooo-sz-goszhilstroj",
+      "ogrn": "1256400012406",
+      "inn": "6450120531",
+      "kpp": "645001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Саратов",
+      "reg_date": "12.11.2025",
+      "period": ""
+    },
+    {
+      "title": "КПСО \"ГОСЖИЛСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1066450108097-kpso-goszhilstroj",
+      "ogrn": "1066450108097",
+      "inn": "6452918090",
+      "kpp": "645201001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Саратов",
+      "reg_date": "",
+      "period": "с 10.04.2006 по 26.10.2016"
+    },
+    {
+      "title": "ООО \"ГЖС\"",
+      "url": "https://synapsenet.ru/organizacii/1086164002946-ooo-gzhs",
+      "ogrn": "1086164002946",
+      "inn": "6164277066",
+      "kpp": "616701001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ростов-на-Дону",
+      "reg_date": "",
+      "period": "с 19.03.2008 по 29.12.2011"
+    }
+  ],
+  "okveds": [
+    "41.20.1",
+    "41.20",
+    "41.2"
+  ],
+  "saved_at": "2026-10-16T09:47:35.080102+00:00"
+}

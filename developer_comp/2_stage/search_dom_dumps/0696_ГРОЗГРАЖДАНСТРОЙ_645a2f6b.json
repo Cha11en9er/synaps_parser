@@ -1,0 +1,54 @@
+{
+  "index": 696,
+  "name": "ГРОЗГРАЖДАНСТРОЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%93%D0%A0%D0%9E%D0%97%D0%93%D0%A0%D0%90%D0%96%D0%94%D0%90%D0%9D%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%93%D0%A0%D0%9E%D0%97%D0%93%D0%A0%D0%90%D0%96%D0%94%D0%90%D0%9D%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"ГРОЗГРАЖДАНСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1082031003450-ooo-grozgrazhdanstroj",
+      "ogrn": "1082031003450",
+      "inn": "2014259840",
+      "kpp": "201401001",
+      "okved": "41.20.9",
+      "okved_name": "Прочие виды строительства жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Грозный",
+      "reg_date": "09.07.2008",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ГРОЗГРАЖДАНСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1027601605074-ooo-grozgrazhdanstroj",
+      "ogrn": "1027601605074",
+      "inn": "7627019726",
+      "kpp": "762701001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "р-н Ярославский",
+      "reg_date": "",
+      "period": "с 26.12.2002 по 01.09.2014"
+    },
+    {
+      "title": "ЗАО \"ГГС\"",
+      "url": "https://synapsenet.ru/organizacii/1042002605017-zao-ggs",
+      "ogrn": "1042002605017",
+      "inn": "2014028634",
+      "kpp": "771401001",
+      "okved": "43.12",
+      "okved_name": "Подготовка строительной площадки",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 24.06.2004 по 24.07.2017"
+    }
+  ],
+  "okveds": [
+    "41.20.9",
+    "43.12"
+  ],
+  "saved_at": "2026-10-16T09:49:10.645972+00:00"
+}

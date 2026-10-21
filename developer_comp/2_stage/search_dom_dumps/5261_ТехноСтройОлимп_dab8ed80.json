@@ -1,0 +1,82 @@
+{
+  "index": 5261,
+  "name": "ТехноСтройОлимп",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%9E%D0%BB%D0%B8%D0%BC%D0%BF",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A2%D0%B5%D1%85%D0%BD%D0%BE%D0%A1%D1%82%D1%80%D0%BE%D0%B9%D0%9E%D0%BB%D0%B8%D0%BC%D0%BF",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ООО \"ТЕХНОСТРОЙОЛИМП\"",
+      "url": "https://synapsenet.ru/organizacii/1257700462260-ooo-tehnostrojolimp",
+      "ogrn": "1257700462260",
+      "inn": "9728164385",
+      "kpp": "772601001",
+      "okved": "46.73",
+      "okved_name": "Торговля оптовая лесоматериалами, строительными материалами и санитарно-техническим оборудованием",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "20.10.2025",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ТЕХНОСТРОЙОЛИМП\"",
+      "url": "https://synapsenet.ru/organizacii/1221600048229-ooo-tehnostrojolimp",
+      "ogrn": "1221600048229",
+      "inn": "1655479668",
+      "kpp": "165501001",
+      "okved": "25.99",
+      "okved_name": "Производство прочих готовых металлических изделий, не включенных в другие группировки",
+      "status": "действующая организация",
+      "region": "г. Казань",
+      "reg_date": "24.06.2022",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ ТЕХНОСТРОЙОЛИМП\"",
+      "url": "https://synapsenet.ru/organizacii/1057748065550-ooo-sz-tehnostrojolimp",
+      "ogrn": "1057748065550",
+      "inn": "7709628581",
+      "kpp": "770201001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "01.09.2005",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ТЕХНОСТРОЙОЛИМП\"",
+      "url": "https://synapsenet.ru/organizacii/1027739874634-ooo-tehnostrojolimp",
+      "ogrn": "1027739874634",
+      "inn": "7709379046",
+      "kpp": "773001001",
+      "okved": "43.11",
+      "okved_name": "Разборка и снос зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 25.12.2002 по 27.10.2022"
+    },
+    {
+      "title": "ООО \"СЗ КТСО\"",
+      "url": "https://synapsenet.ru/organizacii/1077761840727-ooo-sz-ktso",
+      "ogrn": "1077761840727",
+      "inn": "7709763372",
+      "kpp": "773001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "29.10.2007",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "46.73",
+    "25.99",
+    "71.12.2",
+    "43.11"
+  ],
+  "saved_at": "2026-10-16T13:49:39.862909+00:00"
+}

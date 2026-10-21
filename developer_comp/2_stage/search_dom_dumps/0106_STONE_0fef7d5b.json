@@ -1,0 +1,106 @@
+{
+  "index": 106,
+  "name": "STONE",
+  "query_url": "https://synapsenet.ru/organizacii?query=STONE",
+  "final_url": "https://synapsenet.ru/organizacii?query=STONE",
+  "total_text": "найдено 7 лиц",
+  "cards_count": 7,
+  "cards": [
+    {
+      "title": "ООО \"АРТ STONE\"",
+      "url": "https://synapsenet.ru/organizacii/1046603504188-ooo-art-stone",
+      "ogrn": "1046603504188",
+      "inn": "6670057758",
+      "kpp": "665801001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Екатеринбург",
+      "reg_date": "",
+      "period": "с 31.05.2004 по 20.06.2006"
+    },
+    {
+      "title": "ООО \"STONE МАРКЕТ\"",
+      "url": "https://synapsenet.ru/organizacii/1051800812843-ooo-stone-market",
+      "ogrn": "1051800812843",
+      "inn": "1832044932",
+      "kpp": "183201001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ижевск",
+      "reg_date": "",
+      "period": "с 18.10.2005 по 17.11.2015"
+    },
+    {
+      "title": "ООО \"АРТ STONE\"",
+      "url": "https://synapsenet.ru/organizacii/1069658005163-ooo-art-stone",
+      "ogrn": "1069658005163",
+      "inn": "6658223430",
+      "kpp": "665801001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Екатеринбург",
+      "reg_date": "",
+      "period": "с 20.01.2006 по 03.12.2009"
+    },
+    {
+      "title": "ООО \"FIМВА SТОNЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1136164008056-ooo-fimva-sntoe",
+      "ogrn": "1136164008056",
+      "inn": "6164208256",
+      "kpp": "616401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ростов-на-Дону",
+      "reg_date": "",
+      "period": "с 04.10.2013 по 04.10.2013"
+    },
+    {
+      "title": "ООО \"S.V.STONE\"",
+      "url": "https://synapsenet.ru/organizacii/1122309006115-ooo-svstone",
+      "ogrn": "1122309006115",
+      "inn": "2309133899",
+      "kpp": "230901001",
+      "okved": "23.32",
+      "okved_name": "Производство кирпича, черепицы и прочих строительных изделий из обожженной глины",
+      "status": "организация ликвидирована",
+      "region": "г. Краснодар",
+      "reg_date": "",
+      "period": "с 16.11.2012 по 15.02.2019"
+    },
+    {
+      "title": "СТОУН-М STONE-M LTD",
+      "url": "https://synapsenet.ru/organizacii/1077746417319-stounm-stonem-ltd",
+      "ogrn": "1077746417319",
+      "inn": "7710213380",
+      "kpp": "771001001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 23.02.2007 по 23.02.2007"
+    },
+    {
+      "title": "ООО (ДЖИ-СТОУН)",
+      "url": "https://synapsenet.ru/organizacii/1072031003362-ooo-dzhistoun",
+      "ogrn": "1072031003362",
+      "inn": "2014256750",
+      "kpp": "203101001",
+      "okved": "23.6",
+      "okved_name": "Производство изделий из бетона, цемента и гипса",
+      "status": "в процессе ликвидации",
+      "region": "г. Грозный",
+      "reg_date": "07.07.2007",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "23.32",
+    "23.6"
+  ],
+  "saved_at": "2026-10-16T09:11:52.519274+00:00"
+}

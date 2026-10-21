@@ -1,0 +1,41 @@
+{
+  "index": 1236,
+  "name": "КОРПОРАЦИЯ ТАКТИЧЕСКОЕ РАКЕТНОЕ ВООРУЖЕНИЕ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%9E%D0%A0%D0%9F%D0%9E%D0%A0%D0%90%D0%A6%D0%98%D0%AF%20%D0%A2%D0%90%D0%9A%D0%A2%D0%98%D0%A7%D0%95%D0%A1%D0%9A%D0%9E%D0%95%20%D0%A0%D0%90%D0%9A%D0%95%D0%A2%D0%9D%D0%9E%D0%95%20%D0%92%D0%9E%D0%9E%D0%A0%D0%A3%D0%96%D0%95%D0%9D%D0%98%D0%95",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%9E%D0%A0%D0%9F%D0%9E%D0%A0%D0%90%D0%A6%D0%98%D0%AF%20%D0%A2%D0%90%D0%9A%D0%A2%D0%98%D0%A7%D0%95%D0%A1%D0%9A%D0%9E%D0%95%20%D0%A0%D0%90%D0%9A%D0%95%D0%A2%D0%9D%D0%9E%D0%95%20%D0%92%D0%9E%D0%9E%D0%A0%D0%A3%D0%96%D0%95%D0%9D%D0%98%D0%95",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "АО \"КОРПОРАЦИЯ \"ТАКТИЧЕСКОЕ РАКЕТНОЕ ВООРУЖЕНИЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1035003364021-ao-korporaciya-takticheskoe-raketnoe-vooruzhenie",
+      "ogrn": "1035003364021",
+      "inn": "5099000013",
+      "kpp": "501801001",
+      "okved": "25.40",
+      "okved_name": "Производство оружия и боеприпасов",
+      "status": "действующая организация",
+      "region": "г. Королёв",
+      "reg_date": "13.03.2003",
+      "period": ""
+    },
+    {
+      "title": "ППОО АО \"КОРПОРАЦИЯ \"ТРВ\"",
+      "url": "https://synapsenet.ru/organizacii/1035000023981-ppoo-ao-korporaciya-trv",
+      "ogrn": "1035000023981",
+      "inn": "5018040910",
+      "kpp": "501801001",
+      "okved": "94.20",
+      "okved_name": "Деятельность профессиональных союзов",
+      "status": "действующая организация",
+      "region": "г. Королёв",
+      "reg_date": "26.06.2003",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "25.40",
+    "94.20"
+  ],
+  "saved_at": "2026-10-16T10:19:01.887832+00:00"
+}

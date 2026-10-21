@@ -1,0 +1,80 @@
+{
+  "index": 4433,
+  "name": "СЗ - УРАЛЬСКИЕ ГОРЯЧИЕ ИСТОЧНИКИ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20-%20%D0%A3%D0%A0%D0%90%D0%9B%D0%AC%D0%A1%D0%9A%D0%98%D0%95%20%D0%93%D0%9E%D0%A0%D0%AF%D0%A7%D0%98%D0%95%20%D0%98%D0%A1%D0%A2%D0%9E%D0%A7%D0%9D%D0%98%D0%9A%D0%98",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20-%20%D0%A3%D0%A0%D0%90%D0%9B%D0%AC%D0%A1%D0%9A%D0%98%D0%95%20%D0%93%D0%9E%D0%A0%D0%AF%D0%A7%D0%98%D0%95%20%D0%98%D0%A1%D0%A2%D0%9E%D0%A7%D0%9D%D0%98%D0%9A%D0%98",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК - \"УРАЛЬСКИЕ ГОРЯЧИЕ ИСТОЧНИКИ\"",
+      "url": "https://synapsenet.ru/organizacii/1144501002623-ooo-specializirovannij-zastrojschik-uralskie-goryachie-istochniki",
+      "ogrn": "1144501002623",
+      "inn": "4501192928",
+      "kpp": "668501001",
+      "okved": "86.90.4",
+      "okved_name": "Деятельность санаторно-курортных организаций",
+      "status": "действующая организация",
+      "region": "г. Екатеринбург",
+      "reg_date": "22.04.2014",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ПО \"УРАЛЬСКИЕ ИСТОЧНИКИ\"",
+      "url": "https://synapsenet.ru/organizacii/1169658071505-ooo-po-uralskie-istochniki",
+      "ogrn": "1169658071505",
+      "inn": "6679094793",
+      "kpp": "667901001",
+      "okved": "11.07",
+      "okved_name": "Производство безалкогольных напитков; производство упакованных питьевых вод, включая минеральные воды.",
+      "status": "действующая организация",
+      "region": "г. Екатеринбург",
+      "reg_date": "22.06.2016",
+      "period": ""
+    },
+    {
+      "title": "ООО \"УРАЛЬСКИЕ ИСТОЧНИКИ\"",
+      "url": "https://synapsenet.ru/organizacii/1136679011204-ooo-uralskie-istochniki",
+      "ogrn": "1136679011204",
+      "inn": "6679036632",
+      "kpp": "667901001",
+      "okved": "11.07",
+      "okved_name": "Производство безалкогольных напитков; производство упакованных питьевых вод, включая минеральные воды.",
+      "status": "организация ликвидирована",
+      "region": "г. Екатеринбург",
+      "reg_date": "",
+      "period": "с 20.08.2013 по 02.04.2019"
+    },
+    {
+      "title": "ООО \"УРАЛЬСКИЕ ИСТОЧНИКИ\"",
+      "url": "https://synapsenet.ru/organizacii/1075903006750-ooo-uralskie-istochniki",
+      "ogrn": "1075903006750",
+      "inn": "5903080912",
+      "kpp": "590301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Пермь",
+      "reg_date": "",
+      "period": "с 07.08.2007 по 17.03.2015"
+    },
+    {
+      "title": "ООО \"УРАЛЬСКИЕ ИСТОЧНИКИ\"",
+      "url": "https://synapsenet.ru/organizacii/1105902011930-ooo-uralskie-istochniki",
+      "ogrn": "1105902011930",
+      "inn": "5902130279",
+      "kpp": "590201010",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Пермь",
+      "reg_date": "",
+      "period": "с 03.12.2010 по 03.12.2010"
+    }
+  ],
+  "okveds": [
+    "86.90.4",
+    "11.07"
+  ],
+  "saved_at": "2026-10-16T13:03:30.784962+00:00"
+}

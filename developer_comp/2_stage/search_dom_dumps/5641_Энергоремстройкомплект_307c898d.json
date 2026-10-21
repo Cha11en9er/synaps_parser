@@ -1,0 +1,53 @@
+{
+  "index": 5641,
+  "name": "Энергоремстройкомплект",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%AD%D0%BD%D0%B5%D1%80%D0%B3%D0%BE%D1%80%D0%B5%D0%BC%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%AD%D0%BD%D0%B5%D1%80%D0%B3%D0%BE%D1%80%D0%B5%D0%BC%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"ЭНЕРГОРЕМСТРОЙКОМПЛЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1036604384695-ooo-energoremstrojkomplekt",
+      "ogrn": "1036604384695",
+      "inn": "6658095683",
+      "kpp": "667801001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "в процессе банкротства",
+      "region": "г. Екатеринбург",
+      "reg_date": "08.01.2003",
+      "period": ""
+    },
+    {
+      "title": "ЗАО \"КОМПАНИЯ \"ЭНЕРГОРЕМСТРОЙКОМПЛЕКТ\"",
+      "url": "https://synapsenet.ru/organizacii/1065914011668-zao-kompaniya-energoremstrojkomplekt",
+      "ogrn": "1065914011668",
+      "inn": "5914013474",
+      "kpp": "591401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Добрянка",
+      "reg_date": "",
+      "period": "с 23.08.2006 по 20.12.2006"
+    },
+    {
+      "title": "ООО \"ЭРСК\"",
+      "url": "https://synapsenet.ru/organizacii/1035006100678-ooo-ersk",
+      "ogrn": "1035006100678",
+      "inn": "5031042666",
+      "kpp": "503101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Черноголовка",
+      "reg_date": "",
+      "period": "с 20.01.2003 по 28.07.2011"
+    }
+  ],
+  "okveds": [
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T14:13:52.742174+00:00"
+}

@@ -1,0 +1,40 @@
+{
+  "index": 2107,
+  "name": "СЕВОСЕТИНСТРОЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%95%D0%92%D0%9E%D0%A1%D0%95%D0%A2%D0%98%D0%9D%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%95%D0%92%D0%9E%D0%A1%D0%95%D0%A2%D0%98%D0%9D%D0%A1%D0%A2%D0%A0%D0%9E%D0%99",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО\"СЕВОСЕТИНСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1151514000120-ooo-sevosetinstroj",
+      "ogrn": "1151514000120",
+      "inn": "1514013592",
+      "kpp": "151401001",
+      "okved": "42.11",
+      "okved_name": "Строительство автомобильных дорог и автомагистралей",
+      "status": "действующая организация",
+      "region": "г. Владикавказ",
+      "reg_date": "12.03.2015",
+      "period": ""
+    },
+    {
+      "title": "УМСР ТР.СЕВОСЕТИНСТРОЙ",
+      "url": "https://synapsenet.ru/organizacii/1111513007979-umsr-trsevosetinstroj",
+      "ogrn": "1111513007979",
+      "inn": "1503012558",
+      "kpp": "151601090",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Владикавказ",
+      "reg_date": "",
+      "period": "с 21.07.2011 по 21.07.2011"
+    }
+  ],
+  "okveds": [
+    "42.11"
+  ],
+  "saved_at": "2026-10-16T11:10:46.120389+00:00"
+}

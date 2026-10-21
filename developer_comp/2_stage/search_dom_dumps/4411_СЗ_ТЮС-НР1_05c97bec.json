@@ -1,0 +1,66 @@
+{
+  "index": 4411,
+  "name": "СЗ ТЮС-НР1",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A2%D0%AE%D0%A1-%D0%9D%D0%A01",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A2%D0%AE%D0%A1-%D0%9D%D0%A01",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО \"CЗ \"ТЮС-НР1\"",
+      "url": "https://synapsenet.ru/organizacii/1239300015327-ooo-cz-tyusnr1",
+      "ogrn": "1239300015327",
+      "inn": "9309026508",
+      "kpp": "930901001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Донецк",
+      "reg_date": "14.11.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"ТЮС-КАЗАНЬ\"",
+      "url": "https://synapsenet.ru/organizacii/1201600057450-ooo-sz-tyuskazan",
+      "ogrn": "1201600057450",
+      "inn": "1655441569",
+      "kpp": "168401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Казань",
+      "reg_date": "20.08.2020",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"ТЮС-НР2\"",
+      "url": "https://synapsenet.ru/organizacii/1239300015338-ooo-sz-tyusnr2",
+      "ogrn": "1239300015338",
+      "inn": "9309026515",
+      "kpp": "930901001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Донецк",
+      "reg_date": "14.11.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"ТЮС-ДОН\"",
+      "url": "https://synapsenet.ru/organizacii/1249300019110-ooo-sz-tyusdon",
+      "ogrn": "1249300019110",
+      "inn": "9309028618",
+      "kpp": "930901001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Донецк",
+      "reg_date": "18.11.2024",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T13:02:33.928652+00:00"
+}

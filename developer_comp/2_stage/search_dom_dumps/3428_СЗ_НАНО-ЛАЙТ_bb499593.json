@@ -1,0 +1,67 @@
+{
+  "index": 3428,
+  "name": "СЗ НАНО-ЛАЙТ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%9D%D0%90%D0%9D%D0%9E-%D0%9B%D0%90%D0%99%D0%A2",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%9D%D0%90%D0%9D%D0%9E-%D0%9B%D0%90%D0%99%D0%A2",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО СЗ \"НАНО-ЛАЙТ\"",
+      "url": "https://synapsenet.ru/organizacii/1112503001665-ooo-sz-nanolajt",
+      "ogrn": "1112503001665",
+      "inn": "2512305432",
+      "kpp": "250301001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Большой Камень",
+      "reg_date": "08.12.2011",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"ЛАЙТ САЙД\"",
+      "url": "https://synapsenet.ru/organizacii/1125260012404-ooo-sz-lajt-sajd",
+      "ogrn": "1125260012404",
+      "inn": "5260338168",
+      "kpp": "526001001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Нижний Новгород",
+      "reg_date": "24.08.2012",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"ЛАЙТ ИНДАСТРИАЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1245000092787-ooo-sz-lajt-indastrial",
+      "ogrn": "1245000092787",
+      "inn": "5074090400",
+      "kpp": "507401001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Подольск",
+      "reg_date": "15.08.2024",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"АРХИГРАД-ЛАЙТ\"",
+      "url": "https://synapsenet.ru/organizacii/1250100002415-ooo-sz-arhigradlajt",
+      "ogrn": "1250100002415",
+      "inn": "0100013388",
+      "kpp": "010001001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "р-н Тахтамукайский",
+      "reg_date": "07.10.2025",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T12:16:32.180199+00:00"
+}

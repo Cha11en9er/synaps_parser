@@ -1,0 +1,38 @@
+{
+  "index": 50,
+  "name": "Forma",
+  "query_url": "https://synapsenet.ru/organizacii?query=Forma",
+  "final_url": "https://synapsenet.ru/organizacii?query=Forma",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ИНДИВИДУЛ., ЧАСТНЫЕ ПРЕДПРИЯТИЯ (СЕМЕЙНЫЕ) FORMA",
+      "url": "https://synapsenet.ru/organizacii/1097760237520-individul-chastnie-predpriyatiya-semejnie-forma",
+      "ogrn": "1097760237520",
+      "inn": "7715120161",
+      "kpp": "771501050",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 02.03.2009 по 02.03.2009"
+    },
+    {
+      "title": "ФОРМА ГРУПП",
+      "url": "https://synapsenet.ru/organizacii/1187746627606-forma-grupp",
+      "ogrn": "1187746627606",
+      "inn": "7715148826",
+      "kpp": "771501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 02.07.2018 по 02.07.2018"
+    }
+  ],
+  "okveds": [],
+  "saved_at": "2026-10-16T09:09:04.186985+00:00"
+}

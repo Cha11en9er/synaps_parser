@@ -1,0 +1,80 @@
+{
+  "index": 5714,
+  "name": "ЯРСАНТЕХМОНТАЖ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%AF%D0%A0%D0%A1%D0%90%D0%9D%D0%A2%D0%95%D0%A5%D0%9C%D0%9E%D0%9D%D0%A2%D0%90%D0%96",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%AF%D0%A0%D0%A1%D0%90%D0%9D%D0%A2%D0%95%D0%A5%D0%9C%D0%9E%D0%9D%D0%A2%D0%90%D0%96",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ООО \"ЯРСАНТЕХМОНТАЖ\"",
+      "url": "https://synapsenet.ru/organizacii/1167627067596-ooo-yarsantehmontazh",
+      "ogrn": "1167627067596",
+      "inn": "7604303709",
+      "kpp": "760401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Ярославль",
+      "reg_date": "18.04.2016",
+      "period": ""
+    },
+    {
+      "title": "АО \"ФИРМА ЯРСАНТЕХМОНТАЖ\"",
+      "url": "https://synapsenet.ru/organizacii/1027600520518-ao-firma-yarsantehmontazh",
+      "ogrn": "1027600520518",
+      "inn": "7602026993",
+      "kpp": "760201001",
+      "okved": "68.20",
+      "okved_name": "Аренда и управление собственным или арендованным недвижимым имуществом",
+      "status": "в процессе ликвидации",
+      "region": "г. Ярославль",
+      "reg_date": "28.12.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК ЯРСАНТЕХМОНТАЖ\"",
+      "url": "https://synapsenet.ru/organizacii/1047600406644-ooo-specializirovannij-zastrojschik-yarsantehmontazh",
+      "ogrn": "1047600406644",
+      "inn": "7604066222",
+      "kpp": "760401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Ярославль",
+      "reg_date": "24.05.2004",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЯРСАНТЕХМОНТАЖ\"",
+      "url": "https://synapsenet.ru/organizacii/1037602601948-ooo-yarsantehmontazh",
+      "ogrn": "1037602601948",
+      "inn": "7627014277",
+      "kpp": "760201001",
+      "okved": "68.20",
+      "okved_name": "Аренда и управление собственным или арендованным недвижимым имуществом",
+      "status": "организация ликвидирована",
+      "region": "г. Ярославль",
+      "reg_date": "",
+      "period": "с 09.01.2003 по 06.08.2018"
+    },
+    {
+      "title": "ПЕРВИЧНАЯ ПРОФСОЮЗНАЯ ОРГАНИЗАЦИЯ ЗАО ФИРМЫ \"ЯРСАНТЕХМОНТАЖ\" ЯРОСЛАВСКОЙ ОБЛАСТНОЙ ОБЩЕСТВЕННОЙ ОРГАНИЗАЦИИ ПРОФСОЮЗА РАБОТНИКОВ СТРОИТЕЛЬСТВА И ПРОМЫШЛЕННОСТИ СТРОИТЕЛЬНЫХ МАТЕРИАЛОВ РФ",
+      "url": "https://synapsenet.ru/organizacii/1027600008424-pervichnaya-profsoyuznaya-organizaciya-zao-firmi-yarsantehmontazh-yaroslavskoj-oblastnoj-obschestvennoj-organizacii-profsoyuza-rabotnikov-stroitelstva-i-promishlennosti-stroitelnih-stroitelnih",
+      "ogrn": "1027600008424",
+      "inn": "7602011330",
+      "kpp": "760201001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ярославль",
+      "reg_date": "",
+      "period": "с 12.12.2002 по 17.04.2008"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "68.20"
+  ],
+  "saved_at": "2026-10-16T14:19:39.089548+00:00"
+}

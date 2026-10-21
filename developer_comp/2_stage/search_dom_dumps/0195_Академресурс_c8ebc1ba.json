@@ -1,0 +1,93 @@
+{
+  "index": 195,
+  "name": "Академресурс",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D1%80%D0%B5%D1%81%D1%83%D1%80%D1%81",
+  "total_text": "найдено 6 лиц",
+  "cards_count": 6,
+  "cards": [
+    {
+      "title": "ООО \"АКАДЕМРЕСУРС\"",
+      "url": "https://synapsenet.ru/organizacii/1022700930339-ooo-akademresurs",
+      "ogrn": "1022700930339",
+      "inn": "2721093414",
+      "kpp": "272101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Хабаровск",
+      "reg_date": "27.12.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"АКАДЕМРЕСУРС\"",
+      "url": "https://synapsenet.ru/organizacii/1033800515924-ooo-akademresurs",
+      "ogrn": "1033800515924",
+      "inn": "3801064925",
+      "kpp": "380101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ангарск",
+      "reg_date": "",
+      "period": "с 10.01.2003 по 22.06.2011"
+    },
+    {
+      "title": "ООО \"ИС \"АКАДЕМРЕСУРС\"",
+      "url": "https://synapsenet.ru/organizacii/1227100004780-ooo-is-akademresurs",
+      "ogrn": "1227100004780",
+      "inn": "7100019897",
+      "kpp": "710001001",
+      "okved": "62.01",
+      "okved_name": "Разработка компьютерного программного обеспечения",
+      "status": "действующая организация",
+      "region": "г. Тула",
+      "reg_date": "08.04.2022",
+      "period": ""
+    },
+    {
+      "title": "ООО \"АКАДЕМРЕСУРС\"",
+      "url": "https://synapsenet.ru/organizacii/1027700568279-ooo-akademresurs",
+      "ogrn": "1027700568279",
+      "inn": "7736214935",
+      "kpp": "773601001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 24.12.2002 по 12.03.2018"
+    },
+    {
+      "title": "ООО \"АКАДЕМРЕСУРС\"",
+      "url": "https://synapsenet.ru/organizacii/1067746013202-ooo-akademresurs",
+      "ogrn": "1067746013202",
+      "inn": "7709653820",
+      "kpp": "540401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Новосибирск",
+      "reg_date": "",
+      "period": "с 10.01.2006 по 02.09.2011"
+    },
+    {
+      "title": "ООО \"АКАДЕМРЕСУРС М\"",
+      "url": "https://synapsenet.ru/organizacii/1027739119033-ooo-akademresurs-m",
+      "ogrn": "1027739119033",
+      "inn": "7725190376",
+      "kpp": "772501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 27.08.2002 по 07.12.2010"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "62.01"
+  ],
+  "saved_at": "2026-10-16T09:16:43.514918+00:00"
+}

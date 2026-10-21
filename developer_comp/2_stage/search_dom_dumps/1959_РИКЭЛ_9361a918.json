@@ -1,0 +1,81 @@
+{
+  "index": 1959,
+  "name": "РИКЭЛ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A0%D0%98%D0%9A%D0%AD%D0%9B",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A0%D0%98%D0%9A%D0%AD%D0%9B",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ЗАО \"РИКЭЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1027808751410-zao-rikel",
+      "ogrn": "1027808751410",
+      "inn": "7817012479",
+      "kpp": "784201001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "01.10.2002",
+      "period": ""
+    },
+    {
+      "title": "\"РИКЭЛ\" ООО",
+      "url": "https://synapsenet.ru/organizacii/1127847568353--rikel-ooo",
+      "ogrn": "1127847568353",
+      "inn": "7813105700",
+      "kpp": "781301010",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 17.10.2012 по 17.10.2012"
+    },
+    {
+      "title": "ООО \"РИКЭЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1077847536800-ooo-rikel",
+      "ogrn": "1077847536800",
+      "inn": "7802400655",
+      "kpp": "780201001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 06.08.2007 по 13.05.2011"
+    },
+    {
+      "title": "ООО \"РИКЭЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1157847396805-ooo-rikel",
+      "ogrn": "1157847396805",
+      "inn": "7838045813",
+      "kpp": "783801001",
+      "okved": "46.73",
+      "okved_name": "Торговля оптовая лесоматериалами, строительными материалами и санитарно-техническим оборудованием",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 20.11.2015 по 17.10.2018"
+    },
+    {
+      "title": "ООО \"РИКЭЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1177847038071-ooo-rikel",
+      "ogrn": "1177847038071",
+      "inn": "7839078025",
+      "kpp": "783901001",
+      "okved": "33.12",
+      "okved_name": "Ремонт машин и оборудования",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 31.01.2017 по 21.08.2020"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "46.73",
+    "33.12"
+  ],
+  "saved_at": "2026-10-16T10:59:51.965173+00:00"
+}

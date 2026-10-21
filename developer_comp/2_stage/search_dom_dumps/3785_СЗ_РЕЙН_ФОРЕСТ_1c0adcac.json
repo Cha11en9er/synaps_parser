@@ -1,0 +1,40 @@
+{
+  "index": 3785,
+  "name": "СЗ РЕЙН ФОРЕСТ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A0%D0%95%D0%99%D0%9D%20%D0%A4%D0%9E%D0%A0%D0%95%D0%A1%D0%A2",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A0%D0%95%D0%99%D0%9D%20%D0%A4%D0%9E%D0%A0%D0%95%D0%A1%D0%A2",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО СЗ \"РЕЙН ФОРЕСТ\"",
+      "url": "https://synapsenet.ru/organizacii/1203800014450-ooo-sz-rejn-forest",
+      "ogrn": "1203800014450",
+      "inn": "3808272040",
+      "kpp": "380101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Ангарск",
+      "reg_date": "20.07.2020",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"ФОРЕСТ ГРУПП\"",
+      "url": "https://synapsenet.ru/organizacii/1202500025331-ooo-sz-forest-grupp",
+      "ogrn": "1202500025331",
+      "inn": "2536325597",
+      "kpp": "253601001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Владивосток",
+      "reg_date": "05.11.2020",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T12:33:13.793751+00:00"
+}

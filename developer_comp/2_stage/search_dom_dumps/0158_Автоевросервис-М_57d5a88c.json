@@ -1,0 +1,133 @@
+{
+  "index": 158,
+  "name": "Автоевросервис-М",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%B2%D1%82%D0%BE%D0%B5%D0%B2%D1%80%D0%BE%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81-%D0%9C",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%B2%D1%82%D0%BE%D0%B5%D0%B2%D1%80%D0%BE%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81-%D0%9C",
+  "total_text": "найдено 9 лиц",
+  "cards_count": 9,
+  "cards": [
+    {
+      "title": "ООО \"АВТОЕВРОСЕРВИС-М\"",
+      "url": "https://synapsenet.ru/organizacii/1027739216560-ooo-avtoevroservism",
+      "ogrn": "1027739216560",
+      "inn": "7723186303",
+      "kpp": "780101001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 18.09.2002 по 02.07.2020"
+    },
+    {
+      "title": "ООО \"АВТОЕВРОСЕРВИС\"",
+      "url": "https://synapsenet.ru/organizacii/1067746490943-ooo-avtoevroservis",
+      "ogrn": "1067746490943",
+      "inn": "7708596400",
+      "kpp": "770801001",
+      "okved": "45.20",
+      "okved_name": "Техническое обслуживание и ремонт автотранспортных средств",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 13.04.2006 по 08.08.2016"
+    },
+    {
+      "title": "ООО \"АВТОЕВРОСЕРВИС\"",
+      "url": "https://synapsenet.ru/organizacii/1114706003422-ooo-avtoevroservis",
+      "ogrn": "1114706003422",
+      "inn": "4723004318",
+      "kpp": "470601001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Шлиссельбург",
+      "reg_date": "",
+      "period": "с 25.03.2011 по 25.03.2011"
+    },
+    {
+      "title": "ООО \"АВТОЕВРОСЕРВИС\"",
+      "url": "https://synapsenet.ru/organizacii/1027807587939-ooo-avtoevroservis",
+      "ogrn": "1027807587939",
+      "inn": "7814097361",
+      "kpp": "781401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 17.12.2002 по 20.02.2015"
+    },
+    {
+      "title": "ООО \"АВТОЕВРОСЕРВИС\"",
+      "url": "https://synapsenet.ru/organizacii/1037722037242-ooo-avtoevroservis",
+      "ogrn": "1037722037242",
+      "inn": "7722296977",
+      "kpp": "772201001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 02.07.2003 по 30.12.2014"
+    },
+    {
+      "title": "ООО \"АВТОЕВРОСЕРВИС\"",
+      "url": "https://synapsenet.ru/organizacii/1038900748820-ooo-avtoevroservis",
+      "ogrn": "1038900748820",
+      "inn": "8904043002",
+      "kpp": "890401001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Новый Уренгой",
+      "reg_date": "",
+      "period": "с 26.12.2003 по 26.02.2007"
+    },
+    {
+      "title": "ООО \"АВТОЕВРОСЕРВИС\"",
+      "url": "https://synapsenet.ru/organizacii/5067746786762-ooo-avtoevroservis",
+      "ogrn": "5067746786762",
+      "inn": "7715617034",
+      "kpp": "771501001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 22.09.2006 по 25.05.2009"
+    },
+    {
+      "title": "ООО «АЕС»",
+      "url": "https://synapsenet.ru/organizacii/1252500013589-ooo-aes",
+      "ogrn": "1252500013589",
+      "inn": "2502081350",
+      "kpp": "250201001",
+      "okved": "33.12",
+      "okved_name": "Ремонт машин и оборудования",
+      "status": "в процессе ликвидации",
+      "region": "г. Артем",
+      "reg_date": "02.07.2025",
+      "period": ""
+    },
+    {
+      "title": "ООО \"АВЕС\"",
+      "url": "https://synapsenet.ru/organizacii/1027739216735-ooo-aves",
+      "ogrn": "1027739216735",
+      "inn": "7723173079",
+      "kpp": "772301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 18.09.2002 по 21.09.2009"
+    }
+  ],
+  "okveds": [
+    "71.12.2",
+    "45.20",
+    "33.12"
+  ],
+  "saved_at": "2026-10-16T09:14:44.937583+00:00"
+}

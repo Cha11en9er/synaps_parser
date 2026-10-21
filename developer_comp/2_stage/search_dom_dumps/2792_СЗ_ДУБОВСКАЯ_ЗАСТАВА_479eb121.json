@@ -1,0 +1,41 @@
+{
+  "index": 2792,
+  "name": "СЗ ДУБОВСКАЯ ЗАСТАВА",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%94%D0%A3%D0%91%D0%9E%D0%92%D0%A1%D0%9A%D0%90%D0%AF%20%D0%97%D0%90%D0%A1%D0%A2%D0%90%D0%92%D0%90",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%94%D0%A3%D0%91%D0%9E%D0%92%D0%A1%D0%9A%D0%90%D0%AF%20%D0%97%D0%90%D0%A1%D0%A2%D0%90%D0%92%D0%90",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"ДУБОВСКАЯ ЗАСТАВА\"",
+      "url": "https://synapsenet.ru/organizacii/1163123076434-ooo-specializirovannij-zastrojschik-dubovskaya-zastava",
+      "ogrn": "1163123076434",
+      "inn": "3123392508",
+      "kpp": "312301001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Белгород",
+      "reg_date": "03.08.2016",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"ЖК \"АРБЕКОВСКАЯ ЗАСТАВА\"",
+      "url": "https://synapsenet.ru/organizacii/1187746005908-ooo-sz-zhk-arbekovskaya-zastava",
+      "ogrn": "1187746005908",
+      "inn": "9729219816",
+      "kpp": "772901001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "09.01.2018",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T11:45:20.981321+00:00"
+}

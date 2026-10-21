@@ -1,0 +1,40 @@
+{
+  "index": 5676,
+  "name": "ЮгоПолисСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%AE%D0%B3%D0%BE%D0%9F%D0%BE%D0%BB%D0%B8%D1%81%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%AE%D0%B3%D0%BE%D0%9F%D0%BE%D0%BB%D0%B8%D1%81%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"ЮГОПОЛИССТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1162375033512-ooo-yugopolisstroj",
+      "ogrn": "1162375033512",
+      "inn": "2308235633",
+      "kpp": "230801001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Краснодар",
+      "reg_date": "10.08.2016",
+      "period": ""
+    },
+    {
+      "title": "ООО \"ЮГОПОЛИССТРОЙ-КРАСНОДАР\"",
+      "url": "https://synapsenet.ru/organizacii/1212300060631-ooo-yugopolisstrojkrasnodar",
+      "ogrn": "1212300060631",
+      "inn": "2308282150",
+      "kpp": "230801001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "организация ликвидирована",
+      "region": "г. Краснодар",
+      "reg_date": "",
+      "period": "с 21.10.2021 по 18.11.2022"
+    }
+  ],
+  "okveds": [
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T14:16:18.452268+00:00"
+}

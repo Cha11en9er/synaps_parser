@@ -1,0 +1,94 @@
+{
+  "index": 4671,
+  "name": "Сиада",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%B8%D0%B0%D0%B4%D0%B0",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%B8%D0%B0%D0%B4%D0%B0",
+  "total_text": "найдено 6 лиц",
+  "cards_count": 6,
+  "cards": [
+    {
+      "title": "ООО ПСИП \" СИАДА \"",
+      "url": "https://synapsenet.ru/organizacii/1022200902272-ooo-psip-siada",
+      "ogrn": "1022200902272",
+      "inn": "2221032646",
+      "kpp": "222101001",
+      "okved": "41.2",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "в процессе банкротства",
+      "region": "г. Барнаул",
+      "reg_date": "29.10.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СИАДА\"",
+      "url": "https://synapsenet.ru/organizacii/1092223009427-ooo-siada",
+      "ogrn": "1092223009427",
+      "inn": "2223573182",
+      "kpp": "222301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Барнаул",
+      "reg_date": "",
+      "period": "с 06.11.2009 по 02.04.2014"
+    },
+    {
+      "title": "ООО \"СИАДА\"",
+      "url": "https://synapsenet.ru/organizacii/1062221056864-ooo-siada",
+      "ogrn": "1062221056864",
+      "inn": "2221011004",
+      "kpp": "222101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Барнаул",
+      "reg_date": "",
+      "period": "с 22.08.2006 по 22.08.2006"
+    },
+    {
+      "title": "ООО \"СИАДА\"",
+      "url": "https://synapsenet.ru/organizacii/1197746548427-ooo-siada",
+      "ogrn": "1197746548427",
+      "inn": "9704000846",
+      "kpp": "770401001",
+      "okved": "73.11",
+      "okved_name": "Деятельность рекламных агентств",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 06.09.2019 по 21.10.2021"
+    },
+    {
+      "title": "ООО \"СИАДА\"",
+      "url": "https://synapsenet.ru/organizacii/1202200035355-ooo-siada",
+      "ogrn": "1202200035355",
+      "inn": "2221251535",
+      "kpp": "222101001",
+      "okved": "46.90",
+      "okved_name": "Торговля оптовая неспециализированная",
+      "status": "организация ликвидирована",
+      "region": "г. Барнаул",
+      "reg_date": "",
+      "period": "с 19.11.2020 по 19.05.2022"
+    },
+    {
+      "title": "ООО УК \"СИАДА\"",
+      "url": "https://synapsenet.ru/organizacii/1132225005000-ooo-uk-siada",
+      "ogrn": "1132225005000",
+      "inn": "2221203757",
+      "kpp": "222101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Барнаул",
+      "reg_date": "",
+      "period": "с 14.03.2013 по 19.08.2014"
+    }
+  ],
+  "okveds": [
+    "41.2",
+    "73.11",
+    "46.90"
+  ],
+  "saved_at": "2026-10-16T13:15:15.986314+00:00"
+}

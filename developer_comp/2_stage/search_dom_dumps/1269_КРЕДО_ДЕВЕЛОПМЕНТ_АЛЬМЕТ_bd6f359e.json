@@ -1,0 +1,53 @@
+{
+  "index": 1269,
+  "name": "КРЕДО ДЕВЕЛОПМЕНТ АЛЬМЕТ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%A0%D0%95%D0%94%D0%9E%20%D0%94%D0%95%D0%92%D0%95%D0%9B%D0%9E%D0%9F%D0%9C%D0%95%D0%9D%D0%A2%20%D0%90%D0%9B%D0%AC%D0%9C%D0%95%D0%A2",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9A%D0%A0%D0%95%D0%94%D0%9E%20%D0%94%D0%95%D0%92%D0%95%D0%9B%D0%9E%D0%9F%D0%9C%D0%95%D0%9D%D0%A2%20%D0%90%D0%9B%D0%AC%D0%9C%D0%95%D0%A2",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"КРЕДО ДЕВЕЛОПМЕНТ АЛЬМЕТ\"",
+      "url": "https://synapsenet.ru/organizacii/1211600008696-ooo-kredo-development-almet",
+      "ogrn": "1211600008696",
+      "inn": "1644097829",
+      "kpp": "164401001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Альметьевск",
+      "reg_date": "04.02.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО \"КРЕДО ДЕВЕЛОПМЕНТ\"",
+      "url": "https://synapsenet.ru/organizacii/1191690072221-ooo-kredo-development",
+      "ogrn": "1191690072221",
+      "inn": "1644095187",
+      "kpp": "164401001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Альметьевск",
+      "reg_date": "06.09.2019",
+      "period": ""
+    },
+    {
+      "title": "ООО \"КРЕДО ДЕВЕЛОПМЕНТ ЛЕНИНОГОРСК\"",
+      "url": "https://synapsenet.ru/organizacii/1201600032930-ooo-kredo-development-leninogorsk",
+      "ogrn": "1201600032930",
+      "inn": "1649038337",
+      "kpp": "164901001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Альметьевск",
+      "reg_date": "12.05.2020",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T10:21:12.614128+00:00"
+}

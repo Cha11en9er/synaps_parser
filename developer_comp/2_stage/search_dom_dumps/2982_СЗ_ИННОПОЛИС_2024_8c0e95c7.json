@@ -1,0 +1,41 @@
+{
+  "index": 2982,
+  "name": "СЗ ИННОПОЛИС 2024",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%98%D0%9D%D0%9D%D0%9E%D0%9F%D0%9E%D0%9B%D0%98%D0%A1%202024",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%98%D0%9D%D0%9D%D0%9E%D0%9F%D0%9E%D0%9B%D0%98%D0%A1%202024",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"СЗ \"ИННОПОЛИС 2024\"",
+      "url": "https://synapsenet.ru/organizacii/1211600002690-ooo-sz-innopolis-2024",
+      "ogrn": "1211600002690",
+      "inn": "1615016141",
+      "kpp": "161501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Иннополис",
+      "reg_date": "20.01.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"НОВЫЙ ДОНЕЦК 2024\"",
+      "url": "https://synapsenet.ru/organizacii/1249300016052-ooo-sz-novij-doneck-2024",
+      "ogrn": "1249300016052",
+      "inn": "9303038673",
+      "kpp": "930301001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Донецк",
+      "reg_date": "06.09.2024",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "71.12.2"
+  ],
+  "saved_at": "2026-10-16T11:54:22.443175+00:00"
+}

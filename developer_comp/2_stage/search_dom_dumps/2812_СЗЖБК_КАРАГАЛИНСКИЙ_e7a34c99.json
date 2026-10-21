@@ -1,0 +1,66 @@
+{
+  "index": 2812,
+  "name": "СЗЖБК КАРАГАЛИНСКИЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%D0%96%D0%91%D0%9A%20%D0%9A%D0%90%D0%A0%D0%90%D0%93%D0%90%D0%9B%D0%98%D0%9D%D0%A1%D0%9A%D0%98%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%D0%96%D0%91%D0%9A%20%D0%9A%D0%90%D0%A0%D0%90%D0%93%D0%90%D0%9B%D0%98%D0%9D%D0%A1%D0%9A%D0%98%D0%99",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "ООО СЗ \"КАРАГАЛИНСКИЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1252000006521-ooo-sz-karagalinskij",
+      "ogrn": "1252000006521",
+      "inn": "2014046182",
+      "kpp": "201401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Грозный",
+      "reg_date": "24.07.2025",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ\"ЖБК КАРАГАЛИНСКИЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1192036004643-ooo-sz-zhbk-karagalinskij",
+      "ogrn": "1192036004643",
+      "inn": "2014019679",
+      "kpp": "201401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Грозный",
+      "reg_date": "02.07.2019",
+      "period": ""
+    },
+    {
+      "title": "ООО \" ПКФ\" СРЗ \" КАРАГАЛИНСКИЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1023000841632-ooo-pkf-srz-karagalinskij",
+      "ogrn": "1023000841632",
+      "inn": "3009010305",
+      "kpp": "300901001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "р-н Приволжский",
+      "reg_date": "",
+      "period": "с 16.11.2002 по 09.09.2015"
+    },
+    {
+      "title": "ООО \"ТДК\"",
+      "url": "https://synapsenet.ru/organizacii/1103019000127-ooo-tdk",
+      "ogrn": "1103019000127",
+      "inn": "3009016709",
+      "kpp": "771901001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 15.02.2010 по 15.07.2011"
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T11:46:37.716678+00:00"
+}

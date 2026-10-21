@@ -1,0 +1,54 @@
+{
+  "index": 3781,
+  "name": "СЗ РЕЗИДЕНЦИЯ НА САРЫ САДЫКОВОЙ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A0%D0%95%D0%97%D0%98%D0%94%D0%95%D0%9D%D0%A6%D0%98%D0%AF%20%D0%9D%D0%90%20%D0%A1%D0%90%D0%A0%D0%AB%20%D0%A1%D0%90%D0%94%D0%AB%D0%9A%D0%9E%D0%92%D0%9E%D0%99",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%A0%D0%95%D0%97%D0%98%D0%94%D0%95%D0%9D%D0%A6%D0%98%D0%AF%20%D0%9D%D0%90%20%D0%A1%D0%90%D0%A0%D0%AB%20%D0%A1%D0%90%D0%94%D0%AB%D0%9A%D0%9E%D0%92%D0%9E%D0%99",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"СЗ \"РЕЗИДЕНЦИЯ НА САРЫ САДЫКОВОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1231600058480-ooo-sz-rezidenciya-na-sari-sadikovoj",
+      "ogrn": "1231600058480",
+      "inn": "1655499022",
+      "kpp": "165501001",
+      "okved": "68.10",
+      "okved_name": "Покупка и продажа собственного недвижимого имущества",
+      "status": "действующая организация",
+      "region": "г. Казань",
+      "reg_date": "09.11.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"РЕЗИДЕНЦИЯ НА ТУКАЯ\"",
+      "url": "https://synapsenet.ru/organizacii/1221600055005-ooo-sz-rezidenciya-na-tukaya",
+      "ogrn": "1221600055005",
+      "inn": "1655481650",
+      "kpp": "165801001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Казань",
+      "reg_date": "18.07.2022",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"РЕЗИДЕНЦИЯ НА УХТОМСКОГО\"",
+      "url": "https://synapsenet.ru/organizacii/1237700426248-ooo-sz-rezidenciya-na-uhtomskogo",
+      "ogrn": "1237700426248",
+      "inn": "9701252228",
+      "kpp": "770101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 21.06.2023 по 19.05.2026"
+    }
+  ],
+  "okveds": [
+    "68.10",
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T12:33:04.074452+00:00"
+}

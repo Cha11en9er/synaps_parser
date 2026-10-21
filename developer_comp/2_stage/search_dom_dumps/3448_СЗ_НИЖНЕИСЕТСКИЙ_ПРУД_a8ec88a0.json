@@ -1,0 +1,40 @@
+{
+  "index": 3448,
+  "name": "СЗ НИЖНЕИСЕТСКИЙ ПРУД",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%9D%D0%98%D0%96%D0%9D%D0%95%D0%98%D0%A1%D0%95%D0%A2%D0%A1%D0%9A%D0%98%D0%99%20%D0%9F%D0%A0%D0%A3%D0%94",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%9D%D0%98%D0%96%D0%9D%D0%95%D0%98%D0%A1%D0%95%D0%A2%D0%A1%D0%9A%D0%98%D0%99%20%D0%9F%D0%A0%D0%A3%D0%94",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"НИЖНЕИСЕТСКИЙ ПРУД\"",
+      "url": "https://synapsenet.ru/organizacii/1169658108839-ooo-specializirovannij-zastrojschik-nizhneisetskij-prud",
+      "ogrn": "1169658108839",
+      "inn": "6685119693",
+      "kpp": "668501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Екатеринбург",
+      "reg_date": "22.09.2016",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"ГОРОДСКОЙ ПРУД\"",
+      "url": "https://synapsenet.ru/organizacii/1226600047563-ooo-sz-gorodskoj-prud",
+      "ogrn": "1226600047563",
+      "inn": "6685202528",
+      "kpp": "668501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Екатеринбург",
+      "reg_date": "04.08.2022",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T12:17:21.478241+00:00"
+}

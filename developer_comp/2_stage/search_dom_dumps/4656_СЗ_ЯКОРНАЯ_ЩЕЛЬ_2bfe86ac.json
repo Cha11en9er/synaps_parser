@@ -1,0 +1,68 @@
+{
+  "index": 4656,
+  "name": "СЗ ЯКОРНАЯ ЩЕЛЬ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%AF%D0%9A%D0%9E%D0%A0%D0%9D%D0%90%D0%AF%20%D0%A9%D0%95%D0%9B%D0%AC",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%AF%D0%9A%D0%9E%D0%A0%D0%9D%D0%90%D0%AF%20%D0%A9%D0%95%D0%9B%D0%AC",
+  "total_text": "найдено 4 лица",
+  "cards_count": 4,
+  "cards": [
+    {
+      "title": "АО \"СЗ \"ЯКОРНАЯ ЩЕЛЬ\"",
+      "url": "https://synapsenet.ru/organizacii/1052310481871-ao-sz-yakornaya-schel",
+      "ogrn": "1052310481871",
+      "inn": "2318030530",
+      "kpp": "231801001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Сочи",
+      "reg_date": "26.01.2005",
+      "period": ""
+    },
+    {
+      "title": "ФГУП \"ПАНСИОНАТ \"ЯКОРНАЯ ЩЕЛЬ\"",
+      "url": "https://synapsenet.ru/organizacii/1022302789630-fgup-pansionat-yakornaya-schel",
+      "ogrn": "1022302789630",
+      "inn": "2318011270",
+      "kpp": "231801001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Сочи",
+      "reg_date": "",
+      "period": "с 23.10.2002 по 26.01.2005"
+    },
+    {
+      "title": "СОВЕТ ТОС П.ЯКОРНАЯ ЩЕЛЬ",
+      "url": "https://synapsenet.ru/organizacii/1022302788067-sovet-tos-pyakornaya-schel",
+      "ogrn": "1022302788067",
+      "inn": "2318024166",
+      "kpp": "231801001",
+      "okved": "94.99",
+      "okved_name": "Деятельность прочих общественных организаций и некоммерческих организаций, кроме религиозных и политических организаций",
+      "status": "действующая организация",
+      "region": "г. Сочи",
+      "reg_date": "07.10.2002",
+      "period": ""
+    },
+    {
+      "title": "МЕСТНАЯ РЕЛИГИОЗНАЯ ОРГАНИЗАЦИЯ ПРАВОСЛАВНЫЙ ПРИХОД ХРАМА ИКОНЫ БОЖИЕЙ МАТЕРИ \"НЕРУШИМАЯ СТЕНА\" П. ЯКОРНАЯ ЩЕЛЬ Г. СОЧИ КРАСНОДАРСКОГО КРАЯ СОЧИНСКОЙ ЕПАРХИИ РУССКОЙ ПРАВОСЛАВНОЙ ЦЕРКВИ (МОСКОВСКИЙ ПАТРИАРХАТ)",
+      "url": "https://synapsenet.ru/organizacii/1132300006079-mestnaya-religioznaya-organizaciya-pravoslavnij-prihod-hrama-ikoni-bozhiej-materi-nerushimaya-stena-p-yakornaya-schel-g-sochi-krasnodarskogo-kraya-sochinskoj-eparhii-russkoj-pravoslavnoj-pravoslavnoj",
+      "ogrn": "1132300006079",
+      "inn": "2318980179",
+      "kpp": "231801001",
+      "okved": "94.91",
+      "okved_name": "Деятельность религиозных организаций",
+      "status": "действующая организация",
+      "region": "г. Сочи",
+      "reg_date": "26.12.2013",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "71.12.2",
+    "94.99",
+    "94.91"
+  ],
+  "saved_at": "2026-10-16T13:14:37.320107+00:00"
+}

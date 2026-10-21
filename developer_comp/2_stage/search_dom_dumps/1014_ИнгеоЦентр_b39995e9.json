@@ -1,0 +1,53 @@
+{
+  "index": 1014,
+  "name": "ИнгеоЦентр",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%98%D0%BD%D0%B3%D0%B5%D0%BE%D0%A6%D0%B5%D0%BD%D1%82%D1%80",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%98%D0%BD%D0%B3%D0%B5%D0%BE%D0%A6%D0%B5%D0%BD%D1%82%D1%80",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "АО \"ИНГЕОЦЕНТР\"",
+      "url": "https://synapsenet.ru/organizacii/1027739224820-ao-ingeocentr",
+      "ogrn": "1027739224820",
+      "inn": "7730150393",
+      "kpp": "773001001",
+      "okved": "68.32",
+      "okved_name": "Управление недвижимым имуществом за вознаграждение или на договорной основе",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "20.09.2002",
+      "period": ""
+    },
+    {
+      "title": "ЗАО НТП \"ИНГЕОЦЕНТР\"",
+      "url": "https://synapsenet.ru/organizacii/1027739781519-zao-ntp-ingeocentr",
+      "ogrn": "1027739781519",
+      "inn": "7736098686",
+      "kpp": "773601001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 16.12.2002 по 11.03.2019"
+    },
+    {
+      "title": "ИНГЕОЦЕНТР ЛТД ЗАО",
+      "url": "https://synapsenet.ru/organizacii/1097760300802-ingeocentr-ltd-zao",
+      "ogrn": "1097760300802",
+      "inn": "7714116606",
+      "kpp": "771401010",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Москва",
+      "reg_date": "",
+      "period": "с 06.06.2009 по 06.06.2009"
+    }
+  ],
+  "okveds": [
+    "68.32"
+  ],
+  "saved_at": "2026-10-16T10:05:39.774268+00:00"
+}

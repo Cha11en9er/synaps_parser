@@ -1,0 +1,80 @@
+{
+  "index": 2110,
+  "name": "Селигерстрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%B5%D0%BB%D0%B8%D0%B3%D0%B5%D1%80%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%B5%D0%BB%D0%B8%D0%B3%D0%B5%D1%80%D1%81%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 5 лиц",
+  "cards_count": 5,
+  "cards": [
+    {
+      "title": "ООО \"СЕЛИГЕРСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1196952007691-ooo-seligerstroj",
+      "ogrn": "1196952007691",
+      "inn": "6913017365",
+      "kpp": "773301001",
+      "okved": "23.63",
+      "okved_name": "Производство товарного бетона",
+      "status": "действующая организация",
+      "region": "г. Москва",
+      "reg_date": "20.05.2019",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЕЛИГЕРСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1116913000192-ooo-seligerstroj",
+      "ogrn": "1116913000192",
+      "inn": "6913011780",
+      "kpp": "691301001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Осташков",
+      "reg_date": "09.03.2011",
+      "period": ""
+    },
+    {
+      "title": "ОАО \"СЕЛИГЕРСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1026901813091-oao-seligerstroj",
+      "ogrn": "1026901813091",
+      "inn": "6913005169",
+      "kpp": "691301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Осташков",
+      "reg_date": "",
+      "period": "с 06.12.2002 по 29.09.2004"
+    },
+    {
+      "title": "МП \"СЕЛИГЕРСТРОЙ\" МО \"ОСТАШКОВ\"",
+      "url": "https://synapsenet.ru/organizacii/1026901814521-mp-seligerstroj-mo-ostashkov",
+      "ogrn": "1026901814521",
+      "inn": "6913008949",
+      "kpp": "691301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Осташков",
+      "reg_date": "",
+      "period": "с 30.12.2002 по 10.04.2007"
+    },
+    {
+      "title": "ПЕРВИЧНАЯ ПРОФСОЮЗНАЯ ОРГАНИЗАЦИЯ МУНИЦИПАЛЬНОГО УНИТАРНОГО ПРЕДПРИЯТИЯ \"СЕЛИГЕРСТРОЙ\" ОСТАШКОВСКОЙ РАЙОННОЙ ОРГАНИЗАЦИИ ПРОФСОЮЗА РАБОТНИКОВ АГРОПРОМЫШЛЕННОГО КОМПЛЕКСА РФ",
+      "url": "https://synapsenet.ru/organizacii/1036920004461-pervichnaya-profsoyuznaya-organizaciya-municipalnogo-unitarnogo-predpriyatiya-seligerstroj-ostashkovskoj-rajonnoj-organizacii-profsoyuza-rabotnikov-agropromishlennogo-kompleksa-rf",
+      "ogrn": "1036920004461",
+      "inn": "6913010024",
+      "kpp": "691301001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Осташков",
+      "reg_date": "",
+      "period": "с 27.01.2003 по 15.02.2016"
+    }
+  ],
+  "okveds": [
+    "23.63",
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T11:11:14.255144+00:00"
+}

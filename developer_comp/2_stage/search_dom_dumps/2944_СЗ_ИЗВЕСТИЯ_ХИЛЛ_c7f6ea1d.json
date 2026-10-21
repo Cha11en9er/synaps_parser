@@ -1,0 +1,54 @@
+{
+  "index": 2944,
+  "name": "СЗ ИЗВЕСТИЯ ХИЛЛ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%98%D0%97%D0%92%D0%95%D0%A1%D0%A2%D0%98%D0%AF%20%D0%A5%D0%98%D0%9B%D0%9B",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%98%D0%97%D0%92%D0%95%D0%A1%D0%A2%D0%98%D0%AF%20%D0%A5%D0%98%D0%9B%D0%9B",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"СЗ \"ИЗВЕСТИЯ ХИЛЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1212300006115-ooo-sz-izvestiya-hill",
+      "ogrn": "1212300006115",
+      "inn": "2367017838",
+      "kpp": "237801001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "пгт. Сириус",
+      "reg_date": "09.02.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО УПРАВЛЯЮЩАЯ КОМПАНИЯ \"ИЗВЕСТИЯ ХИЛЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1232300054700-ooo-upravlyayuschaya-kompaniya-izvestiya-hill",
+      "ogrn": "1232300054700",
+      "inn": "2367033290",
+      "kpp": "237801001",
+      "okved": "68.32",
+      "okved_name": "Управление недвижимым имуществом за вознаграждение или на договорной основе",
+      "status": "действующая организация",
+      "region": "пгт. Сириус",
+      "reg_date": "20.09.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"ТРИНИТИ ХИЛЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1207800092202-ooo-sz-triniti-hill",
+      "ogrn": "1207800092202",
+      "inn": "7806574525",
+      "kpp": "780401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Санкт-Петербург",
+      "reg_date": "",
+      "period": "с 28.07.2020 по 30.06.2023"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "68.32"
+  ],
+  "saved_at": "2026-10-16T11:52:38.158750+00:00"
+}

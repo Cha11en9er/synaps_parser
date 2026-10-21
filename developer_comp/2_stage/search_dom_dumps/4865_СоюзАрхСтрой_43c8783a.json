@@ -1,0 +1,40 @@
+{
+  "index": 4865,
+  "name": "СоюзАрхСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%BE%D1%8E%D0%B7%D0%90%D1%80%D1%85%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%BE%D1%8E%D0%B7%D0%90%D1%80%D1%85%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 2 лица",
+  "cards_count": 2,
+  "cards": [
+    {
+      "title": "ООО \"СЗ \"САС-СБЫТ\"",
+      "url": "https://synapsenet.ru/organizacii/1132901010736-ooo-sz-sassbit",
+      "ogrn": "1132901010736",
+      "inn": "2901241647",
+      "kpp": "290101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Архангельск",
+      "reg_date": "14.10.2013",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"САС-ЛОГИСТИК\"",
+      "url": "https://synapsenet.ru/organizacii/1162901055734-ooo-sz-saslogistik",
+      "ogrn": "1162901055734",
+      "inn": "2901276784",
+      "kpp": "290101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Архангельск",
+      "reg_date": "05.04.2016",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20"
+  ],
+  "saved_at": "2026-10-16T13:25:51.587929+00:00"
+}

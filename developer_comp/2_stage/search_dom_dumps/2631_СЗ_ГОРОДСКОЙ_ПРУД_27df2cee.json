@@ -1,0 +1,107 @@
+{
+  "index": 2631,
+  "name": "СЗ ГОРОДСКОЙ ПРУД",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%93%D0%9E%D0%A0%D0%9E%D0%94%D0%A1%D0%9A%D0%9E%D0%99%20%D0%9F%D0%A0%D0%A3%D0%94",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%A1%D0%97%20%D0%93%D0%9E%D0%A0%D0%9E%D0%94%D0%A1%D0%9A%D0%9E%D0%99%20%D0%9F%D0%A0%D0%A3%D0%94",
+  "total_text": "найдено 7 лиц",
+  "cards_count": 7,
+  "cards": [
+    {
+      "title": "ООО \"СЗ \"ГОРОДСКОЙ ПРУД\"",
+      "url": "https://synapsenet.ru/organizacii/1226600047563-ooo-sz-gorodskoj-prud",
+      "ogrn": "1226600047563",
+      "inn": "6685202528",
+      "kpp": "668501001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Екатеринбург",
+      "reg_date": "04.08.2022",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"ГОРОДСКОЙ КВАРТАЛ\"",
+      "url": "https://synapsenet.ru/organizacii/1216200009926-ooo-sz-gorodskoj-kvartal",
+      "ogrn": "1216200009926",
+      "inn": "6234197635",
+      "kpp": "623401001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Рязань",
+      "reg_date": "01.11.2021",
+      "period": ""
+    },
+    {
+      "title": "ООО \"СЗ \"ГОРОДСКОЙ БОР\"",
+      "url": "https://synapsenet.ru/organizacii/1235000143949-ooo-sz-gorodskoj-bor",
+      "ogrn": "1235000143949",
+      "inn": "5074085304",
+      "kpp": "504301001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Серпухов",
+      "reg_date": "15.11.2023",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"ГОРОДСКОЙ ПАРК\"",
+      "url": "https://synapsenet.ru/organizacii/1168617070764-ooo-sz-gorodskoj-park",
+      "ogrn": "1168617070764",
+      "inn": "8602272528",
+      "kpp": "860201001",
+      "okved": "41.20.1",
+      "okved_name": "Жилищное строительство",
+      "status": "действующая организация",
+      "region": "г. Сургут",
+      "reg_date": "21.10.2016",
+      "period": ""
+    },
+    {
+      "title": "ООО СЗ \"ГОРОДСКОЙ ПАРК РЕГИОНЫ\"",
+      "url": "https://synapsenet.ru/organizacii/1258600004541-ooo-sz-gorodskoj-park-regioni",
+      "ogrn": "1258600004541",
+      "inn": "8602318966",
+      "kpp": "860201001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "действующая организация",
+      "region": "г. Сургут",
+      "reg_date": "13.05.2025",
+      "period": ""
+    },
+    {
+      "title": "ВГО ЭФ \"КУКУШКИН ПРУД\"",
+      "url": "https://synapsenet.ru/organizacii/1033303608084-vgo-ef-kukushkin-prud",
+      "ogrn": "1033303608084",
+      "inn": "3327701722",
+      "kpp": "332701001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Владимир",
+      "reg_date": "",
+      "period": "с 21.02.2003 по 15.05.2008"
+    },
+    {
+      "title": "ООО СЗ \"ГСФ\"",
+      "url": "https://synapsenet.ru/organizacii/1155476055756-ooo-sz-gsf",
+      "ogrn": "1155476055756",
+      "inn": "5405957870",
+      "kpp": "540501001",
+      "okved": "71.12.2",
+      "okved_name": "Деятельность заказчика-застройщика, генерального подрядчика",
+      "status": "действующая организация",
+      "region": "г. Новосибирск",
+      "reg_date": "21.05.2015",
+      "period": ""
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "71.12.2",
+    "41.20.1"
+  ],
+  "saved_at": "2026-10-16T11:37:53.331232+00:00"
+}

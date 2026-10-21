@@ -1,0 +1,55 @@
+{
+  "index": 1556,
+  "name": "НИКИЩЕ",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%9D%D0%98%D0%9A%D0%98%D0%A9%D0%95",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%9D%D0%98%D0%9A%D0%98%D0%A9%D0%95",
+  "total_text": "найдено 3 лица",
+  "cards_count": 3,
+  "cards": [
+    {
+      "title": "ООО \"НИКИЩЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1085262000890-ooo-nikische",
+      "ogrn": "1085262000890",
+      "inn": "5262222948",
+      "kpp": "526301001",
+      "okved": "32.91",
+      "okved_name": "Производство метел и щеток",
+      "status": "действующая организация",
+      "region": "г. Нижний Новгород",
+      "reg_date": "31.01.2008",
+      "period": ""
+    },
+    {
+      "title": "ООО \"НИКИЩЕ\"",
+      "url": "https://synapsenet.ru/organizacii/1025203738295-ooo-nikische",
+      "ogrn": "1025203738295",
+      "inn": "5262030178",
+      "kpp": "526001001",
+      "okved": "68.10",
+      "okved_name": "Покупка и продажа собственного недвижимого имущества",
+      "status": "действующая организация",
+      "region": "г. Нижний Новгород",
+      "reg_date": "26.11.2002",
+      "period": ""
+    },
+    {
+      "title": "ООО \"НИКИЩЕ+\"",
+      "url": "https://synapsenet.ru/organizacii/1075260014906-ooo-nikische",
+      "ogrn": "1075260014906",
+      "inn": "5260193385",
+      "kpp": "027401001",
+      "okved": "46.15.9",
+      "okved_name": "Деятельность агентов по оптовой торговле прочими бытовыми товарами, не включенными в другие группировки",
+      "status": "организация ликвидирована",
+      "region": "г. Уфа",
+      "reg_date": "",
+      "period": "с 02.04.2007 по 22.10.2018"
+    }
+  ],
+  "okveds": [
+    "32.91",
+    "68.10",
+    "46.15.9"
+  ],
+  "saved_at": "2026-10-16T10:38:28.455024+00:00"
+}

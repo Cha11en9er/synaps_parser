@@ -1,0 +1,94 @@
+{
+  "index": 253,
+  "name": "АнгарскСтрой",
+  "query_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%BD%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "final_url": "https://synapsenet.ru/organizacii?query=%D0%90%D0%BD%D0%B3%D0%B0%D1%80%D1%81%D0%BA%D0%A1%D1%82%D1%80%D0%BE%D0%B9",
+  "total_text": "найдено 6 лиц",
+  "cards_count": 6,
+  "cards": [
+    {
+      "title": "ООО \"АНГАРСКСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1183850038987-ooo-angarskstroj",
+      "ogrn": "1183850038987",
+      "inn": "3801147219",
+      "kpp": "380101001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Ангарск",
+      "reg_date": "",
+      "period": "с 14.12.2018 по 24.04.2020"
+    },
+    {
+      "title": "ООО \"АНГАРСКСТРОЙ-38",
+      "url": "https://synapsenet.ru/organizacii/1183850037062-ooo-angarskstroj38",
+      "ogrn": "1183850037062",
+      "inn": "3801147096",
+      "kpp": "380101001",
+      "okved": "42.22.2",
+      "okved_name": "Строительство местных линий электропередачи и связи",
+      "status": "действующая организация",
+      "region": "г. Ангарск",
+      "reg_date": "28.11.2018",
+      "period": ""
+    },
+    {
+      "title": "ООО \"АНГАРСКСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1023800519049-ooo-angarskstroj",
+      "ogrn": "1023800519049",
+      "inn": "3801053835",
+      "kpp": "380101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ангарск",
+      "reg_date": "",
+      "period": "с 04.09.2002 по 11.03.2013"
+    },
+    {
+      "title": "ООО \"АНГАРСКСТРОЙ +\"",
+      "url": "https://synapsenet.ru/organizacii/1083811007466-ooo-angarskstroj",
+      "ogrn": "1083811007466",
+      "inn": "3811124556",
+      "kpp": "381101001",
+      "okved": "43.12",
+      "okved_name": "Подготовка строительной площадки",
+      "status": "организация ликвидирована",
+      "region": "г. Иркутск",
+      "reg_date": "",
+      "period": "с 10.10.2008 по 12.07.2016"
+    },
+    {
+      "title": "ООО \"ПО \"АНГАРСКСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1053801123496-ooo-po-angarskstroj",
+      "ogrn": "1053801123496",
+      "inn": "3801079167",
+      "kpp": "380101001",
+      "okved": "",
+      "okved_name": "",
+      "status": "организация ликвидирована",
+      "region": "г. Ангарск",
+      "reg_date": "",
+      "period": "с 22.12.2005 по 07.10.2008"
+    },
+    {
+      "title": "ООО \"СПЕЦИАЛИЗИРОВАННЫЙ ЗАСТРОЙЩИК \"АНГАРСКСТРОЙ\"",
+      "url": "https://synapsenet.ru/organizacii/1143850016540-ooo-specializirovannij-zastrojschik-angarskstroj",
+      "ogrn": "1143850016540",
+      "inn": "3811178505",
+      "kpp": "380801001",
+      "okved": "41.20",
+      "okved_name": "Строительство жилых и нежилых зданий",
+      "status": "организация ликвидирована",
+      "region": "г. Иркутск",
+      "reg_date": "",
+      "period": "с 21.04.2014 по 24.04.2026"
+    }
+  ],
+  "okveds": [
+    "41.20",
+    "42.22.2",
+    "43.12"
+  ],
+  "saved_at": "2026-10-16T09:21:03.519132+00:00"
+}
