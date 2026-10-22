@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 import traceback
@@ -119,7 +120,12 @@ def empty_payload(source: Path, inns_total: int) -> dict[str, Any]:
     }
 
 
+# Как часто сбрасывать companies.json (1 = каждый ИНН; для 100k+ по умолчанию 25).
+SAVE_EVERY = max(1, int(os.environ.get("SYNAPS_SAVE_EVERY") or "25"))
+
+
 def save_payload(path: Path, by_inn: dict[str, dict[str, Any]], source: Path, inns_total: int) -> None:
+    """Один компактный JSON: только items с нужными полями, без indent (экономия места/IO)."""
     items = list(by_inn.values())
     ok_count = sum(1 for x in items if (x.get("status") or "").lower() == "ok")
     error_count = sum(1 for x in items if (x.get("status") or "").lower() == "error")
@@ -133,7 +139,10 @@ def save_payload(path: Path, by_inn: dict[str, dict[str, Any]], source: Path, in
     }
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp.write_text(
+        json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8",
+    )
     tmp.replace(path)
 
 
@@ -250,14 +259,23 @@ def main(argv: list[str] | None = None) -> None:
         chunk = queue[offset : offset + batch_size]
         print(f"Пачка {offset + 1}–{offset + len(chunk)} из {len(queue)}")
 
-        def _ok(inn: str, data: dict, _progress: dict = progress, _dst: Path = dst, _src: Path = src) -> None:
+        dirty = {"n": 0}
+
+        def _flush(force: bool = False, _progress: dict = progress, _dst: Path = dst, _src: Path = src) -> None:
+            if force or dirty["n"] >= SAVE_EVERY:
+                save_payload(_dst, _progress, _src, len(inns))
+                dirty["n"] = 0
+
+        def _ok(inn: str, data: dict, _progress: dict = progress) -> None:
             _progress[inn] = row_ok(inn, data)
-            save_payload(_dst, _progress, _src, len(inns))
+            dirty["n"] += 1
+            _flush()
             print(f"  записан ИНН {inn}")
 
-        def _err(inn: str, exc: BaseException, _progress: dict = progress, _dst: Path = dst, _src: Path = src) -> None:
+        def _err(inn: str, exc: BaseException, _progress: dict = progress) -> None:
             _progress[inn] = row_error(inn, exc, _progress.get(inn))
-            save_payload(_dst, _progress, _src, len(inns))
+            dirty["n"] += 1
+            _flush(force=True)
             print(f"  ошибка ИНН {inn}: {exc}")
 
         try:
@@ -268,7 +286,13 @@ def main(argv: list[str] | None = None) -> None:
                 on_each_result=_ok,
                 on_each_error=_err,
             )
+            _flush(force=True)
+        except KeyboardInterrupt:
+            _flush(force=True)
+            print("\nОстановлено. Прогресс сохранён.")
+            raise
         except Exception as exc:
+            _flush(force=True)
             stalls += 1
             print(f"Пачка оборвалась: {exc}")
             traceback.print_exc()
@@ -294,6 +318,7 @@ def main(argv: list[str] | None = None) -> None:
         stalls = 0
         offset += len(chunk)
 
+    save_payload(dst, progress, src, len(inns))
     print(f"Готово. Результат: {dst}")
 
 

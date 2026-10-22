@@ -149,7 +149,13 @@ genpodryad_comp/1_stage/members.json
 genpodryad_comp/1_stage/members.jsonl
 genpodryad_comp/_probe/
 
-
+# Тяжёлые дампы поиска по названиям (тысячи JSON) — не нужны для Синапса
+developer_comp/2_stage/search_dom_dumps/
+developer_comp/2_stage/dump_search_progress.json
+developer_comp/2_stage/okved_freq.json
+developer_comp/2_stage/sample_500.json
+developer_comp/2_stage/shortlist.json
+*.xlsx
 
 # Saved HTML dumps for selector work
 dom_dumps/

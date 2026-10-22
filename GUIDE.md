@@ -51,15 +51,24 @@ git push origin main
 
 ---
 
-## 2. ПК — принять
+## 2. ПК — полностью как на ноуте (стереть локальные отличия)
 
 Путь на твоём ПК:
 
 ```powershell
 cd C:\repos\YouDo\done\20.04.26-synaps_parser
-git pull origin main
+
+# если мешает локальный файл:
+# Remove-Item -Force GUIDE.md -ErrorAction SilentlyContinue
+
+git fetch origin
+git reset --hard origin/main
+git clean -fd
+
 .\.venv\Scripts\Activate.ps1
 ```
+
+`reset --hard` + `clean -fd` удалит и лишние дампы/`GUIDE.md`, если они были только локально.
 
 Проверка, что 134к на месте:
 
