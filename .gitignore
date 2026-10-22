@@ -141,7 +141,8 @@ synaps-table-*.json
 # Local Playwright session (cookies / storage)
 synaps_storage_state.json
 
-# Nostroy scraper artifacts (large)
+# Nostroy scraper artifacts (large ~370MB — не в git).
+# Для Синапса коммитить genpodryad_comp/2_stage/all_inns.json (~2MB, 134k ИНН).
 genpodryad_comp/1_stage/pages/
 genpodryad_comp/1_stage/progress.json
 genpodryad_comp/1_stage/members.json
