@@ -26,6 +26,14 @@ from dotenv import load_dotenv
 from playwright.sync_api import Locator, Page, TimeoutError as PlaywrightTimeoutError, sync_playwright
 
 
+class SynapsOrgNotFound(RuntimeError):
+    """Организация не найдена на Синапсе: поиск по ИНН дал пустую выдачу.
+
+    Отличается от прочих ошибок (сеть, таймаут, сессия): это финальный результат —
+    компанию на сайте искать бессмысленно, повторять не нужно.
+    """
+
+
 def _env_int(name: str, default: int, *, lo: int = 0, hi: int | None = None) -> int:
     raw = (os.getenv(name) or "").strip()
     if not raw:
@@ -418,6 +426,33 @@ def _org_page_loaded(page: Page) -> bool:
     return page.locator(".oc-op-reg-date").count() > 0
 
 
+def _search_results_count(page: Page) -> int:
+    """Сколько организаций показано в выдаче поиска (.org-pc-status)."""
+    try:
+        return page.locator(".org-pc-status").count()
+    except Exception:
+        return 0
+
+
+def _confirm_org_not_found(page: Page, *, wait_ms: int = 6000) -> bool:
+    """
+    Подтвердить, что по запросу организаций реально нет (пустая выдача).
+    True — если за отведённое время не появились ни карточка, ни строки списка.
+    """
+    deadline = time.monotonic() + wait_ms / 1000.0
+    while True:
+        if _org_page_loaded(page):
+            return False
+        if _search_results_count(page) > 0:
+            return False
+        if time.monotonic() >= deadline:
+            return True
+        try:
+            page.wait_for_timeout(400)
+        except Exception:
+            return True
+
+
 def _settle_after_org_goto(page: Page) -> None:
     """После goto на карточку: короткая пауза + ожидание маркера (вместо длинного sleep)."""
     _pause_micro(page)
@@ -652,6 +687,10 @@ def _open_organization_from_choice_list(
     _pause_micro(page)
     href = _pick_active_org_href(page, name_hint=name_hint)
     if not href:
+        if _confirm_org_not_found(page):
+            raise SynapsOrgNotFound(
+                f"Организация не найдена на Синапсе (пустая выдача по {query_label!r}). URL: {page.url}",
+            )
         raise RuntimeError(
             f"По запросу {query_label!r} открыт список организаций, действующая не найдена. URL: {page.url}",
         )
@@ -717,6 +756,10 @@ def navigate_to_organization_by_query(
                 _open_organization_from_choice_list(page, query, name_hint=name_hint)
 
     if not _org_page_loaded(page):
+        if _confirm_org_not_found(page):
+            raise SynapsOrgNotFound(
+                f"Организация не найдена на Синапсе (пустая выдача по {query!r}). URL: {page.url}"
+            )
         raise RuntimeError(
             f"После поиска {query!r} карточка не открылась (нет .oc-op-reg-date). URL: {page.url}"
         )

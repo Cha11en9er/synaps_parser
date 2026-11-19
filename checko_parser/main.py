@@ -48,6 +48,23 @@ def _pause(page: Page, ms: int = ACTION_DELAY_MS) -> None:
         page.wait_for_timeout(ms)
 
 
+class CheckoBlocked(RuntimeError):
+    """checko.ru отдал 429 / «Too many requests» — IP под лимитом."""
+
+
+def _raise_if_blocked(page: Page) -> None:
+    """Если сайт вернул 429 — сразу останавливаемся, не продолжая долбить."""
+    try:
+        body = page.evaluate("() => (document.body ? document.body.innerText : '')") or ""
+    except Exception:
+        return
+    if "Too many requests" in body:
+        raise CheckoBlocked(
+            "checko.ru: 429 Too many requests — IP под лимитом. "
+            "Подождите и повторите; запускайте один процесс и с паузой."
+        )
+
+
 def _phone_column_locator(page: Page):
     """Колонка «Телефон» / «Телефоны» в блоке контактов."""
     row = page.locator(CONTENT_ROW_SELECTOR).first
@@ -85,10 +102,11 @@ def extract_phones(page: Page) -> list[str]:
 
 
 def search_company_by_inn(page: Page, inn_raw: str, *, landing_url: str = CHECKO_LANDING_URL) -> None:
-    """Ввод ИНН в поиск, клик по кнопке, ожидание карточки компании."""
+    """Ввод ИНН в поиск, клик по кнопке, ожидание карточки компании (или ИП)."""
     inn = _normalize_inn(inn_raw)
     page.goto(landing_url, wait_until="domcontentloaded")
     _pause(page, 800)
+    _raise_if_blocked(page)
 
     search_input = page.locator(SEARCH_INPUT_SELECTOR).first
     search_input.wait_for(state="visible", timeout=SEARCH_TIMEOUT_MS)
@@ -96,6 +114,24 @@ def search_company_by_inn(page: Page, inn_raw: str, *, landing_url: str = CHECKO
     _pause(page, 300)
 
     page.locator(".search-button").first.click()
+    _pause(page, 1500)
+    _raise_if_blocked(page)
+
+    # Для ИП (12-значный ИНН) поиск ведёт на страницу физлица /person/…
+    # Переходим по ссылке на страницу предпринимателя /entrepreneur/…
+    if "/person/" in (page.url or ""):
+        try:
+            # ссылка-карточка ИП: /entrepreneur/<slug>-<огрнип>, НЕ меню /entrepreneur/select
+            link = page.locator('a[href^="/entrepreneur/"]:not([href*="select"])').first
+            if link.count() > 0:
+                href = link.get_attribute("href") or ""
+                if href.startswith("/"):
+                    href = "https://checko.ru" + href
+                if href and "/select" not in href:
+                    page.goto(href, wait_until="domcontentloaded")
+                    _pause(page, 1200)
+        except Exception:
+            pass
 
     try:
         page.wait_for_selector(CONTENT_ROW_SELECTOR, state="visible", timeout=SEARCH_TIMEOUT_MS)
